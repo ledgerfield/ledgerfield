@@ -1,0 +1,84 @@
+{
+  "jurisdiction": "CN",
+  "years": {
+    "2024": {
+      "CIT": {
+        "standard_rate": 0.25,
+        "hnte_rate": 0.15,
+        "sme_rate": 0.20,
+        "sme_threshold_cny": 3000000,
+        "micro_rate": 0.05,
+        "micro_threshold_cny": 1000000,
+        "notes": "企业所得税: 标准25%，高新技术企业15%，小微企业年应纳税所得额100万以下5%，300万以下10%"
+      },
+      "IIT": {
+        "comprehensive_brackets": [
+          {"threshold": 0, "rate": 0.03},
+          {"threshold": 36000, "rate": 0.10},
+          {"threshold": 144000, "rate": 0.20},
+          {"threshold": 300000, "rate": 0.25},
+          {"threshold": 420000, "rate": 0.30},
+          {"threshold": 660000, "rate": 0.35},
+          {"threshold": 960000, "rate": 0.45}
+        ],
+        "basic_deduction_cny_monthly": 5000,
+        "notes": "个人所得税综合所得税率(年度)。月应税=月收入-5000-专项扣除"
+      },
+      "VAT": {
+        "standard_rate": 0.13,
+        "rate_construction": 0.09,
+        "rate_services": 0.06,
+        "rate_small_taxpayer": 0.03,
+        "rate_export": 0.00,
+        "notes": "增值税: 一般货物13%，建筑/不动产9%，现代服务6%，小规模纳税人3%，出口0%"
+      },
+      "social_insurance": {
+        "pension_employee_pct": 0.08,
+        "pension_employer_pct": 0.16,
+        "medical_employee_pct": 0.02,
+        "medical_employer_pct": 0.075,
+        "unemployment_employee_pct": 0.005,
+        "unemployment_employer_pct": 0.005,
+        "work_injury_employer_pct": 0.004,
+        "maternity_employer_pct": 0.008,
+        "housing_fund_pct": 0.12,
+        "notes": "五险一金(北京概算): 个人约10.5%，单位约30%"
+      }
+    },
+    "2025": {
+      "CIT": {
+        "standard_rate": 0.25,
+        "hnte_rate": 0.15,
+        "sme_rate": 0.20,
+        "micro_rate": 0.05,
+        "micro_threshold_cny": 1000000,
+        "sme_threshold_cny": 3000000
+      },
+      "IIT": {
+        "comprehensive_brackets": [
+          {"threshold": 0, "rate": 0.03},
+          {"threshold": 36000, "rate": 0.10},
+          {"threshold": 144000, "rate": 0.20},
+          {"threshold": 300000, "rate": 0.25},
+          {"threshold": 420000, "rate": 0.30},
+          {"threshold": 660000, "rate": 0.35},
+          {"threshold": 960000, "rate": 0.45}
+        ],
+        "basic_deduction_cny_monthly": 5000
+      },
+      "VAT": {
+        "standard_rate": 0.13,
+        "rate_construction": 0.09,
+        "rate_services": 0.06,
+        "rate_small_taxpayer": 0.03
+      },
+      "social_insurance": {
+        "pension_employee_pct": 0.08,
+        "pension_employer_pct": 0.16,
+        "medical_employee_pct": 0.02,
+        "medical_employer_pct": 0.075,
+        "housing_fund_pct": 0.12
+      }
+    }
+  }
+}
