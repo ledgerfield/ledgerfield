@@ -1,0 +1,35 @@
+{
+  "kind": "tax-ruleset",
+  "jurisdiction": "AT",
+  "fiscal_year": 2025,
+  "entity_types": ["company", "individual"],
+  "zero_cit": false,
+  "parameters": {
+    "corporate_income_tax": {
+      "key": "corporate_income_tax",
+      "label": "CIT Austria 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 24.0,
+      "currency": "EUR",
+      "notes": "CIT 24% (reduced from 25% in 2023); VAT 20%/13%/10%; income tax 20-55% (7 brackets)"
+    },
+    "vat_standard": {
+      "key": "vat_standard",
+      "label": "VAT/GST Austria 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 20.0,
+      "currency": "EUR"
+    },
+    "income_tax": {
+      "key": "income_tax",
+      "label": "Income Tax Austria 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 55.0,
+      "currency": "EUR"
+    }
+  },
+  "sources": []
+}

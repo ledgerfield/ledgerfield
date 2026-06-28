@@ -1,0 +1,30 @@
+{
+  "jurisdiction": "AT",
+  "years": {
+    "2025": {
+      "CIT": {
+        "standard_rate": 24.0,
+        "notes": "KöSt (Körperschaftsteuer) 24% (reduced from 25% in 2023, 23% from 2024 onward per reform); minimum CIT applies; no local CIT surcharges"
+      },
+      "VAT": {
+        "standard_rate": 20.0,
+        "reduced_rate_13": 13.0,
+        "reduced_rate_10": 10.0,
+        "notes": "Standard 20%; intermediate 13% (art, live animals, wine from farm, overnight stays from 2016); reduced 10% (food, books, pharmaceuticals, rent, passenger transport)"
+      },
+      "IIT": {
+        "top_rate": 55.0,
+        "brackets": [
+          {"up_to": 12816, "rate": 0.0},
+          {"up_to": 20818, "rate": 20.0},
+          {"up_to": 34513, "rate": 30.0},
+          {"up_to": 66612, "rate": 40.0},
+          {"up_to": 99266, "rate": 48.0},
+          {"up_to": 1000000, "rate": 50.0},
+          {"above": 1000000, "rate": 55.0}
+        ],
+        "notes": "7-bracket progressive scale; 55% on income >€1M (temporary solidarity surcharge); 0% up to €12,816"
+      }
+    }
+  }
+}
