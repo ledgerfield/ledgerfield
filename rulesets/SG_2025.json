@@ -1,0 +1,39 @@
+{
+  "ruleset": "SG_2025",
+  "jurisdiction": "Singapore",
+  "effective_year": 2025,
+  "corporate": {
+    "flat_cit_rate": 0.17,
+    "partial_exemption": {
+      "first_10k_exempt_pct": 0.75,
+      "next_190k_exempt_pct": 0.50,
+      "note": "Normal companies; startup exemption scheme offers higher relief for first 3 YAs"
+    }
+  },
+  "personal_income_tax": {
+    "currency": "SGD",
+    "note": "First SGD 20,000 exempt (0%)",
+    "brackets": [
+      {"from": 0,      "to": 20000,  "rate": 0.00,  "marginal_rate_pct": 0.0},
+      {"from": 20000,  "to": 30000,  "rate": 0.02,  "marginal_rate_pct": 2.0},
+      {"from": 30000,  "to": 40000,  "rate": 0.035, "marginal_rate_pct": 3.5},
+      {"from": 40000,  "to": 80000,  "rate": 0.07,  "marginal_rate_pct": 7.0},
+      {"from": 80000,  "to": 120000, "rate": 0.115, "marginal_rate_pct": 11.5},
+      {"from": 120000, "to": 160000, "rate": 0.15,  "marginal_rate_pct": 15.0},
+      {"from": 160000, "to": 200000, "rate": 0.18,  "marginal_rate_pct": 18.0},
+      {"from": 200000, "to": 240000, "rate": 0.19,  "marginal_rate_pct": 19.0},
+      {"from": 240000, "to": 280000, "rate": 0.195, "marginal_rate_pct": 19.5},
+      {"from": 280000, "to": 320000, "rate": 0.20,  "marginal_rate_pct": 20.0},
+      {"from": 320000, "to": null,   "rate": 0.22,  "marginal_rate_pct": 22.0}
+    ]
+  },
+  "consumption_tax": {
+    "gst_rate": 0.09,
+    "note": "Increased from 8% to 9% on 1 January 2024"
+  },
+  "cpf": {
+    "employee_below_55": 0.20,
+    "employer_below_55": 0.17,
+    "note": "Rates taper with age; shown for <=55"
+  }
+}
