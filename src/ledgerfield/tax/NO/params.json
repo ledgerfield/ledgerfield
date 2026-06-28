@@ -1,0 +1,25 @@
+{
+  "jurisdiction": "NO",
+  "years": {
+    "2025": {
+      "CIT": {
+        "standard_rate": 22.0,
+        "petroleum_sector_rate": 78.0,
+        "financial_sector_surcharge": 5.0,
+        "notes": "Standard CIT 22%; petroleum companies 78% (incl special tax); financial institutions 27%; hydropower resource rent tax 67.7%"
+      },
+      "VAT": {
+        "standard_rate": 25.0,
+        "reduced_rate_food": 15.0,
+        "reduced_rate_transport_culture": 12.0,
+        "notes": "Standard 25%; food/drink 15%; passenger transport/cinema/hotel/public broadcasting 12%; zero-rated exports"
+      },
+      "IIT": {
+        "top_rate": 22.8,
+        "bracket_surcharge_rates": [1.7, 4.0, 13.6, 16.6],
+        "national_insurance_rate": 7.9,
+        "notes": "Base income tax 22%; bracket surcharges up to 16.6% on high income; effective top marginal ~47.4%; self-employed social insurance 11.1%"
+      }
+    }
+  }
+}
