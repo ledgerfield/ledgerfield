@@ -1,0 +1,116 @@
+{
+  "kind": "tax-ruleset",
+  "jurisdiction": "CN",
+  "fiscal_year": 2025,
+  "year": 2025,
+  "entity_types": ["company", "hnte", "sme", "individual"],
+  "zero_cit": false,
+  "parameters": {
+    "corporate_income_tax": {
+      "key": "corporate_income_tax",
+      "label": "企业所得税 (CIT) 2025 — standard",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 0.25,
+      "currency": "CNY",
+      "notes": "标准税率25%; 高新技术企业(HNTE)15%; 小型微利企业≤300万CNY适用20%; 微利≤100万CNY适用5%"
+    },
+    "corporate_income_tax_hnte": {
+      "key": "corporate_income_tax_hnte",
+      "label": "企业所得税 — 高新技术企业 (HNTE) 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 0.15,
+      "currency": "CNY",
+      "notes": "高新技术企业优惠税率15%"
+    },
+    "corporate_income_tax_sme": {
+      "key": "corporate_income_tax_sme",
+      "label": "企业所得税 — 小型微利企业 2025",
+      "bracket_type": "marginal_rate",
+      "brackets": [
+        {"threshold": 0, "rate": 0.05, "bracket_type": "marginal_rate"},
+        {"threshold": 1000000, "rate": 0.20, "bracket_type": "marginal_rate"}
+      ],
+      "flat_rate": null,
+      "currency": "CNY",
+      "notes": "小微企业: ≤100万CNY按5%, 100-300万CNY按20%"
+    },
+    "individual_income_tax": {
+      "key": "individual_income_tax",
+      "label": "个人所得税综合所得 (IIT) 2025",
+      "bracket_type": "marginal_rate",
+      "brackets": [
+        {"threshold": 0, "rate": 0.03, "bracket_type": "marginal_rate"},
+        {"threshold": 36000, "rate": 0.10, "bracket_type": "marginal_rate"},
+        {"threshold": 144000, "rate": 0.20, "bracket_type": "marginal_rate"},
+        {"threshold": 300000, "rate": 0.25, "bracket_type": "marginal_rate"},
+        {"threshold": 420000, "rate": 0.30, "bracket_type": "marginal_rate"},
+        {"threshold": 660000, "rate": 0.35, "bracket_type": "marginal_rate"},
+        {"threshold": 960000, "rate": 0.45, "bracket_type": "marginal_rate"}
+      ],
+      "flat_rate": null,
+      "currency": "CNY",
+      "notes": "个人所得税综合所得年度税率表(7级超额累进); 基本减除费用5000元/月(6万/年)"
+    },
+    "iit_basic_deduction_monthly_cny": {
+      "key": "iit_basic_deduction_monthly_cny",
+      "label": "个人所得税基本减除费用 (月) 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 5000,
+      "currency": "CNY",
+      "notes": "月基本减除费用5000元 (年度6万元)"
+    },
+    "vat_standard": {
+      "key": "vat_standard",
+      "label": "增值税标准税率 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 0.13,
+      "currency": "CNY",
+      "notes": "一般纳税人标准税率13% (货物及有形动产租赁)"
+    },
+    "vat_construction": {
+      "key": "vat_construction",
+      "label": "增值税 — 建筑/不动产 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 0.09,
+      "currency": "CNY",
+      "notes": "建筑服务、不动产销售/租赁适用9%"
+    },
+    "vat_services": {
+      "key": "vat_services",
+      "label": "增值税 — 现代服务/金融 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 0.06,
+      "currency": "CNY",
+      "notes": "现代服务业、金融服务、生活服务、无形资产适用6%"
+    },
+    "vat_small_taxpayer": {
+      "key": "vat_small_taxpayer",
+      "label": "增值税 — 小规模纳税人 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 0.03,
+      "currency": "CNY",
+      "notes": "小规模纳税人征收率3%; 部分行业1%优惠(暂时性政策)"
+    },
+    "vat_export": {
+      "key": "vat_export",
+      "label": "增值税 — 出口零税率 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 0.00,
+      "currency": "CNY",
+      "notes": "出口货物和服务适用零税率并可申请退税"
+    }
+  },
+  "sources": [
+    "https://www.chinatax.gov.cn/",
+    "https://www.gov.cn/zhengce/zhengceku/2023-12/29/content_6926693.htm",
+    "http://www.npc.gov.cn/npc/c2/c30834/202108/t20210830_313054.html"
+  ]
+}
