@@ -1,0 +1,35 @@
+{
+  "kind": "tax-ruleset",
+  "jurisdiction": "FI",
+  "fiscal_year": 2025,
+  "entity_types": ["company", "individual"],
+  "zero_cit": false,
+  "parameters": {
+    "corporate_income_tax": {
+      "key": "corporate_income_tax",
+      "label": "CIT Finland 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 20.0,
+      "currency": "EUR",
+      "notes": "CIT 20%; VAT 25.5%/14%/10%; income tax progressive federal+municipal ~50-55%"
+    },
+    "vat_standard": {
+      "key": "vat_standard",
+      "label": "VAT/GST Finland 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 25.5,
+      "currency": "EUR"
+    },
+    "income_tax": {
+      "key": "income_tax",
+      "label": "Income Tax Finland 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 44.0,
+      "currency": "EUR"
+    }
+  },
+  "sources": []
+}

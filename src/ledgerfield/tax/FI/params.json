@@ -1,0 +1,22 @@
+{
+  "jurisdiction": "FI",
+  "years": {
+    "2025": {
+      "CIT": {
+        "standard_rate": 20.0,
+        "notes": "CIT 20% flat rate since 2014; no local CIT surcharge; cooperative surcharge applies in some cases"
+      },
+      "VAT": {
+        "standard_rate": 25.5,
+        "reduced_rate_food": 14.0,
+        "reduced_rate_books_pharma_culture": 10.0,
+        "notes": "Standard 25.5% (raised from 24% in September 2024); food/restaurants/animal feed 14%; books/medicines/hotel/culture/sport/transport 10%"
+      },
+      "IIT": {
+        "top_rate": 44.0,
+        "municipal_average_rate": 22.0,
+        "notes": "Progressive state income tax; top federal bracket 44% on income >EUR 100,000 (approx); municipal tax ~20-23%; combined top marginal ~55%; capital gains 30-34%"
+      }
+    }
+  }
+}
