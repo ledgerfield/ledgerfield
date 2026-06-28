@@ -1,0 +1,35 @@
+{
+  "kind": "tax-ruleset",
+  "jurisdiction": "DK",
+  "fiscal_year": 2025,
+  "entity_types": ["company", "individual"],
+  "zero_cit": false,
+  "parameters": {
+    "corporate_income_tax": {
+      "key": "corporate_income_tax",
+      "label": "CIT Denmark 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 22.0,
+      "currency": "DKK",
+      "notes": "CIT 22%; VAT 25%; top marginal income tax ~56% incl municipal; no wealth tax"
+    },
+    "vat_standard": {
+      "key": "vat_standard",
+      "label": "VAT/GST Denmark 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 25.0,
+      "currency": "DKK"
+    },
+    "income_tax": {
+      "key": "income_tax",
+      "label": "Income Tax Denmark 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 15.0,
+      "currency": "DKK"
+    }
+  },
+  "sources": []
+}

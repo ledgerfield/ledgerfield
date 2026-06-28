@@ -1,0 +1,21 @@
+{
+  "jurisdiction": "DK",
+  "years": {
+    "2025": {
+      "CIT": {
+        "standard_rate": 22.0,
+        "notes": "CIT 22% flat; no local CIT surcharges; tonnage tax for shipping; no separate regional/municipal CIT"
+      },
+      "VAT": {
+        "standard_rate": 25.0,
+        "notes": "Single standard rate 25% (MOMS); no reduced rates in Denmark except zero-rated newspapers; one of EU's highest VAT rates"
+      },
+      "IIT": {
+        "top_rate": 15.0,
+        "municipal_average_rate": 25.0,
+        "labor_market_contribution_rate": 8.0,
+        "notes": "Top state tax 15% on income >DKK 588,900 (2025); municipal avg ~25%; bottom state 12.16%; AM-bidrag (labor market) 8%; effective top marginal ~56%; no wealth tax"
+      }
+    }
+  }
+}
