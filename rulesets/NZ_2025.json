@@ -1,0 +1,35 @@
+{
+  "ruleset": "NZ_2025",
+  "jurisdiction": "New Zealand",
+  "effective_year": 2025,
+  "currency": "NZD",
+  "accounting_standard": "NZ IFRS / NZ GAAP",
+  "corporate": {
+    "cit_rate": 0.28,
+    "note": "Flat CIT 28% under Income Tax Act 2007; no tiered rate"
+  },
+  "personal_income_tax": {
+    "currency": "NZD",
+    "note": "Individual income tax brackets 2024-25",
+    "brackets": [
+      {"from": 0,      "to": 14000,  "rate": 0.105,  "marginal_rate_pct": 10.5},
+      {"from": 14001,  "to": 48000,  "rate": 0.175,  "marginal_rate_pct": 17.5},
+      {"from": 48001,  "to": 70000,  "rate": 0.30,   "marginal_rate_pct": 30.0},
+      {"from": 70001,  "to": 180000, "rate": 0.33,   "marginal_rate_pct": 33.0},
+      {"from": 180001, "to": null,   "rate": 0.39,   "marginal_rate_pct": 39.0}
+    ]
+  },
+  "consumption_tax": {
+    "gst_rate": 0.15,
+    "registration_threshold_nzd": 60000,
+    "note": "15% GST broad-based; registration threshold NZD 60,000 annual turnover"
+  },
+  "kiwisaver": {
+    "employer_minimum_rate": 0.03,
+    "note": "KiwiSaver employer minimum 3% of gross salary; employee 3-10%"
+  },
+  "acc_levy": {
+    "employer_levy_rate_approx": 0.0067,
+    "note": "ACC Employer Levy ~0.67% of gross payroll; industry-specific rates apply"
+  }
+}
