@@ -1,0 +1,82 @@
+{
+  "jurisdiction": "JP",
+  "currency": "JPY",
+  "years": {
+    "2024": {
+      "CIT": {
+        "sme_threshold": 8000000,
+        "sme_rate": 0.19,
+        "standard_rate": 0.232,
+        "sme_capital_threshold": 100000000,
+        "local_tax_estimate_pct": 0.107,
+        "notes": "法人税: SME (資本金1億円以下) ≤800万円 19%, 超 23.2%; 地方税概算10.7%"
+      },
+      "IIT": {
+        "brackets": [
+          {"threshold": 0,       "rate": 0.05},
+          {"threshold": 1950000, "rate": 0.10},
+          {"threshold": 3300000, "rate": 0.20},
+          {"threshold": 6950000, "rate": 0.23},
+          {"threshold": 9000000, "rate": 0.33},
+          {"threshold": 18000000,"rate": 0.40},
+          {"threshold": 40000000,"rate": 0.45}
+        ],
+        "resident_tax_rate": 0.10,
+        "notes": "所得税 5-45% (7段階) + 住民税10%フラット"
+      },
+      "consumption_tax": {
+        "standard_rate": 0.10,
+        "reduced_rate": 0.08,
+        "notes": "消費税: 標準10%, 軽減8% (食料品等)"
+      },
+      "social_insurance": {
+        "employee_health_pct": 0.0500,
+        "employee_pension_pct": 0.0915,
+        "employer_health_pct": 0.0500,
+        "employer_pension_pct": 0.0915,
+        "employee_total_approx": 0.1415,
+        "employer_total_approx": 0.1415,
+        "pension_ceiling_monthly": 650000,
+        "notes": "社会保険: 健保5%+厚生年金9.15% (労使折半); 上限65万円/月"
+      }
+    },
+    "2025": {
+      "CIT": {
+        "sme_threshold": 8000000,
+        "sme_rate": 0.19,
+        "standard_rate": 0.232,
+        "sme_capital_threshold": 100000000,
+        "local_tax_estimate_pct": 0.107,
+        "notes": "法人税: SME (資本金1億円以下) ≤800万円 19%, 超 23.2%; 地方税概算10.7%"
+      },
+      "IIT": {
+        "brackets": [
+          {"threshold": 0,       "rate": 0.05},
+          {"threshold": 1950000, "rate": 0.10},
+          {"threshold": 3300000, "rate": 0.20},
+          {"threshold": 6950000, "rate": 0.23},
+          {"threshold": 9000000, "rate": 0.33},
+          {"threshold": 18000000,"rate": 0.40},
+          {"threshold": 40000000,"rate": 0.45}
+        ],
+        "resident_tax_rate": 0.10,
+        "notes": "所得税 5-45% (7段階) + 住民税10%フラット"
+      },
+      "consumption_tax": {
+        "standard_rate": 0.10,
+        "reduced_rate": 0.08,
+        "notes": "消費税: 標準10%, 軽減8% (食料品等)"
+      },
+      "social_insurance": {
+        "employee_health_pct": 0.0500,
+        "employee_pension_pct": 0.0915,
+        "employer_health_pct": 0.0500,
+        "employer_pension_pct": 0.0915,
+        "employee_total_approx": 0.1415,
+        "employer_total_approx": 0.1415,
+        "pension_ceiling_monthly": 650000,
+        "notes": "社会保険: 健保5%+厚生年金9.15% (労使折半); 上限65万円/月"
+      }
+    }
+  }
+}

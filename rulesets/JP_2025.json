@@ -1,0 +1,103 @@
+{
+  "kind": "tax-ruleset",
+  "jurisdiction": "JP",
+  "fiscal_year": 2025,
+  "year": 2025,
+  "currency": "JPY",
+  "entity_types": ["kabushiki_kaisha", "godo_kaisha", "individual", "sole_trader"],
+  "zero_cit": false,
+  "parameters": {
+    "corporate_income_tax_sme": {
+      "key": "corporate_income_tax_sme",
+      "label": "法人税 SME 2025 (資本金1億円以下)",
+      "bracket_type": "marginal_rate",
+      "brackets": [
+        {"threshold": 0,       "rate": 0.19,  "bracket_type": "marginal_rate"},
+        {"threshold": 8000000, "rate": 0.232, "bracket_type": "marginal_rate"}
+      ],
+      "flat_rate": null,
+      "currency": "JPY",
+      "notes": "SME: ≤¥8M @ 19%, 超 @ 23.2% (資本金1億円以下)"
+    },
+    "corporate_income_tax_large": {
+      "key": "corporate_income_tax_large",
+      "label": "法人税 大企業 2025",
+      "bracket_type": "flat",
+      "brackets": [],
+      "flat_rate": 0.232,
+      "currency": "JPY",
+      "notes": "大企業 (資本金1億円超): 一律23.2%"
+    },
+    "local_tax_estimate": {
+      "key": "local_tax_estimate",
+      "label": "地方法人税+法人住民税+法人事業税 概算 2025",
+      "bracket_type": "flat",
+      "brackets": [],
+      "flat_rate": 0.107,
+      "currency": "JPY",
+      "notes": "国税額の概算10.7%（都道府県・市区町村により異なる）"
+    },
+    "income_tax": {
+      "key": "income_tax",
+      "label": "所得税 2025",
+      "bracket_type": "marginal_rate",
+      "brackets": [
+        {"threshold": 0,        "rate": 0.05, "bracket_type": "marginal_rate"},
+        {"threshold": 1950000,  "rate": 0.10, "bracket_type": "marginal_rate"},
+        {"threshold": 3300000,  "rate": 0.20, "bracket_type": "marginal_rate"},
+        {"threshold": 6950000,  "rate": 0.23, "bracket_type": "marginal_rate"},
+        {"threshold": 9000000,  "rate": 0.33, "bracket_type": "marginal_rate"},
+        {"threshold": 18000000, "rate": 0.40, "bracket_type": "marginal_rate"},
+        {"threshold": 40000000, "rate": 0.45, "bracket_type": "marginal_rate"}
+      ],
+      "flat_rate": null,
+      "currency": "JPY",
+      "notes": "所得税 5-45% (7段階)"
+    },
+    "resident_tax": {
+      "key": "resident_tax",
+      "label": "住民税 2025",
+      "bracket_type": "flat",
+      "brackets": [],
+      "flat_rate": 0.10,
+      "currency": "JPY",
+      "notes": "住民税: 所得割10%フラット (道府県民税4% + 市町村民税6%)"
+    },
+    "consumption_tax_standard": {
+      "key": "consumption_tax_standard",
+      "label": "消費税 標準税率 2025",
+      "bracket_type": "flat",
+      "brackets": [],
+      "flat_rate": 0.10,
+      "currency": "JPY",
+      "notes": "消費税標準税率10% (国税7.8% + 地方消費税2.2%)"
+    },
+    "consumption_tax_reduced": {
+      "key": "consumption_tax_reduced",
+      "label": "消費税 軽減税率 2025",
+      "bracket_type": "flat",
+      "brackets": [],
+      "flat_rate": 0.08,
+      "currency": "JPY",
+      "notes": "軽減税率8%: 食料品・新聞等"
+    },
+    "social_insurance_employee": {
+      "key": "social_insurance_employee",
+      "label": "社会保険 従業員負担 2025",
+      "bracket_type": "flat",
+      "brackets": [],
+      "flat_rate": 0.1415,
+      "currency": "JPY",
+      "notes": "健保5% + 厚生年金9.15% (労使折半); 年金上限月65万円"
+    },
+    "social_insurance_employer": {
+      "key": "social_insurance_employer",
+      "label": "社会保険 事業主負担 2025",
+      "bracket_type": "flat",
+      "brackets": [],
+      "flat_rate": 0.1415,
+      "currency": "JPY",
+      "notes": "健保5% + 厚生年金9.15% (労使折半)"
+    }
+  }
+}
