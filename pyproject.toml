@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "P2P global accounting, tax engine & payroll — offline-capable, privacy-first, knitweb-integrated"
 requires-python = ">=3.12"
 readme = "README.md"
-license = { text = "Apache-2.0" }
+license = "Apache-2.0"
 authors = [{ name = "ledgerfield", email = "develuse@gmail.com" }]
 dependencies = []
 
