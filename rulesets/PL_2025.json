@@ -1,0 +1,44 @@
+{
+  "kind": "tax-ruleset",
+  "jurisdiction": "PL",
+  "fiscal_year": 2025,
+  "entity_types": ["company_sp_zoo", "company_sa", "individual", "sole_trader"],
+  "zero_cit": false,
+  "parameters": {
+    "corporate_income_tax": {
+      "key": "corporate_income_tax",
+      "label": "CIT Poland 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 19.0,
+      "currency": "PLN",
+      "notes": "CIT 19% standard; SME 9% for small taxpayers (revenue up to EUR 2m equiv); minimum CIT from 2024"
+    },
+    "vat_standard": {
+      "key": "vat_standard",
+      "label": "VAT/GST Poland 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 23.0,
+      "currency": "PLN",
+      "notes": "Standard VAT 23%; reduced 8% (food, hotel, construction, passenger transport); super-reduced 5% (basic foodstuffs, books)"
+    },
+    "income_tax": {
+      "key": "income_tax",
+      "label": "Income Tax Poland 2025 (top rate)",
+      "bracket_type": "marginal_rate",
+      "brackets": [
+        {"threshold": 0, "rate": 12.0, "bracket_type": "marginal_rate"},
+        {"threshold": 120000, "rate": 32.0, "bracket_type": "marginal_rate"}
+      ],
+      "flat_rate": null,
+      "currency": "PLN",
+      "notes": "Polish Deal: 12% up to PLN 120k, 32% above; tax-free amount PLN 30,000"
+    }
+  },
+  "sources": [
+    "https://www.podatki.gov.pl/pit/",
+    "https://www.podatki.gov.pl/cit/",
+    "https://www.podatki.gov.pl/vat/"
+  ]
+}
