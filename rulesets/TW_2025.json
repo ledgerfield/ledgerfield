@@ -1,0 +1,78 @@
+{
+  "kind": "tax-ruleset",
+  "jurisdiction": "TW",
+  "fiscal_year": 2025,
+  "year": 2025,
+  "currency": "TWD",
+  "entity_types": [
+    "company",
+    "sme",
+    "individual"
+  ],
+  "zero_cit": false,
+  "parameters": {
+    "corporate_income_tax": {
+      "key": "corporate_income_tax",
+      "label": "營利事業所得稅 (CIT) 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 0.2,
+      "currency": "TWD",
+      "notes": "標準稅率20%; 未分配盈餘加徵5%"
+    },
+    "retained_earnings_surtax": {
+      "key": "retained_earnings_surtax",
+      "label": "未分配盈餘加徵稅 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 0.05,
+      "currency": "TWD",
+      "notes": "未分配盈餘加徵5% (所得基本稅額條例)"
+    },
+    "income_tax": {
+      "key": "income_tax",
+      "label": "綜合所得稅 (IIT) 2025",
+      "bracket_type": "marginal_rate",
+      "brackets": [
+        {
+          "threshold": 0,
+          "rate": 0.05,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 560000,
+          "rate": 0.12,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 1260000,
+          "rate": 0.2,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 2520000,
+          "rate": 0.3,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 4720000,
+          "rate": 0.4,
+          "bracket_type": "marginal_rate"
+        }
+      ],
+      "flat_rate": null,
+      "currency": "TWD",
+      "notes": "綜合所得稅: 5段累進稅率 5-40%"
+    },
+    "vat": {
+      "key": "vat",
+      "label": "營業稅 (VAT) 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 0.05,
+      "currency": "TWD",
+      "notes": "營業稅標準稅率5%"
+    }
+  },
+  "cid": "sha256:912dc8d88a0048ae110eca57c8a03e288d29dbadde3429dc6afced5adc4163fc"
+}

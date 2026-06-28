@@ -1,0 +1,34 @@
+{
+  "jurisdiction": "TW",
+  "currency": "TWD",
+  "years": {
+    "2025": {
+      "CIT": {
+        "standard_rate": 0.20,
+        "retained_earnings_surtax": 0.05,
+        "notes": "營利事業所得稅: 標準稅率20%; 未分配盈餘加徵5%"
+      },
+      "IIT": {
+        "brackets": [
+          {"threshold": 0,        "rate": 0.05},
+          {"threshold": 560000,   "rate": 0.12},
+          {"threshold": 1260000,  "rate": 0.20},
+          {"threshold": 2520000,  "rate": 0.30},
+          {"threshold": 4720000,  "rate": 0.40}
+        ],
+        "notes": "綜合所得稅: 5段累進稅率 5-40%"
+      },
+      "VAT": {
+        "standard_rate": 0.05,
+        "notes": "營業稅 (VAT): 標準稅率5%"
+      },
+      "social_insurance": {
+        "employee_labor_insurance_pct": 0.0900,
+        "employer_labor_insurance_pct": 0.1050,
+        "employee_health_insurance_pct": 0.0530,
+        "employer_health_insurance_pct": 0.0530,
+        "notes": "勞保9%員工+10.5%雇主; 健保5.3%(雙方)"
+      }
+    }
+  }
+}
