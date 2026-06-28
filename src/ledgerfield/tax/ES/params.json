@@ -1,0 +1,33 @@
+{
+  "jurisdiction": "ES",
+  "years": {
+    "2025": {
+      "CIT": {
+        "standard_rate": 25.0,
+        "startup_rate": 15.0,
+        "startup_years": 2,
+        "small_company_rate": 23.0,
+        "notes": "IS (Impuesto sobre Sociedades) 25%; newly created companies 15% first 2 profitable years; small companies (turnover <€1M) 23%; banking/energy sector surcharge applies"
+      },
+      "VAT": {
+        "standard_rate": 21.0,
+        "reduced_rate_10": 10.0,
+        "super_reduced_rate_4": 4.0,
+        "notes": "IVA standard 21%; reduced 10% (food non-basic, hospitality, transport, cinema); super-reduced 4% (basic food, books, medicine, newspapers)"
+      },
+      "IIT": {
+        "top_rate": 47.0,
+        "state_brackets": [
+          {"up_to": 12450, "rate": 9.5},
+          {"up_to": 20200, "rate": 12.0},
+          {"up_to": 35200, "rate": 15.0},
+          {"up_to": 60000, "rate": 18.5},
+          {"up_to": 300000, "rate": 22.5},
+          {"above": 300000, "rate": 24.5}
+        ],
+        "regional_average_top": 22.5,
+        "notes": "IRPF: state scale + autonomous community scale; combined top 47% (state+region); Catalonia ~50%; autonomías set own rates; capital gains 19-28%"
+      }
+    }
+  }
+}
