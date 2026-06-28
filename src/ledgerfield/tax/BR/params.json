@@ -1,0 +1,59 @@
+{
+  "jurisdiction": "BR",
+  "year": 2025,
+  "currency": "BRL",
+  "cit": {
+    "irpj_base_rate": 0.15,
+    "irpj_surtax_rate": 0.10,
+    "irpj_surtax_threshold_annual_brl": 240000,
+    "csll_rate": 0.09,
+    "effective_combined_rate": 0.34,
+    "note": "IRPJ 15% + 10% surtax (on income >BRL 240k/yr) + CSLL 9% = 34% combined"
+  },
+  "income_tax_brackets_2025": [
+    {"from": 0,      "to": 2824,   "rate": 0.00, "note": "Exempt (monthly BRL)"},
+    {"from": 2824,   "to": 3751,   "rate": 0.075},
+    {"from": 3751,   "to": 4664,   "rate": 0.15},
+    {"from": 4664,   "to": 5858,   "rate": 0.225},
+    {"from": 5858,   "to": null,   "rate": 0.275}
+  ],
+  "income_tax_top_rate": 0.275,
+  "indirect_taxes": {
+    "icms": {
+      "interstate_standard_rate": 0.12,
+      "intrastate_rates": [0.17, 0.18, 0.19, 0.20, 0.25],
+      "note": "State-level VAT; interstate rate 12% (most goods); intrastate varies by state (17-25%)"
+    },
+    "pis": {
+      "non_cumulative_rate": 0.0165,
+      "cumulative_rate": 0.0065,
+      "note": "Federal social contribution on gross revenue; Lucro Real: 1.65% non-cumulative"
+    },
+    "cofins": {
+      "non_cumulative_rate": 0.076,
+      "cumulative_rate": 0.03,
+      "note": "Federal social contribution on gross revenue; Lucro Real: 7.6% non-cumulative"
+    },
+    "iss": {
+      "min_rate": 0.02,
+      "max_rate": 0.05,
+      "note": "Municipal services tax; 2-5% by municipality"
+    },
+    "ipi": {
+      "note": "Federal excise on industrial goods; rate varies by product NCM code"
+    },
+    "summary_vat_equivalent": 0.12,
+    "summary_note": "Representative interstate ICMS rate used as headline VAT-equivalent"
+  },
+  "social_security": {
+    "inss_employer_rate": 0.20,
+    "inss_employee_rate_max": 0.14,
+    "fgts_rate": 0.08,
+    "note": "INSS employer 20% on payroll; FGTS 8% (severance fund); employee INSS up to 14%"
+  },
+  "regime": {
+    "lucro_real": "Actual profit regime — mandatory for revenue >BRL 78M or financial institutions; IRPJ/CSLL on actual taxable income; non-cumulative PIS/COFINS",
+    "lucro_presumido": "Presumed profit regime — available up to BRL 78M; IRPJ/CSLL on fixed margin; cumulative PIS/COFINS",
+    "simples_nacional": "Simplified unified tax regime for micro/small enterprises (ME/EPP); replaces multiple taxes with single DAS payment"
+  }
+}
