@@ -1,0 +1,227 @@
+{
+  "jurisdiction": "NL",
+  "years": {
+    "2022": {
+      "IB": {
+        "schijf_1_grens": 69398,
+        "tarief_schijf_1": 0.3707,
+        "tarief_schijf_2": 0.495,
+        "max_algemene_heffingskorting": 2888,
+        "max_arbeidskorting": 4260,
+        "eigenwoningforfait_pct": 0.0035,
+        "aow_franchise": 14802
+      },
+      "VPB": {
+        "tarief_schijf_1": 0.15,
+        "tarief_schijf_2": 0.258,
+        "schijf_1_grens": 395000
+      },
+      "Box2": {
+        "tarief": 0.2640
+      },
+      "LH": {
+        "dga_min_salaris": 48000,
+        "reiskostenvergoeding_per_km": 0.19
+      },
+      "ZVW": {
+        "bijdrage_pct": 0.0545
+      },
+      "KIA": {
+        "min_investering": 450,
+        "percentage": 0.28
+      },
+      "WKR": {
+        "vrije_ruimte_pct_tot_400k": 0.017
+      }
+    },
+    "2023": {
+      "IB": {
+        "schijf_1_grens": 73031,
+        "tarief_schijf_1": 0.3693,
+        "tarief_schijf_2": 0.495,
+        "max_algemene_heffingskorting": 3070,
+        "max_arbeidskorting": 5052,
+        "eigenwoningforfait_pct": 0.0035,
+        "aow_franchise": 15448
+      },
+      "VPB": {
+        "tarief_schijf_1": 0.19,
+        "tarief_schijf_2": 0.258,
+        "schijf_1_grens": 200000
+      },
+      "Box2": {
+        "tarief_schijf_1": 0.2493,
+        "tarief_schijf_2": 0.3150,
+        "schijf_1_grens": 67000
+      },
+      "LH": {
+        "dga_min_salaris": 51000,
+        "reiskostenvergoeding_per_km": 0.21
+      },
+      "ZVW": {
+        "bijdrage_pct": 0.0555
+      },
+      "KIA": {
+        "min_investering": 450,
+        "percentage": 0.28,
+        "kia_grens": 63216
+      },
+      "WKR": {
+        "vrije_ruimte_pct_tot_400k": 0.03
+      },
+      "WBSO": {
+        "tarief_schijf_1": 0.32,
+        "tarief_schijf_2": 0.16,
+        "schijf_1_grens": 350000
+      },
+      "Innovatiebox": {
+        "effectief_tarief": 0.09,
+        "forfait_max": 25000
+      },
+      "Excessief": {
+        "grens": 700000
+      }
+    },
+    "2024": {
+      "IB": {
+        "schijf_1_grens": 75518,
+        "tarief_schijf_1": 0.3697,
+        "tarief_schijf_2": 0.495,
+        "ib_tarief_schijf_1a": 0.0932,
+        "aow_premie": 0.179,
+        "anw_premie": 0.001,
+        "wlz_premie": 0.0965,
+        "max_algemene_heffingskorting": 3362,
+        "max_arbeidskorting": 5532,
+        "eigenwoningforfait_pct": 0.0035,
+        "jaarruimte_pct": 0.30,
+        "aow_franchise": 16322,
+        "lijfrente_max_jaarruimte": 34355,
+        "lijfrente_max_reserveringsruimte": 40396
+      },
+      "VPB": {
+        "tarief_schijf_1": 0.19,
+        "tarief_schijf_2": 0.258,
+        "schijf_1_grens": 200000
+      },
+      "Box2": {
+        "tarief_schijf_1": 0.245,
+        "tarief_schijf_2": 0.33,
+        "schijf_1_grens": 67000
+      },
+      "Box3": {
+        "heffingsvrij_per_persoon": 57000,
+        "forfait_overige_beleggingen": 0.0633,
+        "tarief": 0.36
+      },
+      "LH": {
+        "dga_min_salaris": 56000,
+        "reiskostenvergoeding_per_km": 0.23
+      },
+      "ZVW": {
+        "bijdrage_pct": 0.0557,
+        "max_bijdragegrondslag": 71628
+      },
+      "KIA": {
+        "min_investering": 450,
+        "percentage": 0.28,
+        "kia_grens": 70600
+      },
+      "WKR": {
+        "vrije_ruimte_pct_tot_400k": 0.0192
+      },
+      "WBSO": {
+        "tarief_schijf_1": 0.36,
+        "tarief_schijf_2": 0.16,
+        "schijf_1_grens": 380000
+      },
+      "Innovatiebox": {
+        "effectief_tarief": 0.09,
+        "forfait_max": 25000
+      },
+      "Excessief": {
+        "grens": 700000
+      },
+      "EIA": {
+        "percentage": 0.455
+      },
+      "Bijtelling": {
+        "ev_tarief_tot_30k": 0.16,
+        "overig_tarief": 0.22
+      },
+      "Thuiswerk": {
+        "vergoeding_per_dag": 2.35
+      }
+    },
+    "2025": {
+      "IB": {
+        "schijf_1_grens": 76817,
+        "tarief_schijf_1": 0.3550,
+        "tarief_schijf_2": 0.495,
+        "max_algemene_heffingskorting": 3068,
+        "max_arbeidskorting": 5599,
+        "eigenwoningforfait_pct": 0.0035,
+        "jaarruimte_pct": 0.30,
+        "aow_franchise": 18475,
+        "lijfrente_max_jaarruimte": 35798,
+        "lijfrente_max_reserveringsruimte": 42108
+      },
+      "VPB": {
+        "tarief_schijf_1": 0.19,
+        "tarief_schijf_2": 0.258,
+        "schijf_1_grens": 200000
+      },
+      "Box2": {
+        "tarief_schijf_1": 0.245,
+        "tarief_schijf_2": 0.31,
+        "schijf_1_grens": 67804
+      },
+      "Box3": {
+        "heffingsvrij_per_persoon": 57684,
+        "forfait_overige_beleggingen": 0.0588,
+        "tarief": 0.36
+      },
+      "LH": {
+        "dga_min_salaris": 56000,
+        "reiskostenvergoeding_per_km": 0.23
+      },
+      "ZVW": {
+        "bijdrage_pct": 0.0557,
+        "max_bijdragegrondslag": 75864
+      },
+      "KIA": {
+        "min_investering": 450,
+        "percentage": 0.28,
+        "kia_grens": 70600
+      },
+      "WKR": {
+        "vrije_ruimte_pct_tot_400k": 0.02
+      },
+      "WBSO": {
+        "tarief_schijf_1": 0.36,
+        "tarief_schijf_2": 0.16,
+        "schijf_1_grens": 380000
+      },
+      "Innovatiebox": {
+        "effectief_tarief": 0.09,
+        "forfait_max": 25000
+      },
+      "Excessief": {
+        "grens": 500000
+      },
+      "EIA": {
+        "percentage": 0.455
+      },
+      "Bijtelling": {
+        "ev_tarief_tot_30k": 0.17,
+        "overig_tarief": 0.22
+      },
+      "Thuiswerk": {
+        "vergoeding_per_dag": 2.40
+      },
+      "Saldering": {
+        "zonnepanelen_deadline": 2027
+      }
+    }
+  }
+}

@@ -1,0 +1,614 @@
+[
+  {
+    "code": "0010",
+    "name": "Tangible Fixed Assets",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Tangible"
+  },
+  {
+    "code": "0020",
+    "name": "Freehold Land & Buildings",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Tangible"
+  },
+  {
+    "code": "0030",
+    "name": "Leasehold Improvements",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Tangible"
+  },
+  {
+    "code": "0040",
+    "name": "Plant & Machinery",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Tangible"
+  },
+  {
+    "code": "0050",
+    "name": "Motor Vehicles",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Tangible"
+  },
+  {
+    "code": "0060",
+    "name": "Office Equipment & Furniture",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Tangible"
+  },
+  {
+    "code": "0070",
+    "name": "Computer Hardware & IT Equipment",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Tangible"
+  },
+  {
+    "code": "0080",
+    "name": "Accum. Depreciation — Buildings",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Tangible"
+  },
+  {
+    "code": "0085",
+    "name": "Accum. Depreciation — Plant",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Tangible"
+  },
+  {
+    "code": "0090",
+    "name": "Accum. Depreciation — Vehicles",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Tangible"
+  },
+  {
+    "code": "0095",
+    "name": "Accum. Depreciation — IT",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Tangible"
+  },
+  {
+    "code": "0200",
+    "name": "Intangible Fixed Assets",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Intangible"
+  },
+  {
+    "code": "0210",
+    "name": "Goodwill",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Intangible"
+  },
+  {
+    "code": "0220",
+    "name": "Intellectual Property / Patents",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Intangible"
+  },
+  {
+    "code": "0230",
+    "name": "Development Costs Capitalised",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Intangible"
+  },
+  {
+    "code": "0240",
+    "name": "Software (Capitalised)",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Intangible"
+  },
+  {
+    "code": "0280",
+    "name": "Accum. Amortisation — Goodwill",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Intangible"
+  },
+  {
+    "code": "0290",
+    "name": "Accum. Amortisation — Other Intang",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Intangible"
+  },
+  {
+    "code": "0300",
+    "name": "Investments in Subsidiaries",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Financial"
+  },
+  {
+    "code": "0310",
+    "name": "Loans to Group Companies",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Financial"
+  },
+  {
+    "code": "0320",
+    "name": "Other Long-term Investments",
+    "statement": "Balance Sheet",
+    "group": "Fixed Assets/Financial"
+  },
+  {
+    "code": "1000",
+    "name": "Stock / Inventories",
+    "statement": "Balance Sheet",
+    "group": "Current Assets"
+  },
+  {
+    "code": "1010",
+    "name": "Raw Materials",
+    "statement": "Balance Sheet",
+    "group": "Current Assets"
+  },
+  {
+    "code": "1020",
+    "name": "Work in Progress",
+    "statement": "Balance Sheet",
+    "group": "Current Assets"
+  },
+  {
+    "code": "1030",
+    "name": "Finished Goods",
+    "statement": "Balance Sheet",
+    "group": "Current Assets"
+  },
+  {
+    "code": "1100",
+    "name": "Trade Debtors",
+    "statement": "Balance Sheet",
+    "group": "Current Assets"
+  },
+  {
+    "code": "1110",
+    "name": "Other Debtors",
+    "statement": "Balance Sheet",
+    "group": "Current Assets"
+  },
+  {
+    "code": "1120",
+    "name": "Prepayments",
+    "statement": "Balance Sheet",
+    "group": "Current Assets"
+  },
+  {
+    "code": "1130",
+    "name": "Accrued Income",
+    "statement": "Balance Sheet",
+    "group": "Current Assets"
+  },
+  {
+    "code": "1140",
+    "name": "VAT Recoverable",
+    "statement": "Balance Sheet",
+    "group": "Current Assets"
+  },
+  {
+    "code": "1150",
+    "name": "Corporation Tax Recoverable",
+    "statement": "Balance Sheet",
+    "group": "Current Assets"
+  },
+  {
+    "code": "1160",
+    "name": "Loans to Directors / Officers",
+    "statement": "Balance Sheet",
+    "group": "Current Assets"
+  },
+  {
+    "code": "1200",
+    "name": "Cash at Bank",
+    "statement": "Balance Sheet",
+    "group": "Current Assets"
+  },
+  {
+    "code": "1210",
+    "name": "Petty Cash",
+    "statement": "Balance Sheet",
+    "group": "Current Assets"
+  },
+  {
+    "code": "1220",
+    "name": "Short-term Deposits",
+    "statement": "Balance Sheet",
+    "group": "Current Assets"
+  },
+  {
+    "code": "2000",
+    "name": "Trade Creditors",
+    "statement": "Balance Sheet",
+    "group": "Creditors <1yr"
+  },
+  {
+    "code": "2010",
+    "name": "Accruals",
+    "statement": "Balance Sheet",
+    "group": "Creditors <1yr"
+  },
+  {
+    "code": "2020",
+    "name": "Deferred Income",
+    "statement": "Balance Sheet",
+    "group": "Creditors <1yr"
+  },
+  {
+    "code": "2030",
+    "name": "Bank Overdraft",
+    "statement": "Balance Sheet",
+    "group": "Creditors <1yr"
+  },
+  {
+    "code": "2040",
+    "name": "Current Portion of Long-term Loans",
+    "statement": "Balance Sheet",
+    "group": "Creditors <1yr"
+  },
+  {
+    "code": "2050",
+    "name": "VAT Payable",
+    "statement": "Balance Sheet",
+    "group": "Creditors <1yr"
+  },
+  {
+    "code": "2060",
+    "name": "PAYE / NIC Payable",
+    "statement": "Balance Sheet",
+    "group": "Creditors <1yr"
+  },
+  {
+    "code": "2070",
+    "name": "Corporation Tax Payable",
+    "statement": "Balance Sheet",
+    "group": "Creditors <1yr"
+  },
+  {
+    "code": "2080",
+    "name": "Dividend Payable",
+    "statement": "Balance Sheet",
+    "group": "Creditors <1yr"
+  },
+  {
+    "code": "2090",
+    "name": "Directors' Loan Accounts",
+    "statement": "Balance Sheet",
+    "group": "Creditors <1yr"
+  },
+  {
+    "code": "2095",
+    "name": "Other Short-term Creditors",
+    "statement": "Balance Sheet",
+    "group": "Creditors <1yr"
+  },
+  {
+    "code": "3000",
+    "name": "Mortgage / Long-term Bank Loans",
+    "statement": "Balance Sheet",
+    "group": "Creditors >1yr"
+  },
+  {
+    "code": "3010",
+    "name": "Finance Lease Obligations",
+    "statement": "Balance Sheet",
+    "group": "Creditors >1yr"
+  },
+  {
+    "code": "3020",
+    "name": "Loans from Directors (>1yr)",
+    "statement": "Balance Sheet",
+    "group": "Creditors >1yr"
+  },
+  {
+    "code": "3030",
+    "name": "Debentures",
+    "statement": "Balance Sheet",
+    "group": "Creditors >1yr"
+  },
+  {
+    "code": "3500",
+    "name": "Provisions for Liabilities",
+    "statement": "Balance Sheet",
+    "group": "Provisions"
+  },
+  {
+    "code": "3510",
+    "name": "Deferred Tax Provision",
+    "statement": "Balance Sheet",
+    "group": "Provisions"
+  },
+  {
+    "code": "3520",
+    "name": "Warranty Provision",
+    "statement": "Balance Sheet",
+    "group": "Provisions"
+  },
+  {
+    "code": "3530",
+    "name": "Restructuring Provision",
+    "statement": "Balance Sheet",
+    "group": "Provisions"
+  },
+  {
+    "code": "4000",
+    "name": "Called-up Share Capital",
+    "statement": "Balance Sheet",
+    "group": "Share Capital & Reserves"
+  },
+  {
+    "code": "4010",
+    "name": "Share Premium Account",
+    "statement": "Balance Sheet",
+    "group": "Share Capital & Reserves"
+  },
+  {
+    "code": "4020",
+    "name": "Revaluation Reserve",
+    "statement": "Balance Sheet",
+    "group": "Share Capital & Reserves"
+  },
+  {
+    "code": "4030",
+    "name": "Capital Redemption Reserve",
+    "statement": "Balance Sheet",
+    "group": "Share Capital & Reserves"
+  },
+  {
+    "code": "4040",
+    "name": "Retained Earnings",
+    "statement": "Balance Sheet",
+    "group": "Share Capital & Reserves"
+  },
+  {
+    "code": "4050",
+    "name": "Profit & Loss Account (current yr)",
+    "statement": "Balance Sheet",
+    "group": "Share Capital & Reserves"
+  },
+  {
+    "code": "5000",
+    "name": "UK Sales",
+    "statement": "P&L",
+    "group": "Revenue"
+  },
+  {
+    "code": "5010",
+    "name": "EU Sales (goods)",
+    "statement": "P&L",
+    "group": "Revenue"
+  },
+  {
+    "code": "5020",
+    "name": "Export Sales (non-EU)",
+    "statement": "P&L",
+    "group": "Revenue"
+  },
+  {
+    "code": "5030",
+    "name": "Service Revenue",
+    "statement": "P&L",
+    "group": "Revenue"
+  },
+  {
+    "code": "5040",
+    "name": "Rental Income",
+    "statement": "P&L",
+    "group": "Revenue"
+  },
+  {
+    "code": "5050",
+    "name": "Grant Income",
+    "statement": "P&L",
+    "group": "Revenue"
+  },
+  {
+    "code": "5060",
+    "name": "Other Operating Income",
+    "statement": "P&L",
+    "group": "Revenue"
+  },
+  {
+    "code": "6000",
+    "name": "Purchases — Materials",
+    "statement": "P&L",
+    "group": "Cost of Sales"
+  },
+  {
+    "code": "6010",
+    "name": "Freight & Carriage Inward",
+    "statement": "P&L",
+    "group": "Cost of Sales"
+  },
+  {
+    "code": "6020",
+    "name": "Direct Labour",
+    "statement": "P&L",
+    "group": "Cost of Sales"
+  },
+  {
+    "code": "6030",
+    "name": "Direct Overhead",
+    "statement": "P&L",
+    "group": "Cost of Sales"
+  },
+  {
+    "code": "6040",
+    "name": "Subcontractors",
+    "statement": "P&L",
+    "group": "Cost of Sales"
+  },
+  {
+    "code": "6050",
+    "name": "Opening Stock",
+    "statement": "P&L",
+    "group": "Cost of Sales"
+  },
+  {
+    "code": "6060",
+    "name": "Closing Stock",
+    "statement": "P&L",
+    "group": "Cost of Sales"
+  },
+  {
+    "code": "7000",
+    "name": "Directors' Remuneration",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7010",
+    "name": "Salaries & Wages",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7020",
+    "name": "Employer NIC",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7030",
+    "name": "Pension Contributions",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7040",
+    "name": "Rent & Rates",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7050",
+    "name": "Light & Heat",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7060",
+    "name": "Insurance",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7070",
+    "name": "Repairs & Maintenance",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7080",
+    "name": "Telephone & Internet",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7090",
+    "name": "Postage & Stationery",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7100",
+    "name": "IT Costs & Software Licences",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7110",
+    "name": "Motor & Travel Expenses",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7120",
+    "name": "Subsistence & Entertaining",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7130",
+    "name": "Accountancy & Audit Fees",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7140",
+    "name": "Legal & Professional Fees",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7150",
+    "name": "Advertising & Marketing",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7160",
+    "name": "Bad Debts Written Off",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7170",
+    "name": "Depreciation — Tangible Assets",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7180",
+    "name": "Amortisation — Intangible Assets",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "7190",
+    "name": "Sundry Expenses",
+    "statement": "P&L",
+    "group": "Admin & Overhead"
+  },
+  {
+    "code": "8000",
+    "name": "Bank Interest Receivable",
+    "statement": "P&L",
+    "group": "Finance"
+  },
+  {
+    "code": "8010",
+    "name": "Bank Interest Payable",
+    "statement": "P&L",
+    "group": "Finance"
+  },
+  {
+    "code": "8020",
+    "name": "Loan Interest Payable",
+    "statement": "P&L",
+    "group": "Finance"
+  },
+  {
+    "code": "8030",
+    "name": "Finance Lease Interest",
+    "statement": "P&L",
+    "group": "Finance"
+  },
+  {
+    "code": "8040",
+    "name": "Bank Charges",
+    "statement": "P&L",
+    "group": "Finance"
+  },
+  {
+    "code": "8050",
+    "name": "Foreign Exchange Gains / (Losses)",
+    "statement": "P&L",
+    "group": "Finance"
+  },
+  {
+    "code": "9000",
+    "name": "Corporation Tax Charge",
+    "statement": "P&L",
+    "group": "Taxation"
+  },
+  {
+    "code": "9010",
+    "name": "Deferred Tax (Charge) / Credit",
+    "statement": "P&L",
+    "group": "Taxation"
+  }
+]

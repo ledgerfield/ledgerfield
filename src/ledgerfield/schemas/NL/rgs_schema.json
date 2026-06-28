@@ -1,0 +1,620 @@
+[
+  {
+    "code": "0100",
+    "name": "Immateriële vaste activa",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "0110",
+    "name": "Kosten van ontwikkeling",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "0120",
+    "name": "Concessies, vergunningen, IP",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "0130",
+    "name": "Goodwill",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "0140",
+    "name": "Software",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "0200",
+    "name": "Materiële vaste activa",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "0210",
+    "name": "Bedrijfsgebouwen",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "0220",
+    "name": "Machines en installaties",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "0230",
+    "name": "Inventaris en inrichting",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "0240",
+    "name": "Vervoermiddelen",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "0250",
+    "name": "Hardware / ICT",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "0300",
+    "name": "Financiële vaste activa",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "0310",
+    "name": "Deelnemingen",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "0320",
+    "name": "Leningen u/g",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "0330",
+    "name": "Deelneming EHMAC BV",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "0340",
+    "name": "Deelneming SLAG BV (25%)",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "0350",
+    "name": "RC vordering op EHMAC BV",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "0360",
+    "name": "RC vordering op DGA privé",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "1000",
+    "name": "Voorraden",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "1100",
+    "name": "Onderhanden werk",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "1200",
+    "name": "Debiteuren",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "1210",
+    "name": "Debiteuren binnenland",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "1220",
+    "name": "Debiteuren buitenland",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "1300",
+    "name": "Overige vorderingen",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "1310",
+    "name": "Te ontvangen BTW",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "1320",
+    "name": "Vooruitbetaalde bedragen",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "1330",
+    "name": "RC vordering DGA",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "1400",
+    "name": "Liquide middelen",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "1410",
+    "name": "Kas",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "1420",
+    "name": "Bank zakelijke rekening",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "1430",
+    "name": "Bank G-rekening",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "1440",
+    "name": "Spaarrekening",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "1500",
+    "name": "Overlopende activa",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "1510",
+    "name": "Nog te ontvangen bedragen",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "1520",
+    "name": "Vooruitbetaalde bedragen (overlopend)",
+    "statement": "Balans",
+    "category": "Activa"
+  },
+  {
+    "code": "2000",
+    "name": "Eigen vermogen",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "2010",
+    "name": "Aandelenkapitaal",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "2020",
+    "name": "Agioreserve",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "2030",
+    "name": "Overige reserves",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "2040",
+    "name": "Onverdeelde winst",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "2050",
+    "name": "Resultaat boekjaar",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "2100",
+    "name": "Voorzieningen",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "3000",
+    "name": "Langlopende schulden",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "3010",
+    "name": "Hypothecaire leningen",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "3020",
+    "name": "Leningen o/g",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "3030",
+    "name": "RC schuld aan holding",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "4000",
+    "name": "Kortlopende schulden",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "4010",
+    "name": "Crediteuren",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "4020",
+    "name": "Af te dragen BTW",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "4030",
+    "name": "Af te dragen loonheffing",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "4040",
+    "name": "Te betalen VPB",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "4050",
+    "name": "Overige schulden",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "4060",
+    "name": "Geblokkeerde rekening (G-rekening)",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "4070",
+    "name": "Overlopende passiva",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "4080",
+    "name": "Nog te betalen bedragen",
+    "statement": "Balans",
+    "category": "Passiva"
+  },
+  {
+    "code": "8000",
+    "name": "Netto-omzet",
+    "statement": "W&V",
+    "category": "Opbrengsten"
+  },
+  {
+    "code": "8010",
+    "name": "Omzet dienstverlening binnenland",
+    "statement": "W&V",
+    "category": "Opbrengsten"
+  },
+  {
+    "code": "8020",
+    "name": "Omzet dienstverlening buitenland",
+    "statement": "W&V",
+    "category": "Opbrengsten"
+  },
+  {
+    "code": "8030",
+    "name": "Omzet producten",
+    "statement": "W&V",
+    "category": "Opbrengsten"
+  },
+  {
+    "code": "8100",
+    "name": "Overige bedrijfsopbrengsten",
+    "statement": "W&V",
+    "category": "Opbrengsten"
+  },
+  {
+    "code": "8110",
+    "name": "Subsidies (WBSO)",
+    "statement": "W&V",
+    "category": "Opbrengsten"
+  },
+  {
+    "code": "4100",
+    "name": "Lonen en salarissen",
+    "statement": "W&V",
+    "category": "Personeelskosten"
+  },
+  {
+    "code": "4110",
+    "name": "DGA-salaris",
+    "statement": "W&V",
+    "category": "Personeelskosten"
+  },
+  {
+    "code": "4120",
+    "name": "Lonen werknemers",
+    "statement": "W&V",
+    "category": "Personeelskosten"
+  },
+  {
+    "code": "4130",
+    "name": "Sociale lasten",
+    "statement": "W&V",
+    "category": "Personeelskosten"
+  },
+  {
+    "code": "4140",
+    "name": "Pensioenlasten",
+    "statement": "W&V",
+    "category": "Personeelskosten"
+  },
+  {
+    "code": "4150",
+    "name": "Inhuur personeel (uitzendkrachten)",
+    "statement": "W&V",
+    "category": "Personeelskosten"
+  },
+  {
+    "code": "4160",
+    "name": "Reiskostenvergoeding",
+    "statement": "W&V",
+    "category": "Personeelskosten"
+  },
+  {
+    "code": "4200",
+    "name": "Huisvestingskosten",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4210",
+    "name": "Huur bedrijfspand",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4220",
+    "name": "Energie en water",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4230",
+    "name": "Onderhoud bedrijfspand",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4240",
+    "name": "Verzekeringen pand",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4300",
+    "name": "Vervoerskosten",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4310",
+    "name": "Brandstof / laden",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4320",
+    "name": "Lease auto",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4330",
+    "name": "Onderhoud vervoermiddelen",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4340",
+    "name": "Parkeerkosten",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4400",
+    "name": "Kantoorkosten",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4410",
+    "name": "Kantoorbenodigdheden",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4420",
+    "name": "Telefoon en internet",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4430",
+    "name": "Porti en verzendkosten",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4440",
+    "name": "Software en licenties",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4500",
+    "name": "Verkoopkosten",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4510",
+    "name": "Reclame en marketing",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4520",
+    "name": "Representatiekosten",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4530",
+    "name": "Relatiegeschenken",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4600",
+    "name": "Algemene kosten",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4610",
+    "name": "Accountant en administratie",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4620",
+    "name": "Juridische kosten",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4630",
+    "name": "Verzekeringen bedrijf",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4640",
+    "name": "Contributies en abonnementen",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4650",
+    "name": "Bankkosten",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4660",
+    "name": "Overige algemene kosten",
+    "statement": "W&V",
+    "category": "Bedrijfskosten"
+  },
+  {
+    "code": "4700",
+    "name": "Afschrijvingen",
+    "statement": "W&V",
+    "category": "Afschrijvingen"
+  },
+  {
+    "code": "4710",
+    "name": "Afschrijving immateriële activa",
+    "statement": "W&V",
+    "category": "Afschrijvingen"
+  },
+  {
+    "code": "4720",
+    "name": "Afschrijving materiële activa",
+    "statement": "W&V",
+    "category": "Afschrijvingen"
+  },
+  {
+    "code": "4800",
+    "name": "Financiële baten en lasten",
+    "statement": "W&V",
+    "category": "Financieel"
+  },
+  {
+    "code": "4810",
+    "name": "Rentebaten",
+    "statement": "W&V",
+    "category": "Financieel"
+  },
+  {
+    "code": "4820",
+    "name": "Rentelasten",
+    "statement": "W&V",
+    "category": "Financieel"
+  },
+  {
+    "code": "4830",
+    "name": "Bankkosten",
+    "statement": "W&V",
+    "category": "Financieel"
+  },
+  {
+    "code": "4900",
+    "name": "Belastingen",
+    "statement": "W&V",
+    "category": "Belastingen"
+  },
+  {
+    "code": "4910",
+    "name": "Vennootschapsbelasting",
+    "statement": "W&V",
+    "category": "Belastingen"
+  }
+]

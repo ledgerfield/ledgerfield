@@ -1,0 +1,866 @@
+{
+  "schema": "US-GAAP",
+  "version": "2024",
+  "description": "Standard US GAAP chart of accounts for corporations and LLCs",
+  "ranges": {
+    "1000-1999": "Assets",
+    "2000-2999": "Liabilities",
+    "3000-3999": "Equity",
+    "4000-4999": "Revenue",
+    "5000-5999": "Cost of Goods Sold",
+    "6000-6999": "Operating Expenses",
+    "7000+": "Other Income / Expense"
+  },
+  "accounts": [
+    {
+      "number": 1000,
+      "name": "Cash and Cash Equivalents",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Total cash header",
+      "entity_types": null
+    },
+    {
+      "number": 1010,
+      "name": "Checking Account",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Primary operating checking account",
+      "entity_types": null
+    },
+    {
+      "number": 1020,
+      "name": "Savings Account",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Business savings / money market",
+      "entity_types": null
+    },
+    {
+      "number": 1030,
+      "name": "Petty Cash",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "On-hand petty cash fund",
+      "entity_types": null
+    },
+    {
+      "number": 1040,
+      "name": "Restricted Cash",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Cash restricted for specific purpose",
+      "entity_types": null
+    },
+    {
+      "number": 1100,
+      "name": "Accounts Receivable",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Trade receivables header",
+      "entity_types": null
+    },
+    {
+      "number": 1110,
+      "name": "Accounts Receivable",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Amounts owed by customers",
+      "entity_types": null
+    },
+    {
+      "number": 1120,
+      "name": "Allowance for Doubtful Accounts",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Contra-asset for estimated uncollectible",
+      "entity_types": null
+    },
+    {
+      "number": 1130,
+      "name": "Notes Receivable (current)",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Short-term notes receivable",
+      "entity_types": null
+    },
+    {
+      "number": 1200,
+      "name": "Inventory",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Merchandise / finished goods inventory",
+      "entity_types": null
+    },
+    {
+      "number": 1210,
+      "name": "Raw Materials",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Raw material inventory",
+      "entity_types": null
+    },
+    {
+      "number": 1220,
+      "name": "Work in Progress",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "WIP inventory",
+      "entity_types": null
+    },
+    {
+      "number": 1230,
+      "name": "Finished Goods",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Completed product ready for sale",
+      "entity_types": null
+    },
+    {
+      "number": 1400,
+      "name": "Prepaid Expenses",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Prepaid expenses header",
+      "entity_types": null
+    },
+    {
+      "number": 1410,
+      "name": "Prepaid Expenses",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Prepaid insurance, rent, subscriptions",
+      "entity_types": null
+    },
+    {
+      "number": 1420,
+      "name": "Prepaid Insurance",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Insurance paid in advance",
+      "entity_types": null
+    },
+    {
+      "number": 1430,
+      "name": "Employee Advances",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Advances paid to employees",
+      "entity_types": null
+    },
+    {
+      "number": 1500,
+      "name": "Property, Plant & Equipment",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "PP&E header (gross)",
+      "entity_types": null
+    },
+    {
+      "number": 1510,
+      "name": "Land",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Land (not depreciated)",
+      "entity_types": null
+    },
+    {
+      "number": 1520,
+      "name": "Buildings",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Buildings and improvements",
+      "entity_types": null
+    },
+    {
+      "number": 1525,
+      "name": "Accumulated Depreciation – Buildings",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Contra-asset",
+      "entity_types": null
+    },
+    {
+      "number": 1530,
+      "name": "Equipment",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Machinery, furniture, fixtures",
+      "entity_types": null
+    },
+    {
+      "number": 1535,
+      "name": "Accumulated Depreciation – Equipment",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Contra-asset",
+      "entity_types": null
+    },
+    {
+      "number": 1540,
+      "name": "Vehicles",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Company vehicles",
+      "entity_types": null
+    },
+    {
+      "number": 1545,
+      "name": "Accumulated Depreciation – Vehicles",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Contra-asset",
+      "entity_types": null
+    },
+    {
+      "number": 1550,
+      "name": "Leasehold Improvements",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Tenant improvements",
+      "entity_types": null
+    },
+    {
+      "number": 1555,
+      "name": "Accumulated Amortization – Leasehold",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Contra-asset",
+      "entity_types": null
+    },
+    {
+      "number": 1600,
+      "name": "Intangible Assets",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Intangibles header",
+      "entity_types": null
+    },
+    {
+      "number": 1610,
+      "name": "Patents",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Capitalized patent costs",
+      "entity_types": null
+    },
+    {
+      "number": 1620,
+      "name": "Goodwill",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Goodwill from acquisitions",
+      "entity_types": [
+        "corp",
+        "llc"
+      ]
+    },
+    {
+      "number": 1630,
+      "name": "Trademarks",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Registered trademarks",
+      "entity_types": null
+    },
+    {
+      "number": 1640,
+      "name": "Customer Lists",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Acquired customer relationship intangibles",
+      "entity_types": null
+    },
+    {
+      "number": 1650,
+      "name": "Software Development Costs",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Capitalized internal-use software",
+      "entity_types": null
+    },
+    {
+      "number": 1700,
+      "name": "Other Assets",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Long-term assets not elsewhere classified",
+      "entity_types": null
+    },
+    {
+      "number": 1710,
+      "name": "Security Deposits",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Deposits paid to landlords/utilities",
+      "entity_types": null
+    },
+    {
+      "number": 1720,
+      "name": "Long-Term Investments",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Equity investments, bonds held to maturity",
+      "entity_types": null
+    },
+    {
+      "number": 1730,
+      "name": "Notes Receivable (long-term)",
+      "category": "Assets",
+      "normal_balance": "debit",
+      "description": "Long-term notes receivable",
+      "entity_types": null
+    },
+    {
+      "number": 2010,
+      "name": "Accounts Payable",
+      "category": "Liabilities",
+      "normal_balance": "credit",
+      "description": "Amounts owed to vendors/suppliers",
+      "entity_types": null
+    },
+    {
+      "number": 2020,
+      "name": "Accrued Liabilities",
+      "category": "Liabilities",
+      "normal_balance": "credit",
+      "description": "Accrued expenses not yet invoiced",
+      "entity_types": null
+    },
+    {
+      "number": 2030,
+      "name": "Sales Tax Payable",
+      "category": "Liabilities",
+      "normal_balance": "credit",
+      "description": "Sales tax collected, owed to state",
+      "entity_types": null
+    },
+    {
+      "number": 2040,
+      "name": "Payroll Liabilities",
+      "category": "Liabilities",
+      "normal_balance": "credit",
+      "description": "Wages, taxes, benefits withheld",
+      "entity_types": null
+    },
+    {
+      "number": 2041,
+      "name": "Federal Payroll Taxes Payable",
+      "category": "Liabilities",
+      "normal_balance": "credit",
+      "description": "FICA and FUTA payable",
+      "entity_types": null
+    },
+    {
+      "number": 2042,
+      "name": "State Payroll Taxes Payable",
+      "category": "Liabilities",
+      "normal_balance": "credit",
+      "description": "State unemployment and income tax withheld",
+      "entity_types": null
+    },
+    {
+      "number": 2050,
+      "name": "Federal Income Tax Payable",
+      "category": "Liabilities",
+      "normal_balance": "credit",
+      "description": "Corporate/estimated federal income tax",
+      "entity_types": [
+        "corp"
+      ]
+    },
+    {
+      "number": 2060,
+      "name": "State Income Tax Payable",
+      "category": "Liabilities",
+      "normal_balance": "credit",
+      "description": "State income tax payable",
+      "entity_types": [
+        "corp"
+      ]
+    },
+    {
+      "number": 2070,
+      "name": "Customer Deposits",
+      "category": "Liabilities",
+      "normal_balance": "credit",
+      "description": "Advance payments from customers",
+      "entity_types": null
+    },
+    {
+      "number": 2080,
+      "name": "Current Portion of Long-Term Debt",
+      "category": "Liabilities",
+      "normal_balance": "credit",
+      "description": "LTD due within 12 months",
+      "entity_types": null
+    },
+    {
+      "number": 2100,
+      "name": "Notes Payable (short-term)",
+      "category": "Liabilities",
+      "normal_balance": "credit",
+      "description": "Short-term borrowings and lines of credit",
+      "entity_types": null
+    },
+    {
+      "number": 2200,
+      "name": "Long-Term Notes Payable",
+      "category": "Liabilities",
+      "normal_balance": "credit",
+      "description": "Long-term bank loans and bonds payable",
+      "entity_types": null
+    },
+    {
+      "number": 2210,
+      "name": "Mortgage Payable",
+      "category": "Liabilities",
+      "normal_balance": "credit",
+      "description": "Mortgage on real property",
+      "entity_types": null
+    },
+    {
+      "number": 2300,
+      "name": "Deferred Revenue",
+      "category": "Liabilities",
+      "normal_balance": "credit",
+      "description": "Revenue received but not yet earned",
+      "entity_types": null
+    },
+    {
+      "number": 2400,
+      "name": "Deferred Tax Liability",
+      "category": "Liabilities",
+      "normal_balance": "credit",
+      "description": "Temporary differences – deferred taxes",
+      "entity_types": [
+        "corp"
+      ]
+    },
+    {
+      "number": 2900,
+      "name": "Other Long-Term Liabilities",
+      "category": "Liabilities",
+      "normal_balance": "credit",
+      "description": "Other non-current liabilities",
+      "entity_types": null
+    },
+    {
+      "number": 3010,
+      "name": "Common Stock",
+      "category": "Equity",
+      "normal_balance": "credit",
+      "description": "Par value of issued common shares",
+      "entity_types": [
+        "corp"
+      ]
+    },
+    {
+      "number": 3015,
+      "name": "Preferred Stock",
+      "category": "Equity",
+      "normal_balance": "credit",
+      "description": "Par value of issued preferred shares",
+      "entity_types": [
+        "corp"
+      ]
+    },
+    {
+      "number": 3020,
+      "name": "Additional Paid-In Capital",
+      "category": "Equity",
+      "normal_balance": "credit",
+      "description": "Capital in excess of par value",
+      "entity_types": [
+        "corp"
+      ]
+    },
+    {
+      "number": 3025,
+      "name": "Member Contributions",
+      "category": "Equity",
+      "normal_balance": "credit",
+      "description": "Capital contributed by LLC members",
+      "entity_types": [
+        "llc"
+      ]
+    },
+    {
+      "number": 3030,
+      "name": "Retained Earnings",
+      "category": "Equity",
+      "normal_balance": "credit",
+      "description": "Accumulated undistributed net income",
+      "entity_types": [
+        "corp"
+      ]
+    },
+    {
+      "number": 3035,
+      "name": "Member Equity",
+      "category": "Equity",
+      "normal_balance": "credit",
+      "description": "LLC accumulated equity",
+      "entity_types": [
+        "llc"
+      ]
+    },
+    {
+      "number": 3040,
+      "name": "Treasury Stock",
+      "category": "Equity",
+      "normal_balance": "credit",
+      "description": "Repurchased shares (contra-equity)",
+      "entity_types": [
+        "corp"
+      ]
+    },
+    {
+      "number": 3050,
+      "name": "Current Year Net Income",
+      "category": "Equity",
+      "normal_balance": "credit",
+      "description": "Plug account for current period P&L",
+      "entity_types": null
+    },
+    {
+      "number": 3060,
+      "name": "Owner's Drawings",
+      "category": "Equity",
+      "normal_balance": "credit",
+      "description": "Distributions to owners/members",
+      "entity_types": null
+    },
+    {
+      "number": 3070,
+      "name": "Dividends Declared",
+      "category": "Equity",
+      "normal_balance": "credit",
+      "description": "Dividends declared to shareholders",
+      "entity_types": [
+        "corp"
+      ]
+    },
+    {
+      "number": 4010,
+      "name": "Product Sales",
+      "category": "Revenue",
+      "normal_balance": "credit",
+      "description": "Revenue from sale of physical goods",
+      "entity_types": null
+    },
+    {
+      "number": 4015,
+      "name": "Sales Returns & Allowances",
+      "category": "Revenue",
+      "normal_balance": "credit",
+      "description": "Contra-revenue: returns and price adjustments",
+      "entity_types": null
+    },
+    {
+      "number": 4017,
+      "name": "Sales Discounts",
+      "category": "Revenue",
+      "normal_balance": "credit",
+      "description": "Contra-revenue: early-pay discounts granted",
+      "entity_types": null
+    },
+    {
+      "number": 4020,
+      "name": "Service Revenue",
+      "category": "Revenue",
+      "normal_balance": "credit",
+      "description": "Revenue from services rendered",
+      "entity_types": null
+    },
+    {
+      "number": 4030,
+      "name": "Interest Income",
+      "category": "Revenue",
+      "normal_balance": "credit",
+      "description": "Interest earned on deposits and investments",
+      "entity_types": null
+    },
+    {
+      "number": 4040,
+      "name": "Other Income",
+      "category": "Revenue",
+      "normal_balance": "credit",
+      "description": "Miscellaneous income not elsewhere classified",
+      "entity_types": null
+    },
+    {
+      "number": 4050,
+      "name": "Gain on Sale of Assets",
+      "category": "Revenue",
+      "normal_balance": "credit",
+      "description": "Gain realized on disposal of assets",
+      "entity_types": null
+    },
+    {
+      "number": 5010,
+      "name": "Cost of Goods Sold",
+      "category": "Cost of Goods Sold",
+      "normal_balance": "debit",
+      "description": "Direct cost of merchandise sold",
+      "entity_types": null
+    },
+    {
+      "number": 5020,
+      "name": "Direct Labor",
+      "category": "Cost of Goods Sold",
+      "normal_balance": "debit",
+      "description": "Wages directly tied to production",
+      "entity_types": null
+    },
+    {
+      "number": 5030,
+      "name": "Manufacturing Overhead",
+      "category": "Cost of Goods Sold",
+      "normal_balance": "debit",
+      "description": "Indirect production costs allocated to COGS",
+      "entity_types": null
+    },
+    {
+      "number": 5040,
+      "name": "Freight-In",
+      "category": "Cost of Goods Sold",
+      "normal_balance": "debit",
+      "description": "Inbound shipping costs for inventory",
+      "entity_types": null
+    },
+    {
+      "number": 5050,
+      "name": "Purchase Discounts",
+      "category": "Cost of Goods Sold",
+      "normal_balance": "debit",
+      "description": "Contra-COGS: discounts received from vendors",
+      "entity_types": null
+    },
+    {
+      "number": 6010,
+      "name": "Salaries & Wages Expense",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "Gross wages for employees",
+      "entity_types": null
+    },
+    {
+      "number": 6020,
+      "name": "Payroll Tax Expense",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "Employer share of FICA, FUTA, SUTA",
+      "entity_types": null
+    },
+    {
+      "number": 6030,
+      "name": "Employee Benefits Expense",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "Health, dental, vision, retirement match",
+      "entity_types": null
+    },
+    {
+      "number": 6040,
+      "name": "Officer Compensation",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "Salaries paid to officers/owners",
+      "entity_types": [
+        "corp",
+        "llc"
+      ]
+    },
+    {
+      "number": 6110,
+      "name": "Rent Expense",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "Office, warehouse, or retail lease",
+      "entity_types": null
+    },
+    {
+      "number": 6120,
+      "name": "Utilities Expense",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "Electric, gas, water, internet",
+      "entity_types": null
+    },
+    {
+      "number": 6130,
+      "name": "Office Supplies Expense",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "Consumable office supplies",
+      "entity_types": null
+    },
+    {
+      "number": 6140,
+      "name": "Insurance Expense",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "Business liability, property, auto insurance",
+      "entity_types": null
+    },
+    {
+      "number": 6150,
+      "name": "Repairs & Maintenance",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "Routine repairs to premises and equipment",
+      "entity_types": null
+    },
+    {
+      "number": 6210,
+      "name": "Advertising & Marketing",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "Digital ads, print, SEO, marketing campaigns",
+      "entity_types": null
+    },
+    {
+      "number": 6220,
+      "name": "Travel Expense",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "Airfare, lodging, ground transport",
+      "entity_types": null
+    },
+    {
+      "number": 6230,
+      "name": "Meals & Entertainment",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "50% deductible meals and client entertainment",
+      "entity_types": null
+    },
+    {
+      "number": 6240,
+      "name": "Vehicle Expense",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "Gas, maintenance, tolls for business vehicles",
+      "entity_types": null
+    },
+    {
+      "number": 6310,
+      "name": "Depreciation Expense",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "Periodic depreciation of PP&E",
+      "entity_types": null
+    },
+    {
+      "number": 6320,
+      "name": "Amortization Expense",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "Periodic amortization of intangible assets",
+      "entity_types": null
+    },
+    {
+      "number": 6410,
+      "name": "Professional Fees",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "Legal, accounting, consulting fees",
+      "entity_types": null
+    },
+    {
+      "number": 6420,
+      "name": "Software & Subscriptions",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "SaaS, cloud, software licenses",
+      "entity_types": null
+    },
+    {
+      "number": 6430,
+      "name": "Bank & Merchant Fees",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "Bank charges, credit card processing fees",
+      "entity_types": null
+    },
+    {
+      "number": 6440,
+      "name": "Licenses & Permits",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "Business licenses, permits, regulatory fees",
+      "entity_types": null
+    },
+    {
+      "number": 6450,
+      "name": "Research & Development",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "R&D costs expensed in current period",
+      "entity_types": null
+    },
+    {
+      "number": 6490,
+      "name": "Miscellaneous Expense",
+      "category": "Operating Expenses",
+      "normal_balance": "debit",
+      "description": "Other operating expenses not classified above",
+      "entity_types": null
+    },
+    {
+      "number": 7010,
+      "name": "Interest Expense",
+      "category": "Other",
+      "normal_balance": "credit",
+      "description": "Interest on loans, lines of credit, bonds",
+      "entity_types": null
+    },
+    {
+      "number": 7020,
+      "name": "Loss on Sale of Assets",
+      "category": "Other",
+      "normal_balance": "credit",
+      "description": "Loss realized on disposal of assets",
+      "entity_types": null
+    },
+    {
+      "number": 7030,
+      "name": "Foreign Currency Loss",
+      "category": "Other",
+      "normal_balance": "credit",
+      "description": "FX losses on transactions or translation",
+      "entity_types": null
+    },
+    {
+      "number": 7100,
+      "name": "Income Tax Expense – Federal",
+      "category": "Other",
+      "normal_balance": "debit",
+      "description": "Federal corporate income tax provision",
+      "entity_types": [
+        "corp"
+      ]
+    },
+    {
+      "number": 7110,
+      "name": "Income Tax Expense – State",
+      "category": "Other",
+      "normal_balance": "debit",
+      "description": "State corporate income tax provision",
+      "entity_types": [
+        "corp"
+      ]
+    },
+    {
+      "number": 7120,
+      "name": "Deferred Tax Expense",
+      "category": "Other",
+      "normal_balance": "debit",
+      "description": "Change in deferred tax asset/liability",
+      "entity_types": [
+        "corp"
+      ]
+    }
+  ]
+}
