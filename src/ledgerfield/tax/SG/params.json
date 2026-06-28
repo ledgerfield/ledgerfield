@@ -1,0 +1,36 @@
+{
+  "jurisdiction": "SG",
+  "year": 2025,
+  "cit": {
+    "flat_rate": 0.17,
+    "partial_exemption": {
+      "first_tranche_sgd": 10000,
+      "first_tranche_exempt_pct": 0.75,
+      "second_tranche_sgd": 190000,
+      "second_tranche_exempt_pct": 0.50,
+      "note": "First SGD 10k: 75% exempt; next SGD 190k: 50% exempt"
+    }
+  },
+  "income_tax_brackets_2025": [
+    {"from": 0,      "to": 20000,  "rate": 0.00},
+    {"from": 20000,  "to": 30000,  "rate": 0.02},
+    {"from": 30000,  "to": 40000,  "rate": 0.035},
+    {"from": 40000,  "to": 80000,  "rate": 0.07},
+    {"from": 80000,  "to": 120000, "rate": 0.115},
+    {"from": 120000, "to": 160000, "rate": 0.15},
+    {"from": 160000, "to": 200000, "rate": 0.18},
+    {"from": 200000, "to": 240000, "rate": 0.19},
+    {"from": 240000, "to": 280000, "rate": 0.195},
+    {"from": 280000, "to": 320000, "rate": 0.20},
+    {"from": 320000, "to": null,   "rate": 0.22}
+  ],
+  "gst": {
+    "rate": 0.09,
+    "note": "Increased from 8% to 9% on 1 January 2024"
+  },
+  "cpf": {
+    "employee_rate_below_55": 0.20,
+    "employer_rate_below_55": 0.17,
+    "note": "Rates vary by age band; shown for employees aged <=55"
+  }
+}
