@@ -6,7 +6,10 @@ from dataclasses import dataclass, field
 from enum import Enum
 from pathlib import Path
 
-__all__ = ["Werknemer", "LoonstrookRegel", "Loonstrook", "genereer_loonstrook"]
+__all__ = [
+    "Werknemer", "LoonstrookRegel", "Loonstrook", "genereer_loonstrook",
+    "GebruikelijkLoonCheck", "controleer_gebruikelijk_loon",
+]
 
 # ---------------------------------------------------------------------------
 # Tax params loader
@@ -347,4 +350,67 @@ def genereer_loonstrook(werknemer: Werknemer, periode: str, jaar: int = 2025) ->
         periode=periode,
         jaar=jaar,
         regels=regels,
+    )
+
+
+# ---------------------------------------------------------------------------
+# DGA: Gebruikelijk loon check (art. 12a Wet LB 1964)
+# ---------------------------------------------------------------------------
+
+@dataclass
+class GebruikelijkLoonCheck:
+    """Resultaat van de gebruikelijk-loon toets voor een DGA."""
+    jaar: int
+    jaarsalaris: float
+    norm: float                  # wettelijk minimum gebruikelijk loon
+    voldoet: bool
+    tekort: float                # 0 indien voldoet, anders (norm - jaarsalaris)
+    waarschuwing: str
+
+    def to_dict(self) -> dict:
+        return {
+            "jaar": self.jaar,
+            "jaarsalaris": self.jaarsalaris,
+            "norm": self.norm,
+            "voldoet": self.voldoet,
+            "tekort": self.tekort,
+            "waarschuwing": self.waarschuwing,
+        }
+
+
+def controleer_gebruikelijk_loon(
+    werknemer: Werknemer,
+    jaar: int = 2025,
+) -> GebruikelijkLoonCheck:
+    """Toets DGA-salaris aan de gebruikelijk-loon norm (art. 12a Wet LB 1964).
+
+    De Belastingdienst hanteert als minimum het hoogste van:
+    - Het wettelijk vastgestelde normbedrag (€56.000 in 2024/2025)
+    - 75% van het loon uit de meest vergelijkbare dienstbetrekking
+    - Het loon van de meestverdienende werknemer in de BV
+
+    Hier wordt alleen het wettelijke normbedrag gecontroleerd.
+    """
+    params = _load_params(jaar)
+    norm = float(params.get("LH", {}).get("dga_min_salaris", 56000))
+
+    voldoet = werknemer.jaarsalaris >= norm
+    tekort = max(0.0, norm - werknemer.jaarsalaris)
+
+    if voldoet:
+        waarschuwing = ""
+    else:
+        waarschuwing = (
+            f"DGA-salaris €{werknemer.jaarsalaris:,.0f} ligt onder de gebruikelijk-loon norm "
+            f"€{norm:,.0f} voor {jaar}. Tekort: €{tekort:,.0f}. "
+            f"Risico: correctie + heffingsrente Belastingdienst (art. 12a Wet LB 1964)."
+        )
+
+    return GebruikelijkLoonCheck(
+        jaar=jaar,
+        jaarsalaris=werknemer.jaarsalaris,
+        norm=norm,
+        voldoet=voldoet,
+        tekort=tekort,
+        waarschuwing=waarschuwing,
     )

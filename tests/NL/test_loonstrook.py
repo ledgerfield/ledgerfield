@@ -1,6 +1,9 @@
 """Tests for ledgerfield.payroll.NL.loonstrook — loonstrook generator."""
 import pytest
-from ledgerfield.payroll.NL.loonstrook import Werknemer, genereer_loonstrook, RegelSoort
+from ledgerfield.payroll.NL.loonstrook import (
+    Werknemer, genereer_loonstrook, RegelSoort,
+    GebruikelijkLoonCheck, controleer_gebruikelijk_loon,
+)
 
 
 # ---------------------------------------------------------------------------
@@ -171,3 +174,57 @@ def test_reiskosten_afwezig_wanneer_afstand_nul(loonstrook_standaard):
 def test_thuiswerk_afwezig_wanneer_geen_thuiswerk(loonstrook_standaard):
     tw_regels = [r for r in loonstrook_standaard.regels if r.soort == RegelSoort.THUISWERK_VERGOEDING]
     assert len(tw_regels) == 0
+
+
+# ---------------------------------------------------------------------------
+# Tests 13-18: GebruikelijkLoonCheck (art. 12a Wet LB 1964)
+# ---------------------------------------------------------------------------
+
+def test_gebruikelijk_loon_voldoet_aan_norm():
+    """DGA met salaris >= €56.000 voldoet aan de norm."""
+    w = Werknemer(id="d1", naam="DGA OK", jaarsalaris=60_000.0, is_dga=True)
+    check = controleer_gebruikelijk_loon(w, 2025)
+    assert check.voldoet is True
+    assert check.tekort == 0.0
+    assert check.waarschuwing == ""
+
+
+def test_gebruikelijk_loon_onder_norm_geeft_waarschuwing():
+    """DGA met salaris < €56.000 krijgt waarschuwing + tekortbedrag."""
+    w = Werknemer(id="d2", naam="DGA Te Laag", jaarsalaris=40_000.0, is_dga=True)
+    check = controleer_gebruikelijk_loon(w, 2025)
+    assert check.voldoet is False
+    assert check.tekort == pytest.approx(16_000.0)
+    assert "art. 12a" in check.waarschuwing
+    assert "16.000" in check.waarschuwing or "16000" in check.waarschuwing.replace(",", "")
+
+
+def test_gebruikelijk_loon_norm_2025():
+    """Norm 2025 is €56.000."""
+    w = Werknemer(id="d3", naam="DGA", jaarsalaris=56_000.0, is_dga=True)
+    check = controleer_gebruikelijk_loon(w, 2025)
+    assert check.norm == 56_000.0
+    assert check.voldoet is True
+
+
+def test_gebruikelijk_loon_norm_2024():
+    """Norm 2024 is ook €56.000."""
+    w = Werknemer(id="d4", naam="DGA", jaarsalaris=55_000.0, is_dga=True)
+    check = controleer_gebruikelijk_loon(w, 2024)
+    assert check.norm == 56_000.0
+    assert check.voldoet is False
+
+
+def test_gebruikelijk_loon_to_dict():
+    """to_dict bevat alle verwachte sleutels."""
+    w = Werknemer(id="d5", naam="DGA", jaarsalaris=60_000.0, is_dga=True)
+    d = controleer_gebruikelijk_loon(w, 2025).to_dict()
+    assert set(d.keys()) >= {"jaar", "jaarsalaris", "norm", "voldoet", "tekort", "waarschuwing"}
+
+
+def test_gebruikelijk_loon_precies_op_grens():
+    """Precies op de norm: voldoet, tekort=0."""
+    w = Werknemer(id="d6", naam="DGA Grens", jaarsalaris=56_000.0, is_dga=True)
+    check = controleer_gebruikelijk_loon(w, 2025)
+    assert check.voldoet is True
+    assert check.tekort == pytest.approx(0.0)
