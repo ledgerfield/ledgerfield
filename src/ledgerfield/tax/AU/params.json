@@ -1,0 +1,33 @@
+{
+  "jurisdiction": "AU",
+  "year": 2025,
+  "cit": {
+    "base_rate_entity_rate": 0.25,
+    "general_rate": 0.30,
+    "base_rate_entity_turnover_threshold_aud": 50000000,
+    "note": "Base rate entity: aggregated turnover < AUD 50M and 80%+ of assessable income is passive"
+  },
+  "income_tax_2024_25": {
+    "tax_free_threshold_aud": 18200,
+    "note": "Stage 3 tax cuts effective 1 July 2024",
+    "brackets": [
+      {"from": 0,      "to": 18200,  "rate": 0.00},
+      {"from": 18201,  "to": 45000,  "rate": 0.19},
+      {"from": 45001,  "to": 120000, "rate": 0.325},
+      {"from": 120001, "to": 180000, "rate": 0.37},
+      {"from": 180001, "to": null,   "rate": 0.45}
+    ]
+  },
+  "gst": {
+    "rate": 0.10
+  },
+  "superannuation": {
+    "employer_rate_from_1_jul_2024": 0.115,
+    "employer_rate_from_1_jul_2025": 0.12,
+    "note": "Super Guarantee increases annually until 12% in 2025-26"
+  },
+  "medicare_levy": {
+    "rate": 0.02,
+    "note": "2% of taxable income; low-income thresholds apply"
+  }
+}
