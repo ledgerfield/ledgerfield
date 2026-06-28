@@ -1,0 +1,43 @@
+{
+  "jurisdiction": "NO",
+  "year": 2025,
+  "currency": "NOK",
+  "cit": {
+    "standard_rate": 0.22,
+    "petroleum_sector_rate": 0.78,
+    "financial_institutions_surcharge": 0.05,
+    "note": "Standard CIT 22%; petroleum 78% (22% ordinary + 56% special tax); financial institutions +5%"
+  },
+  "income_tax": {
+    "flat_rate": 0.22,
+    "note": "22% flat rate on ordinary income; trinnskatt bracket surcharge on gross salary",
+    "trinnskatt_brackets": [
+      {"from": 0,       "to": 208050,  "rate": 0.000},
+      {"from": 208051,  "to": 292850,  "rate": 0.017},
+      {"from": 292851,  "to": 670000,  "rate": 0.040},
+      {"from": 670001,  "to": 937900,  "rate": 0.136},
+      {"from": 937901,  "to": 1350000, "rate": 0.166},
+      {"from": 1350001, "to": null,    "rate": 0.176}
+    ]
+  },
+  "vat": {
+    "standard_rate": 0.25,
+    "reduced_rate_food": 0.15,
+    "reduced_rate_transport_culture": 0.12,
+    "note": "MVA: 25% standard; 15% food; 12% passenger transport, hotels, culture and sport"
+  },
+  "employer_ni": {
+    "zones": {
+      "zone1_standard": 0.141,
+      "zone2": 0.106,
+      "zone3": 0.064,
+      "zone4": 0.051,
+      "zone5_svalbard": 0.00
+    },
+    "note": "Arbeidsgiveravgift varies by geographic zone; zone 1 (Oslo/urban) = 14.1%"
+  },
+  "otp_pension": {
+    "min_employer_rate": 0.02,
+    "note": "Mandatory OTP occupational pension; minimum 2% of salary above 1G (NOK 124028 in 2025)"
+  }
+}

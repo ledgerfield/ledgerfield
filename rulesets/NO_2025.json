@@ -1,0 +1,45 @@
+{
+  "ruleset": "NO_2025",
+  "jurisdiction": "Norway",
+  "iso_code": "NO",
+  "currency": "NOK",
+  "effective_year": 2025,
+  "accounting_standard": "Norwegian GAAP (NRS/IFRS)",
+  "corporate": {
+    "cit_standard_rate": 0.22,
+    "cit_petroleum_rate": 0.78,
+    "financial_institutions_surcharge": 0.05,
+    "note": "Standard CIT 22%; petroleum 78% (ordinary 22% + special tax 56%); financial institutions +5% surcharge"
+  },
+  "personal_income_tax": {
+    "currency": "NOK",
+    "flat_rate_ordinary_income": 0.22,
+    "note": "22% flat rate on ordinary income; trinnskatt (bracket surcharge) on gross salary",
+    "trinnskatt_brackets": [
+      {"from": 0,       "to": 208050,  "rate": 0.000, "marginal_rate_pct": 0.0},
+      {"from": 208051,  "to": 292850,  "rate": 0.017, "marginal_rate_pct": 1.7},
+      {"from": 292851,  "to": 670000,  "rate": 0.040, "marginal_rate_pct": 4.0},
+      {"from": 670001,  "to": 937900,  "rate": 0.136, "marginal_rate_pct": 13.6},
+      {"from": 937901,  "to": 1350000, "rate": 0.166, "marginal_rate_pct": 16.6},
+      {"from": 1350001, "to": null,    "rate": 0.176, "marginal_rate_pct": 17.6}
+    ]
+  },
+  "consumption_tax": {
+    "standard_vat_rate": 0.25,
+    "reduced_food_rate": 0.15,
+    "reduced_transport_culture_rate": 0.12,
+    "note": "MVA (merverdiavgift): 25% standard; 15% food; 12% passenger transport, hotels, culture and sport"
+  },
+  "employer_national_insurance": {
+    "zone1_standard": 0.141,
+    "zone2": 0.106,
+    "zone3": 0.064,
+    "zone4": 0.051,
+    "zone5_svalbard": 0.00,
+    "note": "Arbeidsgiveravgift geographically differentiated; zone 1 (Oslo/urban) = 14.1%"
+  },
+  "pension": {
+    "otp_min_employer_rate": 0.02,
+    "note": "Mandatory OTP occupational pension; minimum 2% of salary above 1G (NOK 124028 in 2025)"
+  }
+}
