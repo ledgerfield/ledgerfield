@@ -1,0 +1,101 @@
+{
+  "kind": "tax-ruleset",
+  "jurisdiction": "PT",
+  "fiscal_year": 2025,
+  "year": 2025,
+  "entity_types": ["company_lda", "company_sa", "individual", "sole_trader", "eni"],
+  "zero_cit": false,
+  "parameters": {
+    "corporate_income_tax": {
+      "key": "corporate_income_tax",
+      "label": "IRC — Imposto sobre o Rendimento das Pessoas Coletivas 2025",
+      "bracket_type": "marginal_rate",
+      "brackets": [
+        {"threshold": 0, "rate": 0.17, "bracket_type": "marginal_rate", "note": "PME — taxa reduzida sobre primeiros €25.000"},
+        {"threshold": 25000, "rate": 0.21, "bracket_type": "marginal_rate", "note": "Taxa geral IRC"}
+      ],
+      "flat_rate": null,
+      "currency": "EUR",
+      "notes": "IRC 2025: taxa geral 21%; PME 17% sobre primeiros €25k de lucro tributável; taxa autónoma sobre despesas não documentadas 50%"
+    },
+    "income_tax": {
+      "key": "income_tax",
+      "label": "IRS — Imposto sobre o Rendimento das Pessoas Singulares 2025",
+      "bracket_type": "marginal_rate",
+      "brackets": [
+        {"threshold": 0,     "rate": 0.1325, "bracket_type": "marginal_rate"},
+        {"threshold": 7703,  "rate": 0.18,   "bracket_type": "marginal_rate"},
+        {"threshold": 11623, "rate": 0.23,   "bracket_type": "marginal_rate"},
+        {"threshold": 16472, "rate": 0.26,   "bracket_type": "marginal_rate"},
+        {"threshold": 21321, "rate": 0.3275, "bracket_type": "marginal_rate"},
+        {"threshold": 27146, "rate": 0.37,   "bracket_type": "marginal_rate"},
+        {"threshold": 39791, "rate": 0.435,  "bracket_type": "marginal_rate"},
+        {"threshold": 51997, "rate": 0.45,   "bracket_type": "marginal_rate"},
+        {"threshold": 81199, "rate": 0.48,   "bracket_type": "marginal_rate"}
+      ],
+      "flat_rate": null,
+      "currency": "EUR",
+      "notes": "IRS 2025: 9 escalões de 13,25% a 48%; taxa máxima 48% aplicável a rendimentos colectáveis acima de €81.199"
+    },
+    "vat_standard": {
+      "key": "vat_standard",
+      "label": "IVA taxa normal 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 0.23,
+      "currency": "EUR",
+      "notes": "IVA taxa normal 23% (Portugal continental)"
+    },
+    "vat_intermediate": {
+      "key": "vat_intermediate",
+      "label": "IVA taxa intermédia 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 0.13,
+      "currency": "EUR",
+      "notes": "IVA taxa intermédia 13% — alimentação transformada, bebidas alcoólicas em restauração, espetáculos"
+    },
+    "vat_reduced": {
+      "key": "vat_reduced",
+      "label": "IVA taxa reduzida 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 0.06,
+      "currency": "EUR",
+      "notes": "IVA taxa reduzida 6% — géneros alimentícios essenciais, medicamentos, livros, jornais"
+    },
+    "social_security_employer": {
+      "key": "social_security_employer",
+      "label": "TSU — Segurança Social (entidade patronal) 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 0.2375,
+      "currency": "EUR",
+      "notes": "Contribuição patronal para a Segurança Social: 23,75% do salário bruto (regime geral 2025)"
+    },
+    "social_security_employee": {
+      "key": "social_security_employee",
+      "label": "TSU — Segurança Social (trabalhador) 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 0.11,
+      "currency": "EUR",
+      "notes": "Contribuição do trabalhador para a Segurança Social: 11% do salário bruto (regime geral 2025)"
+    },
+    "dividend_withholding": {
+      "key": "dividend_withholding",
+      "label": "Retenção na fonte — dividendos 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 0.28,
+      "currency": "EUR",
+      "notes": "Retenção na fonte sobre dividendos pagos a residentes: 28% (taxa liberatória padrão IRS/IRC)"
+    }
+  },
+  "sources": [
+    "https://www.portaldasfinancas.gov.pt/at/html/index.html",
+    "https://www.seg-social.pt/taxa-social-unica",
+    "https://diariodarepublica.pt/",
+    "https://www.pwc.pt/pt/fiscalidade/publicacoes/tax-guide-portugal.html"
+  ]
+}
