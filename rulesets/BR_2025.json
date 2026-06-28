@@ -1,0 +1,47 @@
+{
+  "ruleset": "BR_2025",
+  "jurisdiction": "Brazil",
+  "iso_code": "BR",
+  "effective_year": 2025,
+  "currency": "BRL",
+  "accounting_standard": "NBC TG (CPC, IFRS-aligned)",
+  "corporate": {
+    "irpj_base_rate": 0.15,
+    "irpj_surtax_rate": 0.10,
+    "irpj_surtax_threshold_annual_brl": 240000,
+    "csll_rate": 0.09,
+    "effective_combined_rate": 0.34,
+    "note": "Lucro Real: IRPJ 15% on taxable income + 10% surtax on portion exceeding BRL 240k/year + CSLL 9%"
+  },
+  "personal_income_tax": {
+    "currency": "BRL",
+    "note": "Monthly IRPF brackets 2025 (Lei 14.848/2024 table); annual threshold BRL 33.888 exempt",
+    "top_rate": 0.275,
+    "brackets_monthly": [
+      {"from": 0,    "to": 2824,  "rate": 0.00},
+      {"from": 2824, "to": 3751,  "rate": 0.075},
+      {"from": 3751, "to": 4664,  "rate": 0.15},
+      {"from": 4664, "to": 5858,  "rate": 0.225},
+      {"from": 5858, "to": null,  "rate": 0.275}
+    ]
+  },
+  "consumption_tax": {
+    "icms_interstate_rate": 0.12,
+    "pis_non_cumulative": 0.0165,
+    "cofins_non_cumulative": 0.076,
+    "iss_min": 0.02,
+    "iss_max": 0.05,
+    "headline_vat_equivalent": 0.12,
+    "note": "ICMS (state VAT) 12% interstate; PIS 1.65%+COFINS 7.6% on revenue (Lucro Real); ISS 2-5% municipal services"
+  },
+  "social_contributions": {
+    "inss_employer_pct": 0.20,
+    "fgts_pct": 0.08,
+    "note": "INSS employer 20% on gross payroll; FGTS 8% (Fundo de Garantia do Tempo de Servico)"
+  },
+  "tax_regime_thresholds": {
+    "lucro_presumido_max_revenue_brl": 78000000,
+    "simples_nacional_max_revenue_brl": 4800000,
+    "note": "Lucro Real mandatory above BRL 78M annual revenue or for financial institutions"
+  }
+}
