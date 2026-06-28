@@ -1,0 +1,22 @@
+{
+  "jurisdiction": "CH",
+  "years": {
+    "2025": {
+      "CIT": {
+        "standard_rate": 8.5,
+        "effective_combined_rate_range": [14.0, 24.0],
+        "notes": "Federal CIT 8.5% on after-tax profit (~7.83% on pre-tax); cantonal+communal rates add ~5-15%; total effective ~14-24% depending on canton; Zug ~12%, Zurich ~19.7%"
+      },
+      "VAT": {
+        "standard_rate": 8.1,
+        "reduced_rate": 2.6,
+        "special_accommodation_rate": 3.8,
+        "notes": "Standard 8.1%; reduced 2.6% (food, books, medicine); special 3.8% (hotel accommodation); rates effective since 2024"
+      },
+      "IIT": {
+        "top_rate": 11.5,
+        "notes": "Federal income tax top rate ~11.5%; cantonal+communal adds ~10-25%; total marginal rate varies 22-45% by canton; Geneva ~45%, Zug ~22%"
+      }
+    }
+  }
+}

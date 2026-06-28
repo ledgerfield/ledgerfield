@@ -1,0 +1,22 @@
+{
+  "jurisdiction": "SE",
+  "years": {
+    "2025": {
+      "CIT": {
+        "standard_rate": 20.6,
+        "notes": "CIT 20.6% flat rate (reduced from 22% in 2021); no local surcharges on CIT; tonnage tax regime for shipping"
+      },
+      "VAT": {
+        "standard_rate": 25.0,
+        "reduced_rate_food": 12.0,
+        "reduced_rate_print_culture": 6.0,
+        "notes": "Standard 25%; food/restaurant/hotel 12%; books/newspapers/public transport/theatre/cinema 6%"
+      },
+      "IIT": {
+        "top_rate": 20.0,
+        "municipal_average_rate": 32.0,
+        "notes": "State (federal) income tax 20% on income above SEK 643,100 (2025); municipal income tax ~32% average; combined top marginal ~52%"
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "kind": "tax-ruleset",
+  "jurisdiction": "IN",
+  "fiscal_year": 2025,
+  "entity_types": ["company", "individual"],
+  "zero_cit": false,
+  "parameters": {
+    "corporate_income_tax": {
+      "key": "corporate_income_tax",
+      "label": "CIT India 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 25.0,
+      "currency": "INR",
+      "notes": "25% opt-in legacy regime; 22% new concessional regime (Sec 115BAA); GST 5/12/18/28 slabs; surcharge on high income"
+    },
+    "vat_standard": {
+      "key": "vat_standard",
+      "label": "VAT/GST India 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 18.0,
+      "currency": "INR"
+    },
+    "income_tax": {
+      "key": "income_tax",
+      "label": "Income Tax India 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 30.0,
+      "currency": "INR"
+    }
+  },
+  "sources": []
+}

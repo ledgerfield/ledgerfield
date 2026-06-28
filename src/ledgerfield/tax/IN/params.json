@@ -1,0 +1,22 @@
+{
+  "jurisdiction": "IN",
+  "years": {
+    "2025": {
+      "CIT": {
+        "standard_rate": 25.0,
+        "new_regime_rate": 22.0,
+        "notes": "25% opt-in legacy regime; 22% new concessional regime (Sec 115BAA); effective ~25.17% / ~22.87% incl surcharge+cess; surcharges apply on high income"
+      },
+      "VAT": {
+        "standard_rate": 18.0,
+        "reduced_rates": [5.0, 12.0, 28.0],
+        "notes": "GST slabs: 0%/5%/12%/18%/28%; 18% is primary standard rate; 28% on luxury/demerit goods"
+      },
+      "IIT": {
+        "top_rate": 30.0,
+        "surcharge_rates": [10.0, 15.0, 25.0, 37.0],
+        "notes": "30% top slab; surcharge 10%-37% on very high income; health+education cess 4%; new regime top 30%+25% surcharge=39%"
+      }
+    }
+  }
+}
