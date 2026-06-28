@@ -1,0 +1,47 @@
+{
+  "jurisdiction": "AR",
+  "year": 2025,
+  "currency": "ARS",
+  "cit": {
+    "rate": 0.35,
+    "note": "Impuesto a las Ganancias — Sociedades; flat 35% on net taxable income"
+  },
+  "income_tax_2025": {
+    "note": "Impuesto a las Ganancias — Personas Fisicas; progressive 5-35%; thresholds indexed to MNI (Minimo No Imponible)",
+    "brackets": [
+      {"from": 0,         "to": 1296732,  "rate": 0.05},
+      {"from": 1296733,   "to": 2593469,  "rate": 0.09},
+      {"from": 2593470,   "to": 3890207,  "rate": 0.12},
+      {"from": 3890208,   "to": 5186944,  "rate": 0.15},
+      {"from": 5186945,   "to": 7780415,  "rate": 0.19},
+      {"from": 7780416,   "to": 10373887, "rate": 0.23},
+      {"from": 10373888,  "to": 15560831, "rate": 0.27},
+      {"from": 15560832,  "to": 20747776, "rate": 0.31},
+      {"from": 20747777,  "to": null,     "rate": 0.35}
+    ]
+  },
+  "iva": {
+    "standard_rate": 0.21,
+    "reduced_rate": 0.105,
+    "utilities_rate": 0.27,
+    "note": "IVA: 21% general; 10.5% reduced (food staples, medicine, certain construction); 27% on utilities for non-final consumers"
+  },
+  "ingresos_brutos": {
+    "rate_typical": 0.03,
+    "note": "Ingresos Brutos: provincial turnover tax; typical 3% (varies by province and activity)"
+  },
+  "impuesto_al_cheque": {
+    "debits_rate": 0.006,
+    "credits_rate": 0.006,
+    "note": "Impuesto a los Debitos y Creditos Bancarios (IDCB); 0.6% on bank debits and credits"
+  },
+  "social_security_employer": {
+    "rate": 0.26,
+    "note": "Contribuciones patronales: SIPA 17% + obra social 6% + ART ~3% (approximate)"
+  },
+  "inflation_adjustment": {
+    "mandatory": true,
+    "standard": "RT 6/17 (FACPCE)",
+    "note": "Ajuste integral por inflacion mandatory in hyperinflationary context; IPC used as deflator"
+  }
+}
