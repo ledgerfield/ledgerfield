@@ -1,0 +1,40 @@
+{
+  "ruleset": "CA_2025",
+  "jurisdiction": "Canada",
+  "effective_year": 2025,
+  "corporate": {
+    "small_business_deduction": {
+      "rate": 0.09,
+      "limit_cad": 500000,
+      "eligible": "CCPC with active business income"
+    },
+    "general_cit_rate": 0.15,
+    "combined_federal_provincial_estimate": 0.265
+  },
+  "personal_income_tax": {
+    "currency": "CAD",
+    "brackets": [
+      {"from": 0,      "to": 55867,  "rate": 0.15,  "marginal_rate_pct": 15.0},
+      {"from": 55867,  "to": 111733, "rate": 0.205, "marginal_rate_pct": 20.5},
+      {"from": 111733, "to": 154906, "rate": 0.26,  "marginal_rate_pct": 26.0},
+      {"from": 154906, "to": 220000, "rate": 0.29,  "marginal_rate_pct": 29.0},
+      {"from": 220000, "to": null,   "rate": 0.33,  "marginal_rate_pct": 33.0}
+    ]
+  },
+  "consumption_tax": {
+    "federal_gst_rate": 0.05,
+    "note": "Provinces add 0-10%; HST up to 15% in NS/NB/NL/PEI/ON"
+  },
+  "payroll": {
+    "cpp": {
+      "employer_rate": 0.0595,
+      "employee_rate": 0.0595,
+      "max_employee_contribution_cad": 3867
+    },
+    "ei": {
+      "employee_rate": 0.0166,
+      "employer_multiplier": 1.4,
+      "employee_max_premium_cad": 1049
+    }
+  }
+}
