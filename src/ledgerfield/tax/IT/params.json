@@ -1,0 +1,68 @@
+{
+  "jurisdiction": "IT",
+  "year": 2025,
+  "currency": "EUR",
+  "note": "Italian tax parameters 2025. D.P.R. 917/1986 (TUIR), D.Lgs. 446/1997 (IRAP), D.P.R. 633/1972 (IVA).",
+  "ires": {
+    "rate": 0.24,
+    "label": "IRES — Imposta sul Reddito delle Societa",
+    "note": "Flat rate 24% on taxable corporate income (D.P.R. 917/1986 art. 77).",
+    "standard_rate": 0.24
+  },
+  "irap": {
+    "standard_rate": 0.039,
+    "reduced_rate_agriculture": 0.019,
+    "label": "IRAP — Imposta Regionale sulle Attivita Produttive",
+    "note": "Standard 3.9% (D.Lgs. 446/1997 art. 16). Regions may vary +/-0.92pp.",
+    "total_effective_cit_irap": 0.279,
+    "note_total": "IRES 24% + IRAP 3.9% = 27.9% combined burden"
+  },
+  "iva": {
+    "standard_rate": 0.22,
+    "reduced_rate_10": 0.1,
+    "reduced_rate_5": 0.05,
+    "super_reduced_rate_4": 0.04,
+    "zero_rate": 0.0,
+    "label": "IVA — Imposta sul Valore Aggiunto (VAT)",
+    "note": "22% standard; 10% reduced; 5% social cooperatives; 4% super-reduced; 0% exports."
+  },
+  "irpef": {
+    "label": "IRPEF — Imposta sul Reddito delle Persone Fisiche",
+    "note": "Legge di Bilancio 2025: 3 brackets (23%/35%/43%).",
+    "brackets_2025": [
+      {
+        "from": 0,
+        "to": 28000,
+        "rate": 0.23
+      },
+      {
+        "from": 28000,
+        "to": 50000,
+        "rate": 0.35
+      },
+      {
+        "from": 50000,
+        "to": null,
+        "rate": 0.43
+      }
+    ],
+    "top_rate": 0.43,
+    "no_tax_area_dipendenti": 8500,
+    "no_tax_area_pensionati": 8500,
+    "no_tax_area_altri": 4800
+  },
+  "contributi_inps": {
+    "artigiani_commercianti_rate": 0.2398,
+    "gestione_separata_rate_non_iscritti": 0.2672,
+    "label": "INPS contributions for self-employed"
+  },
+  "cedolare_secca": {
+    "standard_rate": 0.21,
+    "reduced_rate_contratti_concordati": 0.1,
+    "label": "Cedolare secca — flat tax on residential rental income"
+  },
+  "ritenuta_acconto": {
+    "lavoro_autonomo_rate": 0.2,
+    "label": "Ritenuta d acconto (withholding tax)"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "kind": "tax-ruleset",
+  "jurisdiction": "IT",
+  "jurisdiction_name": "Italy",
+  "accounting_standard": "Italian OIC (Organismo Italiano di Contabilita)",
+  "fiscal_year": 2025,
+  "year": 2025,
+  "currency": "EUR",
+  "entity_types": [
+    "s_r_l",
+    "s_p_a",
+    "societa_di_persone",
+    "ditta_individuale"
+  ],
+  "zero_cit": false,
+  "parameters": {
+    "corporate_income_tax": {
+      "key": "corporate_income_tax",
+      "label": "IRES 2025",
+      "bracket_type": "flat",
+      "brackets": [
+        {
+          "threshold": 0,
+          "rate": 0.24,
+          "bracket_type": "flat"
+        }
+      ],
+      "flat_rate": 0.24,
+      "currency": "EUR",
+      "notes": "IRES 24% flat on net taxable income. D.P.R. 917/1986 art. 77."
+    },
+    "regional_production_tax": {
+      "key": "regional_production_tax",
+      "label": "IRAP 2025",
+      "bracket_type": "flat",
+      "brackets": [
+        {
+          "threshold": 0,
+          "rate": 0.039,
+          "bracket_type": "flat"
+        }
+      ],
+      "flat_rate": 0.039,
+      "currency": "EUR",
+      "notes": "IRAP 3.9% standard rate. D.Lgs. 446/1997."
+    },
+    "vat": {
+      "key": "vat",
+      "label": "IVA 2025",
+      "standard_rate": 0.22,
+      "reduced_rates": [
+        0.1,
+        0.05,
+        0.04
+      ],
+      "zero_rate": 0.0,
+      "currency": "EUR",
+      "notes": "22% standard; 10%/5%/4% reduced; 0% exports."
+    },
+    "income_tax": {
+      "key": "income_tax",
+      "label": "IRPEF 2025",
+      "bracket_type": "marginal_rate",
+      "brackets": [
+        {
+          "threshold": 0,
+          "to": 28000,
+          "rate": 0.23,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 28000,
+          "to": 50000,
+          "rate": 0.35,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 50000,
+          "to": null,
+          "rate": 0.43,
+          "bracket_type": "marginal_rate"
+        }
+      ],
+      "flat_rate": null,
+      "top_rate": 0.43,
+      "currency": "EUR",
+      "notes": "3-bracket structure from Legge di Bilancio 2025. Top rate 43%."
+    },
+    "withholding_tax_dividends": {
+      "key": "withholding_tax_dividends",
+      "label": "Ritenuta dividendi 2025",
+      "flat_rate": 0.26,
+      "currency": "EUR",
+      "notes": "26% ritenuta on dividends to individuals. PEX 95% for qualifying corporate holdings."
+    }
+  },
+  "special_regimes": {
+    "regime_forfettario": {
+      "label": "Regime forfettario (flat tax small businesses)",
+      "rate": 0.15,
+      "reduced_rate_startups": 0.05,
+      "turnover_limit_eur": 85000
+    },
+    "pex": {
+      "label": "PEX Participation Exemption",
+      "exempt_fraction": 0.95,
+      "holding_period_months": 12
+    }
+  },
+  "cid": "bafkreiit2025ledgerfielditalianoic20250101v1"
+}
