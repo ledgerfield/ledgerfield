@@ -1,0 +1,31 @@
+{
+  "jurisdiction": "HK",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.165,
+    "two_tier": {
+      "first_tranche_hkd": 2000000,
+      "first_tranche_rate": 0.0825,
+      "remainder_rate": 0.165,
+      "note": "Two-tier profits tax: first HKD 2M at 8.25%; remainder at 16.5%"
+    }
+  },
+  "salaries_tax_brackets_2025": [
+    {"from": 0,       "to": 50000,  "rate": 0.02},
+    {"from": 50000,   "to": 100000, "rate": 0.06},
+    {"from": 100000,  "to": 150000, "rate": 0.10},
+    {"from": 150000,  "to": 200000, "rate": 0.14},
+    {"from": 200000,  "to": null,   "rate": 0.17}
+  ],
+  "salaries_tax_standard_rate_cap": 0.15,
+  "gst": {
+    "rate": 0.00,
+    "note": "Hong Kong has no VAT or GST"
+  },
+  "mpf": {
+    "employee_rate": 0.05,
+    "employer_rate": 0.05,
+    "monthly_cap_hkd": 1500,
+    "note": "Mandatory Provident Fund; each contributes 5% up to HKD 1,500/month"
+  }
+}
