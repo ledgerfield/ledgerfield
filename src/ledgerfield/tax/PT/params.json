@@ -1,0 +1,41 @@
+{
+  "jurisdiction": "PT",
+  "year": 2025,
+  "currency": "EUR",
+  "irc": {
+    "standard_rate": 0.21,
+    "sme_reduced_rate": 0.17,
+    "sme_first_tranche_eur": 25000,
+    "note": "IRC 2025: taxa geral 21%; taxa reduzida PME 17% sobre primeiros €25.000 de lucro tributável"
+  },
+  "iva": {
+    "standard_rate": 0.23,
+    "intermediate_rate": 0.13,
+    "reduced_rate": 0.06,
+    "note": "IVA 2025: taxa normal 23%; taxa intermédia 13% (alimentação transformada, bebidas alcoólicas em restauração, espetáculos); taxa reduzida 6% (géneros alimentícios essenciais, medicamentos, livros)"
+  },
+  "irs_brackets_2025": [
+    {"from": 0,      "to": 7703,   "rate": 0.1325},
+    {"from": 7703,   "to": 11623,  "rate": 0.18},
+    {"from": 11623,  "to": 16472,  "rate": 0.23},
+    {"from": 16472,  "to": 21321,  "rate": 0.26},
+    {"from": 21321,  "to": 27146,  "rate": 0.3275},
+    {"from": 27146,  "to": 39791,  "rate": 0.37},
+    {"from": 39791,  "to": 51997,  "rate": 0.435},
+    {"from": 51997,  "to": 81199,  "rate": 0.45},
+    {"from": 81199,  "to": null,   "rate": 0.48}
+  ],
+  "social_security": {
+    "employee_rate": 0.11,
+    "employer_rate": 0.2375,
+    "note": "TSU 2025: trabalhador 11%; entidade patronal 23,75% (regime geral)"
+  },
+  "stamp_duty": {
+    "note": "Imposto de Selo: taxas variáveis conforme o ato ou contrato"
+  },
+  "sources": [
+    "https://www.portaldasfinancas.gov.pt/",
+    "https://www.seg-social.pt/",
+    "https://diariodarepublica.pt/"
+  ]
+}
