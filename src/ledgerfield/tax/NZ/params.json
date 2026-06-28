@@ -1,0 +1,31 @@
+{
+  "jurisdiction": "NZ",
+  "year": 2025,
+  "cit": {
+    "rate": 0.28,
+    "note": "Flat corporate income tax rate 28% (Income Tax Act 2007)"
+  },
+  "income_tax_2024_25": {
+    "note": "Marginal income tax rates for individuals; PIE rates may differ",
+    "brackets": [
+      {"from": 0,      "to": 14000,  "rate": 0.105},
+      {"from": 14001,  "to": 48000,  "rate": 0.175},
+      {"from": 48001,  "to": 70000,  "rate": 0.30},
+      {"from": 70001,  "to": 180000, "rate": 0.33},
+      {"from": 180001, "to": null,   "rate": 0.39}
+    ]
+  },
+  "gst": {
+    "rate": 0.15,
+    "note": "15% GST; broad-based; registration threshold NZD 60,000 turnover"
+  },
+  "kiwisaver": {
+    "employer_minimum_rate": 0.03,
+    "employee_options": [0.03, 0.04, 0.06, 0.08, 0.10],
+    "note": "KiwiSaver employer minimum contribution 3% of gross salary"
+  },
+  "acc_levy": {
+    "employer_levy_rate_approx": 0.0067,
+    "note": "ACC Employer Levy approximately 0.67% of gross payroll (rate varies by industry)"
+  }
+}
