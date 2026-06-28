@@ -1,0 +1,30 @@
+{
+  "jurisdiction": "BE",
+  "years": {
+    "2025": {
+      "CIT": {
+        "standard_rate": 25.0,
+        "sme_reduced_rate": 20.0,
+        "sme_threshold_eur": 100000,
+        "notes": "CIT 25%; SME first €100k profit taxed at 20% (reduced rate); crisis contribution abolished; innovation income deduction 85%"
+      },
+      "VAT": {
+        "standard_rate": 21.0,
+        "reduced_rate_12": 12.0,
+        "reduced_rate_6": 6.0,
+        "notes": "Standard 21%; intermediate 12% (restaurant food, phytopharmaceuticals, social housing); reduced 6% (basic foodstuffs, books, renovation, electricity for residential)"
+      },
+      "IIT": {
+        "top_rate": 50.0,
+        "brackets": [
+          {"up_to": 15820, "rate": 25.0},
+          {"up_to": 27920, "rate": 40.0},
+          {"up_to": 48320, "rate": 45.0},
+          {"above": 48320, "rate": 50.0}
+        ],
+        "communal_surcharge_avg": 7.0,
+        "notes": "Progressive 25-50%; communal surcharge ~7% on top (avg); solidarity contribution 2% on very high pensions; effective top ~54%"
+      }
+    }
+  }
+}
