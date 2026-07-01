@@ -120,13 +120,13 @@ def accounts_by_class(account_class: str) -> List[CASAccount]:
 
 
 # ---------------------------------------------------------------------------
-# cas_schema.json — written next to this module on first import
+# JSON export
 # ---------------------------------------------------------------------------
 
-_SCHEMA_PATH = Path(__file__).with_name("cas_schema.json")
+def schema_payload() -> dict[str, object]:
+    """Return a JSON-serializable CAS schema payload."""
 
-if not _SCHEMA_PATH.exists():
-    _schema = {
+    return {
         "jurisdiction": "CN",
         "standard": "企业会计准则 (CAS)",
         "issuer": "Ministry of Finance of China (MOF)",
@@ -141,4 +141,11 @@ if not _SCHEMA_PATH.exists():
             for a in CAS_CN
         ],
     }
-    _SCHEMA_PATH.write_text(json.dumps(_schema, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def write_json_schema(path: str | Path | None = None) -> Path:
+    """Write the CAS schema JSON to ``path`` and return the output path."""
+
+    out = Path(path) if path is not None else Path(__file__).with_name("cas_schema.json")
+    out.write_text(json.dumps(schema_payload(), ensure_ascii=False, indent=2), encoding="utf-8")
+    return out
