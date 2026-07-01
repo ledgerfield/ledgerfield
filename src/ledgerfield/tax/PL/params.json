@@ -1,0 +1,33 @@
+{
+  "jurisdiction": "PL",
+  "years": {
+    "2025": {
+      "CIT": {
+        "standard_rate": 19.0,
+        "sme_rate": 9.0,
+        "sme_revenue_threshold_eur": 2000000,
+        "notes": "CIT 19% standard; SME rate 9% for small taxpayers (revenue up to EUR 2m equivalent); minimum CIT introduced from 2024 for loss-making entities"
+      },
+      "VAT": {
+        "standard_rate": 23.0,
+        "reduced_rate_food_agri": 8.0,
+        "super_reduced_rate": 5.0,
+        "zero_rate": 0.0,
+        "notes": "Standard 23%; reduced 8% (food, hotel, construction, passenger transport); super-reduced 5% (basic foodstuffs, books, magazines); 0% (exports, intra-EU supply)"
+      },
+      "IIT": {
+        "bracket_1_rate": 12.0,
+        "bracket_1_threshold_pln": 120000,
+        "bracket_2_rate": 32.0,
+        "tax_free_amount_pln": 30000,
+        "notes": "Polish Deal: 12% up to PLN 120k, 32% above; tax-free amount PLN 30,000; lump-sum and flat-rate options available for sole traders"
+      },
+      "SocialInsurance": {
+        "employee_pension_pln_cap": 260190,
+        "employer_social_total_approx_pct": 20.5,
+        "employee_total_approx_pct": 22.7,
+        "notes": "ZUS contributions: pension 9.76%+9.76%, disability 1.5%+6.5%, sickness 2.45% (employee only), accident ~1.67% (employer); health 9% (employee, non-deductible post Polish Deal)"
+      }
+    }
+  }
+}
