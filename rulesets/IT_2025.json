@@ -1,0 +1,96 @@
+{
+  "kind": "tax-ruleset",
+  "jurisdiction": "IT",
+  "jurisdiction_name": "Italy",
+  "accounting_standard": "Italian OIC (Organismo Italiano di Contabilità)",
+  "fiscal_year": 2025,
+  "year": 2025,
+  "currency": "EUR",
+  "entity_types": ["s_r_l", "s_p_a", "societa_di_persone", "ditta_individuale"],
+  "zero_cit": false,
+  "parameters": {
+    "corporate_income_tax": {
+      "key": "corporate_income_tax",
+      "label": "IRES — Imposta sul Reddito delle Società 2025",
+      "bracket_type": "flat",
+      "brackets": [
+        {"threshold": 0, "rate": 0.24, "bracket_type": "flat"}
+      ],
+      "flat_rate": 0.24,
+      "currency": "EUR",
+      "notes": "IRES 24% flat on net taxable income. See D.P.R. 917/1986 art. 77."
+    },
+    "regional_production_tax": {
+      "key": "regional_production_tax",
+      "label": "IRAP — Imposta Regionale sulle Attività Produttive 2025",
+      "bracket_type": "flat",
+      "brackets": [
+        {"threshold": 0, "rate": 0.039, "bracket_type": "flat"}
+      ],
+      "flat_rate": 0.039,
+      "currency": "EUR",
+      "notes": "IRAP 3.9% standard rate. Regions may apply ±0.92pp. Base = value of production minus eligible costs (no interest, no personnel generally). D.Lgs. 446/1997."
+    },
+    "vat": {
+      "key": "vat",
+      "label": "IVA — Imposta sul Valore Aggiunto 2025",
+      "standard_rate": 0.22,
+      "reduced_rates": [0.10, 0.05, 0.04],
+      "zero_rate": 0.00,
+      "currency": "EUR",
+      "notes": "22% standard; 10% reduced (food, tourism, medicines); 5% (social cooperatives); 4% super-reduced (essential goods, books); 0% exports."
+    },
+    "income_tax": {
+      "key": "income_tax",
+      "label": "IRPEF — Imposta sul Reddito delle Persone Fisiche 2025",
+      "bracket_type": "marginal_rate",
+      "brackets": [
+        {"threshold": 0,     "to": 28000, "rate": 0.23, "bracket_type": "marginal_rate"},
+        {"threshold": 28000, "to": 50000, "rate": 0.35, "bracket_type": "marginal_rate"},
+        {"threshold": 50000, "to": null,  "rate": 0.43, "bracket_type": "marginal_rate"}
+      ],
+      "flat_rate": null,
+      "top_rate": 0.43,
+      "currency": "EUR",
+      "notes": "3-bracket structure from Legge di Bilancio 2025. Top marginal rate 43%."
+    },
+    "withholding_tax_dividends": {
+      "key": "withholding_tax_dividends",
+      "label": "Ritenuta dividendi (dividend withholding tax) 2025",
+      "flat_rate": 0.26,
+      "currency": "EUR",
+      "notes": "26% ritenuta a titolo d'imposta on dividends paid to individuals. PEX (participation exemption) 95% for qualifying corporate holdings."
+    }
+  },
+  "special_regimes": {
+    "regime_forfettario": {
+      "label": "Regime forfettario (flat tax for small businesses/freelancers)",
+      "rate": 0.15,
+      "reduced_rate_startups": 0.05,
+      "turnover_limit_eur": 85000,
+      "notes": "Available to individuals with turnover ≤ EUR 85,000. Substitute tax at 15% (5% for first 5 years for new activities). No IVA charged/deducted."
+    },
+    "pex": {
+      "label": "PEX — Participation Exemption",
+      "exempt_fraction": 0.95,
+      "holding_period_months": 12,
+      "notes": "95% of capital gains on qualifying holdings exempt from IRES (D.P.R. 917/1986 art. 87)."
+    },
+    "ace": {
+      "label": "ACE — Aiuto alla Crescita Economica (abolished FY2024+)",
+      "applicable": false,
+      "notes": "ACE deduction repealed from FY2024 by D.L. 73/2023. Replaced by partial IRES reduction (IRES premiale) from 2026."
+    }
+  },
+  "social_contributions": {
+    "inps_artigiani_commercianti": {
+      "rate": 0.2398,
+      "notes": "INPS contributions for artigiani/commercianti 2025 (23.98%)."
+    },
+    "gestione_separata": {
+      "rate_non_iscritti": 0.2672,
+      "notes": "INPS Gestione Separata 26.72% for non-enrolled freelancers."
+    }
+  },
+  "cid": "bafkreiit2025ledgerfielditalianoic20250101v1"
+}
