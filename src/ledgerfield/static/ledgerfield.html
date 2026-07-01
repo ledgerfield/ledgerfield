@@ -66,6 +66,7 @@ tr:hover td{background:#1f242b}
   <div class="tab" onclick="sw(4)">5. Aangifte</div>
   <div class="tab" onclick="sw(5)">6. Vault</div>
   <div class="tab" onclick="sw(6)">7. P2P</div>
+  <div class="tab" onclick="sw(7)">8. &#128202; Datamarkt</div>
 </div>
 
 <!-- TAB 1 -->
@@ -226,11 +227,63 @@ tr:hover td{background:#1f242b}
 <div class="panel"><h2>Sync status</h2><div class="ok">Offline — lokale modus actief. Geen verbinding vereist.</div></div>
 </div>
 
+<!-- TAB 8: DATAMARKT -->
+<div class="content" id="t7">
+<div class="panel"><h2>Aggregaat data-marktplaats</h2>
+<p class="prv">Verkoop <b>alleen geanonimiseerde aggregaten</b>: een pakket wordt pas gepubliceerd bij <b>k &ge; 5</b> verschillende bijdragers (k-anonimiteit). Ruwe boekhouddata verlaat nooit uw node. Platform-fee 10% &mdash; de rest gaat naar de bijdragers.</p>
+</div>
+
+<div class="panel"><h2>1. Toestemming (consent)</h2>
+<div class="row">
+  <div class="f" style="max-width:120px"><label>Jurisdictie</label><input id="mk-cjur" value="NL" maxlength="2" oninput="renderConsent()"></div>
+</div>
+<p class="prv">Kies welke van de 7 categorieen u wilt delen voor deze jurisdictie. Standaard deelt u niets.</p>
+<div id="mkt-consent"></div>
+</div>
+
+<div class="panel"><h2>2. Aggregaat samenstellen &amp; publiceren</h2>
+<div class="row">
+  <div class="f"><label>Categorie</label><select id="mk-cat"></select></div>
+  <div class="f" style="max-width:90px"><label>Jurisdictie</label><input id="mk-jur" value="NL" maxlength="2" oninput="renderPool()"></div>
+  <div class="f"><label>Sector</label><input id="mk-sec" placeholder="tech" oninput="renderPool()"></div>
+  <div class="f" style="max-width:80px"><label>Boekjaar</label><input id="mk-fy" type="number" value="2025" oninput="renderPool()"></div>
+</div>
+<div class="row">
+  <div class="f"><label>Uw waarde (bijv. mediaan salaris &#8364;)</label><input id="mk-val" type="number" placeholder="55000"></div>
+  <div class="f"><label>Node-id (leeg = uw node)</label><input id="mk-node" placeholder="peer-id"></div>
+  <div class="f" style="max-width:110px"><label>Prijs (&#8364;)</label><input id="mk-price" type="number" value="100"></div>
+</div>
+<button class="btn" onclick="mkContribute()">+ Bijdrage</button>
+<button class="btn bg" onclick="mkSimPeers()">Simuleer 5 peers</button>
+<button class="btn" onclick="mkBuild()">Publiceer pakket (k&ge;5)</button>
+<div id="mk-pool"></div>
+<div id="mk-build"></div>
+</div>
+
+<div class="panel"><h2>3. Mijn listings</h2><div id="mk-mine"></div></div>
+
+<div class="panel"><h2>4. Marktplaats doorzoeken</h2>
+<div class="row">
+  <div class="f"><label>Categorie</label><select id="mk-scat"><option value="">— alle —</option></select></div>
+  <div class="f" style="max-width:90px"><label>Jurisdictie</label><input id="mk-sjur" placeholder="alle" maxlength="2"></div>
+  <div class="f" style="align-self:flex-end"><button class="btn" onclick="mkSearch()">Zoek</button></div>
+</div>
+<div id="mk-results"></div>
+</div>
+
+<div class="panel"><h2>5. Opbrengsten</h2>
+<div class="row">
+  <div class="f" style="max-width:150px"><label>Verdeling</label><select id="mk-split"><option value="equal">Gelijk</option><option value="weighted">Gewogen (naar bijdrage)</option></select></div>
+</div>
+<div id="mk-earnings"></div>
+</div>
+</div>
+
 <script>
 // ── STATE ──────────────────────────────────────────────────────────────────
-const S={ents:[],jnl:[],wrks:[],rsets:[]};
+const S={ents:[],jnl:[],wrks:[],rsets:[],consent:[],mkpool:[],mkpkgs:[],mkbuys:[]};
 const LS={get:k=>JSON.parse(localStorage.getItem('lf_'+k)||'[]'),set:(k,v)=>localStorage.setItem('lf_'+k,JSON.stringify(v))};
-['ents','jnl','wrks','rsets'].forEach(k=>{try{S[k]=LS.get(k)}catch(e){}});
+['ents','jnl','wrks','rsets','consent','mkpool','mkpkgs','mkbuys'].forEach(k=>{try{S[k]=LS.get(k)}catch(e){}});
 const save=k=>LS.set(k,S[k]);
 const fmt=n=>(n||0).toLocaleString('nl-NL',{minimumFractionDigits:2,maximumFractionDigits:2});
 const v=id=>document.getElementById(id);
@@ -240,7 +293,7 @@ const fv=id=>parseFloat(v(id)?.value)||0;
 function sw(i){
   document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
   document.querySelectorAll('.content').forEach((c,j)=>c.classList.toggle('active',i===j));
-  if(i===1)renderCoA(); if(i===4){renderAngEnt();renderAngF();} if(i===5)renderVault();
+  if(i===1)renderCoA(); if(i===4){renderAngEnt();renderAngF();} if(i===5)renderVault(); if(i===7)renderMarket();
 }
 
 // ── LOCK ──────────────────────────────────────────────────────────────────
@@ -390,6 +443,106 @@ async function pubRS(){
 }
 initP2P();
 renderAngF();
+
+// ── TAB 8: DATAMARKT ──────────────────────────────────────────────────────
+const K_MIN=5, PLATFORM_FEE=0.10;
+const MKT_CATS=[
+  ['salary_benchmarks','Salaris-benchmarks (mediaan/p25/p75 per sector+land)'],
+  ['cost_ratios','Kostenratio\'s (opex/omzet per industrie)'],
+  ['margin_benchmarks','Marge-benchmarks (bruto/netto marge)'],
+  ['tax_effective_rates','Effectieve belastingtarieven (werkelijk betaald)'],
+  ['cash_flow_patterns','Cashflow-patronen (maandelijkse seizoensindex)'],
+  ['payroll_costs','Loonkosten (werkgeverslasten per land)'],
+  ['invoice_cycles','Factuurcycli (gem. dagen tot betaling per sector)']
+];
+const canon=o=>Array.isArray(o)?'['+o.map(canon).join(',')+']':(o&&typeof o==='object'?'{'+Object.keys(o).sort().map(k=>JSON.stringify(k)+':'+canon(o[k])).join(',')+'}':JSON.stringify(o));
+const cjur=()=>(v('mk-cjur').value||'NL').toUpperCase();
+const conKey=(c,j)=>c+'|'+j;
+const isConsented=(cat,jur)=>S.consent.includes(conKey(cat,jur))||S.consent.includes(conKey(cat,'*'));
+function mkKey(){return [v('mk-cat').value,(v('mk-jur').value||'NL').toUpperCase(),v('mk-sec').value||'*',v('mk-fy').value||'2025'].join('|');}
+
+function renderConsent(){
+  const j=cjur();
+  v('mkt-consent').innerHTML=MKT_CATS.map(([c,d])=>{
+    const on=isConsented(c,j);
+    return `<div class="card"><h4>${d}</h4><span class="badge">${c}</span> <span class="badge">${j}</span> <button class="btn ${on?'':'bg'}" style="font-size:.76em" onclick="mkToggle('${c}')">${on?'&#10003; Gedeeld':'Deel niet'}</button></div>`;
+  }).join('');
+  const catopts=MKT_CATS.map(([c])=>`<option value="${c}">${c}</option>`).join('');
+  if(v('mk-cat')&&!v('mk-cat').innerHTML)v('mk-cat').innerHTML=catopts;
+  if(v('mk-scat')&&v('mk-scat').options.length<=1)v('mk-scat').innerHTML='<option value="">&mdash; alle &mdash;</option>'+catopts;
+}
+function mkToggle(c){const k=conKey(c,cjur());if(S.consent.includes(k))S.consent=S.consent.filter(x=>x!==k);else S.consent.push(k);save('consent');renderConsent();}
+
+function mkpct(s,p){if(!s.length)return 0;const i=(s.length-1)*p,lo=Math.floor(i),hi=Math.ceil(i);return s[lo]+(s[hi]-s[lo])*(i-lo);}
+function mkAgg(pts){const vals=pts.map(p=>p.val).sort((a,b)=>a-b),n=vals.length,sum=vals.reduce((a,b)=>a+b,0);return{distinct:new Set(pts.map(p=>p.node)).size,count:n,min:vals[0],max:vals[n-1],mean:sum/n,median:mkpct(vals,.5),p25:mkpct(vals,.25),p75:mkpct(vals,.75)};}
+
+function mkContribute(){
+  const cat=v('mk-cat').value,jur=(v('mk-jur').value||'NL').toUpperCase();
+  if(!isConsented(cat,jur)){alert('Geef eerst toestemming voor '+cat+' / '+jur+' (stap 1)');return;}
+  const val=fv('mk-val');if(!val){alert('Waarde verplicht');return;}
+  const node=v('mk-node').value||('self:'+(localStorage.getItem('lf_nid')||'node').slice(0,8));
+  S.mkpool.push({key:mkKey(),cat,jur,sec:v('mk-sec').value||'*',fy:v('mk-fy').value||'2025',node,val});
+  save('mkpool');v('mk-val').value='';v('mk-node').value='';renderPool();
+}
+function mkSimPeers(){
+  const cat=v('mk-cat').value,jur=(v('mk-jur').value||'NL').toUpperCase(),base=fv('mk-val')||50000;
+  if(!isConsented(cat,jur)){alert('Geef eerst toestemming voor '+cat+' / '+jur);return;}
+  for(let i=1;i<=5;i++)S.mkpool.push({key:mkKey(),cat,jur,sec:v('mk-sec').value||'*',fy:v('mk-fy').value||'2025',node:'peer-'+i+'-'+jur,val:Math.round(base*(0.8+i*0.08))});
+  save('mkpool');renderPool();
+}
+function renderPool(){
+  const el=v('mk-pool');if(!el)return;
+  const key=mkKey(),pts=S.mkpool.filter(p=>p.key===key),d=new Set(pts.map(p=>p.node)).size;
+  el.innerHTML=`<div class="res"><div class="rr"><span>Bijdragen (deze sleutel)</span><span>${pts.length} &mdash; ${d} unieke nodes</span></div><div class="rr"><span>k-anonimiteit</span><span class="${d>=K_MIN?'ok':'warn'}">${d}/${K_MIN} ${d>=K_MIN?'&#10003; publiceerbaar':'&#9888; nog niet publiceerbaar'}</span></div>${pts.length?`<div style="margin-top:6px">${[...new Set(pts.map(p=>p.node))].map(n=>`<span class="badge">${n}</span>`).join(' ')}</div>`:''}</div>`;
+}
+async function mkBuild(){
+  const key=mkKey(),pts=S.mkpool.filter(p=>p.key===key),m=v('mk-build');
+  if(!pts.length){m.innerHTML='<div class="warn">Geen bijdragen voor deze sleutel.</div>';return;}
+  const a=mkAgg(pts);
+  if(a.distinct<K_MIN){m.innerHTML=`<div class="warn">&#9888; Slechts ${a.distinct} unieke bijdragers &mdash; k&ge;${K_MIN} vereist. Publicatie geweigerd (privacy).</div>`;return;}
+  const [cat,jur,sec,fy]=key.split('|');
+  const stats={count:a.count,min:a.min,max:a.max,mean:a.mean,median:a.median,p25:a.p25,p75:a.p75};
+  const payload={category:cat,jurisdiction:jur,sector:sec,fiscal_year:+fy,stats};
+  const cid='cid:sha256:'+(await sha256(canon(payload)));
+  const price=fv('mk-price')||100, contributors=[...new Set(pts.map(p=>p.node))], weights={};
+  pts.forEach(p=>{weights[p.node]=(weights[p.node]||0)+p.val;});
+  const pkg={package_id:cid,category:cat,jurisdiction:jur,sector:sec,fiscal_year:+fy,stats,contributor_count:a.distinct,price,contributors,weights,mine:true};
+  const ex=S.mkpkgs.findIndex(p=>p.package_id===cid);
+  if(ex>=0)S.mkpkgs[ex]=pkg;else S.mkpkgs.push(pkg);
+  save('mkpkgs');renderMine();mkSearch();renderEarnings();
+  m.innerHTML=`<div class="ok">&#10003; Pakket gepubliceerd &mdash; ${a.distinct} bijdragers &middot; CID ${cid.slice(0,30)}&hellip;</div>`;
+}
+const statRow=s=>`<span class="badge">n=${s.count}</span> <span class="badge">med ${fmt(s.median)}</span> <span class="badge">p25 ${fmt(s.p25)}</span> <span class="badge">p75 ${fmt(s.p75)}</span>`;
+function renderMine(){
+  const el=v('mk-mine');if(!el)return;
+  const mine=S.mkpkgs.filter(p=>p.mine);
+  el.innerHTML=mine.length?`<table><thead><tr><th>Categorie</th><th>Land</th><th>Sector</th><th>Jaar</th><th>Prijs</th><th>Bijdragers</th><th>Mediaan</th></tr></thead><tbody>${mine.map(p=>`<tr><td>${p.category}</td><td>${p.jurisdiction}</td><td>${p.sector}</td><td>${p.fiscal_year}</td><td>&#8364; ${fmt(p.price)}</td><td><span class="badge">${p.contributor_count}</span></td><td>&#8364; ${fmt(p.stats.median)}</td></tr>`).join('')}</tbody></table>`:'<div class="warn">Nog geen eigen listings gepubliceerd.</div>';
+}
+function mkSearch(){
+  const el=v('mk-results');if(!el)return;
+  const sc=v('mk-scat').value,sj=(v('mk-sjur').value||'').toUpperCase();
+  const res=S.mkpkgs.filter(p=>(!sc||p.category===sc)&&(!sj||p.jurisdiction===sj));
+  el.innerHTML=res.length?`<table><thead><tr><th>Categorie</th><th>Land</th><th>Sector</th><th>Jaar</th><th>Stats</th><th>Prijs</th><th></th></tr></thead><tbody>${res.map(p=>`<tr><td>${p.category}</td><td>${p.jurisdiction}</td><td>${p.sector}</td><td>${p.fiscal_year}</td><td>${statRow(p.stats)}</td><td>&#8364; ${fmt(p.price)}</td><td><button class="btn" style="font-size:.74em" onclick="mkBuy('${p.package_id}')">Koop</button></td></tr>`).join('')}</tbody></table>`:'<div class="warn">Geen pakketten gevonden.</div>';
+}
+function mkBuy(cid){
+  const p=S.mkpkgs.find(x=>x.package_id===cid);if(!p)return;
+  const fee=p.price*PLATFORM_FEE,net=p.price-fee,mode=v('mk-split').value;
+  let shares;
+  if(mode==='weighted'){const tot=Object.values(p.weights).reduce((a,b)=>a+b,0)||1;shares=p.contributors.map(n=>[n,net*(p.weights[n]||0)/tot]);}
+  else shares=p.contributors.map(n=>[n,net/p.contributors.length]);
+  S.mkbuys.push({cid,category:p.category,jur:p.jurisdiction,price:p.price,fee,shares,ts:new Date().toISOString().slice(0,10)});
+  save('mkbuys');renderEarnings();
+  alert('Gekocht: '+p.category+' ('+p.jurisdiction+') voor €'+fmt(p.price)+'. Platform-fee €'+fmt(fee)+', €'+fmt(net)+' verdeeld over '+p.contributors.length+' bijdragers.');
+}
+function renderEarnings(){
+  const el=v('mk-earnings');if(!el)return;
+  if(!S.mkbuys.length){el.innerHTML='<div class="warn">Nog geen verkopen.</div>';return;}
+  const board={};let gross=0,feeTot=0;
+  S.mkbuys.forEach(b=>{gross+=b.price;feeTot+=b.fee;b.shares.forEach(([n,a])=>{board[n]=(board[n]||0)+a;});});
+  const rows=Object.entries(board).sort((a,b)=>b[1]-a[1]);
+  el.innerHTML=`<div class="res"><div class="rr"><span>Bruto omzet</span><span>&#8364; ${fmt(gross)}</span></div><div class="rr"><span>Platform-fee (10%)</span><span>&#8364; ${fmt(feeTot)}</span></div><div class="rr tot"><span>Uitgekeerd aan bijdragers</span><span>&#8364; ${fmt(gross-feeTot)}</span></div></div><h3>Leaderboard bijdragers</h3><table><thead><tr><th>#</th><th>Node</th><th>Verdiend</th></tr></thead><tbody>${rows.map(([n,a],i)=>`<tr><td>${i+1}</td><td style="font-family:monospace;font-size:.78em">${n}</td><td>&#8364; ${fmt(a)}</td></tr>`).join('')}</tbody></table><h3>Verkoopgeschiedenis</h3><table><thead><tr><th>Datum</th><th>Categorie</th><th>Land</th><th>Prijs</th><th>Fee</th></tr></thead><tbody>${S.mkbuys.slice().reverse().map(b=>`<tr><td>${b.ts}</td><td>${b.category}</td><td>${b.jur}</td><td>&#8364; ${fmt(b.price)}</td><td>&#8364; ${fmt(b.fee)}</td></tr>`).join('')}</tbody></table>`;
+}
+function renderMarket(){renderConsent();renderPool();renderMine();mkSearch();renderEarnings();}
 </script>
 </body>
 </html>
