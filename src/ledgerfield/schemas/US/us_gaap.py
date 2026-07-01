@@ -19,6 +19,7 @@ __all__ = [
     "US_GAAP",
     "get_account",
     "accounts_for_entity_type",
+    "write_json_schema",
 ]
 
 
@@ -293,15 +294,11 @@ def _build_json_schema() -> dict:
     }
 
 
-def _write_json_schema(path: str | None = None) -> str:
+def write_json_schema(path: str | None = None) -> str:
+    """Write the US GAAP schema JSON to ``path`` and return the output path."""
+
     if path is None:
         path = os.path.join(os.path.dirname(__file__), "us_gaap_schema.json")
     with open(path, "w", encoding="utf-8") as f:
         json.dump(_build_json_schema(), f, indent=2, ensure_ascii=False)
     return path
-
-
-# Write JSON schema at import time if it doesn't exist yet
-_json_path = os.path.join(os.path.dirname(__file__), "us_gaap_schema.json")
-if not os.path.exists(_json_path):
-    _write_json_schema(_json_path)

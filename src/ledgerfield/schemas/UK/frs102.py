@@ -28,6 +28,7 @@ __all__ = [
     "FRS_UK",
     "get_account",
     "accounts_by_group",
+    "write_json_schema",
 ]
 
 
@@ -225,12 +226,12 @@ def accounts_by_group(group: str) -> list[FRSAccount]:
     return [a for a in FRS_UK.values() if a.group == group]
 
 
-# ── JSON export (side-effect on import: writes frs102_schema.json) ────────────
+# ── JSON export ───────────────────────────────────────────────────────────────
 
-def _write_json() -> None:
-    out = Path(__file__).with_name("frs102_schema.json")
+def write_json_schema(path: str | Path | None = None) -> Path:
+    """Write the FRS 102 schema JSON to ``path`` and return the output path."""
+
+    out = Path(path) if path is not None else Path(__file__).with_name("frs102_schema.json")
     payload = [asdict(a) for a in FRS_UK.values()]
     out.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
-
-
-_write_json()
+    return out
