@@ -56,13 +56,13 @@ class PurchaseReceipt:
 
 
 class DataMarket:
-    """Local market node: list packages, handle discovery and purchases."""
+    """Local market node with prepaid token settlement for purchases."""
 
     def __init__(self, node_id: str) -> None:
         self.node_id = node_id
         self._listings: dict[str, Listing] = {}          # package_id → Listing
         self._receipts: list[PurchaseReceipt] = []
-        # simple ledger: how many tokens each node has earned/spent
+        # Prepaid settlement ledger: buyers must have enough tokens before purchase.
         self._balances: dict[str, float] = {}
 
     # ── listing ──────────────────────────────────────────────────────────────
@@ -106,13 +106,21 @@ class DataMarket:
 
     # ── purchase ─────────────────────────────────────────────────────────────
 
+    def credit_balance(self, node_id: str, amount: float) -> float:
+        """Credit prepaid market tokens to a node and return the new balance."""
+        if amount <= 0:
+            raise ValueError("credit amount must be positive")
+        self._balances[node_id] = self._balances.get(node_id, 0.0) + amount
+        return self._balances[node_id]
+
     def purchase(self, package_id: str, buyer_node_id: str) -> Optional[PurchaseReceipt]:
-        """Deduct tokens from buyer, credit seller, return receipt + package access."""
+        """Settle a prepaid purchase and return a receipt when funded."""
         listing = self._listings.get(package_id)
         if not listing or not listing.active:
             return None
         price = listing.package.price_tokens
-        # check buyer balance (default 0 → allow negative for simplicity, settle later)
+        if self.balance(buyer_node_id) < price:
+            return None
         receipt_id = "rcpt:" + hashlib.sha256(
             f"{package_id}{buyer_node_id}{time.time()}".encode()
         ).hexdigest()[:16]
