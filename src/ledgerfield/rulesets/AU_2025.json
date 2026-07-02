@@ -1,0 +1,35 @@
+{
+  "ruleset": "AU_2025",
+  "jurisdiction": "Australia",
+  "effective_year": 2025,
+  "corporate": {
+    "base_rate_entity_cit_rate": 0.25,
+    "general_cit_rate": 0.30,
+    "base_rate_entity_turnover_threshold_aud": 50000000,
+    "note": "Base rate entities (turnover < AUD 50M) pay 25%; large companies pay 30%"
+  },
+  "personal_income_tax": {
+    "currency": "AUD",
+    "note": "Stage 3 tax cuts effective 1 July 2024; tax-free threshold AUD 18,200",
+    "brackets": [
+      {"from": 0,      "to": 18200,  "rate": 0.00,   "marginal_rate_pct": 0.0},
+      {"from": 18201,  "to": 45000,  "rate": 0.19,   "marginal_rate_pct": 19.0},
+      {"from": 45001,  "to": 120000, "rate": 0.325,  "marginal_rate_pct": 32.5},
+      {"from": 120001, "to": 180000, "rate": 0.37,   "marginal_rate_pct": 37.0},
+      {"from": 180001, "to": null,   "rate": 0.45,   "marginal_rate_pct": 45.0}
+    ]
+  },
+  "consumption_tax": {
+    "gst_rate": 0.10,
+    "note": "10% GST; ATO BAS reporting quarterly or monthly"
+  },
+  "superannuation": {
+    "employer_rate_from_1_jul_2024": 0.115,
+    "employer_rate_from_1_jul_2025": 0.12,
+    "note": "Super Guarantee rate rises annually; reaches 12% in FY2025-26"
+  },
+  "medicare_levy": {
+    "rate": 0.02,
+    "note": "2% of taxable income; low-income thresholds and surcharge apply"
+  }
+}

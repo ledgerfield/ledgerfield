@@ -22,11 +22,6 @@ jobs:
       - name: Bump version in pyproject.toml
         run: sed -i "s/^version = .*/version = \"${{ inputs.version }}\"/" pyproject.toml
 
-      - name: Copy top-level rulesets into package
-        run: |
-          mkdir -p src/ledgerfield/rulesets
-          cp rulesets/*.json src/ledgerfield/rulesets/
-
       - name: Build
         run: |
           pip install build
@@ -36,7 +31,7 @@ jobs:
         run: |
           pip install check-wheel-contents
           check-wheel-contents dist/*.whl
-          python -m zipfile -l dist/*.whl | grep rulesets
+          python scripts/check_wheel_rulesets.py dist/*.whl
 
       - name: Publish
         uses: pypa/gh-action-pypi-publish@release/v1

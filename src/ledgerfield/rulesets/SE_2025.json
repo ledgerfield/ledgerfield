@@ -1,0 +1,35 @@
+{
+  "kind": "tax-ruleset",
+  "jurisdiction": "SE",
+  "fiscal_year": 2025,
+  "entity_types": ["company", "individual"],
+  "zero_cit": false,
+  "parameters": {
+    "corporate_income_tax": {
+      "key": "corporate_income_tax",
+      "label": "CIT Sweden 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 20.6,
+      "currency": "SEK",
+      "notes": "CIT 20.6%; VAT 25%/12%/6%; state income tax 20% on high earners + municipal ~32%"
+    },
+    "vat_standard": {
+      "key": "vat_standard",
+      "label": "VAT/GST Sweden 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 25.0,
+      "currency": "SEK"
+    },
+    "income_tax": {
+      "key": "income_tax",
+      "label": "Income Tax Sweden 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 20.0,
+      "currency": "SEK"
+    }
+  },
+  "sources": []
+}

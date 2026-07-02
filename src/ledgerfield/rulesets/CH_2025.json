@@ -1,0 +1,35 @@
+{
+  "kind": "tax-ruleset",
+  "jurisdiction": "CH",
+  "fiscal_year": 2025,
+  "entity_types": ["company", "individual"],
+  "zero_cit": false,
+  "parameters": {
+    "corporate_income_tax": {
+      "key": "corporate_income_tax",
+      "label": "CIT Switzerland 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 8.5,
+      "currency": "CHF",
+      "notes": "Federal CIT 8.5%; effective incl cantonal/communal ~14-24%; VAT 8.1% standard (reduced 2.6%, accommodation 3.8%)"
+    },
+    "vat_standard": {
+      "key": "vat_standard",
+      "label": "VAT/GST Switzerland 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 8.1,
+      "currency": "CHF"
+    },
+    "income_tax": {
+      "key": "income_tax",
+      "label": "Income Tax Switzerland 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 11.5,
+      "currency": "CHF"
+    }
+  },
+  "sources": []
+}
