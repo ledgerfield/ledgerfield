@@ -13,26 +13,47 @@
       },
       "IIT": {
         "brackets": [
-          {"threshold": 0,       "rate": 0.05},
-          {"threshold": 1950000, "rate": 0.10},
-          {"threshold": 3300000, "rate": 0.20},
-          {"threshold": 6950000, "rate": 0.23},
-          {"threshold": 9000000, "rate": 0.33},
-          {"threshold": 18000000,"rate": 0.40},
-          {"threshold": 40000000,"rate": 0.45}
+          {
+            "threshold": 0,
+            "rate": 0.05
+          },
+          {
+            "threshold": 1950000,
+            "rate": 0.1
+          },
+          {
+            "threshold": 3300000,
+            "rate": 0.2
+          },
+          {
+            "threshold": 6950000,
+            "rate": 0.23
+          },
+          {
+            "threshold": 9000000,
+            "rate": 0.33
+          },
+          {
+            "threshold": 18000000,
+            "rate": 0.4
+          },
+          {
+            "threshold": 40000000,
+            "rate": 0.45
+          }
         ],
-        "resident_tax_rate": 0.10,
+        "resident_tax_rate": 0.1,
         "notes": "所得税 5-45% (7段階) + 住民税10%フラット"
       },
       "consumption_tax": {
-        "standard_rate": 0.10,
+        "standard_rate": 0.1,
         "reduced_rate": 0.08,
         "notes": "消費税: 標準10%, 軽減8% (食料品等)"
       },
       "social_insurance": {
-        "employee_health_pct": 0.0500,
+        "employee_health_pct": 0.05,
         "employee_pension_pct": 0.0915,
-        "employer_health_pct": 0.0500,
+        "employer_health_pct": 0.05,
         "employer_pension_pct": 0.0915,
         "employee_total_approx": 0.1415,
         "employer_total_approx": 0.1415,
@@ -51,26 +72,47 @@
       },
       "IIT": {
         "brackets": [
-          {"threshold": 0,       "rate": 0.05},
-          {"threshold": 1950000, "rate": 0.10},
-          {"threshold": 3300000, "rate": 0.20},
-          {"threshold": 6950000, "rate": 0.23},
-          {"threshold": 9000000, "rate": 0.33},
-          {"threshold": 18000000,"rate": 0.40},
-          {"threshold": 40000000,"rate": 0.45}
+          {
+            "threshold": 0,
+            "rate": 0.05
+          },
+          {
+            "threshold": 1950000,
+            "rate": 0.1
+          },
+          {
+            "threshold": 3300000,
+            "rate": 0.2
+          },
+          {
+            "threshold": 6950000,
+            "rate": 0.23
+          },
+          {
+            "threshold": 9000000,
+            "rate": 0.33
+          },
+          {
+            "threshold": 18000000,
+            "rate": 0.4
+          },
+          {
+            "threshold": 40000000,
+            "rate": 0.45
+          }
         ],
-        "resident_tax_rate": 0.10,
+        "resident_tax_rate": 0.1,
         "notes": "所得税 5-45% (7段階) + 住民税10%フラット"
       },
       "consumption_tax": {
-        "standard_rate": 0.10,
+        "standard_rate": 0.1,
         "reduced_rate": 0.08,
         "notes": "消費税: 標準10%, 軽減8% (食料品等)"
       },
       "social_insurance": {
-        "employee_health_pct": 0.0500,
+        "employee_health_pct": 0.05,
         "employee_pension_pct": 0.0915,
-        "employer_health_pct": 0.0500,
+        "employer_health_pct": 0.05,
         "employer_pension_pct": 0.0915,
         "employee_total_approx": 0.1415,
         "employer_total_approx": 0.1415,
@@ -78,5 +120,31 @@
         "notes": "社会保険: 健保5%+厚生年金9.15% (労使折半); 上限65万円/月"
       }
     }
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "National Tax Agency Japan",
+        "url": "https://www.nta.go.jp/english/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "JPY",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
   }
 }

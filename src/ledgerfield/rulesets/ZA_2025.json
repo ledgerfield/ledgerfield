@@ -16,13 +16,48 @@
     "tertiary_rebate_zar": 3145,
     "note": "7 brackets; 18% to 45%; rebates applied after tax calculated; secondary rebate for persons 65+; tertiary for 75+",
     "brackets": [
-      {"from": 0,       "to": 237100,  "rate": 0.18,  "marginal_rate_pct": 18.0},
-      {"from": 237101,  "to": 370500,  "rate": 0.26,  "marginal_rate_pct": 26.0},
-      {"from": 370501,  "to": 512800,  "rate": 0.31,  "marginal_rate_pct": 31.0},
-      {"from": 512801,  "to": 673000,  "rate": 0.36,  "marginal_rate_pct": 36.0},
-      {"from": 673001,  "to": 857900,  "rate": 0.39,  "marginal_rate_pct": 39.0},
-      {"from": 857901,  "to": 1817000, "rate": 0.41,  "marginal_rate_pct": 41.0},
-      {"from": 1817001, "to": null,    "rate": 0.45,  "marginal_rate_pct": 45.0}
+      {
+        "from": 0,
+        "to": 237100,
+        "rate": 0.18,
+        "marginal_rate_pct": 18.0
+      },
+      {
+        "from": 237101,
+        "to": 370500,
+        "rate": 0.26,
+        "marginal_rate_pct": 26.0
+      },
+      {
+        "from": 370501,
+        "to": 512800,
+        "rate": 0.31,
+        "marginal_rate_pct": 31.0
+      },
+      {
+        "from": 512801,
+        "to": 673000,
+        "rate": 0.36,
+        "marginal_rate_pct": 36.0
+      },
+      {
+        "from": 673001,
+        "to": 857900,
+        "rate": 0.39,
+        "marginal_rate_pct": 39.0
+      },
+      {
+        "from": 857901,
+        "to": 1817000,
+        "rate": 0.41,
+        "marginal_rate_pct": 41.0
+      },
+      {
+        "from": 1817001,
+        "to": null,
+        "rate": 0.45,
+        "marginal_rate_pct": 45.0
+      }
     ]
   },
   "consumption_tax": {
@@ -30,7 +65,7 @@
     "note": "15% VAT standard rate; administered by SARS; VAT201 returns submitted monthly or bi-monthly; zero-rated: basic foodstuffs, exports, international transport; exempt: residential rental, education"
   },
   "dividends_tax": {
-    "rate": 0.20,
+    "rate": 0.2,
     "note": "20% withheld at source by company declaring dividend; reduced by applicable DTA provisions"
   },
   "payroll_levies": {
@@ -42,9 +77,35 @@
     "note": "UIF: employer 1% + employee 1% capped at ZAR 17,712/month; SDL: 1% of leviable amount, exempt if annual leviable amount < ZAR 500,000"
   },
   "capital_gains_tax": {
-    "inclusion_rate_company": 0.80,
-    "inclusion_rate_individual": 0.40,
+    "inclusion_rate_company": 0.8,
+    "inclusion_rate_individual": 0.4,
     "annual_exclusion_individual_zar": 40000,
     "note": "Capital gain included in taxable income at inclusion rate, then taxed at normal income tax rate"
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "South African Revenue Service",
+        "url": "https://www.sars.gov.za/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "ZAR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
   }
 }

@@ -3,7 +3,12 @@
   "jurisdiction": "CN",
   "fiscal_year": 2025,
   "year": 2025,
-  "entity_types": ["company", "hnte", "sme", "individual"],
+  "entity_types": [
+    "company",
+    "hnte",
+    "sme",
+    "individual"
+  ],
   "zero_cit": false,
   "parameters": {
     "corporate_income_tax": {
@@ -29,8 +34,16 @@
       "label": "企业所得税 — 小型微利企业 2025",
       "bracket_type": "marginal_rate",
       "brackets": [
-        {"threshold": 0, "rate": 0.05, "bracket_type": "marginal_rate"},
-        {"threshold": 1000000, "rate": 0.20, "bracket_type": "marginal_rate"}
+        {
+          "threshold": 0,
+          "rate": 0.05,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 1000000,
+          "rate": 0.2,
+          "bracket_type": "marginal_rate"
+        }
       ],
       "flat_rate": null,
       "currency": "CNY",
@@ -41,13 +54,41 @@
       "label": "个人所得税综合所得 (IIT) 2025",
       "bracket_type": "marginal_rate",
       "brackets": [
-        {"threshold": 0, "rate": 0.03, "bracket_type": "marginal_rate"},
-        {"threshold": 36000, "rate": 0.10, "bracket_type": "marginal_rate"},
-        {"threshold": 144000, "rate": 0.20, "bracket_type": "marginal_rate"},
-        {"threshold": 300000, "rate": 0.25, "bracket_type": "marginal_rate"},
-        {"threshold": 420000, "rate": 0.30, "bracket_type": "marginal_rate"},
-        {"threshold": 660000, "rate": 0.35, "bracket_type": "marginal_rate"},
-        {"threshold": 960000, "rate": 0.45, "bracket_type": "marginal_rate"}
+        {
+          "threshold": 0,
+          "rate": 0.03,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 36000,
+          "rate": 0.1,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 144000,
+          "rate": 0.2,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 300000,
+          "rate": 0.25,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 420000,
+          "rate": 0.3,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 660000,
+          "rate": 0.35,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 960000,
+          "rate": 0.45,
+          "bracket_type": "marginal_rate"
+        }
       ],
       "flat_rate": null,
       "currency": "CNY",
@@ -103,7 +144,7 @@
       "label": "增值税 — 出口零税率 2025",
       "bracket_type": "flat_rate",
       "brackets": [],
-      "flat_rate": 0.00,
+      "flat_rate": 0.0,
       "currency": "CNY",
       "notes": "出口货物和服务适用零税率并可申请退税"
     }
@@ -112,5 +153,31 @@
     "https://www.chinatax.gov.cn/",
     "https://www.gov.cn/zhengce/zhengceku/2023-12/29/content_6926693.htm",
     "http://www.npc.gov.cn/npc/c2/c30834/202108/t20210830_313054.html"
-  ]
+  ],
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "State Taxation Administration of China",
+        "url": "https://www.chinatax.gov.cn/eng/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "CNY",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
+  }
 }

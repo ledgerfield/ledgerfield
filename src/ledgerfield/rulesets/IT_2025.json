@@ -6,7 +6,12 @@
   "fiscal_year": 2025,
   "year": 2025,
   "currency": "EUR",
-  "entity_types": ["s_r_l", "s_p_a", "societa_di_persone", "ditta_individuale"],
+  "entity_types": [
+    "s_r_l",
+    "s_p_a",
+    "societa_di_persone",
+    "ditta_individuale"
+  ],
   "zero_cit": false,
   "parameters": {
     "corporate_income_tax": {
@@ -14,7 +19,11 @@
       "label": "IRES — Imposta sul Reddito delle Società 2025",
       "bracket_type": "flat",
       "brackets": [
-        {"threshold": 0, "rate": 0.24, "bracket_type": "flat"}
+        {
+          "threshold": 0,
+          "rate": 0.24,
+          "bracket_type": "flat"
+        }
       ],
       "flat_rate": 0.24,
       "currency": "EUR",
@@ -25,7 +34,11 @@
       "label": "IRAP — Imposta Regionale sulle Attività Produttive 2025",
       "bracket_type": "flat",
       "brackets": [
-        {"threshold": 0, "rate": 0.039, "bracket_type": "flat"}
+        {
+          "threshold": 0,
+          "rate": 0.039,
+          "bracket_type": "flat"
+        }
       ],
       "flat_rate": 0.039,
       "currency": "EUR",
@@ -35,8 +48,12 @@
       "key": "vat",
       "label": "IVA — Imposta sul Valore Aggiunto 2025",
       "standard_rate": 0.22,
-      "reduced_rates": [0.10, 0.05, 0.04],
-      "zero_rate": 0.00,
+      "reduced_rates": [
+        0.1,
+        0.05,
+        0.04
+      ],
+      "zero_rate": 0.0,
       "currency": "EUR",
       "notes": "22% standard; 10% reduced (food, tourism, medicines); 5% (social cooperatives); 4% super-reduced (essential goods, books); 0% exports."
     },
@@ -45,9 +62,24 @@
       "label": "IRPEF — Imposta sul Reddito delle Persone Fisiche 2025",
       "bracket_type": "marginal_rate",
       "brackets": [
-        {"threshold": 0,     "to": 28000, "rate": 0.23, "bracket_type": "marginal_rate"},
-        {"threshold": 28000, "to": 50000, "rate": 0.35, "bracket_type": "marginal_rate"},
-        {"threshold": 50000, "to": null,  "rate": 0.43, "bracket_type": "marginal_rate"}
+        {
+          "threshold": 0,
+          "to": 28000,
+          "rate": 0.23,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 28000,
+          "to": 50000,
+          "rate": 0.35,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 50000,
+          "to": null,
+          "rate": 0.43,
+          "bracket_type": "marginal_rate"
+        }
       ],
       "flat_rate": null,
       "top_rate": 0.43,
@@ -92,5 +124,31 @@
       "notes": "INPS Gestione Separata 26.72% for non-enrolled freelancers."
     }
   },
-  "cid": "bafkreiit2025ledgerfielditalianoic20250101v1"
+  "cid": "bafkreiit2025ledgerfielditalianoic20250101v1",
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Agenzia delle Entrate",
+        "url": "https://www.agenziaentrate.gov.it/portale/en/home"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
+  }
 }

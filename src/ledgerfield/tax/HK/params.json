@@ -11,15 +11,35 @@
     }
   },
   "salaries_tax_brackets_2025": [
-    {"from": 0,       "to": 50000,  "rate": 0.02},
-    {"from": 50000,   "to": 100000, "rate": 0.06},
-    {"from": 100000,  "to": 150000, "rate": 0.10},
-    {"from": 150000,  "to": 200000, "rate": 0.14},
-    {"from": 200000,  "to": null,   "rate": 0.17}
+    {
+      "from": 0,
+      "to": 50000,
+      "rate": 0.02
+    },
+    {
+      "from": 50000,
+      "to": 100000,
+      "rate": 0.06
+    },
+    {
+      "from": 100000,
+      "to": 150000,
+      "rate": 0.1
+    },
+    {
+      "from": 150000,
+      "to": 200000,
+      "rate": 0.14
+    },
+    {
+      "from": 200000,
+      "to": null,
+      "rate": 0.17
+    }
   ],
   "salaries_tax_standard_rate_cap": 0.15,
   "gst": {
-    "rate": 0.00,
+    "rate": 0.0,
     "note": "Hong Kong has no VAT or GST"
   },
   "mpf": {
@@ -27,5 +47,31 @@
     "employer_rate": 0.05,
     "monthly_cap_hkd": 1500,
     "note": "Mandatory Provident Fund; each contributes 5% up to HKD 1,500/month"
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Hong Kong Inland Revenue Department",
+        "url": "https://www.ird.gov.hk/eng/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "HKD",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
   }
 }

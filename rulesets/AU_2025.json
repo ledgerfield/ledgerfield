@@ -4,7 +4,7 @@
   "effective_year": 2025,
   "corporate": {
     "base_rate_entity_cit_rate": 0.25,
-    "general_cit_rate": 0.30,
+    "general_cit_rate": 0.3,
     "base_rate_entity_turnover_threshold_aud": 50000000,
     "note": "Base rate entities (turnover < AUD 50M) pay 25%; large companies pay 30%"
   },
@@ -12,15 +12,40 @@
     "currency": "AUD",
     "note": "Stage 3 tax cuts effective 1 July 2024; tax-free threshold AUD 18,200",
     "brackets": [
-      {"from": 0,      "to": 18200,  "rate": 0.00,   "marginal_rate_pct": 0.0},
-      {"from": 18201,  "to": 45000,  "rate": 0.19,   "marginal_rate_pct": 19.0},
-      {"from": 45001,  "to": 120000, "rate": 0.325,  "marginal_rate_pct": 32.5},
-      {"from": 120001, "to": 180000, "rate": 0.37,   "marginal_rate_pct": 37.0},
-      {"from": 180001, "to": null,   "rate": 0.45,   "marginal_rate_pct": 45.0}
+      {
+        "from": 0,
+        "to": 18200,
+        "rate": 0.0,
+        "marginal_rate_pct": 0.0
+      },
+      {
+        "from": 18201,
+        "to": 45000,
+        "rate": 0.19,
+        "marginal_rate_pct": 19.0
+      },
+      {
+        "from": 45001,
+        "to": 120000,
+        "rate": 0.325,
+        "marginal_rate_pct": 32.5
+      },
+      {
+        "from": 120001,
+        "to": 180000,
+        "rate": 0.37,
+        "marginal_rate_pct": 37.0
+      },
+      {
+        "from": 180001,
+        "to": null,
+        "rate": 0.45,
+        "marginal_rate_pct": 45.0
+      }
     ]
   },
   "consumption_tax": {
-    "gst_rate": 0.10,
+    "gst_rate": 0.1,
     "note": "10% GST; ATO BAS reporting quarterly or monthly"
   },
   "superannuation": {
@@ -31,5 +56,31 @@
   "medicare_levy": {
     "rate": 0.02,
     "note": "2% of taxable income; low-income thresholds and surcharge apply"
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Australian Taxation Office",
+        "url": "https://www.ato.gov.au/businesses-and-organisations/income-deductions-and-concessions/income-and-deductions-for-business/company-tax-rates"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2024-07-01",
+      "end": "2025-06-30",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "AUD",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
   }
 }

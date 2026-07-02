@@ -11,6 +11,15 @@ P2P global accounting engine — privacy-first, offline-capable, knitweb-integra
 - AES-GCM encrypted local vault — PII never leaves device unless user opts in
 - Fully offline: runs in browser (file://) — no server required
 
+## Tax Metadata
+
+Tax rulesets and parameter files include provenance metadata with official tax
+authority URLs, currency, effective date range, assumptions, limitations, and a
+`last_reviewed` date. LedgerField calculations remain estimates until the
+source metadata, local filing rules, entity-specific elections, regional taxes,
+deductions, reliefs, and current official forms are validated for the concrete
+filing context. The package is not legal, tax, accounting, or filing advice.
+
 ## Layout
 ```
 src/ledgerfield/

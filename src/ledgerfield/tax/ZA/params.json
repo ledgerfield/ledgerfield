@@ -12,13 +12,48 @@
     "secondary_rebate_zar": 9444,
     "tertiary_rebate_zar": 3145,
     "brackets": [
-      {"from": 0,       "to": 237100,  "rate": 0.18,  "base_zar": 0},
-      {"from": 237101,  "to": 370500,  "rate": 0.26,  "base_zar": 42678},
-      {"from": 370501,  "to": 512800,  "rate": 0.31,  "base_zar": 77362},
-      {"from": 512801,  "to": 673000,  "rate": 0.36,  "base_zar": 121475},
-      {"from": 673001,  "to": 857900,  "rate": 0.39,  "base_zar": 179147},
-      {"from": 857901,  "to": 1817000, "rate": 0.41,  "base_zar": 251258},
-      {"from": 1817001, "to": null,    "rate": 0.45,  "base_zar": 644489}
+      {
+        "from": 0,
+        "to": 237100,
+        "rate": 0.18,
+        "base_zar": 0
+      },
+      {
+        "from": 237101,
+        "to": 370500,
+        "rate": 0.26,
+        "base_zar": 42678
+      },
+      {
+        "from": 370501,
+        "to": 512800,
+        "rate": 0.31,
+        "base_zar": 77362
+      },
+      {
+        "from": 512801,
+        "to": 673000,
+        "rate": 0.36,
+        "base_zar": 121475
+      },
+      {
+        "from": 673001,
+        "to": 857900,
+        "rate": 0.39,
+        "base_zar": 179147
+      },
+      {
+        "from": 857901,
+        "to": 1817000,
+        "rate": 0.41,
+        "base_zar": 251258
+      },
+      {
+        "from": 1817001,
+        "to": null,
+        "rate": 0.45,
+        "base_zar": 644489
+      }
     ]
   },
   "vat": {
@@ -26,7 +61,7 @@
     "note": "Standard rate 15%; zero-rated supplies include basic foodstuffs, exported goods, international transport; exempt includes residential accommodation, educational services"
   },
   "dividends_tax": {
-    "rate": 0.20,
+    "rate": 0.2,
     "note": "20% withheld at source by company; reduced by applicable double tax agreements"
   },
   "sdl": {
@@ -40,9 +75,35 @@
     "note": "Unemployment Insurance Fund: 1% employer + 1% employee of remuneration; capped at ZAR 17,712/month contribution ceiling"
   },
   "capital_gains_tax": {
-    "inclusion_rate_individual": 0.40,
-    "inclusion_rate_company": 0.80,
+    "inclusion_rate_individual": 0.4,
+    "inclusion_rate_company": 0.8,
     "annual_exclusion_individual_zar": 40000,
     "note": "40% of net capital gain included in individual taxable income; 80% for companies; then taxed at normal rate"
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "South African Revenue Service",
+        "url": "https://www.sars.gov.za/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "ZAR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
   }
 }

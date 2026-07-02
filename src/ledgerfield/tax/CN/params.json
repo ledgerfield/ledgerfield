@@ -5,7 +5,7 @@
       "CIT": {
         "standard_rate": 0.25,
         "hnte_rate": 0.15,
-        "sme_rate": 0.20,
+        "sme_rate": 0.2,
         "sme_threshold_cny": 3000000,
         "micro_rate": 0.05,
         "micro_threshold_cny": 1000000,
@@ -13,13 +13,34 @@
       },
       "IIT": {
         "comprehensive_brackets": [
-          {"threshold": 0, "rate": 0.03},
-          {"threshold": 36000, "rate": 0.10},
-          {"threshold": 144000, "rate": 0.20},
-          {"threshold": 300000, "rate": 0.25},
-          {"threshold": 420000, "rate": 0.30},
-          {"threshold": 660000, "rate": 0.35},
-          {"threshold": 960000, "rate": 0.45}
+          {
+            "threshold": 0,
+            "rate": 0.03
+          },
+          {
+            "threshold": 36000,
+            "rate": 0.1
+          },
+          {
+            "threshold": 144000,
+            "rate": 0.2
+          },
+          {
+            "threshold": 300000,
+            "rate": 0.25
+          },
+          {
+            "threshold": 420000,
+            "rate": 0.3
+          },
+          {
+            "threshold": 660000,
+            "rate": 0.35
+          },
+          {
+            "threshold": 960000,
+            "rate": 0.45
+          }
         ],
         "basic_deduction_cny_monthly": 5000,
         "notes": "个人所得税综合所得税率(年度)。月应税=月收入-5000-专项扣除"
@@ -29,7 +50,7 @@
         "rate_construction": 0.09,
         "rate_services": 0.06,
         "rate_small_taxpayer": 0.03,
-        "rate_export": 0.00,
+        "rate_export": 0.0,
         "notes": "增值税: 一般货物13%，建筑/不动产9%，现代服务6%，小规模纳税人3%，出口0%"
       },
       "social_insurance": {
@@ -49,20 +70,41 @@
       "CIT": {
         "standard_rate": 0.25,
         "hnte_rate": 0.15,
-        "sme_rate": 0.20,
+        "sme_rate": 0.2,
         "micro_rate": 0.05,
         "micro_threshold_cny": 1000000,
         "sme_threshold_cny": 3000000
       },
       "IIT": {
         "comprehensive_brackets": [
-          {"threshold": 0, "rate": 0.03},
-          {"threshold": 36000, "rate": 0.10},
-          {"threshold": 144000, "rate": 0.20},
-          {"threshold": 300000, "rate": 0.25},
-          {"threshold": 420000, "rate": 0.30},
-          {"threshold": 660000, "rate": 0.35},
-          {"threshold": 960000, "rate": 0.45}
+          {
+            "threshold": 0,
+            "rate": 0.03
+          },
+          {
+            "threshold": 36000,
+            "rate": 0.1
+          },
+          {
+            "threshold": 144000,
+            "rate": 0.2
+          },
+          {
+            "threshold": 300000,
+            "rate": 0.25
+          },
+          {
+            "threshold": 420000,
+            "rate": 0.3
+          },
+          {
+            "threshold": 660000,
+            "rate": 0.35
+          },
+          {
+            "threshold": 960000,
+            "rate": 0.45
+          }
         ],
         "basic_deduction_cny_monthly": 5000
       },
@@ -80,5 +122,31 @@
         "housing_fund_pct": 0.12
       }
     }
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "State Taxation Administration of China",
+        "url": "https://www.chinatax.gov.cn/eng/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "CNY",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
   }
 }

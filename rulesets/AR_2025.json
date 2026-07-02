@@ -12,15 +12,60 @@
     "currency": "ARS",
     "note": "Progressive 5-35%; MNI thresholds updated annually by AFIP",
     "brackets": [
-      {"from": 0,         "to": 1296732,  "rate": 0.05,  "marginal_rate_pct": 5.0},
-      {"from": 1296733,   "to": 2593469,  "rate": 0.09,  "marginal_rate_pct": 9.0},
-      {"from": 2593470,   "to": 3890207,  "rate": 0.12,  "marginal_rate_pct": 12.0},
-      {"from": 3890208,   "to": 5186944,  "rate": 0.15,  "marginal_rate_pct": 15.0},
-      {"from": 5186945,   "to": 7780415,  "rate": 0.19,  "marginal_rate_pct": 19.0},
-      {"from": 7780416,   "to": 10373887, "rate": 0.23,  "marginal_rate_pct": 23.0},
-      {"from": 10373888,  "to": 15560831, "rate": 0.27,  "marginal_rate_pct": 27.0},
-      {"from": 15560832,  "to": 20747776, "rate": 0.31,  "marginal_rate_pct": 31.0},
-      {"from": 20747777,  "to": null,     "rate": 0.35,  "marginal_rate_pct": 35.0}
+      {
+        "from": 0,
+        "to": 1296732,
+        "rate": 0.05,
+        "marginal_rate_pct": 5.0
+      },
+      {
+        "from": 1296733,
+        "to": 2593469,
+        "rate": 0.09,
+        "marginal_rate_pct": 9.0
+      },
+      {
+        "from": 2593470,
+        "to": 3890207,
+        "rate": 0.12,
+        "marginal_rate_pct": 12.0
+      },
+      {
+        "from": 3890208,
+        "to": 5186944,
+        "rate": 0.15,
+        "marginal_rate_pct": 15.0
+      },
+      {
+        "from": 5186945,
+        "to": 7780415,
+        "rate": 0.19,
+        "marginal_rate_pct": 19.0
+      },
+      {
+        "from": 7780416,
+        "to": 10373887,
+        "rate": 0.23,
+        "marginal_rate_pct": 23.0
+      },
+      {
+        "from": 10373888,
+        "to": 15560831,
+        "rate": 0.27,
+        "marginal_rate_pct": 27.0
+      },
+      {
+        "from": 15560832,
+        "to": 20747776,
+        "rate": 0.31,
+        "marginal_rate_pct": 31.0
+      },
+      {
+        "from": 20747777,
+        "to": null,
+        "rate": 0.35,
+        "marginal_rate_pct": 35.0
+      }
     ]
   },
   "consumption_tax": {
@@ -47,5 +92,31 @@
   "social_security": {
     "employer_contribution_rate": 0.26,
     "note": "Contribuciones patronales: ~26% of gross salary (SIPA + PAMI + obra social)"
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Administracion Federal de Ingresos Publicos",
+        "url": "https://www.afip.gob.ar/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "ARS",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
   }
 }

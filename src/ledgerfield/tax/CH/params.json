@@ -4,7 +4,10 @@
     "2025": {
       "CIT": {
         "standard_rate": 8.5,
-        "effective_combined_rate_range": [14.0, 24.0],
+        "effective_combined_rate_range": [
+          14.0,
+          24.0
+        ],
         "notes": "Federal CIT 8.5% on after-tax profit (~7.83% on pre-tax); cantonal+communal rates add ~5-15%; total effective ~14-24% depending on canton; Zug ~12%, Zurich ~19.7%"
       },
       "VAT": {
@@ -18,5 +21,31 @@
         "notes": "Federal income tax top rate ~11.5%; cantonal+communal adds ~10-25%; total marginal rate varies 22-45% by canton; Geneva ~45%, Zug ~22%"
       }
     }
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Swiss Federal Tax Administration",
+        "url": "https://www.estv.admin.ch/estv/en/home.html"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "CHF",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
   }
 }

@@ -9,14 +9,49 @@
       },
       "VAT": {
         "standard_rate": 18.0,
-        "reduced_rates": [5.0, 12.0, 28.0],
+        "reduced_rates": [
+          5.0,
+          12.0,
+          28.0
+        ],
         "notes": "GST slabs: 0%/5%/12%/18%/28%; 18% is primary standard rate; 28% on luxury/demerit goods"
       },
       "IIT": {
         "top_rate": 30.0,
-        "surcharge_rates": [10.0, 15.0, 25.0, 37.0],
+        "surcharge_rates": [
+          10.0,
+          15.0,
+          25.0,
+          37.0
+        ],
         "notes": "30% top slab; surcharge 10%-37% on very high income; health+education cess 4%; new regime top 30%+25% surcharge=39%"
       }
     }
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Income Tax Department India",
+        "url": "https://www.incometax.gov.in/iec/foportal/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "INR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
   }
 }

@@ -18,16 +18,60 @@
       "IIT": {
         "top_rate": 47.0,
         "state_brackets": [
-          {"up_to": 12450, "rate": 9.5},
-          {"up_to": 20200, "rate": 12.0},
-          {"up_to": 35200, "rate": 15.0},
-          {"up_to": 60000, "rate": 18.5},
-          {"up_to": 300000, "rate": 22.5},
-          {"above": 300000, "rate": 24.5}
+          {
+            "up_to": 12450,
+            "rate": 9.5
+          },
+          {
+            "up_to": 20200,
+            "rate": 12.0
+          },
+          {
+            "up_to": 35200,
+            "rate": 15.0
+          },
+          {
+            "up_to": 60000,
+            "rate": 18.5
+          },
+          {
+            "up_to": 300000,
+            "rate": 22.5
+          },
+          {
+            "above": 300000,
+            "rate": 24.5
+          }
         ],
         "regional_average_top": 22.5,
         "notes": "IRPF: state scale + autonomous community scale; combined top 47% (state+region); Catalonia ~50%; autonomías set own rates; capital gains 19-28%"
       }
     }
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Agencia Tributaria",
+        "url": "https://sede.agenciatributaria.gob.es/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
   }
 }

@@ -3,7 +3,13 @@
   "jurisdiction": "PT",
   "fiscal_year": 2025,
   "year": 2025,
-  "entity_types": ["company_lda", "company_sa", "individual", "sole_trader", "eni"],
+  "entity_types": [
+    "company_lda",
+    "company_sa",
+    "individual",
+    "sole_trader",
+    "eni"
+  ],
   "zero_cit": false,
   "parameters": {
     "corporate_income_tax": {
@@ -11,8 +17,18 @@
       "label": "IRC — Imposto sobre o Rendimento das Pessoas Coletivas 2025",
       "bracket_type": "marginal_rate",
       "brackets": [
-        {"threshold": 0, "rate": 0.17, "bracket_type": "marginal_rate", "note": "PME — taxa reduzida sobre primeiros €25.000"},
-        {"threshold": 25000, "rate": 0.21, "bracket_type": "marginal_rate", "note": "Taxa geral IRC"}
+        {
+          "threshold": 0,
+          "rate": 0.17,
+          "bracket_type": "marginal_rate",
+          "note": "PME — taxa reduzida sobre primeiros €25.000"
+        },
+        {
+          "threshold": 25000,
+          "rate": 0.21,
+          "bracket_type": "marginal_rate",
+          "note": "Taxa geral IRC"
+        }
       ],
       "flat_rate": null,
       "currency": "EUR",
@@ -23,15 +39,51 @@
       "label": "IRS — Imposto sobre o Rendimento das Pessoas Singulares 2025",
       "bracket_type": "marginal_rate",
       "brackets": [
-        {"threshold": 0,     "rate": 0.1325, "bracket_type": "marginal_rate"},
-        {"threshold": 7703,  "rate": 0.18,   "bracket_type": "marginal_rate"},
-        {"threshold": 11623, "rate": 0.23,   "bracket_type": "marginal_rate"},
-        {"threshold": 16472, "rate": 0.26,   "bracket_type": "marginal_rate"},
-        {"threshold": 21321, "rate": 0.3275, "bracket_type": "marginal_rate"},
-        {"threshold": 27146, "rate": 0.37,   "bracket_type": "marginal_rate"},
-        {"threshold": 39791, "rate": 0.435,  "bracket_type": "marginal_rate"},
-        {"threshold": 51997, "rate": 0.45,   "bracket_type": "marginal_rate"},
-        {"threshold": 81199, "rate": 0.48,   "bracket_type": "marginal_rate"}
+        {
+          "threshold": 0,
+          "rate": 0.1325,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 7703,
+          "rate": 0.18,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 11623,
+          "rate": 0.23,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 16472,
+          "rate": 0.26,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 21321,
+          "rate": 0.3275,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 27146,
+          "rate": 0.37,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 39791,
+          "rate": 0.435,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 51997,
+          "rate": 0.45,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 81199,
+          "rate": 0.48,
+          "bracket_type": "marginal_rate"
+        }
       ],
       "flat_rate": null,
       "currency": "EUR",
@@ -97,5 +149,31 @@
     "https://www.seg-social.pt/taxa-social-unica",
     "https://diariodarepublica.pt/",
     "https://www.pwc.pt/pt/fiscalidade/publicacoes/tax-guide-portugal.html"
-  ]
+  ],
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Autoridade Tributaria e Aduaneira",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/Pages/homepage.aspx"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
+  }
 }
