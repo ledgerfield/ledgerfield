@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Data market · LedgerField</title>
+<meta name="description" content="LedgerField Data Market guide: privacy-preserving consent, k-anonymity threshold, CID-addressed packages, earnings split.">
+<link rel="stylesheet" href="/ledgerfield/style.css">
+</head>
+<body>
+<header class="site"><div class="bar">
+  <a href="/ledgerfield/" class="brand">LedgerField<span>offline P2P accounting</span></a>
+  <nav><a href="/ledgerfield/">Home</a><a href="/ledgerfield/guides/" class="active">Guides</a><a href="/ledgerfield/wiki/">Wiki</a><a href="/ledgerfield/app.html" class="cta">Open app</a></nav>
+</div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/ledgerfield/">Home</a> / <a href="/ledgerfield/guides/">Guides</a> / Data market</div>
+<h1>Data market</h1>
+<section>
+  <p>The LedgerField data market lets your accounting data generate revenue without exposing it. You contribute to pooled statistics; buyers receive only anonymised summaries. <strong>Raw books never leave your device — ever.</strong></p>
+  <div class="ok-box">
+    <strong>Privacy guarantee:</strong> only two artefact types ever traverse the knitweb network — public tax rulesets and anonymised statistical aggregates. Individual entries, entity details, payroll records, and vault keys remain offline at all times.
+  </div>
+</section>
+
+<section>
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li>Grant <a href="/ledgerfield/wiki/privacy-datamarket.html#consent">consent</a> per <a href="/ledgerfield/wiki/privacy-datamarket.html#data-category">data category</a> and jurisdiction.</li>
+    <li>Contribute: LedgerField reads the relevant figures from your local ledger and holds them locally.</li>
+    <li>Wait for the <a href="/ledgerfield/wiki/privacy-datamarket.html#k-anonymity">k-anonymity</a> threshold — at least 5 distinct nodes must contribute before any aggregate is publishable.</li>
+    <li>Publish: a <a href="/ledgerfield/wiki/privacy-datamarket.html#data-package">data package</a> is generated, addressed by its <a href="/ledgerfield/wiki/knitweb-p2p.html#cid">CID</a>, and listed in the market.</li>
+    <li>Earn: buyers browse and purchase packages; proceeds are split automatically between the platform and contributors.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Step 1 — Grant consent</h2>
+  <p>Open the <strong>Datamarkt</strong> tab (tab 8). You will see a grid of the 7 data categories across every jurisdiction you have configured. Toggle each cell independently — for example, share payroll data for NL but withhold it for DE.</p>
+
+  <div class="feature-grid">
+    <div class="feature">
+      <div class="ic">7</div>
+      <h3>Data categories</h3>
+      <p>The app lists all 7 categories in the consent grid. Each is labelled in the UI. You choose which ones to enable, per jurisdiction, before any data leaves the device.</p>
+    </div>
+    <div class="feature">
+      <div class="ic">🌍</div>
+      <h3>Per-jurisdiction control</h3>
+      <p>Consent is scoped to the combination of category + ISO jurisdiction code. Withdrawing consent removes your node from future aggregations for that cell immediately.</p>
+    </div>
+  </div>
+
+  <div class="note">Consent can be updated or revoked at any time. Changes take effect on the next aggregation cycle — they do not retroactively alter already-published packages.</div>
+</section>
+
+<section>
+  <h2>Step 2 — Contribute values</h2>
+  <p>After granting consent, LedgerField reads the relevant figures from your local ledger for each enabled category and jurisdiction. The values are prepared locally — nothing is transmitted at this stage. Your node registers participation with the public relay at 5mart.ml using only its anonymous node ID (a SHA-256 hash containing no personal information).</p>
+  <div class="note">You can inspect which figures will be contributed from the Datamarkt tab before any publish action is taken.</div>
+</section>
+
+<section>
+  <h2>Step 3 — The k ≥ 5 threshold</h2>
+
+  <div class="warn-box">
+    <strong>Publication is refused below k = 5.</strong> An <a href="/ledgerfield/wiki/privacy-datamarket.html#aggregate">aggregate</a> can only be published when at least 5 distinct nodes have contributed to that category + jurisdiction combination. If fewer than 5 peers have enrolled, the <em>Publish</em> button is disabled and no market listing is created. This hard threshold prevents statistical re-identification of any individual contributor.
+  </div>
+
+  <p>The node count is verified at publish time against the relay's contributor log. Each node is identified solely by its anonymous node ID — no IP address, company name, or personal data is recorded.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Participating nodes</th>
+        <th>Can publish?</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1 – 4</td>
+        <td>No</td>
+        <td>Below k-anonymity threshold; publish button disabled</td>
+      </tr>
+      <tr>
+        <td>5 or more</td>
+        <td>Yes</td>
+        <td>Threshold met; aggregate is publishable</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Step 4 — Publish a data package</h2>
+  <p>Once the threshold is met, click <strong>Publish</strong> in the Datamarkt tab. LedgerField performs four steps automatically:</p>
+  <ol class="steps">
+    <li>Computes the statistical aggregate from all contributing nodes for the selected category + jurisdiction.</li>
+    <li>Serialises the result as a structured JSON data package (category, jurisdiction, statistics, node count, timestamp).</li>
+    <li>Computes the CID of the package — a content-addressed fingerprint that is unique to the exact bytes published. Any tampering changes the CID.</li>
+    <li>Broadcasts the package to the market via the 5mart.ml relay. The CID becomes the package's permanent, verifiable address.</li>
+  </ol>
+  <div class="note">The CID is displayed after publishing. Share it with buyers who want to verify the package independently by recomputing it from the downloaded file.</div>
+</section>
+
+<section>
+  <h2>Step 5 — Browse and buy</h2>
+  <p>The market browser lists all published data packages with their category, jurisdiction, contributing node count, price, and CID. Click a package to preview its metadata and summary statistics, then purchase to download the full aggregate.</p>
+  <p>Buyers can verify authenticity by recomputing the CID from the downloaded JSON and comparing it to the listed value — any mismatch indicates tampering.</p>
+  <div class="note">Purchases are settled on-device. The app records your acquisition history and lets you re-download previously purchased packages by CID.</div>
+</section>
+
+<section>
+  <h2>Earnings and the leaderboard</h2>
+
+  <div class="grid2">
+    <div class="card">
+      <h3><a href="/ledgerfield/wiki/privacy-datamarket.html#platform-fee">Platform fee — 10%</a></h3>
+      <p>Ten percent of each sale is retained by the platform to fund relay infrastructure and market operation. This fee is fixed and applied automatically at settlement.</p>
+    </div>
+    <div class="card">
+      <h3><a href="/ledgerfield/wiki/privacy-datamarket.html#revenue-distribution">Contributor share — 90%</a></h3>
+      <p>The remaining ninety percent is distributed to all nodes that contributed to that package. Distribution is equal by default; an optional weighted mode allocates proportionally to contribution size or data quality score.</p>
+    </div>
+  </div>
+
+  <h3>Leaderboard</h3>
+  <p>The Datamarkt tab shows a live leaderboard of top-earning nodes, ranked by cumulative earnings across categories. Nodes appear by their anonymous node ID only — no company name or personal data is exposed. Use the leaderboard to track your own ranking and identify which categories attract the most buyer demand.</p>
+</section>
+
+<section>
+  <h2>What leaves your device — summary</h2>
+  <div class="ok-box">
+    <strong>Only these two artefact types ever traverse the network:</strong>
+    <ul>
+      <li>Public tax rulesets (not personal; any node can publish or import them)</li>
+      <li>Anonymised statistical aggregates — and only once k ≥ 5 distinct nodes have contributed</li>
+    </ul>
+    Journal entries, entity details, payroll records, vault keys, and any other raw data <strong>never leave your device</strong>.
+  </div>
+
+  <p>
+    <a class="cta" href="/ledgerfield/app.html">Open LedgerField</a>
+    <a class="cta secondary" href="/ledgerfield/guides/p2p-sync.html">P2P sync guide</a>
+  </p>
+</section>
+<hr><p><a href="/ledgerfield/guides/">← All guides</a></p>
+</main>
+<footer class="site"><div class="inner">
+  <div class="relay">
+    <h4>LedgerField</h4>
+    Offline-first, privacy-first accounting for 100+ jurisdictions.<br>
+    Served peer-to-peer over the knitweb relay <code>5mart.ml</code>. No server, no cloud, no telemetry.
+  </div>
+  <div class="cols">
+    <div><h4>Docs</h4>
+      <a href="/ledgerfield/guides/">Guides</a><br>
+      <a href="/ledgerfield/wiki/">Wiki</a><br>
+      <a href="/ledgerfield/app.html">Open the app</a></div>
+    <div><h4>Project</h4>
+      <a href="https://github.com/ledgerfield/ledgerfield">GitHub</a><br>
+      <a href="/ledgerfield/wiki/knitweb-p2p.html">Knitweb &amp; P2P</a><br>
+      <a href="/ledgerfield/wiki/privacy-datamarket.html">Privacy model</a></div>
+  </div>
+</div></footer>
+</body>
+</html>

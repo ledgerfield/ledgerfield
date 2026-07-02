@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Getting started · LedgerField</title>
+<meta name="description" content="LedgerField getting-started guide: open the offline app, set a vault password, add your first entity, pick a chart of accounts, and start posting entries.">
+<link rel="stylesheet" href="/ledgerfield/style.css">
+</head>
+<body>
+<header class="site"><div class="bar">
+  <a href="/ledgerfield/" class="brand">LedgerField<span>offline P2P accounting</span></a>
+  <nav><a href="/ledgerfield/">Home</a><a href="/ledgerfield/guides/" class="active">Guides</a><a href="/ledgerfield/wiki/">Wiki</a><a href="/ledgerfield/app.html" class="cta">Open app</a></nav>
+</div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/ledgerfield/">Home</a> / <a href="/ledgerfield/guides/">Guides</a> / Getting started</div>
+<h1>Getting started</h1>
+<section>
+<p>LedgerField runs entirely in your browser — no install, no account, no server. Follow these five steps and you will have a working ledger in under two minutes.</p>
+
+<ol class="steps">
+  <li>
+    <strong>Open the app.</strong>
+    Navigate to <a href="/ledgerfield/app.html">ledgerfield/app.html</a>.
+    The page is a single self-contained HTML file. Once loaded it works fully offline; you can even save it to disk and open it from there.
+  </li>
+  <li>
+    <strong>Set a <a href="/ledgerfield/wiki/privacy-datamarket.html#vault">vault</a> password.</strong>
+    On first launch the Vault tab (tab 6) opens automatically.
+    Choose a password of at least 8 characters. All data is encrypted with PBKDF2-HMAC-SHA256 before being written to local storage.
+    You can export an encrypted backup at any time from the same tab.
+  </li>
+  <li>
+    <strong>Add your first <a href="/ledgerfield/wiki/accounting.html#entity">entity</a>.</strong>
+    Go to tab 1 — Entity — and fill in:
+    <table>
+      <thead>
+        <tr><th>Field</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Name</td><td>Legal name of the company or person</td></tr>
+        <tr><td>Type</td><td>BV, Holding, ZZP, VOF, Ltd, LLC, Corp, GmbH, or SARL</td></tr>
+        <tr><td>ISO jurisdiction</td><td>Two-letter country code, e.g. <code>NL</code>, <code>GB</code>, <code>US</code></td></tr>
+        <tr><td>Registration number</td><td>KvK, EIN, UTR — whichever applies</td></tr>
+        <tr><td>VAT number</td><td>Optional; required for BTW filing</td></tr>
+        <tr><td>Financial-year start</td><td>Day and month, e.g. <code>01-01</code></td></tr>
+        <tr><td>Parent entity</td><td>Optional; use for holding structures</td></tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <strong>Pick a <a href="/ledgerfield/wiki/accounting.html#chart-of-accounts">chart of accounts</a>.</strong>
+    Still on tab 1, select the standard that matches your jurisdiction:
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="ic">🇳🇱</div>
+        <h3>NL RGS</h3>
+        <p>Dutch Referentie Grootboekschema — default for BV and ZZP entities with jurisdiction <code>NL</code>.</p>
+      </div>
+      <div class="feature">
+        <div class="ic">🇬🇧</div>
+        <h3>UK FRS 102</h3>
+        <p>UK Financial Reporting Standard for small and micro entities.</p>
+      </div>
+      <div class="feature">
+        <div class="ic">🇺🇸</div>
+        <h3>US GAAP</h3>
+        <p>Standard chart for US-based LLC, Corp, or other entity types.</p>
+      </div>
+    </div>
+  </li>
+  <li>
+    <strong>Post your first entries.</strong>
+    Switch to tab 2 — Ledger — and start adding <a href="/ledgerfield/wiki/accounting.html#journal-entry">journal entries</a>: pick debit and credit accounts, enter the amount and category.
+    You can also import a CSV file (format: <code>date;description;amount;category</code>).
+    See the <a href="/ledgerfield/guides/bookkeeping.html">bookkeeping guide</a> for a full walkthrough of the Ledger tab, Trial Balance, and Profit &amp; Loss report.
+  </li>
+</ol>
+
+<div class="note">
+  Everything stays on your device. Raw books, entity details, and vault keys never leave the browser.
+  Only public artefacts — anonymised aggregates and tax rulesets — can be shared over the network, and only when you explicitly choose to do so via the P2P or Data market tabs.
+  See the <a href="/ledgerfield/wiki/privacy-datamarket.html#offline-first">offline-first</a> privacy model for details.
+</div>
+
+<div class="grid2">
+  <div class="card">
+    <h3>Next step</h3>
+    <p>Ready to reconcile accounts and generate a Profit &amp; Loss statement?</p>
+    <a class="cta" href="/ledgerfield/guides/bookkeeping.html">Bookkeeping guide</a>
+  </div>
+  <div class="card">
+    <h3>All guides</h3>
+    <p>Taxes, payroll, filing, data market, and P2P sync — each covered in its own guide.</p>
+    <a class="cta secondary" href="/ledgerfield/guides/">Guides hub</a>
+  </div>
+</div>
+</section>
+<hr><p><a href="/ledgerfield/guides/">← All guides</a></p>
+</main>
+<footer class="site"><div class="inner">
+  <div class="relay">
+    <h4>LedgerField</h4>
+    Offline-first, privacy-first accounting for 100+ jurisdictions.<br>
+    Served peer-to-peer over the knitweb relay <code>5mart.ml</code>. No server, no cloud, no telemetry.
+  </div>
+  <div class="cols">
+    <div><h4>Docs</h4>
+      <a href="/ledgerfield/guides/">Guides</a><br>
+      <a href="/ledgerfield/wiki/">Wiki</a><br>
+      <a href="/ledgerfield/app.html">Open the app</a></div>
+    <div><h4>Project</h4>
+      <a href="https://github.com/ledgerfield/ledgerfield">GitHub</a><br>
+      <a href="/ledgerfield/wiki/knitweb-p2p.html">Knitweb &amp; P2P</a><br>
+      <a href="/ledgerfield/wiki/privacy-datamarket.html">Privacy model</a></div>
+  </div>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Payroll & filing · LedgerField</title>
+<meta name="description" content="LedgerField guide: add workers, generate gross-to-net payslips, and export VPB/IB/BTW filings as JSON or SAF-T XML — all offline.">
+<link rel="stylesheet" href="/ledgerfield/style.css">
+</head>
+<body>
+<header class="site"><div class="bar">
+  <a href="/ledgerfield/" class="brand">LedgerField<span>offline P2P accounting</span></a>
+  <nav><a href="/ledgerfield/">Home</a><a href="/ledgerfield/guides/" class="active">Guides</a><a href="/ledgerfield/wiki/">Wiki</a><a href="/ledgerfield/app.html" class="cta">Open app</a></nav>
+</div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/ledgerfield/">Home</a> / <a href="/ledgerfield/guides/">Guides</a> / Payroll & filing</div>
+<h1>Payroll & filing</h1>
+<section>
+  <div class="hero">
+    <p class="tagline">Calculate gross-to-net payslips with full employer costs, then generate and export your VPB, IB, and BTW returns — entirely offline.</p>
+    <div class="badges">
+      <span class="tag">Tab 4 — Payroll</span>
+      <span class="tag">Tab 5 — Filing</span>
+      <span class="tag acc">NL 2025</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>1. Payroll — Add a Worker and Generate a Payslip</h2>
+  <p>The <a href="/ledgerfield/wiki/taxation.html#payroll">Payroll</a> tab (tab 4) takes a worker's inputs and produces a full gross-to-net payslip plus a breakdown of total employer cost.</p>
+
+  <h3>Add a Worker</h3>
+  <ol class="steps">
+    <li>Open <strong>Tab 4 — Payroll</strong> and click <strong>Add Worker</strong>.</li>
+    <li>Enter the worker's name and monthly gross salary.</li>
+    <li>Set commute distance (km per day) and WFH days per week.</li>
+    <li>Enter the employee pension contribution as a percentage.</li>
+    <li>Click <strong>Calculate</strong> — the payslip generates instantly in your browser.</li>
+  </ol>
+
+  <h3>Payslip Breakdown (Gross to Net)</h3>
+  <table>
+    <thead>
+      <tr><th>Item</th><th>Direction</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Gross salary</td><td>Base</td><td>Monthly gross as entered</td></tr>
+      <tr><td>Holiday pay (vakantiegeld)</td><td>+</td><td>8% accrued on gross salary</td></tr>
+      <tr><td>Travel allowance (reiskostenvergoeding)</td><td>+</td><td>Calculated from commute km/day at the applicable NL fiscal rate</td></tr>
+      <tr><td>WFH allowance (thuiswerkvergoeding)</td><td>+</td><td>Calculated from WFH days/week at the applicable NL fiscal rate</td></tr>
+      <tr><td>Wage tax (loonheffing)</td><td>&minus;</td><td>Withheld at source, progressive rate</td></tr>
+      <tr><td>ZVW premium (employee share)</td><td>&minus;</td><td>Healthcare contribution withheld from gross</td></tr>
+      <tr><td>Pension (employee contribution)</td><td>&minus;</td><td>The percentage you entered</td></tr>
+      <tr><td><strong>Net pay</strong></td><td>=</td><td>Take-home amount</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Employer Cost Breakdown</h3>
+  <p>Below the payslip, LedgerField shows the total cost to the employer on top of gross salary:</p>
+  <table>
+    <thead>
+      <tr><th>Cost item</th><th>Rate</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Pension (employer contribution)</td><td>15%</td></tr>
+      <tr><td>WW — werkloosheidsverzekering</td><td>2.98%</td></tr>
+      <tr><td>WIA — arbeidsongeschiktheidsverzekering</td><td>0.77%</td></tr>
+      <tr><td>ZVW (employer share)</td><td>6.86%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note">All payroll data is stored only in your encrypted <a href="/ledgerfield/wiki/privacy-datamarket.html#vault">vault</a>. Nothing leaves your device unless you explicitly export or publish an anonymised aggregate.</div>
+</section>
+
+<section>
+  <h2>2. Filing — VPB, IB, BTW and Exports</h2>
+  <p>Tab 5 (Filing) pre-fills return forms from your ledger data. You can review figures, check deadlines, and export structured files for submission or audit — all without an internet connection.</p>
+
+  <h3>Available Returns</h3>
+  <div class="feature-grid">
+    <div class="feature">
+      <h3><a href="/ledgerfield/wiki/taxation.html#vpb">VPB</a> — Corporate Tax</h3>
+      <p>Vennootschapsbelasting. 19% up to &euro;200k profit, 25.8% above. Figures are pre-filled from your Profit &amp; Loss statement.</p>
+    </div>
+    <div class="feature">
+      <h3><a href="/ledgerfield/wiki/taxation.html#ib">IB</a> — Income Tax</h3>
+      <p>Inkomstenbelasting for DGA and ZZP. Box 1, Box 2, and Box 3 breakdown with applicable credits (AHK, AK).</p>
+    </div>
+    <div class="feature">
+      <h3><a href="/ledgerfield/wiki/taxation.html#btw">BTW</a> — VAT</h3>
+      <p>Omzetbelasting at 21% standard rate. Quarterly returns are pre-filled automatically from your journal entries.</p>
+    </div>
+  </div>
+
+  <h3>Deadlines</h3>
+  <table>
+    <thead>
+      <tr><th>Return</th><th>Period</th><th>Typical deadline</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>BTW</td><td>Quarterly</td><td>Last day of the month following the quarter end</td></tr>
+      <tr><td>VPB</td><td>Financial year</td><td>5 months after financial year end</td></tr>
+      <tr><td>IB</td><td>Calendar year</td><td>1 May of the following year</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Export a Return</h3>
+  <ol class="steps">
+    <li>Open <strong>Tab 5 — Filing</strong> and select the return type: VPB, IB, or BTW.</li>
+    <li>Review the pre-filled figures — drawn directly from your ledger.</li>
+    <li>Check the deadlines panel and confirm the filing period.</li>
+    <li>Click <strong>Export JSON</strong> for a portable, machine-readable archive.</li>
+    <li>Click <strong>Export SAF-T XML</strong> to produce a <a href="/ledgerfield/wiki/accounting.html#saft">SAF-T</a>-compliant audit file for tax authority submission.</li>
+  </ol>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>JSON export</h3>
+      <p>Human-readable and portable. Hand it to your accountant, keep it as an archive, or re-import it into LedgerField on another device.</p>
+    </div>
+    <div class="card">
+      <h3>SAF-T XML export</h3>
+      <p>Standardised audit file format. Accepted by the Belastingdienst and most EU tax authorities for audit trail and e-filing purposes.</p>
+    </div>
+  </div>
+
+  <div class="ok-box">Both exports are generated locally in your browser. Your raw financial data never reaches a server at any point.</div>
+
+  <a class="cta" href="/ledgerfield/app.html">Open LedgerField App</a>
+  <a class="cta secondary" href="/ledgerfield/guides/">All Guides</a>
+</section>
+<hr><p><a href="/ledgerfield/guides/">← All guides</a></p>
+</main>
+<footer class="site"><div class="inner">
+  <div class="relay">
+    <h4>LedgerField</h4>
+    Offline-first, privacy-first accounting for 100+ jurisdictions.<br>
+    Served peer-to-peer over the knitweb relay <code>5mart.ml</code>. No server, no cloud, no telemetry.
+  </div>
+  <div class="cols">
+    <div><h4>Docs</h4>
+      <a href="/ledgerfield/guides/">Guides</a><br>
+      <a href="/ledgerfield/wiki/">Wiki</a><br>
+      <a href="/ledgerfield/app.html">Open the app</a></div>
+    <div><h4>Project</h4>
+      <a href="https://github.com/ledgerfield/ledgerfield">GitHub</a><br>
+      <a href="/ledgerfield/wiki/knitweb-p2p.html">Knitweb &amp; P2P</a><br>
+      <a href="/ledgerfield/wiki/privacy-datamarket.html">Privacy model</a></div>
+  </div>
+</div></footer>
+</body>
+</html>
