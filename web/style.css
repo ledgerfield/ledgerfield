@@ -1,0 +1,113 @@
+/* LedgerField — promotional site + docs + wiki
+   Served at https://www.5mart.ml/ledgerfield/ over the knitweb relay.
+   Shared stylesheet: every page uses these classes; no page ships its own CSS. */
+
+:root{
+  --bg:#0d1117; --panel:#161b22; --panel2:#1c232d; --acc:#6c63ff; --acc2:#8b84ff;
+  --txt:#e6edf3; --muted:#8b949e; --bdr:#30363d; --ok:#3fb950; --warn:#f0883e; --link:#79c0ff;
+  --maxw:960px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88em;background:var(--panel2);padding:1px 5px;border-radius:4px;color:var(--acc2)}
+pre{background:var(--panel);border:1px solid var(--bdr);border-radius:8px;padding:12px 14px;overflow:auto;margin:12px 0;font-size:.85em}
+pre code{background:none;padding:0;color:var(--txt)}
+hr{border:none;border-top:1px solid var(--bdr);margin:22px 0}
+
+/* ── header / nav ─────────────────────────────────────────── */
+header.site{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--bdr)}
+header.site .bar{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:18px;padding:12px 18px}
+header.site .brand{font-weight:800;color:var(--acc);font-size:1.15em;white-space:nowrap}
+header.site .brand span{color:var(--muted);font-weight:400;font-size:.72em;margin-left:6px}
+header.site nav{display:flex;gap:16px;flex-wrap:wrap;margin-left:auto;font-size:.92em}
+header.site nav a{color:var(--muted)}
+header.site nav a:hover,header.site nav a.active{color:var(--txt);text-decoration:none}
+header.site nav a.cta{background:var(--acc);color:#fff;padding:4px 12px;border-radius:6px}
+header.site nav a.cta:hover{background:var(--acc2)}
+
+/* ── layout ───────────────────────────────────────────────── */
+main.wrap{max-width:var(--maxw);margin:0 auto;padding:26px 18px 60px}
+.crumbs{font-size:.82em;color:var(--muted);margin-bottom:18px}
+.crumbs a{color:var(--muted)}
+section{margin:30px 0}
+h1{font-size:2em;line-height:1.2;margin-bottom:12px}
+h2{font-size:1.4em;margin:26px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--bdr)}
+h3{font-size:1.1em;margin:18px 0 8px;color:var(--acc2)}
+p{margin:10px 0}
+ul,ol{margin:10px 0 10px 22px}
+li{margin:5px 0}
+
+/* ── hero ─────────────────────────────────────────────────── */
+.hero{text-align:center;padding:48px 10px 30px;background:radial-gradient(ellipse at top,rgba(108,99,255,.16),transparent 62%)}
+.hero h1{font-size:2.7em}
+.hero .tagline{font-size:1.2em;color:var(--muted);max-width:640px;margin:12px auto 0}
+.hero .badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+
+/* ── buttons ──────────────────────────────────────────────── */
+.cta,.btn{display:inline-block;background:var(--acc);color:#fff;padding:10px 20px;border-radius:8px;font-weight:600;margin:6px;border:1px solid var(--acc)}
+.cta:hover,.btn:hover{background:var(--acc2);text-decoration:none}
+.cta.secondary,.btn.secondary{background:transparent;color:var(--txt);border-color:var(--bdr)}
+.cta.secondary:hover{border-color:var(--acc);color:var(--acc2);background:transparent}
+
+/* ── feature / card grids ─────────────────────────────────── */
+.feature-grid,.grid2{display:grid;gap:14px;margin:18px 0}
+.feature-grid{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.grid2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.feature,.card{background:var(--panel);border:1px solid var(--bdr);border-radius:10px;padding:16px}
+.feature h3{margin-top:0}
+.feature .ic{font-size:1.6em}
+
+/* ── callouts ─────────────────────────────────────────────── */
+.note,.warn-box,.ok-box{border-radius:8px;padding:12px 14px;margin:14px 0;font-size:.94em;border:1px solid var(--bdr);background:var(--panel)}
+.note{border-left:3px solid var(--acc)}
+.warn-box{border-left:3px solid var(--warn)}
+.ok-box{border-left:3px solid var(--ok)}
+
+/* ── steps ────────────────────────────────────────────────── */
+ol.steps{list-style:none;margin-left:0;counter-reset:s}
+ol.steps>li{counter-increment:s;position:relative;padding:10px 0 10px 44px;border-bottom:1px solid var(--bdr)}
+ol.steps>li::before{content:counter(s);position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;background:var(--acc);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85em}
+ol.steps>li:last-child{border-bottom:none}
+
+/* ── tags / pills ─────────────────────────────────────────── */
+.tag,.pill,.badge{display:inline-block;padding:2px 9px;border-radius:20px;font-size:.75em;background:var(--panel2);color:var(--muted);border:1px solid var(--bdr)}
+.tag.acc{color:var(--acc2);border-color:var(--acc)}
+
+/* ── tables ───────────────────────────────────────────────── */
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.9em}
+th{background:var(--panel);text-align:left;padding:8px 10px;color:var(--muted);border-bottom:1px solid var(--bdr)}
+td{padding:8px 10px;border-bottom:1px solid var(--bdr)}
+tr:hover td{background:var(--panel)}
+
+/* ── wiki ─────────────────────────────────────────────────── */
+.wiki-toc{columns:2;gap:24px;list-style:none;margin-left:0}
+.wiki-toc li{margin:3px 0;break-inside:avoid}
+.wiki-def{background:var(--panel);border:1px solid var(--bdr);border-radius:10px;padding:16px 18px;margin:16px 0;scroll-margin-top:70px}
+.wiki-def h3{margin-top:0;display:flex;align-items:baseline;gap:8px}
+.wiki-def h3 .anchor{font-size:.7em;color:var(--muted);opacity:0;transition:.15s}
+.wiki-def:hover h3 .anchor{opacity:1}
+.wiki-def .rel,.wiki-def .kw{font-size:.82em;color:var(--muted);margin-top:8px}
+.wiki-def .kw{color:var(--acc2)}
+.wiki-def .rel b,.wiki-def .kw b{color:var(--muted);font-weight:600}
+
+/* alphabet index for glossary */
+.alpha{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}
+.alpha a{background:var(--panel);border:1px solid var(--bdr);border-radius:6px;padding:3px 9px;color:var(--muted)}
+
+/* ── footer ───────────────────────────────────────────────── */
+footer.site{border-top:1px solid var(--bdr);background:var(--panel);margin-top:40px}
+footer.site .inner{max-width:var(--maxw);margin:0 auto;padding:26px 18px;display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between;font-size:.86em;color:var(--muted)}
+footer.site a{color:var(--muted)}
+footer.site .cols{display:flex;gap:40px;flex-wrap:wrap}
+footer.site h4{color:var(--txt);font-size:.9em;margin-bottom:6px}
+footer.site .relay{max-width:320px}
+footer.site .relay code{font-size:.85em}
+
+@media (max-width:640px){
+  .wiki-toc{columns:1}
+  .hero h1{font-size:2.1em}
+  header.site nav{gap:11px;font-size:.85em}
+}

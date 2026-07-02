@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bookkeeping · LedgerField</title>
+<meta name="description" content="LedgerField bookkeeping guide: post journal entries, import CSV, run Trial Balance and Profit & Loss — all offline in your browser.">
+<link rel="stylesheet" href="/ledgerfield/style.css">
+</head>
+<body>
+<header class="site"><div class="bar">
+  <a href="/ledgerfield/" class="brand">LedgerField<span>offline P2P accounting</span></a>
+  <nav><a href="/ledgerfield/">Home</a><a href="/ledgerfield/guides/" class="active">Guides</a><a href="/ledgerfield/wiki/">Wiki</a><a href="/ledgerfield/app.html" class="cta">Open app</a></nav>
+</div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/ledgerfield/">Home</a> / <a href="/ledgerfield/guides/">Guides</a> / Bookkeeping</div>
+<h1>Bookkeeping</h1>
+<section>
+  <p>The <strong>Ledger tab</strong> is where all double-entry bookkeeping happens. Every transaction is a <a href="/ledgerfield/wiki/accounting.html#journal-entry">journal entry</a> against your <a href="/ledgerfield/wiki/accounting.html#chart-of-accounts">chart of accounts</a>. Nothing leaves your device — the vault stays offline.</p>
+</section>
+
+<section>
+  <h2>1. Post a journal entry</h2>
+  <ol class="steps">
+    <li>Open the app and go to tab <strong>2 Ledger</strong>. <a href="/ledgerfield/app.html">Open LedgerField</a></li>
+    <li>Click <strong>New entry</strong>. Fill in the date and an optional description.</li>
+    <li>Add at least two lines — one debit, one credit — so that totals balance:
+      <table>
+        <thead>
+          <tr><th>Field</th><th>What to enter</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>Account</code></td><td>Pick from your chart of accounts (NL RGS / UK FRS102 / US GAAP).</td></tr>
+          <tr><td><code>Side</code></td><td>Debit or Credit.</td></tr>
+          <tr><td><code>Amount</code></td><td>Positive number in your entity's currency.</td></tr>
+          <tr><td><code>Category</code></td><td>Optional tag for filtering (e.g. <code>sales</code>, <code>travel</code>).</td></tr>
+        </tbody>
+      </table>
+    </li>
+    <li>Click <strong>Save</strong>. The entry appears in the ledger list immediately.</li>
+  </ol>
+  <div class="note">Debits and credits must balance before you can save. The app shows the running difference in real time.</div>
+</section>
+
+<section>
+  <h2>2. Import transactions from CSV</h2>
+  <p>Bank exports and spreadsheets can be imported directly. Use a semicolon-delimited file with this exact column order:</p>
+  <pre><code>date;description;amount;category
+2025-01-15;Office supplies;-84.70;expenses
+2025-01-17;Invoice #1042 — client payment;3500.00;sales
+2025-01-31;Monthly SaaS subscription;-49.00;software</code></pre>
+  <ol class="steps">
+    <li>In the Ledger tab, click <strong>Import CSV</strong>.</li>
+    <li>Select your file. The app previews the parsed rows before committing.</li>
+    <li>Choose which account each row maps to for the debit and credit sides, then click <strong>Confirm import</strong>.</li>
+  </ol>
+  <div class="note">Amounts are signed: negative = money out (credit the bank), positive = money in (debit the bank). The importer enforces this convention automatically.</div>
+</section>
+
+<section>
+  <h2>3. Run the Trial Balance</h2>
+  <p>The <a href="/ledgerfield/wiki/accounting.html#trial-balance">trial balance</a> checks that total debits equal total credits across all accounts for any date range.</p>
+  <ol class="steps">
+    <li>In the Ledger tab, click <strong>Trial Balance</strong>.</li>
+    <li>Set the <em>From</em> and <em>To</em> dates (defaults to your financial year).</li>
+    <li>The table lists every account with its debit total, credit total, and net balance. The footer row shows the grand totals — they must match.</li>
+  </ol>
+  <div class="ok-box">A zero difference in the footer means your books are in balance. If it is non-zero, the imbalance row is highlighted so you can find the offending entry quickly.</div>
+</section>
+
+<section>
+  <h2>4. Run the Profit &amp; Loss</h2>
+  <p>The <a href="/ledgerfield/wiki/accounting.html#profit-loss">Profit &amp; Loss</a> report groups income and expense accounts to show your net result for the period.</p>
+  <ol class="steps">
+    <li>Click <strong>Profit &amp; Loss</strong> in the Ledger tab.</li>
+    <li>Choose the period. The report segments into <em>Revenue</em>, <em>Cost of Sales</em>, <em>Gross Profit</em>, <em>Operating Expenses</em>, and <em>Net Profit</em>.</li>
+    <li>Export to JSON or SAF-T XML from the <strong>Filing tab</strong> when you are ready to file.</li>
+  </ol>
+</section>
+
+<section>
+  <div class="feature-grid">
+    <div class="feature">
+      <div class="ic">📂</div>
+      <h3>Chart of accounts</h3>
+      <p>NL RGS, UK FRS102, and US GAAP are built in. The chart is editable: add sub-accounts under any standard code without breaking existing entries.</p>
+    </div>
+    <div class="feature">
+      <div class="ic">🔒</div>
+      <h3>Fully offline</h3>
+      <p>Every entry is encrypted in the browser vault. Raw books are never transmitted — only anonymised aggregates and public tax rulesets ever touch the network.</p>
+    </div>
+    <div class="feature">
+      <div class="ic">📤</div>
+      <h3>SAF-T XML export</h3>
+      <p>One click from the Filing tab produces a standards-compliant SAF-T XML that most tax authorities and auditors accept directly.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Next step: Taxes</h2>
+  <p>Once your books are in order, move on to the taxes guide to compute VPB, IB, BTW, and more — all pre-loaded with NL 2025 rates and CID-verified rulesets for 100+ other jurisdictions.</p>
+  <a class="cta" href="/ledgerfield/guides/taxes.html">Taxes guide</a>
+  <a class="cta secondary" href="/ledgerfield/guides/">All guides</a>
+</section>
+<hr><p><a href="/ledgerfield/guides/">← All guides</a></p>
+</main>
+<footer class="site"><div class="inner">
+  <div class="relay">
+    <h4>LedgerField</h4>
+    Offline-first, privacy-first accounting for 100+ jurisdictions.<br>
+    Served peer-to-peer over the knitweb relay <code>5mart.ml</code>. No server, no cloud, no telemetry.
+  </div>
+  <div class="cols">
+    <div><h4>Docs</h4>
+      <a href="/ledgerfield/guides/">Guides</a><br>
+      <a href="/ledgerfield/wiki/">Wiki</a><br>
+      <a href="/ledgerfield/app.html">Open the app</a></div>
+    <div><h4>Project</h4>
+      <a href="https://github.com/ledgerfield/ledgerfield">GitHub</a><br>
+      <a href="/ledgerfield/wiki/knitweb-p2p.html">Knitweb &amp; P2P</a><br>
+      <a href="/ledgerfield/wiki/privacy-datamarket.html">Privacy model</a></div>
+  </div>
+</div></footer>
+</body>
+</html>

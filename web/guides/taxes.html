@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Taxes · LedgerField</title>
+<meta name="description" content="LedgerField Taxes guide: NL calculators (VPB, IB, WBSO, DGA, BTW) with rates and multi-country CIT via CID-addressed rulesets.">
+<link rel="stylesheet" href="/ledgerfield/style.css">
+</head>
+<body>
+<header class="site"><div class="bar">
+  <a href="/ledgerfield/" class="brand">LedgerField<span>offline P2P accounting</span></a>
+  <nav><a href="/ledgerfield/">Home</a><a href="/ledgerfield/guides/" class="active">Guides</a><a href="/ledgerfield/wiki/">Wiki</a><a href="/ledgerfield/app.html" class="cta">Open app</a></nav>
+</div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/ledgerfield/">Home</a> / <a href="/ledgerfield/guides/">Guides</a> / Taxes</div>
+<h1>Taxes</h1>
+<section>
+  <div class="hero">
+    <p class="tagline">Step-by-step: run every NL tax calculator and extend to 100+ countries — all offline, no data leaves your device.</p>
+    <div class="badges">
+      <span class="tag">NL 2025</span>
+      <span class="tag acc">100+ jurisdictions</span>
+      <span class="tag">Offline</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Before you start</h2>
+  <p>Open the <strong>Taxes</strong> tab (tab 3) in the app. All calculators on this page read from your <a href="/ledgerfield/wiki/accounting.html#entity">entity</a> configuration and your ledger balances — make sure tab 1 (Entity) and tab 2 (Ledger) are complete first.</p>
+  <div class="note">Rates are loaded from <a href="/ledgerfield/wiki/taxation.html#ruleset">rulesets</a> that are distributed peer-to-peer. See the <a href="/ledgerfield/guides/p2p-sync.html">P2P sync guide</a> to pull the latest published rulesets from the network before calculating.</div>
+</section>
+
+<section>
+  <h2><a href="/ledgerfield/wiki/taxation.html#vpb">VPB</a> — Corporate Income Tax (Netherlands)</h2>
+  <p>Applies to BV, Holding, and equivalent entities with NL jurisdiction. The calculator takes your taxable profit from the ledger and applies the current two-bracket rate.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Taxable profit</th>
+        <th>Rate (2025)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Up to €200,000</td>
+        <td>19%</td>
+      </tr>
+      <tr>
+        <td>Above €200,000</td>
+        <td>25.8%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ol class="steps">
+    <li>On the Taxes tab, select <strong>VPB</strong>.</li>
+    <li>Confirm the fiscal year and the pre-tax profit pulled from your Trial Balance.</li>
+    <li>Apply any deductions (WBSO, investment allowances) — enter them in the deduction fields.</li>
+    <li>The calculator outputs taxable profit, split across brackets, and total VPB due.</li>
+    <li>Use <strong>Filing</strong> (tab 5) to export the VPB form as JSON or <a href="/ledgerfield/wiki/accounting.html#saft">SAF-T XML</a>.</li>
+  </ol>
+
+  <div class="ok-box">The <a href="/ledgerfield/wiki/taxation.html#effective-rate">effective rate</a> is shown separately so you can compare year-over-year without manually blending the brackets.</div>
+</section>
+
+<section>
+  <h2><a href="/ledgerfield/wiki/taxation.html#ib">IB</a> — Personal Income Tax (Netherlands)</h2>
+  <p>Relevant for DGA salary, dividend distributions (Box 2), and savings/investments (Box 3). Select the <strong>IB</strong> calculator and choose the box.</p>
+
+  <div class="feature-grid">
+    <div class="feature">
+      <div class="ic">1️⃣</div>
+      <h3>Box 1 — Labour &amp; home</h3>
+      <p>36.97% up to the first-bracket threshold; 49.5% above. General tax credit (AHK) and employment credit (AK) are applied automatically to reduce the net amount due.</p>
+    </div>
+    <div class="feature">
+      <div class="ic">2️⃣</div>
+      <h3>Box 2 — Substantial interest</h3>
+      <p>24.5% on the first €67,000 of dividend / capital gain per person; 31% above that threshold.</p>
+    </div>
+    <div class="feature">
+      <div class="ic">3️⃣</div>
+      <h3>Box 3 — Savings &amp; investments</h3>
+      <p>Forfait return of 6.04% applied to net assets above the tax-free threshold, then taxed at 36%. Enter total asset and debt values; the calculator derives the imputed return and final tax.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><a href="/ledgerfield/wiki/taxation.html#wbso">WBSO</a> — R&amp;D Tax Credit</h2>
+  <p>WBSO reduces wage costs for approved R&amp;D work. Enter your approved S&O hours and the applicable payroll base.</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Standard rate</h3>
+      <p><strong>32%</strong> credit on the first band of S&O wage costs (up to €350,000).</p>
+    </div>
+    <div class="card">
+      <h3>Starter rate</h3>
+      <p><strong>40%</strong> credit on the first band for companies recognised as starters by RVO.</p>
+    </div>
+    <div class="card">
+      <h3>Above €350k</h3>
+      <p><strong>16%</strong> credit on S&O wage costs exceeding the first-band threshold.</p>
+    </div>
+    <div class="card">
+      <h3>Output</h3>
+      <p>Total WBSO deduction, net employer cost after credit, and the figure to carry into the VPB deduction field.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2><a href="/ledgerfield/wiki/taxation.html#dga">DGA</a> — Customary Salary Check</h2>
+  <p>Dutch law requires a director-major-shareholder to draw a customary salary. The app compares the salary you have entered in the Payroll tab against the statutory benchmark.</p>
+
+  <ol class="steps">
+    <li>Go to the DGA check panel in the Taxes tab.</li>
+    <li>The app reads gross annual salary from your payroll worker record.</li>
+    <li>It compares your salary to the 2025 benchmark of <strong>€41,138</strong>.</li>
+    <li>If your salary falls below the benchmark (and no exemption applies), a <code>warn-box</code> alert is shown with the shortfall amount.</li>
+    <li>Correct the salary in tab 4 (Payroll) and recalculate.</li>
+  </ol>
+
+  <div class="warn-box">Setting a DGA salary below €41,138 without a documented exemption is a recognised audit trigger. Correct it before filing.</div>
+</section>
+
+<section>
+  <h2><a href="/ledgerfield/wiki/taxation.html#btw">BTW</a> — VAT (Netherlands)</h2>
+  <p>Standard rate is 21%, filed quarterly. The BTW calculator aggregates your ledger entries by VAT category for the period.</p>
+
+  <ol class="steps">
+    <li>Select the quarter and confirm the VAT number on file (Entity tab).</li>
+    <li>The app groups ledger entries tagged <code>BTW 21%</code> into output VAT (sales) and input VAT (purchases).</li>
+    <li>Net VAT due = output − input. The result is shown with a breakdown by category.</li>
+    <li>Export the BTW declaration via tab 5 (Filing) as JSON or print to PDF.</li>
+    <li>The deadline table in Filing lists the due date for each quarter.</li>
+  </ol>
+</section>
+
+<section>
+  <h2><a href="/ledgerfield/wiki/taxation.html#cit">CIT</a> — Multi-country Corporate Tax</h2>
+  <p>For entities outside the Netherlands (or holding structures spanning jurisdictions), LedgerField loads jurisdiction rulesets covering 100+ countries. Each ruleset is a <a href="/ledgerfield/wiki/knitweb-p2p.html#cid">CID</a>-addressed JSON file — the CID guarantees the rates have not been tampered with.</p>
+
+  <ol class="steps">
+    <li>Go to the <strong>P2P</strong> tab (tab 7) and sync rulesets from the 5mart.ml relay — see the <a href="/ledgerfield/guides/p2p-sync.html">P2P sync guide</a>.</li>
+    <li>Return to Taxes and choose <strong>CIT — Other jurisdiction</strong>.</li>
+    <li>Select the ISO jurisdiction. The matching <a href="/ledgerfield/wiki/taxation.html#ruleset">ruleset</a> is loaded and its CID is displayed for verification.</li>
+    <li>Enter taxable profit and any locally deductible items. The calculator applies the bracket or flat rate from the ruleset.</li>
+    <li>The <a href="/ledgerfield/wiki/taxation.html#effective-rate">effective rate</a> is shown alongside the nominal rate for at-a-glance comparison.</li>
+  </ol>
+
+  <div class="note">You can also import a ruleset manually: download the JSON from a peer, paste it into the P2P tab import field, and the app recomputes the CID to verify authenticity before loading it.</div>
+</section>
+
+<section>
+  <h2>Next steps</h2>
+  <div class="feature-grid">
+    <a class="feature" href="/ledgerfield/guides/bookkeeping.html">
+      <h3>Bookkeeping guide</h3>
+      <p>Set up your chart of accounts and enter journal entries before running any tax calculator.</p>
+    </a>
+    <a class="feature" href="/ledgerfield/guides/payroll-filing.html">
+      <h3>Payroll &amp; filing guide</h3>
+      <p>Generate payslips and export the BTW / VPB declaration files.</p>
+    </a>
+    <a class="feature" href="/ledgerfield/guides/p2p-sync.html">
+      <h3>P2P sync guide</h3>
+      <p>Pull the latest CID-addressed rulesets from peers so your rates are always current.</p>
+    </a>
+  </div>
+  <p><a class="cta" href="/ledgerfield/app.html">Open the app and run your first tax calculation</a> <a class="cta secondary" href="/ledgerfield/guides/">Back to guides</a></p>
+</section>
+<hr><p><a href="/ledgerfield/guides/">← All guides</a></p>
+</main>
+<footer class="site"><div class="inner">
+  <div class="relay">
+    <h4>LedgerField</h4>
+    Offline-first, privacy-first accounting for 100+ jurisdictions.<br>
+    Served peer-to-peer over the knitweb relay <code>5mart.ml</code>. No server, no cloud, no telemetry.
+  </div>
+  <div class="cols">
+    <div><h4>Docs</h4>
+      <a href="/ledgerfield/guides/">Guides</a><br>
+      <a href="/ledgerfield/wiki/">Wiki</a><br>
+      <a href="/ledgerfield/app.html">Open the app</a></div>
+    <div><h4>Project</h4>
+      <a href="https://github.com/ledgerfield/ledgerfield">GitHub</a><br>
+      <a href="/ledgerfield/wiki/knitweb-p2p.html">Knitweb &amp; P2P</a><br>
+      <a href="/ledgerfield/wiki/privacy-datamarket.html">Privacy model</a></div>
+  </div>
+</div></footer>
+</body>
+</html>

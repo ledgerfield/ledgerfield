@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Offline P2P accounting · LedgerField</title>
+<meta name="description" content="LedgerField landing page — offline, privacy-first P2P accounting for founders and accountants, 100+ jurisdictions, encrypted vault, knitweb P2P.">
+<link rel="stylesheet" href="/ledgerfield/style.css">
+</head>
+<body>
+<header class="site"><div class="bar">
+  <a href="/ledgerfield/" class="brand">LedgerField<span>offline P2P accounting</span></a>
+  <nav><a href="/ledgerfield/" class="active">Home</a><a href="/ledgerfield/guides/">Guides</a><a href="/ledgerfield/wiki/">Wiki</a><a href="/ledgerfield/app.html" class="cta">Open app</a></nav>
+</div></header>
+<main class="wrap">
+<section class="hero">
+  <h1>LedgerField</h1>
+  <p class="tagline">Private, offline-first accounting for founders and accountants — double-entry books, tax engine, payroll, and a privacy-respecting data market, all in a single HTML file.</p>
+  <div class="badges">
+    <span class="tag">Offline-first</span>
+    <span class="tag">100+ jurisdictions</span>
+    <span class="tag">No cloud &middot; no telemetry</span>
+    <span class="tag">Open source</span>
+    <span class="tag acc">End-to-end encrypted</span>
+  </div>
+  <a class="cta" href="/ledgerfield/app.html">Open the app</a>
+  <a class="cta secondary" href="/ledgerfield/guides/">Read the guides</a>
+</section>
+
+<section>
+  <h2>Why LedgerField</h2>
+  <div class="feature-grid">
+    <div class="feature">
+      <div class="ic">&#128274;</div>
+      <h3>Encrypted <a href="/ledgerfield/wiki/privacy-datamarket.html#vault">vault</a></h3>
+      <p>All your books are stored in an encrypted vault in the browser. Set a password, lock it when you step away, and export an encrypted backup — your raw data never leaves the device.</p>
+    </div>
+    <div class="feature">
+      <div class="ic">&#128218;</div>
+      <h3>Double-entry bookkeeping</h3>
+      <p>Journal entries against a full <a href="/ledgerfield/wiki/accounting.html#chart-of-accounts">chart of accounts</a> — NL RGS, UK FRS102, or US GAAP. Import via CSV, view a Trial Balance, and generate a Profit &amp; Loss report in seconds.</p>
+    </div>
+    <div class="feature">
+      <div class="ic">&#128200;</div>
+      <h3>NL tax engine + 100+ country <a href="/ledgerfield/wiki/taxation.html#cit">CIT</a></h3>
+      <p>Built-in 2025 rates for <a href="/ledgerfield/wiki/taxation.html#vpb">VPB</a>, IB (Box 1/2/3), WBSO, DGA customary-salary, and BTW. Corporate income tax rulesets for 100+ jurisdictions, fetched and verified by CID over the peer network.</p>
+    </div>
+    <div class="feature">
+      <div class="ic">&#128176;</div>
+      <h3><a href="/ledgerfield/wiki/taxation.html#payroll">Payroll</a> &amp; payslips</h3>
+      <p>Enter salary, commute km, WFH days, and pension contribution. The app computes gross pay, 8% holiday pay, travel and WFH allowances, wage tax, ZVW, and full employer costs — one click per worker per period.</p>
+    </div>
+    <div class="feature">
+      <div class="ic">&#128257;</div>
+      <h3>P2P <a href="/ledgerfield/wiki/taxation.html#ruleset">ruleset</a> sync via <a href="/ledgerfield/wiki/knitweb-p2p.html#knitweb">knitweb</a></h3>
+      <p>Import a peer's tax ruleset and verify it by recomputing its content ID — no trust required. Publish your own rulesets. The public relay is 5mart.ml; the app works fully offline between syncs.</p>
+    </div>
+    <div class="feature">
+      <div class="ic">&#128202;</div>
+      <h3>Anonymised data market (<a href="/ledgerfield/wiki/privacy-datamarket.html#k-anonymity">k&thinsp;&ge;&thinsp;5</a>)</h3>
+      <p>Opt in per category and jurisdiction. Aggregates are only publishable when at least 5 distinct nodes contribute — no individual trace is ever exposed. Browse, buy, or earn from published packages.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><strong>Keep your books offline.</strong> Open <code>app.html</code> in any modern browser, set up your entity (BV, ZZP, LLC, GmbH, and more), and start posting journal entries. Everything is encrypted locally — no account, no server, no sync required.</li>
+    <li><strong>The app computes taxes, payslips, and filings.</strong> Switch to the Taxes tab for VPB, IB, WBSO, DGA, and BTW calculations. Open Payroll to generate payslips. Go to Filing to preview your VPB/IB/BTW forms and export JSON or SAF-T XML.</li>
+    <li><strong>Optionally share only public artefacts over the knitweb.</strong> Publish or import CID-addressed tax rulesets and anonymised data-market aggregates via the P2P tab. Raw books stay on your device — always.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Privacy model</h2>
+  <div class="ok-box">
+    <strong>Your raw books never leave your device.</strong> LedgerField is <a href="/ledgerfield/wiki/privacy-datamarket.html#offline-first">offline-first</a> by design: the entire app is a single HTML file that runs in your browser with no network calls. The <a href="/ledgerfield/wiki/privacy-datamarket.html#vault">vault</a> encrypts every record with PBKDF2-HMAC-SHA256 before writing it to browser storage. The only data that ever traverses the network are content-addressed tax rulesets (public by definition) and fully anonymised, k&thinsp;&ge;&thinsp;5 aggregates — both published by you, on your terms, via the knitweb P2P layer.
+  </div>
+</section>
+
+<section>
+  <a class="cta" href="/ledgerfield/app.html">Open LedgerField</a>
+</section>
+</main>
+<footer class="site"><div class="inner">
+  <div class="relay">
+    <h4>LedgerField</h4>
+    Offline-first, privacy-first accounting for 100+ jurisdictions.<br>
+    Served peer-to-peer over the knitweb relay <code>5mart.ml</code>. No server, no cloud, no telemetry.
+  </div>
+  <div class="cols">
+    <div><h4>Docs</h4>
+      <a href="/ledgerfield/guides/">Guides</a><br>
+      <a href="/ledgerfield/wiki/">Wiki</a><br>
+      <a href="/ledgerfield/app.html">Open the app</a></div>
+    <div><h4>Project</h4>
+      <a href="https://github.com/ledgerfield/ledgerfield">GitHub</a><br>
+      <a href="/ledgerfield/wiki/knitweb-p2p.html">Knitweb &amp; P2P</a><br>
+      <a href="/ledgerfield/wiki/privacy-datamarket.html">Privacy model</a></div>
+  </div>
+</div></footer>
+</body>
+</html>
