@@ -1,7 +1,9 @@
 """K-anonymised statistical aggregation of ledger data.
 
 Guarantees: a DataPoint is only published when >= K_MIN distinct
-node IDs contributed to it.  Raw values are never stored or returned.
+node IDs contributed to it. Published stats use at most one value per node
+per aggregate key so a single node cannot flood the sample. Raw values are
+never stored or returned.
 """
 from __future__ import annotations
 
@@ -20,6 +22,8 @@ K_MIN = 5  # minimum contributors — do NOT lower without privacy review
 @dataclass(frozen=True)
 class AggregateStats:
     count: int
+    sample_count: int
+    distinct_contributor_count: int
     mean: float
     median: float
     p25: float
@@ -31,6 +35,8 @@ class AggregateStats:
     def to_dict(self) -> dict:
         return {
             "count": self.count,
+            "sample_count": self.sample_count,
+            "distinct_contributor_count": self.distinct_contributor_count,
             "mean": round(self.mean, 4),
             "median": round(self.median, 4),
             "p25": round(self.p25, 4),
@@ -81,17 +87,22 @@ class Aggregator:
         sector: str,
         fiscal_year: int,
     ) -> Optional[AggregateStats]:
-        """Return AggregateStats, or None if fewer than K_MIN distinct contributors."""
+        """Return stats, or None if fewer than K_MIN distinct contributors."""
         key = (category, jurisdiction, sector, fiscal_year)
         points = self._pool.get(key, [])
-        # k-anonymity: count distinct node_ids
-        distinct = len({p.node_id for p in points})
+        # k-anonymity: one published value per distinct node_id.
+        first_value_by_node: dict[str, float] = {}
+        for point in points:
+            first_value_by_node.setdefault(point.node_id, point.value)
+        distinct = len(first_value_by_node)
         if distinct < K_MIN:
             return None
-        values = sorted(p.value for p in points)
+        values = sorted(first_value_by_node.values())
         n = len(values)
         return AggregateStats(
             count=n,
+            sample_count=len(points),
+            distinct_contributor_count=distinct,
             mean=statistics.mean(values),
             median=statistics.median(values),
             p25=_percentile(values, 25),
