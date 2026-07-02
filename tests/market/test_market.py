@@ -128,6 +128,7 @@ def test_market_purchase_returns_receipt():
     market = DataMarket("seller-1")
     pkg = _make_pkg()
     market.list_package(pkg)
+    market.credit_balance("buyer-1", 20.0)
     receipt = market.purchase(pkg.package_id, "buyer-1")
     assert receipt is not None
     assert receipt.price_tokens == 20.0
@@ -136,9 +137,35 @@ def test_market_purchase_updates_balances():
     market = DataMarket("seller-1")
     pkg = _make_pkg()
     market.list_package(pkg)
+    market.credit_balance("buyer-1", 20.0)
     market.purchase(pkg.package_id, "buyer-1")
-    assert market.balance("buyer-1") == pytest.approx(-20.0)
+    assert market.balance("buyer-1") == pytest.approx(0.0)
     assert market.balance("seller-1") == pytest.approx(20.0)
+
+def test_market_purchase_requires_prepaid_balance():
+    market = DataMarket("seller-1")
+    pkg = _make_pkg()
+    market.list_package(pkg)
+    receipt = market.purchase(pkg.package_id, "buyer-1")
+    assert receipt is None
+    assert market.balance("buyer-1") == pytest.approx(0.0)
+    assert market.balance("seller-1") == pytest.approx(0.0)
+    assert market.receipts() == []
+
+def test_market_purchase_rejects_partial_balance_without_mutation():
+    market = DataMarket("seller-1")
+    pkg = _make_pkg()
+    market.list_package(pkg)
+    market.credit_balance("buyer-1", 19.99)
+    receipt = market.purchase(pkg.package_id, "buyer-1")
+    assert receipt is None
+    assert market.balance("buyer-1") == pytest.approx(19.99)
+    assert market.balance("seller-1") == pytest.approx(0.0)
+
+def test_market_credit_balance_requires_positive_amount():
+    market = DataMarket("seller-1")
+    with pytest.raises(ValueError, match="credit amount must be positive"):
+        market.credit_balance("buyer-1", 0.0)
 
 def test_market_delist_hides_from_search():
     market = DataMarket("seller-1")
