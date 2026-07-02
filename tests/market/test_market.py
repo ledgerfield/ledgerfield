@@ -72,6 +72,23 @@ def test_aggregator_duplicate_node_counted_once_for_k():
         agg.contribute("same_node", DataCategory.SALARY_BENCHMARKS, "NL", "legal", 2025, 60_000)
     assert agg.aggregate(DataCategory.SALARY_BENCHMARKS, "NL", "legal", 2025) is None
 
+def test_aggregator_single_node_flood_does_not_dominate_stats():
+    agg = Aggregator()
+    for i, value in enumerate([10.0, 20.0, 30.0, 40.0, 50.0]):
+        agg.contribute(f"node_{i}", DataCategory.SALARY_BENCHMARKS, "NL", "ops", 2025, value)
+    for _ in range(100):
+        agg.contribute("node_0", DataCategory.SALARY_BENCHMARKS, "NL", "ops", 2025, 10_000.0)
+
+    stats = agg.aggregate(DataCategory.SALARY_BENCHMARKS, "NL", "ops", 2025)
+
+    assert stats is not None
+    assert stats.count == K_MIN
+    assert stats.sample_count == 105
+    assert stats.distinct_contributor_count == K_MIN
+    assert stats.mean == pytest.approx(30.0)
+    assert stats.median == pytest.approx(30.0)
+    assert stats.max_val == pytest.approx(50.0)
+
 
 # ── dataset / build_package ───────────────────────────────────────────────────
 
@@ -103,6 +120,22 @@ def test_build_package_roundtrip():
     restored = DataPackage.from_dict(pkg.to_dict())
     assert restored.package_id == pkg.package_id
     assert restored.stats.mean == pytest.approx(pkg.stats.mean)
+
+def test_build_package_reports_samples_and_distinct_contributors():
+    agg = Aggregator()
+    _fill(agg, K_MIN, sector="ops")
+    for _ in range(7):
+        agg.contribute("node_0", DataCategory.SALARY_BENCHMARKS, "NL", "ops", 2025, 999_999.0)
+
+    pkg = build_package(agg, DataCategory.SALARY_BENCHMARKS, "NL", "ops", 2025)
+
+    assert pkg is not None
+    assert pkg.contributor_count == K_MIN
+    assert pkg.distinct_contributor_count == K_MIN
+    assert pkg.sample_count == 12
+    assert pkg.stats.sample_count == 12
+    assert pkg.stats.distinct_contributor_count == K_MIN
+    assert pkg.stats.mean == pytest.approx(52_000.0)
 
 
 # ── market ────────────────────────────────────────────────────────────────────

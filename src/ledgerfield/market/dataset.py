@@ -22,6 +22,8 @@ class DataPackage:
     fiscal_year: int
     stats: AggregateStats
     contributor_count: int
+    sample_count: int
+    distinct_contributor_count: int
     created_at: float
     price_tokens: float            # ledgerfield-token price
     description: str = ""
@@ -35,6 +37,8 @@ class DataPackage:
             "fiscal_year": self.fiscal_year,
             "stats": self.stats.to_dict(),
             "contributor_count": self.contributor_count,
+            "sample_count": self.sample_count,
+            "distinct_contributor_count": self.distinct_contributor_count,
             "created_at": self.created_at,
             "price_tokens": self.price_tokens,
             "description": self.description,
@@ -42,16 +46,41 @@ class DataPackage:
 
     @classmethod
     def from_dict(cls, d: dict) -> "DataPackage":
+        stats_payload = d["stats"]
+        fallback_contributor_count = d.get("contributor_count", stats_payload["count"])
+        fallback_distinct_count = d.get(
+            "distinct_contributor_count",
+            fallback_contributor_count,
+        )
+        stats = AggregateStats(
+            count=stats_payload["count"],
+            sample_count=stats_payload.get("sample_count", stats_payload["count"]),
+            distinct_contributor_count=stats_payload.get(
+                "distinct_contributor_count",
+                fallback_distinct_count,
+            ),
+            mean=stats_payload["mean"],
+            median=stats_payload["median"],
+            p25=stats_payload["p25"],
+            p75=stats_payload["p75"],
+            std=stats_payload["std"],
+            min_val=stats_payload["min"],
+            max_val=stats_payload["max"],
+        )
+        distinct_contributor_count = d.get(
+            "distinct_contributor_count",
+            stats.distinct_contributor_count,
+        )
         return cls(
             package_id=d["package_id"],
             category=DataCategory(d["category"]),
             jurisdiction=d["jurisdiction"],
             sector=d["sector"],
             fiscal_year=d["fiscal_year"],
-            stats=AggregateStats(**{k: v for k, v in d["stats"].items()
-                                    if k not in ("min", "max")}
-                                 | {"min_val": d["stats"]["min"], "max_val": d["stats"]["max"]}),
-            contributor_count=d["contributor_count"],
+            stats=stats,
+            contributor_count=d.get("contributor_count", distinct_contributor_count),
+            sample_count=d.get("sample_count", stats.sample_count),
+            distinct_contributor_count=distinct_contributor_count,
             created_at=d["created_at"],
             price_tokens=d["price_tokens"],
             description=d.get("description", ""),
@@ -90,7 +119,9 @@ def build_package(
         sector=sector,
         fiscal_year=fiscal_year,
         stats=stats,
-        contributor_count=stats.count,
+        contributor_count=stats.distinct_contributor_count,
+        sample_count=stats.sample_count,
+        distinct_contributor_count=stats.distinct_contributor_count,
         created_at=time.time(),
         price_tokens=price_tokens,
         description=description,
