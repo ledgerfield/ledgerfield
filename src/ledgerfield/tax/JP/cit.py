@@ -39,7 +39,7 @@ def bereken_cit_japan(
     """Calculate Japan corporate income tax.
 
     Args:
-        taxable_income: 課税所得 (JPY)
+        taxable_income: 課税所得 (JPY); non-positive income returns a zero-tax result
         jaar: fiscal year (2024 or 2025)
         capital: paid-in capital in JPY; ≤ ¥100M → SME rates apply
 
@@ -54,6 +54,19 @@ def bereken_cit_japan(
     local_pct = params["local_tax_estimate_pct"]
 
     is_sme = capital <= sme_cap
+
+    if taxable_income <= 0:
+        return CITResult(
+            jaar=jaar,
+            taxable_income=taxable_income,
+            is_sme=is_sme,
+            cit_tier1=0.0,
+            cit_tier2=0.0,
+            cit_national=0.0,
+            local_tax_estimate=0.0,
+            cit_total=0.0,
+            effective_rate=0.0,
+        )
 
     if is_sme:
         t1 = min(taxable_income, sme_thresh) * sme_rate
