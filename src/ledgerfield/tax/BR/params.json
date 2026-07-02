@@ -16,14 +16,55 @@
       "IIT": {
         "top_rate": 27.5,
         "brackets": [
-          {"up_to": 24511.92, "rate": 0.0},
-          {"up_to": 33919.80, "rate": 7.5},
-          {"up_to": 45012.60, "rate": 15.0},
-          {"up_to": 55976.16, "rate": 22.5},
-          {"above": 55976.16, "rate": 27.5}
+          {
+            "up_to": 24511.92,
+            "rate": 0.0
+          },
+          {
+            "up_to": 33919.8,
+            "rate": 7.5
+          },
+          {
+            "up_to": 45012.6,
+            "rate": 15.0
+          },
+          {
+            "up_to": 55976.16,
+            "rate": 22.5
+          },
+          {
+            "above": 55976.16,
+            "rate": 27.5
+          }
         ],
         "notes": "IRPF 2025 progressive 0-27.5%; annual thresholds"
       }
     }
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Receita Federal do Brasil",
+        "url": "https://www.gov.br/receitafederal/en"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "BRL",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
   }
 }

@@ -2,7 +2,12 @@
   "kind": "tax-ruleset",
   "jurisdiction": "PL",
   "fiscal_year": 2025,
-  "entity_types": ["company_sp_zoo", "company_sa", "individual", "sole_trader"],
+  "entity_types": [
+    "company_sp_zoo",
+    "company_sa",
+    "individual",
+    "sole_trader"
+  ],
   "zero_cit": false,
   "parameters": {
     "corporate_income_tax": {
@@ -28,8 +33,16 @@
       "label": "Income Tax Poland 2025 (top rate)",
       "bracket_type": "marginal_rate",
       "brackets": [
-        {"threshold": 0, "rate": 12.0, "bracket_type": "marginal_rate"},
-        {"threshold": 120000, "rate": 32.0, "bracket_type": "marginal_rate"}
+        {
+          "threshold": 0,
+          "rate": 12.0,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 120000,
+          "rate": 32.0,
+          "bracket_type": "marginal_rate"
+        }
       ],
       "flat_rate": null,
       "currency": "PLN",
@@ -40,5 +53,31 @@
     "https://www.podatki.gov.pl/pit/",
     "https://www.podatki.gov.pl/cit/",
     "https://www.podatki.gov.pl/vat/"
-  ]
+  ],
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Ministry of Finance Poland",
+        "url": "https://www.podatki.gov.pl/en/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "PLN",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
+  }
 }

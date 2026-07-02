@@ -12,11 +12,36 @@
     "currency": "NZD",
     "note": "Individual income tax brackets 2024-25",
     "brackets": [
-      {"from": 0,      "to": 14000,  "rate": 0.105,  "marginal_rate_pct": 10.5},
-      {"from": 14001,  "to": 48000,  "rate": 0.175,  "marginal_rate_pct": 17.5},
-      {"from": 48001,  "to": 70000,  "rate": 0.30,   "marginal_rate_pct": 30.0},
-      {"from": 70001,  "to": 180000, "rate": 0.33,   "marginal_rate_pct": 33.0},
-      {"from": 180001, "to": null,   "rate": 0.39,   "marginal_rate_pct": 39.0}
+      {
+        "from": 0,
+        "to": 14000,
+        "rate": 0.105,
+        "marginal_rate_pct": 10.5
+      },
+      {
+        "from": 14001,
+        "to": 48000,
+        "rate": 0.175,
+        "marginal_rate_pct": 17.5
+      },
+      {
+        "from": 48001,
+        "to": 70000,
+        "rate": 0.3,
+        "marginal_rate_pct": 30.0
+      },
+      {
+        "from": 70001,
+        "to": 180000,
+        "rate": 0.33,
+        "marginal_rate_pct": 33.0
+      },
+      {
+        "from": 180001,
+        "to": null,
+        "rate": 0.39,
+        "marginal_rate_pct": 39.0
+      }
     ]
   },
   "consumption_tax": {
@@ -31,5 +56,31 @@
   "acc_levy": {
     "employer_levy_rate_approx": 0.0067,
     "note": "ACC Employer Levy ~0.67% of gross payroll; industry-specific rates apply"
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Inland Revenue New Zealand",
+        "url": "https://www.ird.govt.nz/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2024-04-01",
+      "end": "2025-03-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "NZD",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
   }
 }

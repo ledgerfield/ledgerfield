@@ -21,10 +21,10 @@
   },
   "iva": {
     "standard_rate": 0.22,
-    "reduced_rate_10": 0.10,
+    "reduced_rate_10": 0.1,
     "reduced_rate_5": 0.05,
     "super_reduced_rate_4": 0.04,
-    "zero_rate": 0.00,
+    "zero_rate": 0.0,
     "label": "IVA — Imposta sul Valore Aggiunto (VAT)",
     "note": "Standard 22% (D.P.R. 633/1972). Ridotta 10%: alimentari, turismo, farmaci. Ridotta 5%: cooperative sociali. Super-ridotta 4%: generi di prima necessità, libri. Zero: esportazioni, operazioni intracomunitarie."
   },
@@ -32,9 +32,24 @@
     "label": "IRPEF — Imposta sul Reddito delle Persone Fisiche",
     "note": "Legge di Bilancio 2025 riforma strutturale: 3 aliquote (23%/35%/43%).",
     "brackets_2025": [
-      {"from": 0,      "to": 28000,  "rate": 0.23, "note": "Prima aliquota"},
-      {"from": 28000,  "to": 50000,  "rate": 0.35, "note": "Seconda aliquota"},
-      {"from": 50000,  "to": null,   "rate": 0.43, "note": "Terza aliquota (top rate)"}
+      {
+        "from": 0,
+        "to": 28000,
+        "rate": 0.23,
+        "note": "Prima aliquota"
+      },
+      {
+        "from": 28000,
+        "to": 50000,
+        "rate": 0.35,
+        "note": "Seconda aliquota"
+      },
+      {
+        "from": 50000,
+        "to": null,
+        "rate": 0.43,
+        "note": "Terza aliquota (top rate)"
+      }
     ],
     "top_rate": 0.43,
     "no_tax_area_dipendenti": 8500,
@@ -49,13 +64,39 @@
   },
   "cedolare_secca": {
     "standard_rate": 0.21,
-    "reduced_rate_contratti_concordati": 0.10,
+    "reduced_rate_contratti_concordati": 0.1,
     "label": "Cedolare secca — flat tax on residential rental income",
     "note": "Alternative to IRPEF on rental income; 21% standard, 10% for contratti a canone concordato."
   },
   "ritenuta_acconto": {
-    "lavoro_autonomo_rate": 0.20,
+    "lavoro_autonomo_rate": 0.2,
     "label": "Ritenuta d'acconto (withholding tax)",
     "note": "20% on payments to self-employed professionals (D.P.R. 600/1973 art. 25)."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Agenzia delle Entrate",
+        "url": "https://www.agenziaentrate.gov.it/portale/en/home"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
   }
 }

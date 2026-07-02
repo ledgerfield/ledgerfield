@@ -2,7 +2,10 @@
   "kind": "tax-ruleset",
   "jurisdiction": "HK",
   "fiscal_year": 2025,
-  "entity_types": ["company", "individual"],
+  "entity_types": [
+    "company",
+    "individual"
+  ],
   "zero_cit": false,
   "parameters": {
     "corporate_income_tax": {
@@ -10,8 +13,18 @@
       "label": "Profits Tax Hong Kong 2025",
       "bracket_type": "two_tier",
       "brackets": [
-        {"from": 0,       "to": 2000000, "rate": 8.25,  "currency": "HKD"},
-        {"from": 2000000, "to": null,    "rate": 16.5,  "currency": "HKD"}
+        {
+          "from": 0,
+          "to": 2000000,
+          "rate": 8.25,
+          "currency": "HKD"
+        },
+        {
+          "from": 2000000,
+          "to": null,
+          "rate": 16.5,
+          "currency": "HKD"
+        }
       ],
       "flat_rate": 16.5,
       "currency": "HKD",
@@ -31,11 +44,31 @@
       "label": "Salaries Tax Hong Kong 2025",
       "bracket_type": "progressive",
       "brackets": [
-        {"from": 0,       "to": 50000,  "rate": 2.0},
-        {"from": 50000,   "to": 100000, "rate": 6.0},
-        {"from": 100000,  "to": 150000, "rate": 10.0},
-        {"from": 150000,  "to": 200000, "rate": 14.0},
-        {"from": 200000,  "to": null,   "rate": 17.0}
+        {
+          "from": 0,
+          "to": 50000,
+          "rate": 2.0
+        },
+        {
+          "from": 50000,
+          "to": 100000,
+          "rate": 6.0
+        },
+        {
+          "from": 100000,
+          "to": 150000,
+          "rate": 10.0
+        },
+        {
+          "from": 150000,
+          "to": 200000,
+          "rate": 14.0
+        },
+        {
+          "from": 200000,
+          "to": null,
+          "rate": 17.0
+        }
       ],
       "flat_rate": 15.0,
       "currency": "HKD",
@@ -45,5 +78,31 @@
   "sources": [
     "https://www.ird.gov.hk/eng/tax/bus_pft.htm",
     "https://www.ird.gov.hk/eng/tax/ind_sal.htm"
-  ]
+  ],
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Hong Kong Inland Revenue Department",
+        "url": "https://www.ird.gov.hk/eng/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "HKD",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
+  }
 }

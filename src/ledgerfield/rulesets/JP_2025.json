@@ -4,7 +4,12 @@
   "fiscal_year": 2025,
   "year": 2025,
   "currency": "JPY",
-  "entity_types": ["kabushiki_kaisha", "godo_kaisha", "individual", "sole_trader"],
+  "entity_types": [
+    "kabushiki_kaisha",
+    "godo_kaisha",
+    "individual",
+    "sole_trader"
+  ],
   "zero_cit": false,
   "parameters": {
     "corporate_income_tax_sme": {
@@ -12,8 +17,16 @@
       "label": "法人税 SME 2025 (資本金1億円以下)",
       "bracket_type": "marginal_rate",
       "brackets": [
-        {"threshold": 0,       "rate": 0.19,  "bracket_type": "marginal_rate"},
-        {"threshold": 8000000, "rate": 0.232, "bracket_type": "marginal_rate"}
+        {
+          "threshold": 0,
+          "rate": 0.19,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 8000000,
+          "rate": 0.232,
+          "bracket_type": "marginal_rate"
+        }
       ],
       "flat_rate": null,
       "currency": "JPY",
@@ -42,13 +55,41 @@
       "label": "所得税 2025",
       "bracket_type": "marginal_rate",
       "brackets": [
-        {"threshold": 0,        "rate": 0.05, "bracket_type": "marginal_rate"},
-        {"threshold": 1950000,  "rate": 0.10, "bracket_type": "marginal_rate"},
-        {"threshold": 3300000,  "rate": 0.20, "bracket_type": "marginal_rate"},
-        {"threshold": 6950000,  "rate": 0.23, "bracket_type": "marginal_rate"},
-        {"threshold": 9000000,  "rate": 0.33, "bracket_type": "marginal_rate"},
-        {"threshold": 18000000, "rate": 0.40, "bracket_type": "marginal_rate"},
-        {"threshold": 40000000, "rate": 0.45, "bracket_type": "marginal_rate"}
+        {
+          "threshold": 0,
+          "rate": 0.05,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 1950000,
+          "rate": 0.1,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 3300000,
+          "rate": 0.2,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 6950000,
+          "rate": 0.23,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 9000000,
+          "rate": 0.33,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 18000000,
+          "rate": 0.4,
+          "bracket_type": "marginal_rate"
+        },
+        {
+          "threshold": 40000000,
+          "rate": 0.45,
+          "bracket_type": "marginal_rate"
+        }
       ],
       "flat_rate": null,
       "currency": "JPY",
@@ -59,7 +100,7 @@
       "label": "住民税 2025",
       "bracket_type": "flat",
       "brackets": [],
-      "flat_rate": 0.10,
+      "flat_rate": 0.1,
       "currency": "JPY",
       "notes": "住民税: 所得割10%フラット (道府県民税4% + 市町村民税6%)"
     },
@@ -68,7 +109,7 @@
       "label": "消費税 標準税率 2025",
       "bracket_type": "flat",
       "brackets": [],
-      "flat_rate": 0.10,
+      "flat_rate": 0.1,
       "currency": "JPY",
       "notes": "消費税標準税率10% (国税7.8% + 地方消費税2.2%)"
     },
@@ -99,5 +140,31 @@
       "currency": "JPY",
       "notes": "健保5% + 厚生年金9.15% (労使折半)"
     }
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "National Tax Agency Japan",
+        "url": "https://www.nta.go.jp/english/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "JPY",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
   }
 }

@@ -14,17 +14,50 @@
       "IIT": {
         "top_rate": 35.0,
         "brackets": [
-          {"up_to": 8952.49, "rate": 1.92},
-          {"up_to": 75984.55, "rate": 6.4},
-          {"up_to": 133536.07, "rate": 10.88},
-          {"up_to": 155229.80, "rate": 16.0},
-          {"up_to": 185852.57, "rate": 17.92},
-          {"up_to": 374837.88, "rate": 21.36},
-          {"up_to": 590795.99, "rate": 23.52},
-          {"up_to": 1127926.84, "rate": 30.0},
-          {"up_to": 1503902.46, "rate": 32.0},
-          {"up_to": 4511707.37, "rate": 34.0},
-          {"above": 4511707.37, "rate": 35.0}
+          {
+            "up_to": 8952.49,
+            "rate": 1.92
+          },
+          {
+            "up_to": 75984.55,
+            "rate": 6.4
+          },
+          {
+            "up_to": 133536.07,
+            "rate": 10.88
+          },
+          {
+            "up_to": 155229.8,
+            "rate": 16.0
+          },
+          {
+            "up_to": 185852.57,
+            "rate": 17.92
+          },
+          {
+            "up_to": 374837.88,
+            "rate": 21.36
+          },
+          {
+            "up_to": 590795.99,
+            "rate": 23.52
+          },
+          {
+            "up_to": 1127926.84,
+            "rate": 30.0
+          },
+          {
+            "up_to": 1503902.46,
+            "rate": 32.0
+          },
+          {
+            "up_to": 4511707.37,
+            "rate": 34.0
+          },
+          {
+            "above": 4511707.37,
+            "rate": 35.0
+          }
         ],
         "notes": "ISR personas fisicas 2025; annual brackets in MXN; 11 brackets 1.92-35%"
       },
@@ -34,5 +67,31 @@
         "notes": "IMSS employer ~20.4% (variable by salary); INFONAVIT 5%; employee IMSS ~1.125%"
       }
     }
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Servicio de Administracion Tributaria",
+        "url": "https://www.sat.gob.mx/home"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "MXN",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
   }
 }

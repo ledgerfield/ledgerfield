@@ -16,10 +16,41 @@
       },
       "IIT": {
         "top_rate": 22.8,
-        "bracket_surcharge_rates": [1.7, 4.0, 13.6, 16.6],
+        "bracket_surcharge_rates": [
+          1.7,
+          4.0,
+          13.6,
+          16.6
+        ],
         "national_insurance_rate": 7.9,
         "notes": "Base income tax 22%; bracket surcharges up to 16.6% on high income; effective top marginal ~47.4%; self-employed social insurance 11.1%"
       }
     }
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Norwegian Tax Administration",
+        "url": "https://www.skatteetaten.no/en/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "NOK",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
   }
 }

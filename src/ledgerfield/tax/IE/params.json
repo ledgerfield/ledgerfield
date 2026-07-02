@@ -11,8 +11,16 @@
   "income_tax_2025": {
     "note": "USC (Universal Social Charge) additional; PRSI Class A1 employer 11.15%",
     "brackets": [
-      {"from": 0,     "to": 42000, "rate": 0.20},
-      {"from": 42001, "to": null,  "rate": 0.40}
+      {
+        "from": 0,
+        "to": 42000,
+        "rate": 0.2
+      },
+      {
+        "from": 42001,
+        "to": null,
+        "rate": 0.4
+      }
     ],
     "standard_rate_band_single": 42000,
     "standard_rate_band_married_one_income": 51000,
@@ -23,7 +31,7 @@
     "standard_rate": 0.23,
     "reduced_rate": 0.135,
     "second_reduced_rate": 0.09,
-    "zero_rate": 0.00,
+    "zero_rate": 0.0,
     "note": "23% standard; 13.5% reduced (construction/fuel); 9% tourism/hospitality; 0% food/children's clothing"
   },
   "prsi": {
@@ -34,12 +42,54 @@
   "usc": {
     "note": "Universal Social Charge 2025",
     "brackets": [
-      {"from": 0,     "to": 12012, "rate": 0.005},
-      {"from": 12013, "to": 25760, "rate": 0.02},
-      {"from": 25761, "to": 70044, "rate": 0.04},
-      {"from": 70045, "to": null,  "rate": 0.08}
+      {
+        "from": 0,
+        "to": 12012,
+        "rate": 0.005
+      },
+      {
+        "from": 12013,
+        "to": 25760,
+        "rate": 0.02
+      },
+      {
+        "from": 25761,
+        "to": 70044,
+        "rate": 0.04
+      },
+      {
+        "from": 70045,
+        "to": null,
+        "rate": 0.08
+      }
     ]
   },
   "currency": "EUR",
-  "filing_authority": "Revenue Commissioners (revenue.ie)"
+  "filing_authority": "Revenue Commissioners (revenue.ie)",
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Revenue Commissioners Ireland",
+        "url": "https://www.revenue.ie/en/Home.aspx"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
+  }
 }

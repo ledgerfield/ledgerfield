@@ -15,15 +15,51 @@
     "note": "IVA 2025: taxa normal 23%; taxa intermédia 13% (alimentação transformada, bebidas alcoólicas em restauração, espetáculos); taxa reduzida 6% (géneros alimentícios essenciais, medicamentos, livros)"
   },
   "irs_brackets_2025": [
-    {"from": 0,      "to": 7703,   "rate": 0.1325},
-    {"from": 7703,   "to": 11623,  "rate": 0.18},
-    {"from": 11623,  "to": 16472,  "rate": 0.23},
-    {"from": 16472,  "to": 21321,  "rate": 0.26},
-    {"from": 21321,  "to": 27146,  "rate": 0.3275},
-    {"from": 27146,  "to": 39791,  "rate": 0.37},
-    {"from": 39791,  "to": 51997,  "rate": 0.435},
-    {"from": 51997,  "to": 81199,  "rate": 0.45},
-    {"from": 81199,  "to": null,   "rate": 0.48}
+    {
+      "from": 0,
+      "to": 7703,
+      "rate": 0.1325
+    },
+    {
+      "from": 7703,
+      "to": 11623,
+      "rate": 0.18
+    },
+    {
+      "from": 11623,
+      "to": 16472,
+      "rate": 0.23
+    },
+    {
+      "from": 16472,
+      "to": 21321,
+      "rate": 0.26
+    },
+    {
+      "from": 21321,
+      "to": 27146,
+      "rate": 0.3275
+    },
+    {
+      "from": 27146,
+      "to": 39791,
+      "rate": 0.37
+    },
+    {
+      "from": 39791,
+      "to": 51997,
+      "rate": 0.435
+    },
+    {
+      "from": 51997,
+      "to": 81199,
+      "rate": 0.45
+    },
+    {
+      "from": 81199,
+      "to": null,
+      "rate": 0.48
+    }
   ],
   "social_security": {
     "employee_rate": 0.11,
@@ -37,5 +73,31 @@
     "https://www.portaldasfinancas.gov.pt/",
     "https://www.seg-social.pt/",
     "https://diariodarepublica.pt/"
-  ]
+  ],
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Autoridade Tributaria e Aduaneira",
+        "url": "https://info.portaldasfinancas.gov.pt/pt/Pages/homepage.aspx"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
+  }
 }

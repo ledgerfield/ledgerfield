@@ -17,7 +17,7 @@
         "schijf_1_grens": 395000
       },
       "Box2": {
-        "tarief": 0.2640
+        "tarief": 0.264
       },
       "LH": {
         "dga_min_salaris": 48000,
@@ -51,7 +51,7 @@
       },
       "Box2": {
         "tarief_schijf_1": 0.2493,
-        "tarief_schijf_2": 0.3150,
+        "tarief_schijf_2": 0.315,
         "schijf_1_grens": 67000
       },
       "LH": {
@@ -94,7 +94,7 @@
         "max_algemene_heffingskorting": 3362,
         "max_arbeidskorting": 5532,
         "eigenwoningforfait_pct": 0.0035,
-        "jaarruimte_pct": 0.30,
+        "jaarruimte_pct": 0.3,
         "aow_franchise": 16322,
         "lijfrente_max_jaarruimte": 34355,
         "lijfrente_max_reserveringsruimte": 40396
@@ -156,12 +156,12 @@
     "2025": {
       "IB": {
         "schijf_1_grens": 76817,
-        "tarief_schijf_1": 0.3550,
+        "tarief_schijf_1": 0.355,
         "tarief_schijf_2": 0.495,
         "max_algemene_heffingskorting": 3068,
         "max_arbeidskorting": 5599,
         "eigenwoningforfait_pct": 0.0035,
-        "jaarruimte_pct": 0.30,
+        "jaarruimte_pct": 0.3,
         "aow_franchise": 18475,
         "lijfrente_max_jaarruimte": 35798,
         "lijfrente_max_reserveringsruimte": 42108
@@ -217,11 +217,37 @@
         "overig_tarief": 0.22
       },
       "Thuiswerk": {
-        "vergoeding_per_dag": 2.40
+        "vergoeding_per_dag": 2.4
       },
       "Saldering": {
         "zonnepanelen_deadline": 2027
       }
     }
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Belastingdienst",
+        "url": "https://www.belastingdienst.nl/wps/wcm/connect/en/business/business"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
   }
 }

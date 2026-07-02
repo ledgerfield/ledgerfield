@@ -17,15 +17,25 @@
     "vat_standard_rate": 0.23,
     "vat_reduced_rate": 0.135,
     "vat_second_reduced_rate": 0.09,
-    "vat_zero_rate": 0.00,
+    "vat_zero_rate": 0.0,
     "note": "VAT standard 23%; 13.5% reduced (construction, fuel, vet services); 9% tourism & hospitality; 0% food, oral medicines, children's clothing"
   },
   "personal_income_tax": {
     "currency": "EUR",
     "note": "Standard rate band EUR 42,000 (single 2025); USC and PRSI apply separately",
     "brackets": [
-      {"from": 0,     "to": 42000, "rate": 0.20, "marginal_rate_pct": 20.0},
-      {"from": 42001, "to": null,  "rate": 0.40, "marginal_rate_pct": 40.0}
+      {
+        "from": 0,
+        "to": 42000,
+        "rate": 0.2,
+        "marginal_rate_pct": 20.0
+      },
+      {
+        "from": 42001,
+        "to": null,
+        "rate": 0.4,
+        "marginal_rate_pct": 40.0
+      }
     ]
   },
   "prsi": {
@@ -36,11 +46,57 @@
   "usc": {
     "note": "Universal Social Charge 2025",
     "brackets": [
-      {"from": 0,     "to": 12012, "rate": 0.005, "marginal_rate_pct": 0.5},
-      {"from": 12013, "to": 25760, "rate": 0.02,  "marginal_rate_pct": 2.0},
-      {"from": 25761, "to": 70044, "rate": 0.04,  "marginal_rate_pct": 4.0},
-      {"from": 70045, "to": null,  "rate": 0.08,  "marginal_rate_pct": 8.0}
+      {
+        "from": 0,
+        "to": 12012,
+        "rate": 0.005,
+        "marginal_rate_pct": 0.5
+      },
+      {
+        "from": 12013,
+        "to": 25760,
+        "rate": 0.02,
+        "marginal_rate_pct": 2.0
+      },
+      {
+        "from": 25761,
+        "to": 70044,
+        "rate": 0.04,
+        "marginal_rate_pct": 4.0
+      },
+      {
+        "from": 70045,
+        "to": null,
+        "rate": 0.08,
+        "marginal_rate_pct": 8.0
+      }
     ]
   },
-  "cid_note": "CID-addressable; ruleset hash covers trading_cit_rate + vat_standard_rate + pillar_two_rate"
+  "cid_note": "CID-addressable; ruleset hash covers trading_cit_rate + vat_standard_rate + pillar_two_rate",
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Revenue Commissioners Ireland",
+        "url": "https://www.revenue.ie/en/Home.aspx"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, local, provincial/state, surtax, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, municipal, provincial/state, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-02"
+  }
 }
