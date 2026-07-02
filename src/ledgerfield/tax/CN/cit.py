@@ -23,6 +23,11 @@ class ChinaCITResult:
 
 def bereken_cit_china(belastbare_winst_cny: float, jaar: int = 2025,
                        entity_type: CNEntityType = CNEntityType.STANDARD) -> ChinaCITResult:
+    """Calculate China corporate income tax.
+
+    Non-positive taxable profit preserves the input and selected rate context,
+    but returns zero tax and zero effective rate.
+    """
     params = json.load(open(os.path.join(os.path.dirname(__file__), "params.json")))
     cit = params["years"][str(jaar)]["CIT"]
 
@@ -38,6 +43,12 @@ def bereken_cit_china(belastbare_winst_cny: float, jaar: int = 2025,
     else:
         rate = cit["standard_rate"]
         notes = f"标准税率: {rate*100}%"
+
+    if belastbare_winst_cny <= 0:
+        notes = f"无应纳税所得额: 0%; {notes}"
+        return ChinaCITResult(
+            jaar, belastbare_winst_cny, entity_type, rate, 0.0, 0.0, notes
+        )
 
     total = belastbare_winst_cny * rate
     eff = total / belastbare_winst_cny if belastbare_winst_cny > 0 else 0

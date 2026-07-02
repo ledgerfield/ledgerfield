@@ -80,6 +80,17 @@ def test_cn_cit_all_entity_types_produce_valid_results():
         assert result.applied_rate > 0
 
 
+@pytest.mark.parametrize("income", [-500_000, 0])
+def test_cn_cit_non_positive_income_returns_zero_tax(income):
+    for entity_type in CNEntityType:
+        result = bereken_cit_china(income, jaar=2025, entity_type=entity_type)
+        assert result.belastbare_winst_cny == pytest.approx(float(income))
+        assert result.entity_type is entity_type
+        assert result.cit_totaal == pytest.approx(0.0)
+        assert result.effective_rate == pytest.approx(0.0)
+        assert result.applied_rate >= 0.0
+
+
 # --- VAT tests ---
 
 def test_cn_vat_standard_13pct():

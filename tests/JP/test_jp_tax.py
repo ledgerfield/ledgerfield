@@ -76,6 +76,22 @@ def test_cit_zero_income():
     assert r.effective_rate == pytest.approx(0.0)
 
 
+@pytest.mark.parametrize(
+    "capital,expected_is_sme",
+    [(10_000_000, True), (200_000_000, False)],
+)
+def test_cit_negative_income_returns_zero_tax(capital, expected_is_sme):
+    r = bereken_cit_japan(-1_000_000, jaar=2025, capital=capital)
+    assert r.taxable_income == pytest.approx(-1_000_000.0)
+    assert r.is_sme is expected_is_sme
+    assert r.cit_tier1 == pytest.approx(0.0)
+    assert r.cit_tier2 == pytest.approx(0.0)
+    assert r.cit_national == pytest.approx(0.0)
+    assert r.local_tax_estimate == pytest.approx(0.0)
+    assert r.cit_total == pytest.approx(0.0)
+    assert r.effective_rate == pytest.approx(0.0)
+
+
 # ── J-GAAP schema ─────────────────────────────────────────────────────────────
 
 def test_jgaap_account_count():
