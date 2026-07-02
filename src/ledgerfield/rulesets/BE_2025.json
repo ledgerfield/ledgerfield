@@ -1,0 +1,35 @@
+{
+  "kind": "tax-ruleset",
+  "jurisdiction": "BE",
+  "fiscal_year": 2025,
+  "entity_types": ["company", "individual"],
+  "zero_cit": false,
+  "parameters": {
+    "corporate_income_tax": {
+      "key": "corporate_income_tax",
+      "label": "CIT Belgium 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 25.0,
+      "currency": "EUR",
+      "notes": "CIT 25%; SME first EUR 100k at 20%; VAT 21%/12%/6%; income tax up to 50%"
+    },
+    "vat_standard": {
+      "key": "vat_standard",
+      "label": "VAT/GST Belgium 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 21.0,
+      "currency": "EUR"
+    },
+    "income_tax": {
+      "key": "income_tax",
+      "label": "Income Tax Belgium 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 50.0,
+      "currency": "EUR"
+    }
+  },
+  "sources": []
+}

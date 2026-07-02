@@ -1,0 +1,35 @@
+{
+  "kind": "tax-ruleset",
+  "jurisdiction": "NO",
+  "fiscal_year": 2025,
+  "entity_types": ["company", "individual"],
+  "zero_cit": false,
+  "parameters": {
+    "corporate_income_tax": {
+      "key": "corporate_income_tax",
+      "label": "CIT Norway 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 22.0,
+      "currency": "NOK",
+      "notes": "CIT 22%; petroleum sector 78%; VAT 25%/15%/12%; income tax 22%+bracket surcharges"
+    },
+    "vat_standard": {
+      "key": "vat_standard",
+      "label": "VAT/GST Norway 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 25.0,
+      "currency": "NOK"
+    },
+    "income_tax": {
+      "key": "income_tax",
+      "label": "Income Tax Norway 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 22.8,
+      "currency": "NOK"
+    }
+  },
+  "sources": []
+}

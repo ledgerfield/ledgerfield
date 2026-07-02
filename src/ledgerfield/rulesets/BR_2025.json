@@ -1,0 +1,35 @@
+{
+  "kind": "tax-ruleset",
+  "jurisdiction": "BR",
+  "fiscal_year": 2025,
+  "entity_types": ["company", "individual"],
+  "zero_cit": false,
+  "parameters": {
+    "corporate_income_tax": {
+      "key": "corporate_income_tax",
+      "label": "CIT Brazil 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 15.0,
+      "currency": "BRL",
+      "notes": "IRPJ 15%+10% surtax+CSLL 9%=34% effective combined; ICMS/ISS/PIS/COFINS complex indirect taxes"
+    },
+    "vat_standard": {
+      "key": "vat_standard",
+      "label": "VAT/GST Brazil 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 12.0,
+      "currency": "BRL"
+    },
+    "income_tax": {
+      "key": "income_tax",
+      "label": "Income Tax Brazil 2025",
+      "bracket_type": "flat_rate",
+      "brackets": [],
+      "flat_rate": 27.5,
+      "currency": "BRL"
+    }
+  },
+  "sources": []
+}
