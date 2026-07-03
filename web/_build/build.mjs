@@ -141,6 +141,7 @@ const NAV = [
   { href:`${BASE}/`,               label:'Home',   key:'home' },
   { href:`${BASE}/guides/`,        label:'Guides', key:'guides' },
   { href:`${BASE}/wiki/`,          label:'Wiki',   key:'wiki' },
+  { href:`${BASE}/coverage.html`,  label:'Coverage', key:'coverage' },
   { href:`${BASE}/app.html`,       label:'Open app', key:'app', cta:true },
 ];
 function wrap({ title, desc, active, main }) {
@@ -265,10 +266,84 @@ function landing() {
   return { file:'index.html', html: wrap({ title:'Offline P2P accounting', desc: body?.desc || 'LedgerField — offline-first, privacy-first accounting for 100+ jurisdictions, synced peer-to-peer over the knitweb.', active:'home', main }) };
 }
 
+// ── coverage page (data-driven from repo dirs + rulesets) ────────────────────
+const COUNTRY = { AR:'Argentina', AU:'Australia', BE:'Belgium', BR:'Brazil', CA:'Canada', CH:'Switzerland', CN:'China', DE:'Germany', DK:'Denmark', ES:'Spain', FI:'Finland', FR:'France', HK:'Hong Kong', IE:'Ireland', IN:'India', IT:'Italy', JP:'Japan', MX:'Mexico', NL:'Netherlands', NO:'Norway', NZ:'New Zealand', PL:'Poland', PT:'Portugal', SE:'Sweden', SG:'Singapore', TW:'Taiwan', UK:'United Kingdom', US:'United States', ZA:'South Africa' };
+const REGION = { Europe:['BE','CH','DE','DK','ES','FI','FR','IE','IT','NL','NO','PL','PT','SE','UK'], Americas:['AR','BR','CA','MX','US'], 'Asia-Pacific':['AU','CN','HK','IN','JP','NZ','SG','TW'], Africa:['ZA'] };
+const regionOf = cc => Object.keys(REGION).find(r => REGION[r].includes(cc)) || 'Other';
+function dirCodes(rel) {
+  const d = path.join(ROOT, rel);
+  if (!fs.existsSync(d)) return new Set();
+  return new Set(fs.readdirSync(d).filter(n => /^[A-Z]{2}$/.test(n)));
+}
+function citHeadline(cc) {
+  const f = path.join(ROOT, 'rulesets', cc + '_2025.json');
+  if (!fs.existsSync(f)) return null;
+  let d; try { d = JSON.parse(fs.readFileSync(f, 'utf8')); } catch (e) { return null; }
+  const c = (d.parameters || {}).corporate_income_tax;
+  if (!c) return null;
+  const norm = r => r <= 1 ? r * 100 : r;                 // rulesets store fraction OR percent
+  const pct = x => (Math.round(x * 100) / 100) + '%';
+  if (typeof c.flat_rate === 'number') return pct(norm(c.flat_rate));
+  if (Array.isArray(c.brackets) && c.brackets.length) {
+    const rs = c.brackets.map(b => b.rate).filter(x => typeof x === 'number');
+    if (rs.length) { const top = norm(Math.max(...rs)); return new Set(rs).size > 1 ? 'up to ' + pct(top) : pct(top); }
+  }
+  if (typeof c.rate === 'number') return pct(norm(c.rate));
+  return null;
+}
+function coverage() {
+  const schemas = dirCodes('src/ledgerfield/schemas'), tax = dirCodes('src/ledgerfield/tax'),
+        payroll = dirCodes('src/ledgerfield/payroll'), filing = dirCodes('src/ledgerfield/filing');
+  const rulesets = new Set(fs.readdirSync(path.join(ROOT, 'rulesets')).filter(n => /^[A-Z]{2}_/.test(n)).map(n => n.slice(0, 2)));
+  const codes = [...new Set([...schemas, ...tax])].sort((a, b) => (COUNTRY[a] || a).localeCompare(COUNTRY[b] || b));
+  const y = '<span class="cov y">&#10003;</span>', n = '<span class="cov n">&middot;</span>';
+  const rows = codes.map(cc => {
+    const cit = citHeadline(cc);
+    return `<tr data-name="${(COUNTRY[cc] || cc).toLowerCase()} ${cc.toLowerCase()}" data-region="${regionOf(cc)}">
+    <td><b>${COUNTRY[cc] || cc}</b> <span class="tag">${cc}</span></td>
+    <td>${regionOf(cc)}</td>
+    <td>${schemas.has(cc) ? y : n}</td>
+    <td>${tax.has(cc) ? y : n}</td>
+    <td>${rulesets.has(cc) ? y : n}</td>
+    <td>${payroll.has(cc) ? y : n}</td>
+    <td>${filing.has(cc) ? y : n}</td>
+    <td>${cit || '<span class="muted">&mdash; in app</span>'}</td>
+  </tr>`;
+  }).join('\n');
+  const main = `<div class="crumbs"><a href="${BASE}/">Home</a> / Coverage</div>
+<h1>Jurisdiction coverage</h1>
+<p>${codes.length} jurisdictions &middot; ${tax.size} tax engines &middot; ${rulesets.size} 2025 rulesets &middot; payroll &amp; filing: NL (more on the roadmap). Rates are computed in full inside the <a href="${BASE}/app.html">app</a> &mdash; the headline <a href="${BASE}/wiki/taxation.html#cit">CIT</a> here is indicative only.</p>
+<div class="covbar">
+  <input id="covq" type="text" placeholder="Search country…" oninput="covFilter()">
+  <select id="covr" onchange="covFilter()"><option value="">All regions</option>${Object.keys(REGION).map(r => `<option value="${r}">${r}</option>`).join('')}</select>
+</div>
+<table id="covtab">
+<thead><tr><th>Country</th><th>Region</th><th>CoA</th><th>Tax</th><th>Ruleset</th><th>Payroll</th><th>Filing</th><th>Headline CIT</th></tr></thead>
+<tbody>
+${rows}
+</tbody></table>
+<p id="covcount" class="muted"></p>
+<div class="note">Legend &mdash; <b>CoA</b>: chart of accounts &middot; <b>Tax</b>: tax-calculation engine &middot; <b>Ruleset</b>: CID-addressed 2025 <a href="${BASE}/wiki/taxation.html#ruleset">ruleset</a> &middot; <b>Payroll</b> / <b>Filing</b>: country modules. A missing dot means &ldquo;not yet &mdash; contributions welcome&rdquo;.</div>
+<script>
+function covFilter(){
+  var q=document.getElementById('covq').value.toLowerCase().trim();
+  var r=document.getElementById('covr').value;
+  var rows=document.querySelectorAll('#covtab tbody tr'),shown=0;
+  rows.forEach(function(tr){
+    var ok=(!q||tr.dataset.name.indexOf(q)>-1)&&(!r||tr.dataset.region===r);
+    tr.style.display=ok?'':'none'; if(ok)shown++;
+  });
+  document.getElementById('covcount').textContent=shown+' of '+rows.length+' shown';
+}
+covFilter();
+</script>`;
+  return { file:'coverage.html', html: wrap({ title:'Coverage', desc:'LedgerField jurisdiction coverage — chart of accounts, tax engine, rulesets, payroll and filing per country.', active:'coverage', main }) };
+}
+
 // ── build ────────────────────────────────────────────────────────────────────
 const pages = [
   landing(), guidesIndex(), ...GUIDES.map(guidePage),
-  wikiIndex(), ...Object.keys(CLUSTERS).map(clusterPage),
+  wikiIndex(), ...Object.keys(CLUSTERS).map(clusterPage), coverage(),
 ];
 for (const p of pages) {
   const out = path.join(WEB, p.file);

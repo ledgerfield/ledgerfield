@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coverage · LedgerField</title>
+<meta name="description" content="LedgerField jurisdiction coverage — chart of accounts, tax engine, rulesets, payroll and filing per country.">
+<link rel="stylesheet" href="/ledgerfield/style.css">
+</head>
+<body>
+<header class="site"><div class="bar">
+  <a href="/ledgerfield/" class="brand">LedgerField<span>offline P2P accounting</span></a>
+  <nav><a href="/ledgerfield/">Home</a><a href="/ledgerfield/guides/">Guides</a><a href="/ledgerfield/wiki/">Wiki</a><a href="/ledgerfield/coverage.html" class="active">Coverage</a><a href="/ledgerfield/app.html" class="cta">Open app</a></nav>
+</div></header>
+<main class="wrap">
+<div class="crumbs"><a href="/ledgerfield/">Home</a> / Coverage</div>
+<h1>Jurisdiction coverage</h1>
+<p>29 jurisdictions &middot; 27 tax engines &middot; 25 2025 rulesets &middot; payroll &amp; filing: NL (more on the roadmap). Rates are computed in full inside the <a href="/ledgerfield/app.html">app</a> &mdash; the headline <a href="/ledgerfield/wiki/taxation.html#cit">CIT</a> here is indicative only.</p>
+<div class="covbar">
+  <input id="covq" type="text" placeholder="Search country…" oninput="covFilter()">
+  <select id="covr" onchange="covFilter()"><option value="">All regions</option><option value="Europe">Europe</option><option value="Americas">Americas</option><option value="Asia-Pacific">Asia-Pacific</option><option value="Africa">Africa</option></select>
+</div>
+<table id="covtab">
+<thead><tr><th>Country</th><th>Region</th><th>CoA</th><th>Tax</th><th>Ruleset</th><th>Payroll</th><th>Filing</th><th>Headline CIT</th></tr></thead>
+<tbody>
+<tr data-name="argentina ar" data-region="Americas">
+    <td><b>Argentina</b> <span class="tag">AR</span></td>
+    <td>Americas</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="muted">&mdash; in app</span></td>
+  </tr>
+<tr data-name="australia au" data-region="Asia-Pacific">
+    <td><b>Australia</b> <span class="tag">AU</span></td>
+    <td>Asia-Pacific</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="muted">&mdash; in app</span></td>
+  </tr>
+<tr data-name="belgium be" data-region="Europe">
+    <td><b>Belgium</b> <span class="tag">BE</span></td>
+    <td>Europe</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td>25%</td>
+  </tr>
+<tr data-name="brazil br" data-region="Americas">
+    <td><b>Brazil</b> <span class="tag">BR</span></td>
+    <td>Americas</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td>15%</td>
+  </tr>
+<tr data-name="canada ca" data-region="Americas">
+    <td><b>Canada</b> <span class="tag">CA</span></td>
+    <td>Americas</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="muted">&mdash; in app</span></td>
+  </tr>
+<tr data-name="china cn" data-region="Asia-Pacific">
+    <td><b>China</b> <span class="tag">CN</span></td>
+    <td>Asia-Pacific</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td>25%</td>
+  </tr>
+<tr data-name="denmark dk" data-region="Europe">
+    <td><b>Denmark</b> <span class="tag">DK</span></td>
+    <td>Europe</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td>22%</td>
+  </tr>
+<tr data-name="finland fi" data-region="Europe">
+    <td><b>Finland</b> <span class="tag">FI</span></td>
+    <td>Europe</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td>20%</td>
+  </tr>
+<tr data-name="france fr" data-region="Europe">
+    <td><b>France</b> <span class="tag">FR</span></td>
+    <td>Europe</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="muted">&mdash; in app</span></td>
+  </tr>
+<tr data-name="germany de" data-region="Europe">
+    <td><b>Germany</b> <span class="tag">DE</span></td>
+    <td>Europe</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="muted">&mdash; in app</span></td>
+  </tr>
+<tr data-name="hong kong hk" data-region="Asia-Pacific">
+    <td><b>Hong Kong</b> <span class="tag">HK</span></td>
+    <td>Asia-Pacific</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td>16.5%</td>
+  </tr>
+<tr data-name="india in" data-region="Asia-Pacific">
+    <td><b>India</b> <span class="tag">IN</span></td>
+    <td>Asia-Pacific</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td>25%</td>
+  </tr>
+<tr data-name="ireland ie" data-region="Europe">
+    <td><b>Ireland</b> <span class="tag">IE</span></td>
+    <td>Europe</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="muted">&mdash; in app</span></td>
+  </tr>
+<tr data-name="italy it" data-region="Europe">
+    <td><b>Italy</b> <span class="tag">IT</span></td>
+    <td>Europe</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td>24%</td>
+  </tr>
+<tr data-name="japan jp" data-region="Asia-Pacific">
+    <td><b>Japan</b> <span class="tag">JP</span></td>
+    <td>Asia-Pacific</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="muted">&mdash; in app</span></td>
+  </tr>
+<tr data-name="mexico mx" data-region="Americas">
+    <td><b>Mexico</b> <span class="tag">MX</span></td>
+    <td>Americas</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td>30%</td>
+  </tr>
+<tr data-name="netherlands nl" data-region="Europe">
+    <td><b>Netherlands</b> <span class="tag">NL</span></td>
+    <td>Europe</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td>up to 25.8%</td>
+  </tr>
+<tr data-name="new zealand nz" data-region="Asia-Pacific">
+    <td><b>New Zealand</b> <span class="tag">NZ</span></td>
+    <td>Asia-Pacific</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="muted">&mdash; in app</span></td>
+  </tr>
+<tr data-name="norway no" data-region="Europe">
+    <td><b>Norway</b> <span class="tag">NO</span></td>
+    <td>Europe</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td>22%</td>
+  </tr>
+<tr data-name="poland pl" data-region="Europe">
+    <td><b>Poland</b> <span class="tag">PL</span></td>
+    <td>Europe</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td>19%</td>
+  </tr>
+<tr data-name="portugal pt" data-region="Europe">
+    <td><b>Portugal</b> <span class="tag">PT</span></td>
+    <td>Europe</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td>up to 21%</td>
+  </tr>
+<tr data-name="singapore sg" data-region="Asia-Pacific">
+    <td><b>Singapore</b> <span class="tag">SG</span></td>
+    <td>Asia-Pacific</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="muted">&mdash; in app</span></td>
+  </tr>
+<tr data-name="south africa za" data-region="Africa">
+    <td><b>South Africa</b> <span class="tag">ZA</span></td>
+    <td>Africa</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="muted">&mdash; in app</span></td>
+  </tr>
+<tr data-name="spain es" data-region="Europe">
+    <td><b>Spain</b> <span class="tag">ES</span></td>
+    <td>Europe</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td>25%</td>
+  </tr>
+<tr data-name="sweden se" data-region="Europe">
+    <td><b>Sweden</b> <span class="tag">SE</span></td>
+    <td>Europe</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td>20.6%</td>
+  </tr>
+<tr data-name="switzerland ch" data-region="Europe">
+    <td><b>Switzerland</b> <span class="tag">CH</span></td>
+    <td>Europe</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td>8.5%</td>
+  </tr>
+<tr data-name="taiwan tw" data-region="Asia-Pacific">
+    <td><b>Taiwan</b> <span class="tag">TW</span></td>
+    <td>Asia-Pacific</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td>20%</td>
+  </tr>
+<tr data-name="united kingdom uk" data-region="Europe">
+    <td><b>United Kingdom</b> <span class="tag">UK</span></td>
+    <td>Europe</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="muted">&mdash; in app</span></td>
+  </tr>
+<tr data-name="united states us" data-region="Americas">
+    <td><b>United States</b> <span class="tag">US</span></td>
+    <td>Americas</td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov y">&#10003;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="cov n">&middot;</span></td>
+    <td><span class="muted">&mdash; in app</span></td>
+  </tr>
+</tbody></table>
+<p id="covcount" class="muted"></p>
+<div class="note">Legend &mdash; <b>CoA</b>: chart of accounts &middot; <b>Tax</b>: tax-calculation engine &middot; <b>Ruleset</b>: CID-addressed 2025 <a href="/ledgerfield/wiki/taxation.html#ruleset">ruleset</a> &middot; <b>Payroll</b> / <b>Filing</b>: country modules. A missing dot means &ldquo;not yet &mdash; contributions welcome&rdquo;.</div>
+<script>
+function covFilter(){
+  var q=document.getElementById('covq').value.toLowerCase().trim();
+  var r=document.getElementById('covr').value;
+  var rows=document.querySelectorAll('#covtab tbody tr'),shown=0;
+  rows.forEach(function(tr){
+    var ok=(!q||tr.dataset.name.indexOf(q)>-1)&&(!r||tr.dataset.region===r);
+    tr.style.display=ok?'':'none'; if(ok)shown++;
+  });
+  document.getElementById('covcount').textContent=shown+' of '+rows.length+' shown';
+}
+covFilter();
+</script>
+</main>
+<footer class="site"><div class="inner">
+  <div class="relay">
+    <h4>LedgerField</h4>
+    Offline-first, privacy-first accounting for 100+ jurisdictions.<br>
+    Served peer-to-peer over the knitweb relay <code>5mart.ml</code>. No server, no cloud, no telemetry.
+  </div>
+  <div class="cols">
+    <div><h4>Docs</h4>
+      <a href="/ledgerfield/guides/">Guides</a><br>
+      <a href="/ledgerfield/wiki/">Wiki</a><br>
+      <a href="/ledgerfield/app.html">Open the app</a></div>
+    <div><h4>Project</h4>
+      <a href="https://github.com/ledgerfield/ledgerfield">GitHub</a><br>
+      <a href="/ledgerfield/wiki/knitweb-p2p.html">Knitweb &amp; P2P</a><br>
+      <a href="/ledgerfield/wiki/privacy-datamarket.html">Privacy model</a></div>
+  </div>
+</div></footer>
+</body>
+</html>
