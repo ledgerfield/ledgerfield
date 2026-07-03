@@ -97,6 +97,17 @@ tr:hover td{background:var(--panel)}
 .alpha{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}
 .alpha a{background:var(--panel);border:1px solid var(--bdr);border-radius:6px;padding:3px 9px;color:var(--muted)}
 
+/* ── coverage table ───────────────────────────────────────── */
+.covbar{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+.covbar input,.covbar select{background:var(--panel);border:1px solid var(--bdr);color:var(--txt);border-radius:6px;padding:8px 10px;font-size:.92em}
+.covbar input{flex:1;min-width:200px}
+.covbar input:focus,.covbar select:focus{outline:none;border-color:var(--acc)}
+.cov{font-weight:700}
+.cov.y{color:var(--ok)}
+.cov.n{color:var(--bdr)}
+.muted{color:var(--muted)}
+#covtab td:nth-child(n+3):nth-child(-n+7){text-align:center}
+
 /* ── footer ───────────────────────────────────────────────── */
 footer.site{border-top:1px solid var(--bdr);background:var(--panel);margin-top:40px}
 footer.site .inner{max-width:var(--maxw);margin:0 auto;padding:26px 18px;display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between;font-size:.86em;color:var(--muted)}
