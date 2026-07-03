@@ -21,41 +21,42 @@
 <link rel="stylesheet" href="/ledgerfield/style.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="site"><div class="bar">
   <a href="/ledgerfield/" class="brand">LedgerField<span>offline P2P accounting</span></a>
-  <nav><a href="/ledgerfield/">Home</a><a href="/ledgerfield/guides/">Guides</a><a href="/ledgerfield/wiki/" class="active">Wiki</a><a href="/ledgerfield/coverage.html">Coverage</a><a href="/ledgerfield/app.html" class="cta">Open app</a></nav>
+  <nav aria-label="Primary"><a href="/ledgerfield/">Home</a><a href="/ledgerfield/guides/">Guides</a><a href="/ledgerfield/wiki/" class="active" aria-current="page">Wiki</a><a href="/ledgerfield/coverage.html">Coverage</a><a href="/ledgerfield/app.html" class="cta">Open app</a></nav>
 </div></header>
-<main class="wrap">
+<main id="main" class="wrap" tabindex="-1">
 <div class="crumbs"><a href="/ledgerfield/">Home</a> / <a href="/ledgerfield/wiki/">Wiki</a> / Accounting</div>
 <h1>Accounting</h1>
 <p>6 definitions. Every term links to related concepts and, where it touches the mesh, to the underlying <a href="/ledgerfield/wiki/knitweb-p2p.html">knitweb / P2P</a> primitives.</p>
 <article class="wiki-def" id="chart-of-accounts">
-  <h3>Chart of accounts <a class="anchor" href="#chart-of-accounts">#</a></h3>
+  <h3>Chart of accounts <a class="anchor" href="#chart-of-accounts" aria-label="Permalink to Chart of accounts">#</a></h3>
   <p>The account structure of the ledger. LedgerField ships NL (RGS), UK (FRS 102) and US (GAAP) charts, plus country schemas for 100+ jurisdictions.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/accounting.html#journal-entry">Journal entry</a> · <a href="/ledgerfield/wiki/accounting.html#trial-balance">Trial balance</a></div>
 </article>
 <article class="wiki-def" id="journal-entry">
-  <h3>Journal entry <a class="anchor" href="#journal-entry">#</a></h3>
+  <h3>Journal entry <a class="anchor" href="#journal-entry" aria-label="Permalink to Journal entry">#</a></h3>
   <p>A dated line with a debit account, a credit account and an amount — the atom of double-entry bookkeeping.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/accounting.html#chart-of-accounts">Chart of accounts</a> · <a href="/ledgerfield/wiki/accounting.html#trial-balance">Trial balance</a></div>
 </article>
 <article class="wiki-def" id="trial-balance">
-  <h3>Trial balance <a class="anchor" href="#trial-balance">#</a></h3>
+  <h3>Trial balance <a class="anchor" href="#trial-balance" aria-label="Permalink to Trial balance">#</a></h3>
   <p>The per-account sum of debits and credits; it must balance before you close a period.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/accounting.html#journal-entry">Journal entry</a> · <a href="/ledgerfield/wiki/accounting.html#profit-loss">Profit & loss (Winst & Verlies)</a></div>
 </article>
 <article class="wiki-def" id="profit-loss">
-  <h3>Profit & loss (Winst & Verlies) <a class="anchor" href="#profit-loss">#</a></h3>
+  <h3>Profit & loss (Winst & Verlies) <a class="anchor" href="#profit-loss" aria-label="Permalink to Profit & loss (Winst & Verlies)">#</a></h3>
   <p>Revenue minus costs over a period. LedgerField derives it directly from your journal entries.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/accounting.html#trial-balance">Trial balance</a></div>
 </article>
 <article class="wiki-def" id="entity">
-  <h3>Entity / holding structure <a class="anchor" href="#entity">#</a></h3>
+  <h3>Entity / holding structure <a class="anchor" href="#entity" aria-label="Permalink to Entity / holding structure">#</a></h3>
   <p>A company in your structure (BV, Holding, ZZP, Ltd, GmbH…), optionally nested under a parent. Reports and filings are scoped per entity.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/accounting.html#chart-of-accounts">Chart of accounts</a></div>
 </article>
 <article class="wiki-def" id="saft">
-  <h3>SAF-T export <a class="anchor" href="#saft">#</a></h3>
+  <h3>SAF-T export <a class="anchor" href="#saft" aria-label="Permalink to SAF-T export">#</a></h3>
   <p>Standard Audit File for Tax — an XML export of your ledger for tax authorities. Deterministically generated from the same canonical data model.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/accounting.html#journal-entry">Journal entry</a></div><div class="kw"><b>On the knitweb:</b> <a href="/ledgerfield/wiki/knitweb-p2p.html#canonical-encoding">Canonical encoding</a></div>
 </article>

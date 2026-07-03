@@ -21,56 +21,57 @@
 <link rel="stylesheet" href="/ledgerfield/style.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="site"><div class="bar">
   <a href="/ledgerfield/" class="brand">LedgerField<span>offline P2P accounting</span></a>
-  <nav><a href="/ledgerfield/">Home</a><a href="/ledgerfield/guides/">Guides</a><a href="/ledgerfield/wiki/" class="active">Wiki</a><a href="/ledgerfield/coverage.html">Coverage</a><a href="/ledgerfield/app.html" class="cta">Open app</a></nav>
+  <nav aria-label="Primary"><a href="/ledgerfield/">Home</a><a href="/ledgerfield/guides/">Guides</a><a href="/ledgerfield/wiki/" class="active" aria-current="page">Wiki</a><a href="/ledgerfield/coverage.html">Coverage</a><a href="/ledgerfield/app.html" class="cta">Open app</a></nav>
 </div></header>
-<main class="wrap">
+<main id="main" class="wrap" tabindex="-1">
 <div class="crumbs"><a href="/ledgerfield/">Home</a> / <a href="/ledgerfield/wiki/">Wiki</a> / Taxation</div>
 <h1>Taxation</h1>
 <p>9 definitions. Every term links to related concepts and, where it touches the mesh, to the underlying <a href="/ledgerfield/wiki/knitweb-p2p.html">knitweb / P2P</a> primitives.</p>
 <article class="wiki-def" id="vpb">
-  <h3>VPB — NL corporate income tax <a class="anchor" href="#vpb">#</a></h3>
+  <h3>VPB — NL corporate income tax <a class="anchor" href="#vpb" aria-label="Permalink to VPB — NL corporate income tax">#</a></h3>
   <p>Vennootschapsbelasting: 19% up to €200k taxable profit, 25.8% above (2025). Built-in calculator with effective-rate output.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/taxation.html#ib">IB — NL personal income tax</a> · <a href="/ledgerfield/wiki/taxation.html#cit">CIT — corporate income tax (global)</a> · <a href="/ledgerfield/wiki/taxation.html#effective-rate">Effective tax rate</a></div>
 </article>
 <article class="wiki-def" id="ib">
-  <h3>IB — NL personal income tax <a class="anchor" href="#ib">#</a></h3>
+  <h3>IB — NL personal income tax <a class="anchor" href="#ib" aria-label="Permalink to IB — NL personal income tax">#</a></h3>
   <p>Inkomstenbelasting across Box 1 (work), Box 2 (substantial-interest dividend) and Box 3 (wealth), with the 2025 brackets and credits.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/taxation.html#vpb">VPB — NL corporate income tax</a> · <a href="/ledgerfield/wiki/taxation.html#dga">DGA gebruikelijk loon</a></div>
 </article>
 <article class="wiki-def" id="wbso">
-  <h3>WBSO — R&D payroll credit <a class="anchor" href="#wbso">#</a></h3>
+  <h3>WBSO — R&D payroll credit <a class="anchor" href="#wbso" aria-label="Permalink to WBSO — R&D payroll credit">#</a></h3>
   <p>A Dutch payroll-tax reduction on qualifying R&D wage costs (32%, or 40% for starters, on the first band). Modelled in the tax tab.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/taxation.html#vpb">VPB — NL corporate income tax</a></div>
 </article>
 <article class="wiki-def" id="dga">
-  <h3>DGA gebruikelijk loon <a class="anchor" href="#dga">#</a></h3>
+  <h3>DGA gebruikelijk loon <a class="anchor" href="#dga" aria-label="Permalink to DGA gebruikelijk loon">#</a></h3>
   <p>The customary-salary rule for director-shareholders. The 2025 benchmark (ijkpunt) is <b>€41,138</b>; the app flags salaries below the norm as a correction risk.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/taxation.html#ib">IB — NL personal income tax</a></div>
 </article>
 <article class="wiki-def" id="btw">
-  <h3>BTW — VAT <a class="anchor" href="#btw">#</a></h3>
+  <h3>BTW — VAT <a class="anchor" href="#btw" aria-label="Permalink to BTW — VAT">#</a></h3>
   <p>Value-added tax (21% standard NL). Quarterly return helper computes VAT charged minus deductible input VAT.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/taxation.html#vpb">VPB — NL corporate income tax</a></div>
 </article>
 <article class="wiki-def" id="cit">
-  <h3>CIT — corporate income tax (global) <a class="anchor" href="#cit">#</a></h3>
+  <h3>CIT — corporate income tax (global) <a class="anchor" href="#cit" aria-label="Permalink to CIT — corporate income tax (global)">#</a></h3>
   <p>Corporate income tax modelled for 100+ jurisdictions from CID-addressed <a href="#ruleset">rulesets</a>, each with its own brackets, entity types and 2025 rates.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/taxation.html#vpb">VPB — NL corporate income tax</a> · <a href="/ledgerfield/wiki/taxation.html#ruleset">Ruleset</a> · <a href="/ledgerfield/wiki/taxation.html#effective-rate">Effective tax rate</a></div><div class="kw"><b>On the knitweb:</b> <a href="/ledgerfield/wiki/knitweb-p2p.html#cid">CID — Content Identifier</a></div>
 </article>
 <article class="wiki-def" id="effective-rate">
-  <h3>Effective tax rate <a class="anchor" href="#effective-rate">#</a></h3>
+  <h3>Effective tax rate <a class="anchor" href="#effective-rate" aria-label="Permalink to Effective tax rate">#</a></h3>
   <p>Tax actually payable divided by the taxable base — the number that matters for benchmarking, and one of the seven shareable aggregate categories.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/taxation.html#cit">CIT — corporate income tax (global)</a> · <a href="/ledgerfield/wiki/taxation.html#vpb">VPB — NL corporate income tax</a> · <a href="/ledgerfield/wiki/privacy-datamarket.html#data-category">Data categories (7)</a></div>
 </article>
 <article class="wiki-def" id="ruleset">
-  <h3>Ruleset <a class="anchor" href="#ruleset">#</a></h3>
+  <h3>Ruleset <a class="anchor" href="#ruleset" aria-label="Permalink to Ruleset">#</a></h3>
   <p>A jurisdiction's tax parameters as a canonical JSON, addressed by <a href="/ledgerfield/wiki/knitweb-p2p.html#cid">CID</a> and shared peer-to-peer over <a href="/ledgerfield/wiki/knitweb-p2p.html#gossip">gossip</a>. Rates are public-domain, so rulesets are safe to replicate; you verify one by recomputing its CID.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/taxation.html#cit">CIT — corporate income tax (global)</a> · <a href="/ledgerfield/wiki/taxation.html#btw">BTW — VAT</a> · <a href="/ledgerfield/wiki/taxation.html#vpb">VPB — NL corporate income tax</a></div><div class="kw"><b>On the knitweb:</b> <a href="/ledgerfield/wiki/knitweb-p2p.html#cid">CID — Content Identifier</a> · <a href="/ledgerfield/wiki/knitweb-p2p.html#gossip">Gossip / anti-entropy</a> · <a href="/ledgerfield/wiki/knitweb-p2p.html#canonical-encoding">Canonical encoding</a></div>
 </article>
 <article class="wiki-def" id="payroll">
-  <h3>Payroll (loonstrook) <a class="anchor" href="#payroll">#</a></h3>
+  <h3>Payroll (loonstrook) <a class="anchor" href="#payroll" aria-label="Permalink to Payroll (loonstrook)">#</a></h3>
   <p>Gross-to-net payslip generation with employer burden (pension, WW, WIA, ZVW), plus the DGA customary-salary check.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/taxation.html#dga">DGA gebruikelijk loon</a></div>
 </article>

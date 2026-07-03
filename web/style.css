@@ -28,6 +28,13 @@ header.site nav a:hover,header.site nav a.active{color:var(--txt);text-decoratio
 header.site nav a.cta{background:var(--acc);color:#fff;padding:4px 12px;border-radius:6px}
 header.site nav a.cta:hover{background:var(--acc2)}
 
+/* ── accessibility ────────────────────────────────────────── */
+.skip{position:absolute;left:-9999px;top:0;background:var(--acc);color:#fff;padding:10px 16px;border-radius:0 0 8px 0;z-index:100;font-weight:600}
+.skip:focus{left:0}
+:focus-visible{outline:2px solid var(--acc2);outline-offset:2px;border-radius:3px}
+main:focus{outline:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+
 /* ── layout ───────────────────────────────────────────────── */
 main.wrap{max-width:var(--maxw);margin:0 auto;padding:26px 18px 60px}
 .crumbs{font-size:.82em;color:var(--muted);margin-bottom:18px}

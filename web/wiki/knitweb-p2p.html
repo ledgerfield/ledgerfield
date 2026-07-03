@@ -21,61 +21,62 @@
 <link rel="stylesheet" href="/ledgerfield/style.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="site"><div class="bar">
   <a href="/ledgerfield/" class="brand">LedgerField<span>offline P2P accounting</span></a>
-  <nav><a href="/ledgerfield/">Home</a><a href="/ledgerfield/guides/">Guides</a><a href="/ledgerfield/wiki/" class="active">Wiki</a><a href="/ledgerfield/coverage.html">Coverage</a><a href="/ledgerfield/app.html" class="cta">Open app</a></nav>
+  <nav aria-label="Primary"><a href="/ledgerfield/">Home</a><a href="/ledgerfield/guides/">Guides</a><a href="/ledgerfield/wiki/" class="active" aria-current="page">Wiki</a><a href="/ledgerfield/coverage.html">Coverage</a><a href="/ledgerfield/app.html" class="cta">Open app</a></nav>
 </div></header>
-<main class="wrap">
+<main id="main" class="wrap" tabindex="-1">
 <div class="crumbs"><a href="/ledgerfield/">Home</a> / <a href="/ledgerfield/wiki/">Wiki</a> / Knitweb & P2P</div>
 <h1>Knitweb & P2P</h1>
 <p>10 definitions. Every term links to related concepts and, where it touches the mesh, to the underlying <a href="/ledgerfield/wiki/knitweb-p2p.html">knitweb / P2P</a> primitives.</p>
 <article class="wiki-def" id="knitweb">
-  <h3>Knitweb <a class="anchor" href="#knitweb">#</a></h3>
+  <h3>Knitweb <a class="anchor" href="#knitweb" aria-label="Permalink to Knitweb">#</a></h3>
   <p>The peer-to-peer knowledge-web primitive LedgerField rides on. A knitweb is an append-only mesh of content-addressed records that peers replicate directly, with no central server. Public tax rulesets and anonymised market aggregates travel this mesh; private books never do.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/knitweb-p2p.html#pulse">Pulse</a> · <a href="/ledgerfield/wiki/knitweb-p2p.html#knitwebs">Knitwebs (domain plugins)</a> · <a href="/ledgerfield/wiki/knitweb-p2p.html#gossip">Gossip / anti-entropy</a></div>
 </article>
 <article class="wiki-def" id="pulse">
-  <h3>Pulse <a class="anchor" href="#pulse">#</a></h3>
+  <h3>Pulse <a class="anchor" href="#pulse" aria-label="Permalink to Pulse">#</a></h3>
   <p>The CID-stable, event-sourced runtime that implements the knitweb protocol. Pulse guarantees that the same logical record produces the same identifier on every peer, which is what lets independently-run nodes agree on a ruleset or aggregate without trusting each other.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/knitweb-p2p.html#knitweb">Knitweb</a> · <a href="/ledgerfield/wiki/knitweb-p2p.html#canonical-encoding">Canonical encoding</a> · <a href="/ledgerfield/wiki/knitweb-p2p.html#cid">CID — Content Identifier</a></div>
 </article>
 <article class="wiki-def" id="knitwebs">
-  <h3>Knitwebs (domain plugins) <a class="anchor" href="#knitwebs">#</a></h3>
+  <h3>Knitwebs (domain plugins) <a class="anchor" href="#knitwebs" aria-label="Permalink to Knitwebs (domain plugins)">#</a></h3>
   <p>Domain-specific webs built on the primitive — a chemistry knitweb, an accounting knitweb, and so on. LedgerField's ruleset exchange is a knitweb whose records are jurisdiction tax parameters.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/knitweb-p2p.html#knitweb">Knitweb</a> · <a href="/ledgerfield/wiki/taxation.html#ruleset">Ruleset</a></div>
 </article>
 <article class="wiki-def" id="cid">
-  <h3>CID — Content Identifier <a class="anchor" href="#cid">#</a></h3>
+  <h3>CID — Content Identifier <a class="anchor" href="#cid" aria-label="Permalink to CID — Content Identifier">#</a></h3>
   <p>A <code>sha256</code> hash of a record's canonical payload, used as its address. Because the address is derived from the bytes, two peers that hold the same ruleset or data package compute the same CID and know they hold the same thing.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/knitweb-p2p.html#content-addressing">Content addressing</a> · <a href="/ledgerfield/wiki/knitweb-p2p.html#canonical-encoding">Canonical encoding</a></div>
 </article>
 <article class="wiki-def" id="content-addressing">
-  <h3>Content addressing <a class="anchor" href="#content-addressing">#</a></h3>
+  <h3>Content addressing <a class="anchor" href="#content-addressing" aria-label="Permalink to Content addressing">#</a></h3>
   <p>Referring to data by <em>what it is</em> (its hash) rather than <em>where it lives</em> (a URL). It makes records immutable, verifiable and cache-friendly across a mesh of untrusted peers.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/knitweb-p2p.html#cid">CID — Content Identifier</a></div>
 </article>
 <article class="wiki-def" id="canonical-encoding">
-  <h3>Canonical encoding <a class="anchor" href="#canonical-encoding">#</a></h3>
+  <h3>Canonical encoding <a class="anchor" href="#canonical-encoding" aria-label="Permalink to Canonical encoding">#</a></h3>
   <p>A deterministic serialization (sorted keys, fixed number formatting) so that semantically-identical data always yields identical bytes — and therefore an identical <a href="#cid">CID</a>. LedgerField sorts object keys before hashing both rulesets and market packages.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/knitweb-p2p.html#cid">CID — Content Identifier</a> · <a href="/ledgerfield/wiki/knitweb-p2p.html#content-addressing">Content addressing</a></div>
 </article>
 <article class="wiki-def" id="gossip">
-  <h3>Gossip / anti-entropy <a class="anchor" href="#gossip">#</a></h3>
+  <h3>Gossip / anti-entropy <a class="anchor" href="#gossip" aria-label="Permalink to Gossip / anti-entropy">#</a></h3>
   <p>The propagation mechanism: peers periodically exchange the records they have, converging on the full set without any coordinator. New rulesets spread peer-to-peer this way.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/knitweb-p2p.html#node">Node</a> · <a href="/ledgerfield/wiki/knitweb-p2p.html#relay">Relay</a></div>
 </article>
 <article class="wiki-def" id="node">
-  <h3>Node <a class="anchor" href="#node">#</a></h3>
+  <h3>Node <a class="anchor" href="#node" aria-label="Permalink to Node">#</a></h3>
   <p>A single peer. Its identity is a <code>SHA-256</code> id derived without personal data, so participation carries no PII. k-anonymity counts distinct nodes, not rows.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/knitweb-p2p.html#gossip">Gossip / anti-entropy</a> · <a href="/ledgerfield/wiki/knitweb-p2p.html#relay">Relay</a></div>
 </article>
 <article class="wiki-def" id="relay">
-  <h3>Relay <a class="anchor" href="#relay">#</a></h3>
+  <h3>Relay <a class="anchor" href="#relay" aria-label="Permalink to Relay">#</a></h3>
   <p>A well-known rendezvous node that helps peers behind firewalls find each other and exchange gossip. LedgerField's public relay is <a href="#relay-5mart">5mart.ml</a>.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/knitweb-p2p.html#relay-5mart">5mart.ml relay</a> · <a href="/ledgerfield/wiki/knitweb-p2p.html#gossip">Gossip / anti-entropy</a> · <a href="/ledgerfield/wiki/knitweb-p2p.html#node">Node</a></div>
 </article>
 <article class="wiki-def" id="relay-5mart">
-  <h3>5mart.ml relay <a class="anchor" href="#relay-5mart">#</a></h3>
+  <h3>5mart.ml relay <a class="anchor" href="#relay-5mart" aria-label="Permalink to 5mart.ml relay">#</a></h3>
   <p>The public knitweb relay that hosts this site (<code>www.5mart.ml/ledgerfield</code>) and carries LedgerField ruleset and aggregate gossip. Running your own relay is optional — the mesh works peer-to-peer.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/knitweb-p2p.html#relay">Relay</a> · <a href="/ledgerfield/wiki/knitweb-p2p.html#pulse">Pulse</a></div>
 </article>

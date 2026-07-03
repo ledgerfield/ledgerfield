@@ -21,56 +21,57 @@
 <link rel="stylesheet" href="/ledgerfield/style.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="site"><div class="bar">
   <a href="/ledgerfield/" class="brand">LedgerField<span>offline P2P accounting</span></a>
-  <nav><a href="/ledgerfield/">Home</a><a href="/ledgerfield/guides/">Guides</a><a href="/ledgerfield/wiki/" class="active">Wiki</a><a href="/ledgerfield/coverage.html">Coverage</a><a href="/ledgerfield/app.html" class="cta">Open app</a></nav>
+  <nav aria-label="Primary"><a href="/ledgerfield/">Home</a><a href="/ledgerfield/guides/">Guides</a><a href="/ledgerfield/wiki/" class="active" aria-current="page">Wiki</a><a href="/ledgerfield/coverage.html">Coverage</a><a href="/ledgerfield/app.html" class="cta">Open app</a></nav>
 </div></header>
-<main class="wrap">
+<main id="main" class="wrap" tabindex="-1">
 <div class="crumbs"><a href="/ledgerfield/">Home</a> / <a href="/ledgerfield/wiki/">Wiki</a> / Privacy & Data market</div>
 <h1>Privacy & Data market</h1>
 <p>9 definitions. Every term links to related concepts and, where it touches the mesh, to the underlying <a href="/ledgerfield/wiki/knitweb-p2p.html">knitweb / P2P</a> primitives.</p>
 <article class="wiki-def" id="k-anonymity">
-  <h3>k-anonymity (k ≥ 5) <a class="anchor" href="#k-anonymity">#</a></h3>
+  <h3>k-anonymity (k ≥ 5) <a class="anchor" href="#k-anonymity" aria-label="Permalink to k-anonymity (k ≥ 5)">#</a></h3>
   <p>A privacy floor: an aggregate is only published once at least <b>K_MIN = 5</b> distinct <a href="/ledgerfield/wiki/knitweb-p2p.html#node">nodes</a> have contributed to it, so no single business can be singled out. Below the threshold, publication is refused.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/privacy-datamarket.html#aggregate">Aggregate (AggregateStats)</a> · <a href="/ledgerfield/wiki/privacy-datamarket.html#data-package">Data package</a> · <a href="/ledgerfield/wiki/privacy-datamarket.html#consent">Consent</a></div><div class="kw"><b>On the knitweb:</b> <a href="/ledgerfield/wiki/knitweb-p2p.html#node">Node</a></div>
 </article>
 <article class="wiki-def" id="aggregate">
-  <h3>Aggregate (AggregateStats) <a class="anchor" href="#aggregate">#</a></h3>
+  <h3>Aggregate (AggregateStats) <a class="anchor" href="#aggregate" aria-label="Permalink to Aggregate (AggregateStats)">#</a></h3>
   <p>A privacy-preserving summary of many contributions — <code>count, min, max, mean, median, p25, p75</code>. Only the summary is ever shared; the underlying figures stay on each node.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/privacy-datamarket.html#k-anonymity">k-anonymity (k ≥ 5)</a> · <a href="/ledgerfield/wiki/privacy-datamarket.html#data-package">Data package</a></div>
 </article>
 <article class="wiki-def" id="data-package">
-  <h3>Data package <a class="anchor" href="#data-package">#</a></h3>
+  <h3>Data package <a class="anchor" href="#data-package" aria-label="Permalink to Data package">#</a></h3>
   <p>The unit sold on the market: a CID-addressed bundle of an <a href="#aggregate">aggregate</a> plus its category, jurisdiction, sector, year and contributor count.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/privacy-datamarket.html#aggregate">Aggregate (AggregateStats)</a> · <a href="/ledgerfield/wiki/privacy-datamarket.html#revenue-distribution">Revenue distribution</a></div><div class="kw"><b>On the knitweb:</b> <a href="/ledgerfield/wiki/knitweb-p2p.html#cid">CID — Content Identifier</a> · <a href="/ledgerfield/wiki/knitweb-p2p.html#content-addressing">Content addressing</a></div>
 </article>
 <article class="wiki-def" id="consent">
-  <h3>Consent <a class="anchor" href="#consent">#</a></h3>
+  <h3>Consent <a class="anchor" href="#consent" aria-label="Permalink to Consent">#</a></h3>
   <p>Per <a href="#data-category">category</a> and jurisdiction opt-in. Default is to share nothing; you explicitly grant each category you want to contribute, and can revoke at any time.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/privacy-datamarket.html#data-category">Data categories (7)</a> · <a href="/ledgerfield/wiki/privacy-datamarket.html#k-anonymity">k-anonymity (k ≥ 5)</a></div>
 </article>
 <article class="wiki-def" id="data-category">
-  <h3>Data categories (7) <a class="anchor" href="#data-category">#</a></h3>
+  <h3>Data categories (7) <a class="anchor" href="#data-category" aria-label="Permalink to Data categories (7)">#</a></h3>
   <p>The seven shareable aggregate types: salary benchmarks, cost ratios, margin benchmarks, effective tax rates, cash-flow patterns, payroll costs and invoice cycles.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/privacy-datamarket.html#consent">Consent</a></div>
 </article>
 <article class="wiki-def" id="revenue-distribution">
-  <h3>Revenue distribution <a class="anchor" href="#revenue-distribution">#</a></h3>
+  <h3>Revenue distribution <a class="anchor" href="#revenue-distribution" aria-label="Permalink to Revenue distribution">#</a></h3>
   <p>When a package sells, proceeds (after the <a href="#platform-fee">platform fee</a>) are split across the contributing nodes — either equally or weighted by contribution.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/privacy-datamarket.html#data-package">Data package</a> · <a href="/ledgerfield/wiki/privacy-datamarket.html#platform-fee">Platform fee</a></div><div class="kw"><b>On the knitweb:</b> <a href="/ledgerfield/wiki/knitweb-p2p.html#node">Node</a></div>
 </article>
 <article class="wiki-def" id="platform-fee">
-  <h3>Platform fee <a class="anchor" href="#platform-fee">#</a></h3>
+  <h3>Platform fee <a class="anchor" href="#platform-fee" aria-label="Permalink to Platform fee">#</a></h3>
   <p>A small percentage retained by the marketplace on each sale (10% in the reference UI); the remainder is distributed to contributors.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/privacy-datamarket.html#revenue-distribution">Revenue distribution</a></div>
 </article>
 <article class="wiki-def" id="vault">
-  <h3>Vault <a class="anchor" href="#vault">#</a></h3>
+  <h3>Vault <a class="anchor" href="#vault" aria-label="Permalink to Vault">#</a></h3>
   <p>The local encrypted store (PBKDF2-HMAC-SHA256, HMAC-authenticated). Your ledgers, entities and payroll live here in the browser; raw data never leaves the device.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/privacy-datamarket.html#offline-first">Offline-first</a></div><div class="kw"><b>On the knitweb:</b> <a href="/ledgerfield/wiki/knitweb-p2p.html#node">Node</a></div>
 </article>
 <article class="wiki-def" id="offline-first">
-  <h3>Offline-first <a class="anchor" href="#offline-first">#</a></h3>
+  <h3>Offline-first <a class="anchor" href="#offline-first" aria-label="Permalink to Offline-first">#</a></h3>
   <p>The whole application runs in your browser with no server. Only public artefacts — anonymised aggregates and tax rulesets — ever touch the network, and only over the knitweb.</p>
   <div class="rel"><b>Related:</b> <a href="/ledgerfield/wiki/privacy-datamarket.html#vault">Vault</a> · <a href="/ledgerfield/wiki/taxation.html#ruleset">Ruleset</a></div><div class="kw"><b>On the knitweb:</b> <a href="/ledgerfield/wiki/knitweb-p2p.html#gossip">Gossip / anti-entropy</a></div>
 </article>

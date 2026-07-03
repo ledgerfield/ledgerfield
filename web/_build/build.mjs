@@ -153,10 +153,12 @@ const NAV = [
   { href:`${BASE}/coverage.html`,  label:'Coverage', key:'coverage' },
   { href:`${BASE}/app.html`,       label:'Open app', key:'app', cta:true },
 ];
-function wrap({ title, desc, active, main, file }) {
-  const nav = NAV.map(n =>
-    `<a href="${n.href}"${n.cta ? ' class="cta"' : (n.key===active ? ' class="active"' : '')}>${n.label}</a>`
-  ).join('');
+function wrap({ title, desc, active, main, file, noindex }) {
+  const nav = NAV.map(n => {
+    const cls = n.cta ? ' class="cta"' : (n.key === active ? ' class="active"' : '');
+    const cur = n.key === active ? ' aria-current="page"' : '';
+    return `<a href="${n.href}"${cls}${cur}>${n.label}</a>`;
+  }).join('');
   const esc = s => String(s).replace(/"/g, '&quot;');
   const url = ORIGIN + canonUrl(file);
   const full = `${title} · LedgerField`;
@@ -181,14 +183,15 @@ function wrap({ title, desc, active, main, file }) {
 <meta name="twitter:title" content="${esc(full)}">
 <meta name="twitter:description" content="${esc(desc)}">
 <meta name="twitter:image" content="${img}">
-<link rel="stylesheet" href="${BASE}/style.css">
+${noindex ? '<meta name="robots" content="noindex">\n' : ''}<link rel="stylesheet" href="${BASE}/style.css">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="site"><div class="bar">
   <a href="${BASE}/" class="brand">LedgerField<span>offline P2P accounting</span></a>
-  <nav>${nav}</nav>
+  <nav aria-label="Primary">${nav}</nav>
 </div></header>
-<main class="wrap">
+<main id="main" class="wrap" tabindex="-1">
 ${main}
 </main>
 <footer class="site"><div class="inner">
@@ -219,7 +222,7 @@ function renderDef(t) {
   const kw = t.knitweb.length
     ? `<div class="kw"><b>On the knitweb:</b> ${t.knitweb.map(linkTerm).join(' · ')}</div>` : '';
   return `<article class="wiki-def" id="${t.id}">
-  <h3>${t.term} <a class="anchor" href="#${t.id}">#</a></h3>
+  <h3>${t.term} <a class="anchor" href="#${t.id}" aria-label="Permalink to ${t.term}">#</a></h3>
   <p>${t.def}</p>
   ${rel}${kw}
 </article>`;
@@ -366,10 +369,24 @@ covFilter();
   return { file:'coverage.html', html: wrap({ title:'Coverage', desc:'LedgerField jurisdiction coverage — chart of accounts, tax engine, rulesets, payroll and filing per country.', active:'coverage', main, file:'coverage.html' }) };
 }
 
+function notFound() {
+  const main = `<section class="hero" style="padding-top:30px">
+  <h1>404 &mdash; page not found</h1>
+  <p class="tagline">That page isn&rsquo;t in the ledger. It may have moved, or never existed.</p>
+  <div style="margin-top:18px">
+    <a class="cta" href="${BASE}/">Home</a>
+    <a class="cta secondary" href="${BASE}/guides/">Guides</a>
+    <a class="cta secondary" href="${BASE}/wiki/">Wiki</a>
+    <a class="cta secondary" href="${BASE}/coverage.html">Coverage</a>
+  </div>
+</section>`;
+  return { file:'404.html', noindex:true, html: wrap({ title:'Page not found', desc:'404 — page not found.', active:'', main, file:'404.html', noindex:true }) };
+}
+
 // ── build ────────────────────────────────────────────────────────────────────
 const pages = [
   landing(), guidesIndex(), ...GUIDES.map(guidePage),
-  wikiIndex(), ...Object.keys(CLUSTERS).map(clusterPage), coverage(),
+  wikiIndex(), ...Object.keys(CLUSTERS).map(clusterPage), coverage(), notFound(),
 ];
 for (const p of pages) {
   const out = path.join(WEB, p.file);
@@ -402,7 +419,7 @@ fs.writeFileSync(path.join(WEB, 'social-card.svg'), socialCard);
 // ── sitemap.xml + robots.txt ─────────────────────────────────────────────────
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${pages.map(p => `  <url><loc>${ORIGIN}${canonUrl(p.file)}</loc></url>`).join('\n')}
+${pages.filter(p => !p.noindex).map(p => `  <url><loc>${ORIGIN}${canonUrl(p.file)}</loc></url>`).join('\n')}
   <url><loc>${ORIGIN}${BASE}/app.html</loc></url>
 </urlset>
 `;
