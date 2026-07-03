@@ -204,6 +204,8 @@ ${main}
     <div><h4>Docs</h4>
       <a href="${BASE}/guides/">Guides</a><br>
       <a href="${BASE}/wiki/">Wiki</a><br>
+      <a href="${BASE}/coverage.html">Coverage</a><br>
+      <a href="${BASE}/faq.html">FAQ</a><br>
       <a href="${BASE}/app.html">Open the app</a></div>
     <div><h4>Project</h4>
       <a href="https://github.com/ledgerfield/ledgerfield">GitHub</a><br>
@@ -369,6 +371,33 @@ covFilter();
   return { file:'coverage.html', html: wrap({ title:'Coverage', desc:'LedgerField jurisdiction coverage — chart of accounts, tax engine, rulesets, payroll and filing per country.', active:'coverage', main, file:'coverage.html' }) };
 }
 
+const FAQS = [
+  { q:'Is my financial data safe?', a:`Yes. Your books live in an encrypted <a href="${BASE}/wiki/privacy-datamarket.html#vault">vault</a> (PBKDF2-HMAC-SHA256) inside your own browser. LedgerField is <a href="${BASE}/wiki/privacy-datamarket.html#offline-first">offline-first</a> — raw data never leaves your device.` },
+  { q:'Do I need an internet connection?', a:`No. The whole app is a single HTML file that runs offline. A connection is only needed if you choose to sync public tax <a href="${BASE}/wiki/taxation.html#ruleset">rulesets</a> or publish anonymised aggregates — see the <a href="${BASE}/guides/p2p-sync.html">P2P sync guide</a>.` },
+  { q:'Which countries are supported?', a:`Chart of accounts and the tax engine cover 100+ jurisdictions, with 25 CID-addressed 2025 rulesets shipping today. See the full <a href="${BASE}/coverage.html">coverage matrix</a>.` },
+  { q:'How do tax rates stay up to date?', a:`Rates live in <a href="${BASE}/wiki/taxation.html#ruleset">rulesets</a> addressed by <a href="${BASE}/wiki/knitweb-p2p.html#cid">CID</a> and shared peer-to-peer via <a href="${BASE}/wiki/knitweb-p2p.html#gossip">gossip</a>. You verify any ruleset by recomputing its content ID — no trust in a server required.` },
+  { q:'What is the data market, and is it private?', a:`An opt-in marketplace for anonymised benchmarks. You <a href="${BASE}/wiki/privacy-datamarket.html#consent">consent</a> per category, and an aggregate is only publishable at <a href="${BASE}/wiki/privacy-datamarket.html#k-anonymity">k&#8805;5</a> distinct contributors. Only summaries ever leave your device — see the <a href="${BASE}/guides/datamarket.html">data-market guide</a>.` },
+  { q:'Is it free and open source?', a:`Yes — the project is open source on <a href="https://github.com/ledgerfield/ledgerfield">GitHub</a>.` },
+  { q:'Can I manage multiple entities?', a:`Yes. Add any number of <a href="${BASE}/wiki/accounting.html#entity">entities</a> (BV, Holding, ZZP, Ltd, GmbH…) with parent/holding structures; reports and filings are scoped per entity.` },
+  { q:'How do I back up my data?', a:`Export an encrypted backup of your <a href="${BASE}/wiki/privacy-datamarket.html#vault">vault</a> from the Vault tab, then restore it on any device with your password.` },
+  { q:'Does it replace my accountant?', a:`No — it is a tool. You keep the books and compute figures locally, then export JSON or <a href="${BASE}/wiki/accounting.html#saft">SAF-T XML</a> to hand to your accountant or file with the authority.` },
+  { q:'What is the knitweb, and who runs the relay?', a:`The <a href="${BASE}/wiki/knitweb-p2p.html#knitweb">knitweb</a> is the peer-to-peer layer (built on <a href="${BASE}/wiki/knitweb-p2p.html#pulse">pulse</a>) that carries public artefacts. The default public <a href="${BASE}/wiki/knitweb-p2p.html#relay-5mart">relay is 5mart.ml</a>, but the mesh works peer-to-peer and you can run your own.` },
+];
+const stripTags = s => s.replace(/<[^>]+>/g, '').replace(/&#8805;/g, '≥').replace(/\s+/g, ' ').trim();
+function faqPage() {
+  const items = FAQS.map(f => `<details class="faq-item"><summary>${f.q}</summary><div class="faq-a">${f.a}</div></details>`).join('\n');
+  const ld = { '@context':'https://schema.org', '@type':'FAQPage', mainEntity: FAQS.map(f => ({ '@type':'Question', name: f.q, acceptedAnswer: { '@type':'Answer', text: stripTags(f.a) } })) };
+  const main = `<div class="crumbs"><a href="${BASE}/">Home</a> / FAQ</div>
+<h1>Frequently asked questions</h1>
+<p>Short answers, with links into the <a href="${BASE}/wiki/">wiki</a> and <a href="${BASE}/guides/">guides</a> for depth.</p>
+<div class="faq">
+${items}
+</div>
+<div class="note">Still stuck? The <a href="${BASE}/guides/">guides</a> walk through every tab step by step.</div>
+<script type="application/ld+json">${JSON.stringify(ld)}</script>`;
+  return { file:'faq.html', html: wrap({ title:'FAQ', desc:'LedgerField FAQ — data safety, offline use, country coverage, the data market and the knitweb P2P layer.', active:'', main, file:'faq.html' }) };
+}
+
 function notFound() {
   const main = `<section class="hero" style="padding-top:30px">
   <h1>404 &mdash; page not found</h1>
@@ -386,7 +415,7 @@ function notFound() {
 // ── build ────────────────────────────────────────────────────────────────────
 const pages = [
   landing(), guidesIndex(), ...GUIDES.map(guidePage),
-  wikiIndex(), ...Object.keys(CLUSTERS).map(clusterPage), coverage(), notFound(),
+  wikiIndex(), ...Object.keys(CLUSTERS).map(clusterPage), coverage(), faqPage(), notFound(),
 ];
 for (const p of pages) {
   const out = path.join(WEB, p.file);

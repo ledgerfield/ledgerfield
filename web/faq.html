@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FAQ · LedgerField</title>
+<meta name="description" content="LedgerField FAQ — data safety, offline use, country coverage, the data market and the knitweb P2P layer.">
+<link rel="canonical" href="https://www.5mart.ml/ledgerfield/faq.html">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%236c63ff%22%2F%3E%3Cpath%20d%3D%22M9%208v16h14%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M13%2013h8M13%2017.5h6%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.85%22%2F%3E%3C%2Fsvg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LedgerField">
+<meta property="og:title" content="FAQ · LedgerField">
+<meta property="og:description" content="LedgerField FAQ — data safety, offline use, country coverage, the data market and the knitweb P2P layer.">
+<meta property="og:url" content="https://www.5mart.ml/ledgerfield/faq.html">
+<meta property="og:image" content="https://www.5mart.ml/ledgerfield/social-card.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FAQ · LedgerField">
+<meta name="twitter:description" content="LedgerField FAQ — data safety, offline use, country coverage, the data market and the knitweb P2P layer.">
+<meta name="twitter:image" content="https://www.5mart.ml/ledgerfield/social-card.svg">
+<link rel="stylesheet" href="/ledgerfield/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="bar">
+  <a href="/ledgerfield/" class="brand">LedgerField<span>offline P2P accounting</span></a>
+  <nav aria-label="Primary"><a href="/ledgerfield/">Home</a><a href="/ledgerfield/guides/">Guides</a><a href="/ledgerfield/wiki/">Wiki</a><a href="/ledgerfield/coverage.html">Coverage</a><a href="/ledgerfield/app.html" class="cta">Open app</a></nav>
+</div></header>
+<main id="main" class="wrap" tabindex="-1">
+<div class="crumbs"><a href="/ledgerfield/">Home</a> / FAQ</div>
+<h1>Frequently asked questions</h1>
+<p>Short answers, with links into the <a href="/ledgerfield/wiki/">wiki</a> and <a href="/ledgerfield/guides/">guides</a> for depth.</p>
+<div class="faq">
+<details class="faq-item"><summary>Is my financial data safe?</summary><div class="faq-a">Yes. Your books live in an encrypted <a href="/ledgerfield/wiki/privacy-datamarket.html#vault">vault</a> (PBKDF2-HMAC-SHA256) inside your own browser. LedgerField is <a href="/ledgerfield/wiki/privacy-datamarket.html#offline-first">offline-first</a> — raw data never leaves your device.</div></details>
+<details class="faq-item"><summary>Do I need an internet connection?</summary><div class="faq-a">No. The whole app is a single HTML file that runs offline. A connection is only needed if you choose to sync public tax <a href="/ledgerfield/wiki/taxation.html#ruleset">rulesets</a> or publish anonymised aggregates — see the <a href="/ledgerfield/guides/p2p-sync.html">P2P sync guide</a>.</div></details>
+<details class="faq-item"><summary>Which countries are supported?</summary><div class="faq-a">Chart of accounts and the tax engine cover 100+ jurisdictions, with 25 CID-addressed 2025 rulesets shipping today. See the full <a href="/ledgerfield/coverage.html">coverage matrix</a>.</div></details>
+<details class="faq-item"><summary>How do tax rates stay up to date?</summary><div class="faq-a">Rates live in <a href="/ledgerfield/wiki/taxation.html#ruleset">rulesets</a> addressed by <a href="/ledgerfield/wiki/knitweb-p2p.html#cid">CID</a> and shared peer-to-peer via <a href="/ledgerfield/wiki/knitweb-p2p.html#gossip">gossip</a>. You verify any ruleset by recomputing its content ID — no trust in a server required.</div></details>
+<details class="faq-item"><summary>What is the data market, and is it private?</summary><div class="faq-a">An opt-in marketplace for anonymised benchmarks. You <a href="/ledgerfield/wiki/privacy-datamarket.html#consent">consent</a> per category, and an aggregate is only publishable at <a href="/ledgerfield/wiki/privacy-datamarket.html#k-anonymity">k&#8805;5</a> distinct contributors. Only summaries ever leave your device — see the <a href="/ledgerfield/guides/datamarket.html">data-market guide</a>.</div></details>
+<details class="faq-item"><summary>Is it free and open source?</summary><div class="faq-a">Yes — the project is open source on <a href="https://github.com/ledgerfield/ledgerfield">GitHub</a>.</div></details>
+<details class="faq-item"><summary>Can I manage multiple entities?</summary><div class="faq-a">Yes. Add any number of <a href="/ledgerfield/wiki/accounting.html#entity">entities</a> (BV, Holding, ZZP, Ltd, GmbH…) with parent/holding structures; reports and filings are scoped per entity.</div></details>
+<details class="faq-item"><summary>How do I back up my data?</summary><div class="faq-a">Export an encrypted backup of your <a href="/ledgerfield/wiki/privacy-datamarket.html#vault">vault</a> from the Vault tab, then restore it on any device with your password.</div></details>
+<details class="faq-item"><summary>Does it replace my accountant?</summary><div class="faq-a">No — it is a tool. You keep the books and compute figures locally, then export JSON or <a href="/ledgerfield/wiki/accounting.html#saft">SAF-T XML</a> to hand to your accountant or file with the authority.</div></details>
+<details class="faq-item"><summary>What is the knitweb, and who runs the relay?</summary><div class="faq-a">The <a href="/ledgerfield/wiki/knitweb-p2p.html#knitweb">knitweb</a> is the peer-to-peer layer (built on <a href="/ledgerfield/wiki/knitweb-p2p.html#pulse">pulse</a>) that carries public artefacts. The default public <a href="/ledgerfield/wiki/knitweb-p2p.html#relay-5mart">relay is 5mart.ml</a>, but the mesh works peer-to-peer and you can run your own.</div></details>
+</div>
+<div class="note">Still stuck? The <a href="/ledgerfield/guides/">guides</a> walk through every tab step by step.</div>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is my financial data safe?","acceptedAnswer":{"@type":"Answer","text":"Yes. Your books live in an encrypted vault (PBKDF2-HMAC-SHA256) inside your own browser. LedgerField is offline-first — raw data never leaves your device."}},{"@type":"Question","name":"Do I need an internet connection?","acceptedAnswer":{"@type":"Answer","text":"No. The whole app is a single HTML file that runs offline. A connection is only needed if you choose to sync public tax rulesets or publish anonymised aggregates — see the P2P sync guide."}},{"@type":"Question","name":"Which countries are supported?","acceptedAnswer":{"@type":"Answer","text":"Chart of accounts and the tax engine cover 100+ jurisdictions, with 25 CID-addressed 2025 rulesets shipping today. See the full coverage matrix."}},{"@type":"Question","name":"How do tax rates stay up to date?","acceptedAnswer":{"@type":"Answer","text":"Rates live in rulesets addressed by CID and shared peer-to-peer via gossip. You verify any ruleset by recomputing its content ID — no trust in a server required."}},{"@type":"Question","name":"What is the data market, and is it private?","acceptedAnswer":{"@type":"Answer","text":"An opt-in marketplace for anonymised benchmarks. You consent per category, and an aggregate is only publishable at k≥5 distinct contributors. Only summaries ever leave your device — see the data-market guide."}},{"@type":"Question","name":"Is it free and open source?","acceptedAnswer":{"@type":"Answer","text":"Yes — the project is open source on GitHub."}},{"@type":"Question","name":"Can I manage multiple entities?","acceptedAnswer":{"@type":"Answer","text":"Yes. Add any number of entities (BV, Holding, ZZP, Ltd, GmbH…) with parent/holding structures; reports and filings are scoped per entity."}},{"@type":"Question","name":"How do I back up my data?","acceptedAnswer":{"@type":"Answer","text":"Export an encrypted backup of your vault from the Vault tab, then restore it on any device with your password."}},{"@type":"Question","name":"Does it replace my accountant?","acceptedAnswer":{"@type":"Answer","text":"No — it is a tool. You keep the books and compute figures locally, then export JSON or SAF-T XML to hand to your accountant or file with the authority."}},{"@type":"Question","name":"What is the knitweb, and who runs the relay?","acceptedAnswer":{"@type":"Answer","text":"The knitweb is the peer-to-peer layer (built on pulse) that carries public artefacts. The default public relay is 5mart.ml, but the mesh works peer-to-peer and you can run your own."}}]}</script>
+</main>
+<footer class="site"><div class="inner">
+  <div class="relay">
+    <h4>LedgerField</h4>
+    Offline-first, privacy-first accounting for 100+ jurisdictions.<br>
+    Served peer-to-peer over the knitweb relay <code>5mart.ml</code>. No server, no cloud, no telemetry.
+  </div>
+  <div class="cols">
+    <div><h4>Docs</h4>
+      <a href="/ledgerfield/guides/">Guides</a><br>
+      <a href="/ledgerfield/wiki/">Wiki</a><br>
+      <a href="/ledgerfield/coverage.html">Coverage</a><br>
+      <a href="/ledgerfield/faq.html">FAQ</a><br>
+      <a href="/ledgerfield/app.html">Open the app</a></div>
+    <div><h4>Project</h4>
+      <a href="https://github.com/ledgerfield/ledgerfield">GitHub</a><br>
+      <a href="/ledgerfield/wiki/knitweb-p2p.html">Knitweb &amp; P2P</a><br>
+      <a href="/ledgerfield/wiki/privacy-datamarket.html">Privacy model</a></div>
+  </div>
+</div></footer>
+</body>
+</html>
