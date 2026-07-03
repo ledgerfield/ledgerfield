@@ -87,6 +87,43 @@
 </section>
 
 <section>
+  <h2>Where your data lives</h2>
+  <figure class="diagram">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 340" role="img" aria-label="Data flow: encrypted books stay on your device; only public rulesets and anonymised aggregates travel the knitweb relay to peers.">
+  <defs><marker id="arw" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0l8 3-8 3z" fill="#6c63ff"/></marker></defs>
+  <rect x="18" y="40" width="300" height="264" rx="14" fill="#161b22" stroke="#30363d"/>
+  <text x="38" y="70" fill="#e6edf3" font-size="18" font-weight="700">Your device</text>
+  <text x="38" y="90" fill="#8b949e" font-size="13">browser &#183; offline-first</text>
+  <rect x="38" y="108" width="262" height="164" rx="10" fill="#0d1117" stroke="#6c63ff"/>
+  <text x="52" y="134" fill="#6c63ff" font-size="14" font-weight="700">Encrypted vault</text>
+  <text x="52" y="160" fill="#e6edf3" font-size="13">Books &#183; journal entries</text>
+  <text x="52" y="182" fill="#e6edf3" font-size="13">Entities &#183; payroll</text>
+  <text x="52" y="204" fill="#e6edf3" font-size="13">Vault keys</text>
+  <text x="52" y="244" fill="#3fb950" font-size="12">PBKDF2-HMAC-SHA256</text>
+  <text x="52" y="262" fill="#3fb950" font-size="12">never leaves the device</text>
+  <line x1="330" y1="44" x2="330" y2="300" stroke="#f0883e" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="336" y="316" fill="#f0883e" font-size="11">raw data blocked here</text>
+  <line x1="322" y1="150" x2="502" y2="150" stroke="#6c63ff" stroke-width="2.5" marker-end="url(#arw)"/>
+  <text x="340" y="138" fill="#8b949e" font-size="12">only public artefacts</text>
+  <text x="340" y="174" fill="#8b949e" font-size="11">rulesets &#183; aggregates (k&#8805;5)</text>
+  <rect x="508" y="86" width="296" height="128" rx="14" fill="#161b22" stroke="#30363d"/>
+  <text x="528" y="118" fill="#e6edf3" font-size="16" font-weight="700">knitweb relay</text>
+  <text x="528" y="140" fill="#6c63ff" font-size="15" font-weight="700">5mart.ml</text>
+  <text x="528" y="164" fill="#8b949e" font-size="12">content-addressed gossip (CID)</text>
+  <text x="528" y="186" fill="#8b949e" font-size="12">peers verify, never trust</text>
+  <circle cx="565" cy="270" r="14" fill="#0d1117" stroke="#6c63ff"/>
+  <circle cx="655" cy="286" r="14" fill="#0d1117" stroke="#6c63ff"/>
+  <circle cx="745" cy="270" r="14" fill="#0d1117" stroke="#6c63ff"/>
+  <line x1="600" y1="214" x2="565" y2="256" stroke="#30363d"/>
+  <line x1="656" y1="214" x2="655" y2="272" stroke="#30363d"/>
+  <line x1="712" y1="214" x2="745" y2="256" stroke="#30363d"/>
+  <text x="612" y="316" fill="#8b949e" font-size="11">peer nodes</text>
+</svg>
+    <figcaption>Your books stay encrypted on your device. Only public tax rulesets and anonymised k&#8805;5 aggregates travel the knitweb relay &mdash; addressed and verified by content ID, never your raw data.</figcaption>
+  </figure>
+</section>
+
+<section>
   <h2>Privacy model</h2>
   <div class="ok-box">
     <strong>Your raw books never leave your device.</strong> LedgerField is <a href="/ledgerfield/wiki/privacy-datamarket.html#offline-first">offline-first</a> by design: the entire app is a single HTML file that runs in your browser with no network calls. The <a href="/ledgerfield/wiki/privacy-datamarket.html#vault">vault</a> encrypts every record with PBKDF2-HMAC-SHA256 before writing it to browser storage. The only data that ever traverses the network are content-addressed tax rulesets (public by definition) and fully anonymised, k&thinsp;&ge;&thinsp;5 aggregates — both published by you, on your terms, via the knitweb P2P layer.
