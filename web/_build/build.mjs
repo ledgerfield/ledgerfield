@@ -9,6 +9,15 @@ const ROOT = process.argv[2] || '/tmp/lf-sprint';
 const WEB = path.join(ROOT, 'web');
 const CONTENT = path.join(WEB, '_content');           // guide/landing bodies (json)
 const BASE = '/ledgerfield';                           // deploy base: www.5mart.ml/ledgerfield/
+const ORIGIN = 'https://www.5mart.ml';                 // absolute origin for canonical / og: URLs
+// Inline SVG favicon (a ledger "L" mark) — no external asset, CSP-safe.
+const FAVICON = 'data:image/svg+xml,' + encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#6c63ff"/><path d="M9 8v16h14" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 13h8M13 17.5h6" stroke="#fff" stroke-width="2.4" stroke-linecap="round" opacity=".85"/></svg>');
+function canonUrl(file) {
+  if (!file || file === 'index.html') return BASE + '/';
+  if (file.endsWith('/index.html')) return BASE + '/' + file.slice(0, -'index.html'.length);
+  return BASE + '/' + file;
+}
 
 // ── glossary registry (single source of truth for the wiki) ──────────────────
 const CLUSTERS = {
@@ -144,17 +153,34 @@ const NAV = [
   { href:`${BASE}/coverage.html`,  label:'Coverage', key:'coverage' },
   { href:`${BASE}/app.html`,       label:'Open app', key:'app', cta:true },
 ];
-function wrap({ title, desc, active, main }) {
+function wrap({ title, desc, active, main, file }) {
   const nav = NAV.map(n =>
     `<a href="${n.href}"${n.cta ? ' class="cta"' : (n.key===active ? ' class="active"' : '')}>${n.label}</a>`
   ).join('');
+  const esc = s => String(s).replace(/"/g, '&quot;');
+  const url = ORIGIN + canonUrl(file);
+  const full = `${title} · LedgerField`;
+  const img = `${ORIGIN}${BASE}/social-card.svg`;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${title} · LedgerField</title>
-<meta name="description" content="${desc.replace(/"/g,'&quot;')}">
+<title>${full}</title>
+<meta name="description" content="${esc(desc)}">
+<link rel="canonical" href="${url}">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" href="${FAVICON}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LedgerField">
+<meta property="og:title" content="${esc(full)}">
+<meta property="og:description" content="${esc(desc)}">
+<meta property="og:url" content="${url}">
+<meta property="og:image" content="${img}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${esc(full)}">
+<meta name="twitter:description" content="${esc(desc)}">
+<meta name="twitter:image" content="${img}">
 <link rel="stylesheet" href="${BASE}/style.css">
 </head>
 <body>
@@ -205,7 +231,7 @@ function clusterPage(key) {
 <h1>${c.title}</h1>
 <p>${defs.length} definitions. Every term links to related concepts and, where it touches the mesh, to the underlying <a href="${BASE}/wiki/knitweb-p2p.html">knitweb / P2P</a> primitives.</p>
 ${defs.map(renderDef).join('\n')}`;
-  return { file: `wiki/${c.file}`, html: wrap({ title: c.title, desc: `${c.title} glossary — LedgerField`, active:'wiki', main }) };
+  return { file: `wiki/${c.file}`, html: wrap({ title: c.title, desc: `${c.title} glossary — LedgerField`, active:'wiki', main, file: `wiki/${c.file}` }) };
 }
 function wikiIndex() {
   const sorted = [...TERMS].sort((a,b) => a.term.localeCompare(b.term));
@@ -224,7 +250,7 @@ function wikiIndex() {
 <div class="feature-grid">${clusters}</div>
 <div class="alpha">${alpha}</div>
 ${groups}`;
-  return { file:'wiki/index.html', html: wrap({ title:'Wiki', desc:'LedgerField glossary — every concept cross-linked to the knitweb P2P layer.', active:'wiki', main }) };
+  return { file:'wiki/index.html', html: wrap({ title:'Wiki', desc:'LedgerField glossary — every concept cross-linked to the knitweb P2P layer.', active:'wiki', main, file:'wiki/index.html' }) };
 }
 
 // ── guide + landing rendering (bodies from _content, else placeholder) ───────
@@ -247,7 +273,7 @@ function guidePage(g) {
 <h1>${g.title}</h1>
 ${body ? body.main_html : `<p class="note">${g.title} guide — content pending.</p>`}
 <hr><p><a href="${BASE}/guides/">← All guides</a></p>`;
-  return { file:`guides/${g.slug}.html`, html: wrap({ title:g.title, desc: body?.desc || `${g.title} — LedgerField guide`, active:'guides', main }) };
+  return { file:`guides/${g.slug}.html`, html: wrap({ title:g.title, desc: body?.desc || `${g.title} — LedgerField guide`, active:'guides', main, file:`guides/${g.slug}.html` }) };
 }
 function guidesIndex() {
   const cards = GUIDES.map(g => {
@@ -258,12 +284,12 @@ function guidesIndex() {
 <h1>Guides</h1>
 <p>Step-by-step, from your first entity to selling anonymised benchmarks on the data market. New to the concepts? Keep the <a href="${BASE}/wiki/">wiki</a> open alongside.</p>
 <div class="feature-grid">${cards}</div>`;
-  return { file:'guides/index.html', html: wrap({ title:'Guides', desc:'LedgerField how-to guides.', active:'guides', main }) };
+  return { file:'guides/index.html', html: wrap({ title:'Guides', desc:'LedgerField how-to guides.', active:'guides', main, file:'guides/index.html' }) };
 }
 function landing() {
   const body = loadBody('landing');
   const main = body ? body.main_html : `<section class="hero"><h1>LedgerField</h1><p class="tagline">Offline P2P accounting.</p></section>`;
-  return { file:'index.html', html: wrap({ title:'Offline P2P accounting', desc: body?.desc || 'LedgerField — offline-first, privacy-first accounting for 100+ jurisdictions, synced peer-to-peer over the knitweb.', active:'home', main }) };
+  return { file:'index.html', html: wrap({ title:'Offline P2P accounting', desc: body?.desc || 'LedgerField — offline-first, privacy-first accounting for 100+ jurisdictions, synced peer-to-peer over the knitweb.', active:'home', main, file:'index.html' }) };
 }
 
 // ── coverage page (data-driven from repo dirs + rulesets) ────────────────────
@@ -337,7 +363,7 @@ function covFilter(){
 }
 covFilter();
 </script>`;
-  return { file:'coverage.html', html: wrap({ title:'Coverage', desc:'LedgerField jurisdiction coverage — chart of accounts, tax engine, rulesets, payroll and filing per country.', active:'coverage', main }) };
+  return { file:'coverage.html', html: wrap({ title:'Coverage', desc:'LedgerField jurisdiction coverage — chart of accounts, tax engine, rulesets, payroll and filing per country.', active:'coverage', main, file:'coverage.html' }) };
 }
 
 // ── build ────────────────────────────────────────────────────────────────────
@@ -353,6 +379,35 @@ for (const p of pages) {
 // copy the SPA so "Open app" works on the served site
 const spa = path.join(ROOT, 'src/ledgerfield/static/ledgerfield.html');
 if (fs.existsSync(spa)) fs.copyFileSync(spa, path.join(WEB, 'app.html'));
+
+// ── social card (1200×630 SVG, referenced by og:image) ───────────────────────
+const badge = (x, w, label) => `<g transform="translate(${x},432)"><rect width="${w}" height="54" rx="27" fill="#161b22" stroke="#30363d"/><text x="${w/2}" y="35" text-anchor="middle" font-size="26" fill="#c9d1e8">${label}</text></g>`;
+const socialCard = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="system-ui,Segoe UI,Roboto,sans-serif">
+<defs><radialGradient id="g" cx="18%" cy="-10%" r="110%"><stop offset="0%" stop-color="#1c1748"/><stop offset="55%" stop-color="#0d1117"/></radialGradient></defs>
+<rect width="1200" height="630" fill="url(#g)"/>
+<rect width="1200" height="8" fill="#6c63ff"/>
+<g transform="translate(80,80)">
+  <rect width="74" height="74" rx="17" fill="#6c63ff"/>
+  <path d="M22 19v40h34" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M31 31h20M31 43h15" stroke="#fff" stroke-width="5.5" stroke-linecap="round" opacity=".85"/>
+  <text x="98" y="50" fill="#e6edf3" font-size="42" font-weight="800">LedgerField</text>
+</g>
+<text x="80" y="300" fill="#e6edf3" font-size="74" font-weight="800">Offline P2P accounting</text>
+<text x="80" y="362" fill="#8b949e" font-size="31">Private, offline-first books &#183; tax engine &#183; payroll &#183; data market</text>
+${badge(80, 210, 'Offline-first')}${badge(310, 320, '100+ jurisdictions')}${badge(650, 200, 'No cloud')}${badge(870, 250, 'Encrypted vault')}
+<text x="80" y="576" fill="#6c63ff" font-size="30" font-weight="600">www.5mart.ml/ledgerfield</text>
+</svg>`;
+fs.writeFileSync(path.join(WEB, 'social-card.svg'), socialCard);
+
+// ── sitemap.xml + robots.txt ─────────────────────────────────────────────────
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${pages.map(p => `  <url><loc>${ORIGIN}${canonUrl(p.file)}</loc></url>`).join('\n')}
+  <url><loc>${ORIGIN}${BASE}/app.html</loc></url>
+</urlset>
+`;
+fs.writeFileSync(path.join(WEB, 'sitemap.xml'), sitemap);
+fs.writeFileSync(path.join(WEB, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${ORIGIN}${BASE}/sitemap.xml\n`);
 
 // ── link checker ─────────────────────────────────────────────────────────────
 const files = pages.map(p => p.file).concat(fs.existsSync(path.join(WEB,'app.html')) ? ['app.html'] : []);
