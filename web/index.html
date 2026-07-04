@@ -18,13 +18,14 @@
 <meta name="twitter:title" content="Offline P2P accounting · LedgerField">
 <meta name="twitter:description" content="LedgerField landing page — offline, privacy-first P2P accounting for founders and accountants, 100+ jurisdictions, encrypted vault, knitweb P2P.">
 <meta name="twitter:image" content="https://www.5mart.ml/ledgerfield/social-card.svg">
+<script>try{if(localStorage.getItem('lf-theme')==='light')document.documentElement.className='light'}catch(e){}</script>
 <link rel="stylesheet" href="/ledgerfield/style.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site"><div class="bar">
   <a href="/ledgerfield/" class="brand">LedgerField<span>offline P2P accounting</span></a>
-  <nav aria-label="Primary"><a href="/ledgerfield/" class="active" aria-current="page">Home</a><a href="/ledgerfield/guides/">Guides</a><a href="/ledgerfield/wiki/">Wiki</a><a href="/ledgerfield/coverage.html">Coverage</a><a href="/ledgerfield/app.html" class="cta">Open app</a></nav>
+  <nav aria-label="Primary"><a href="/ledgerfield/" class="active" aria-current="page">Home</a><a href="/ledgerfield/guides/">Guides</a><a href="/ledgerfield/wiki/">Wiki</a><a href="/ledgerfield/coverage.html">Coverage</a><a href="/ledgerfield/app.html" class="cta">Open app</a><button class="theme-toggle" type="button" aria-label="Toggle light or dark theme" onclick="lfTheme()"></button></nav>
 </div></header>
 <main id="main" class="wrap" tabindex="-1">
 <section class="hero">
@@ -154,5 +155,6 @@
       <a href="/ledgerfield/wiki/privacy-datamarket.html">Privacy model</a></div>
   </div>
 </div></footer>
+<script>function lfTheme(t){var h=document.documentElement;t=t||(h.classList.contains('light')?'dark':'light');h.classList.toggle('light',t==='light');try{localStorage.setItem('lf-theme',t)}catch(e){}}</script>
 </body>
 </html>
