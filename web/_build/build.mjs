@@ -209,6 +209,7 @@ ${main}
       <a href="${BASE}/app.html">Open the app</a></div>
     <div><h4>Project</h4>
       <a href="https://github.com/ledgerfield/ledgerfield">GitHub</a><br>
+      <a href="${BASE}/roadmap.html">Roadmap</a><br>
       <a href="${BASE}/wiki/knitweb-p2p.html">Knitweb &amp; P2P</a><br>
       <a href="${BASE}/wiki/privacy-datamarket.html">Privacy model</a></div>
   </div>
@@ -398,6 +399,40 @@ ${items}
   return { file:'faq.html', html: wrap({ title:'FAQ', desc:'LedgerField FAQ — data safety, offline use, country coverage, the data market and the knitweb P2P layer.', active:'', main, file:'faq.html' }) };
 }
 
+const ROADMAP = [
+  { s:'shipped', t:'Offline encrypted vault', d:`Books, entities and payroll stored client-side in an encrypted <a href="${BASE}/wiki/privacy-datamarket.html#vault">vault</a>.` },
+  { s:'shipped', t:'Double-entry bookkeeping', d:`Journal entries against NL (RGS), UK (FRS 102) and US (GAAP) <a href="${BASE}/wiki/accounting.html#chart-of-accounts">charts of accounts</a>, with trial balance and P&amp;L.` },
+  { s:'shipped', t:'NL tax engine', d:`<a href="${BASE}/wiki/taxation.html#vpb">VPB</a>, <a href="${BASE}/wiki/taxation.html#ib">IB</a>, <a href="${BASE}/wiki/taxation.html#wbso">WBSO</a>, <a href="${BASE}/wiki/taxation.html#dga">DGA</a> and <a href="${BASE}/wiki/taxation.html#btw">BTW</a> calculators for 2025.` },
+  { s:'shipped', t:'100+ jurisdictions, 25 rulesets', d:`Country schemas and a tax engine covering 100+ jurisdictions; 25 CID-addressed 2025 <a href="${BASE}/wiki/taxation.html#ruleset">rulesets</a> — see the <a href="${BASE}/coverage.html">coverage matrix</a>.` },
+  { s:'shipped', t:'Payroll &amp; filing (NL)', d:`NL payslips and VPB/IB/BTW filing with JSON and <a href="${BASE}/wiki/accounting.html#saft">SAF-T</a> export.` },
+  { s:'shipped', t:'P2P ruleset sync', d:`Import and publish rulesets over the <a href="${BASE}/wiki/knitweb-p2p.html#knitweb">knitweb</a>, verified by <a href="${BASE}/wiki/knitweb-p2p.html#cid">CID</a> — see the <a href="${BASE}/guides/p2p-sync.html">P2P guide</a>.` },
+  { s:'shipped', t:'Anonymised data market', d:`Opt-in <a href="${BASE}/wiki/privacy-datamarket.html#k-anonymity">k&#8805;5</a> aggregate marketplace with consent and revenue split — see the <a href="${BASE}/guides/datamarket.html">guide</a>.` },
+  { s:'shipped', t:'Docs site', d:`This site: guides, a cross-linked <a href="${BASE}/wiki/">wiki</a>, coverage matrix and <a href="${BASE}/faq.html">FAQ</a>.` },
+  { s:'next', t:'Payroll &amp; filing beyond NL', d:`Payroll for JP/CN/CA/SG/AU and filing for UK/US/DE/FR/JP/CN.` },
+  { s:'next', t:'More 2025 rulesets', d:`Deepen tax modules toward full coverage of the 100+ jurisdictions with CID-addressed rulesets.` },
+  { s:'next', t:'Data-market GUI polish', d:`Richer browse/earn views and more aggregate categories.` },
+  { s:'planned', t:'Mobile &amp; PWA', d:`Installable, offline service-worker build for phones and tablets.` },
+  { s:'planned', t:'Internationalisation', d:`English/Dutch UI, more languages to follow.` },
+  { s:'planned', t:'Deeper knitweb integration', d:`Gossip rulesets and market packages natively across the mesh.` },
+];
+const ROAD_GROUPS = [
+  { s:'shipped', label:'Shipped', note:'Live today.' },
+  { s:'next', label:'Next', note:'In progress or up next.' },
+  { s:'planned', label:'Exploring', note:'On the horizon.' },
+];
+function roadmapPage() {
+  const groups = ROAD_GROUPS.map(g => {
+    const items = ROADMAP.filter(r => r.s === g.s).map(r =>
+      `<div class="road-item ${r.s}"><span class="road-badge">${g.label}</span><div><b>${r.t}</b><p>${r.d}</p></div></div>`).join('\n');
+    return `<h2>${g.label} <span class="muted" style="font-size:.6em;font-weight:400">${g.note}</span></h2>\n<div class="road">\n${items}\n</div>`;
+  }).join('\n');
+  const main = `<div class="crumbs"><a href="${BASE}/">Home</a> / Roadmap</div>
+<h1>Roadmap</h1>
+<p>What&rsquo;s live today, what&rsquo;s next, and what we&rsquo;re exploring. The <a href="${BASE}/coverage.html">coverage matrix</a> tracks per-jurisdiction status; contributions are welcome on <a href="https://github.com/ledgerfield/ledgerfield">GitHub</a>.</p>
+${groups}`;
+  return { file:'roadmap.html', html: wrap({ title:'Roadmap', desc:'LedgerField roadmap — what is shipped, what is next, and what we are exploring.', active:'', main, file:'roadmap.html' }) };
+}
+
 function notFound() {
   const main = `<section class="hero" style="padding-top:30px">
   <h1>404 &mdash; page not found</h1>
@@ -415,7 +450,7 @@ function notFound() {
 // ── build ────────────────────────────────────────────────────────────────────
 const pages = [
   landing(), guidesIndex(), ...GUIDES.map(guidePage),
-  wikiIndex(), ...Object.keys(CLUSTERS).map(clusterPage), coverage(), faqPage(), notFound(),
+  wikiIndex(), ...Object.keys(CLUSTERS).map(clusterPage), coverage(), faqPage(), roadmapPage(), notFound(),
 ];
 for (const p of pages) {
   const out = path.join(WEB, p.file);

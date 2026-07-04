@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Roadmap · LedgerField</title>
+<meta name="description" content="LedgerField roadmap — what is shipped, what is next, and what we are exploring.">
+<link rel="canonical" href="https://www.5mart.ml/ledgerfield/roadmap.html">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%236c63ff%22%2F%3E%3Cpath%20d%3D%22M9%208v16h14%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M13%2013h8M13%2017.5h6%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.85%22%2F%3E%3C%2Fsvg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="LedgerField">
+<meta property="og:title" content="Roadmap · LedgerField">
+<meta property="og:description" content="LedgerField roadmap — what is shipped, what is next, and what we are exploring.">
+<meta property="og:url" content="https://www.5mart.ml/ledgerfield/roadmap.html">
+<meta property="og:image" content="https://www.5mart.ml/ledgerfield/social-card.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Roadmap · LedgerField">
+<meta name="twitter:description" content="LedgerField roadmap — what is shipped, what is next, and what we are exploring.">
+<meta name="twitter:image" content="https://www.5mart.ml/ledgerfield/social-card.svg">
+<link rel="stylesheet" href="/ledgerfield/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site"><div class="bar">
+  <a href="/ledgerfield/" class="brand">LedgerField<span>offline P2P accounting</span></a>
+  <nav aria-label="Primary"><a href="/ledgerfield/">Home</a><a href="/ledgerfield/guides/">Guides</a><a href="/ledgerfield/wiki/">Wiki</a><a href="/ledgerfield/coverage.html">Coverage</a><a href="/ledgerfield/app.html" class="cta">Open app</a></nav>
+</div></header>
+<main id="main" class="wrap" tabindex="-1">
+<div class="crumbs"><a href="/ledgerfield/">Home</a> / Roadmap</div>
+<h1>Roadmap</h1>
+<p>What&rsquo;s live today, what&rsquo;s next, and what we&rsquo;re exploring. The <a href="/ledgerfield/coverage.html">coverage matrix</a> tracks per-jurisdiction status; contributions are welcome on <a href="https://github.com/ledgerfield/ledgerfield">GitHub</a>.</p>
+<h2>Shipped <span class="muted" style="font-size:.6em;font-weight:400">Live today.</span></h2>
+<div class="road">
+<div class="road-item shipped"><span class="road-badge">Shipped</span><div><b>Offline encrypted vault</b><p>Books, entities and payroll stored client-side in an encrypted <a href="/ledgerfield/wiki/privacy-datamarket.html#vault">vault</a>.</p></div></div>
+<div class="road-item shipped"><span class="road-badge">Shipped</span><div><b>Double-entry bookkeeping</b><p>Journal entries against NL (RGS), UK (FRS 102) and US (GAAP) <a href="/ledgerfield/wiki/accounting.html#chart-of-accounts">charts of accounts</a>, with trial balance and P&amp;L.</p></div></div>
+<div class="road-item shipped"><span class="road-badge">Shipped</span><div><b>NL tax engine</b><p><a href="/ledgerfield/wiki/taxation.html#vpb">VPB</a>, <a href="/ledgerfield/wiki/taxation.html#ib">IB</a>, <a href="/ledgerfield/wiki/taxation.html#wbso">WBSO</a>, <a href="/ledgerfield/wiki/taxation.html#dga">DGA</a> and <a href="/ledgerfield/wiki/taxation.html#btw">BTW</a> calculators for 2025.</p></div></div>
+<div class="road-item shipped"><span class="road-badge">Shipped</span><div><b>100+ jurisdictions, 25 rulesets</b><p>Country schemas and a tax engine covering 100+ jurisdictions; 25 CID-addressed 2025 <a href="/ledgerfield/wiki/taxation.html#ruleset">rulesets</a> — see the <a href="/ledgerfield/coverage.html">coverage matrix</a>.</p></div></div>
+<div class="road-item shipped"><span class="road-badge">Shipped</span><div><b>Payroll &amp; filing (NL)</b><p>NL payslips and VPB/IB/BTW filing with JSON and <a href="/ledgerfield/wiki/accounting.html#saft">SAF-T</a> export.</p></div></div>
+<div class="road-item shipped"><span class="road-badge">Shipped</span><div><b>P2P ruleset sync</b><p>Import and publish rulesets over the <a href="/ledgerfield/wiki/knitweb-p2p.html#knitweb">knitweb</a>, verified by <a href="/ledgerfield/wiki/knitweb-p2p.html#cid">CID</a> — see the <a href="/ledgerfield/guides/p2p-sync.html">P2P guide</a>.</p></div></div>
+<div class="road-item shipped"><span class="road-badge">Shipped</span><div><b>Anonymised data market</b><p>Opt-in <a href="/ledgerfield/wiki/privacy-datamarket.html#k-anonymity">k&#8805;5</a> aggregate marketplace with consent and revenue split — see the <a href="/ledgerfield/guides/datamarket.html">guide</a>.</p></div></div>
+<div class="road-item shipped"><span class="road-badge">Shipped</span><div><b>Docs site</b><p>This site: guides, a cross-linked <a href="/ledgerfield/wiki/">wiki</a>, coverage matrix and <a href="/ledgerfield/faq.html">FAQ</a>.</p></div></div>
+</div>
+<h2>Next <span class="muted" style="font-size:.6em;font-weight:400">In progress or up next.</span></h2>
+<div class="road">
+<div class="road-item next"><span class="road-badge">Next</span><div><b>Payroll &amp; filing beyond NL</b><p>Payroll for JP/CN/CA/SG/AU and filing for UK/US/DE/FR/JP/CN.</p></div></div>
+<div class="road-item next"><span class="road-badge">Next</span><div><b>More 2025 rulesets</b><p>Deepen tax modules toward full coverage of the 100+ jurisdictions with CID-addressed rulesets.</p></div></div>
+<div class="road-item next"><span class="road-badge">Next</span><div><b>Data-market GUI polish</b><p>Richer browse/earn views and more aggregate categories.</p></div></div>
+</div>
+<h2>Exploring <span class="muted" style="font-size:.6em;font-weight:400">On the horizon.</span></h2>
+<div class="road">
+<div class="road-item planned"><span class="road-badge">Exploring</span><div><b>Mobile &amp; PWA</b><p>Installable, offline service-worker build for phones and tablets.</p></div></div>
+<div class="road-item planned"><span class="road-badge">Exploring</span><div><b>Internationalisation</b><p>English/Dutch UI, more languages to follow.</p></div></div>
+<div class="road-item planned"><span class="road-badge">Exploring</span><div><b>Deeper knitweb integration</b><p>Gossip rulesets and market packages natively across the mesh.</p></div></div>
+</div>
+</main>
+<footer class="site"><div class="inner">
+  <div class="relay">
+    <h4>LedgerField</h4>
+    Offline-first, privacy-first accounting for 100+ jurisdictions.<br>
+    Served peer-to-peer over the knitweb relay <code>5mart.ml</code>. No server, no cloud, no telemetry.
+  </div>
+  <div class="cols">
+    <div><h4>Docs</h4>
+      <a href="/ledgerfield/guides/">Guides</a><br>
+      <a href="/ledgerfield/wiki/">Wiki</a><br>
+      <a href="/ledgerfield/coverage.html">Coverage</a><br>
+      <a href="/ledgerfield/faq.html">FAQ</a><br>
+      <a href="/ledgerfield/app.html">Open the app</a></div>
+    <div><h4>Project</h4>
+      <a href="https://github.com/ledgerfield/ledgerfield">GitHub</a><br>
+      <a href="/ledgerfield/roadmap.html">Roadmap</a><br>
+      <a href="/ledgerfield/wiki/knitweb-p2p.html">Knitweb &amp; P2P</a><br>
+      <a href="/ledgerfield/wiki/privacy-datamarket.html">Privacy model</a></div>
+  </div>
+</div></footer>
+</body>
+</html>

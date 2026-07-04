@@ -129,6 +129,18 @@ tr:hover td{background:var(--panel)}
 .faq details[open] summary{border-bottom:1px solid var(--bdr)}
 .faq .faq-a{padding:13px 16px;color:var(--txt)}
 
+/* ── roadmap ──────────────────────────────────────────────── */
+.road{display:flex;flex-direction:column;gap:10px;margin:14px 0}
+.road-item{display:flex;gap:14px;align-items:flex-start;background:var(--panel);border:1px solid var(--bdr);border-left:3px solid var(--bdr);border-radius:10px;padding:14px 16px}
+.road-item.shipped{border-left-color:var(--ok)}
+.road-item.next{border-left-color:var(--acc)}
+.road-item.planned{border-left-color:var(--muted)}
+.road-badge{font-size:.68em;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:3px 9px;border-radius:20px;white-space:nowrap;align-self:center}
+.road-item.shipped .road-badge{background:rgba(63,185,80,.15);color:var(--ok)}
+.road-item.next .road-badge{background:rgba(108,99,255,.16);color:var(--acc2)}
+.road-item.planned .road-badge{background:var(--panel2);color:var(--muted)}
+.road-item p{margin:3px 0 0;color:var(--muted);font-size:.92em}
+
 /* ── footer ───────────────────────────────────────────────── */
 footer.site{border-top:1px solid var(--bdr);background:var(--panel);margin-top:40px}
 footer.site .inner{max-width:var(--maxw);margin:0 auto;padding:26px 18px;display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between;font-size:.86em;color:var(--muted)}
