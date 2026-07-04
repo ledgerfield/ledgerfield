@@ -14,6 +14,7 @@ h3{font-size:.9em;margin:10px 0 6px;color:var(--muted)}
 .tab{padding:7px 13px;cursor:pointer;border-radius:6px 6px 0 0;color:var(--muted);font-size:.82em;border:1px solid transparent;border-bottom:none;white-space:nowrap}
 .tab.active{background:var(--bg);color:var(--acc);border-color:var(--bdr)}
 .tab:hover:not(.active){color:var(--txt)}
+.tab:focus-visible{outline:2px solid var(--acc);outline-offset:-2px}
 .content{display:none;padding:16px}
 .content.active{display:block}
 .panel{background:var(--panel);border:1px solid var(--bdr);border-radius:8px;padding:14px;margin-bottom:14px}
@@ -291,7 +292,7 @@ const fv=id=>parseFloat(v(id)?.value)||0;
 
 // ── NAV ───────────────────────────────────────────────────────────────────
 function sw(i){
-  document.querySelectorAll('.tab').forEach((t,j)=>t.classList.toggle('active',i===j));
+  document.querySelectorAll('.tab').forEach((t,j)=>{t.classList.toggle('active',i===j);t.setAttribute('aria-selected',i===j?'true':'false');t.setAttribute('tabindex',i===j?'0':'-1');});
   document.querySelectorAll('.content').forEach((c,j)=>c.classList.toggle('active',i===j));
   if(i===1)renderCoA(); if(i===4){renderAngEnt();renderAngF();} if(i===5)renderVault(); if(i===7)renderMarket();
 }
@@ -543,6 +544,29 @@ function renderEarnings(){
   el.innerHTML=`<div class="res"><div class="rr"><span>Bruto omzet</span><span>&#8364; ${fmt(gross)}</span></div><div class="rr"><span>Platform-fee (10%)</span><span>&#8364; ${fmt(feeTot)}</span></div><div class="rr tot"><span>Uitgekeerd aan bijdragers</span><span>&#8364; ${fmt(gross-feeTot)}</span></div></div><h3>Leaderboard bijdragers</h3><table><thead><tr><th>#</th><th>Node</th><th>Verdiend</th></tr></thead><tbody>${rows.map(([n,a],i)=>`<tr><td>${i+1}</td><td style="font-family:monospace;font-size:.78em">${n}</td><td>&#8364; ${fmt(a)}</td></tr>`).join('')}</tbody></table><h3>Verkoopgeschiedenis</h3><table><thead><tr><th>Datum</th><th>Categorie</th><th>Land</th><th>Prijs</th><th>Fee</th></tr></thead><tbody>${S.mkbuys.slice().reverse().map(b=>`<tr><td>${b.ts}</td><td>${b.category}</td><td>${b.jur}</td><td>&#8364; ${fmt(b.price)}</td><td>&#8364; ${fmt(b.fee)}</td></tr>`).join('')}</tbody></table>`;
 }
 function renderMarket(){renderConsent();renderPool();renderMine();mkSearch();renderEarnings();}
+
+// ── A11Y: WAI-ARIA keyboard-operable tabs ─────────────────────────────────
+(function(){
+  const tabs=[...document.querySelectorAll('.tabs .tab')];
+  const panels=[...document.querySelectorAll('.content')];
+  const list=document.querySelector('.tabs');
+  if(list)list.setAttribute('role','tablist');
+  tabs.forEach((t,i)=>{
+    t.setAttribute('role','tab');
+    t.id=t.id||('lf-tab-'+i);
+    t.setAttribute('aria-selected',t.classList.contains('active')?'true':'false');
+    t.setAttribute('tabindex',t.classList.contains('active')?'0':'-1');
+    if(panels[i]){panels[i].setAttribute('role','tabpanel');panels[i].setAttribute('aria-labelledby',t.id);panels[i].setAttribute('tabindex','0');}
+    t.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();sw(i);t.focus();return;}
+      let n=null;
+      if(e.key==='ArrowRight'||e.key==='ArrowDown')n=(i+1)%tabs.length;
+      else if(e.key==='ArrowLeft'||e.key==='ArrowUp')n=(i-1+tabs.length)%tabs.length;
+      else if(e.key==='Home')n=0; else if(e.key==='End')n=tabs.length-1;
+      if(n!==null){e.preventDefault();sw(n);tabs[n].focus();}
+    });
+  });
+})();
 </script>
 </body>
 </html>
