@@ -183,13 +183,14 @@ function wrap({ title, desc, active, main, file, noindex }) {
 <meta name="twitter:title" content="${esc(full)}">
 <meta name="twitter:description" content="${esc(desc)}">
 <meta name="twitter:image" content="${img}">
-${noindex ? '<meta name="robots" content="noindex">\n' : ''}<link rel="stylesheet" href="${BASE}/style.css">
+${noindex ? '<meta name="robots" content="noindex">\n' : ''}<script>try{if(localStorage.getItem('lf-theme')==='light')document.documentElement.className='light'}catch(e){}</script>
+<link rel="stylesheet" href="${BASE}/style.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site"><div class="bar">
   <a href="${BASE}/" class="brand">LedgerField<span>offline P2P accounting</span></a>
-  <nav aria-label="Primary">${nav}</nav>
+  <nav aria-label="Primary">${nav}<button class="theme-toggle" type="button" aria-label="Toggle light or dark theme" onclick="lfTheme()"></button></nav>
 </div></header>
 <main id="main" class="wrap" tabindex="-1">
 ${main}
@@ -214,6 +215,7 @@ ${main}
       <a href="${BASE}/wiki/privacy-datamarket.html">Privacy model</a></div>
   </div>
 </div></footer>
+<script>function lfTheme(t){var h=document.documentElement;t=t||(h.classList.contains('light')?'dark':'light');h.classList.toggle('light',t==='light');try{localStorage.setItem('lf-theme',t)}catch(e){}}</script>
 </body>
 </html>`;
 }
