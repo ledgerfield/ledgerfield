@@ -301,10 +301,13 @@ const v=id=>document.getElementById(id);
 const fv=id=>parseFloat(v(id)?.value)||0;
 
 // ── NAV ───────────────────────────────────────────────────────────────────
+const TAB_SLUGS=['entiteit','grootboek','belastingen','loonstrook','aangifte','vault','p2p','datamarkt'];
 function sw(i){
   document.querySelectorAll('.tab').forEach((t,j)=>{t.classList.toggle('active',i===j);t.setAttribute('aria-selected',i===j?'true':'false');t.setAttribute('tabindex',i===j?'0':'-1');});
   document.querySelectorAll('.content').forEach((c,j)=>c.classList.toggle('active',i===j));
   if(i===1)renderCoA(); if(i===4){renderAngEnt();renderAngF();} if(i===5)renderVault(); if(i===7)renderMarket();
+  try{localStorage.setItem('lf_tab',i)}catch(e){}
+  if(TAB_SLUGS[i]&&location.hash!=='#'+TAB_SLUGS[i]){try{history.replaceState(null,'','#'+TAB_SLUGS[i])}catch(e){location.hash=TAB_SLUGS[i];}}
 }
 
 // ── LOCK ──────────────────────────────────────────────────────────────────
@@ -601,6 +604,15 @@ function renderMarket(){renderConsent();renderPool();renderMine();mkSearch();ren
     if(el){el.setAttribute('aria-live','polite');el.setAttribute('aria-atomic','true');}
   });
   const err=document.getElementById('uerr'); if(err){err.setAttribute('role','alert');}
+})();
+
+// ── Tab deep-linking + resume ─────────────────────────────────────────────
+(function(){
+  const idx=function(){return TAB_SLUGS.indexOf((location.hash||'').replace(/^#/,''));};
+  window.addEventListener('hashchange',function(){var i=idx(); if(i>=0)sw(i);});
+  var start=idx();
+  if(start<0){ try{var s=parseInt(localStorage.getItem('lf_tab'),10); if(s>=0&&s<TAB_SLUGS.length)start=s;}catch(e){} }
+  if(start>0)sw(start);
 })();
 </script>
 </body>
