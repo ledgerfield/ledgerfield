@@ -41,6 +41,16 @@ tr:hover td{background:#1f242b}
 .prv{font-size:.8em;color:var(--muted);line-height:1.7}
 #lock{display:none;position:fixed;inset:0;background:var(--bg);z-index:999;justify-content:center;align-items:center;flex-direction:column;gap:14px}
 #lock.show{display:flex}
+@media (max-width:600px){
+  .content{padding:12px}
+  .row{gap:8px}
+  .f{min-width:100%;flex:1 1 100%}
+  .tab{padding:6px 10px;font-size:.78em}
+  .panel{padding:11px}
+  h2{font-size:1em}
+  .btn{font-size:.8em;padding:6px 11px}
+  table{display:block;overflow-x:auto;white-space:nowrap;font-size:.76em;-webkit-overflow-scrolling:touch}
+}
 @media print{.tabs,.btn{display:none!important}.content{display:block!important}}
 </style>
 </head>
