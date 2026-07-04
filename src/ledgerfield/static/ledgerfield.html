@@ -567,6 +567,22 @@ function renderMarket(){renderConsent();renderPool();renderMine();mkSearch();ren
     });
   });
 })();
+
+// ── A11Y: associate visible labels with their form controls ───────────────
+(function(){
+  document.querySelectorAll('.f').forEach(function(f){
+    const lab=f.querySelector('label'), ctl=f.querySelector('input,select,textarea');
+    if(!lab||!ctl)return;
+    if(ctl.id){ if(!lab.hasAttribute('for')) lab.setAttribute('for',ctl.id); }
+    else if(!ctl.getAttribute('aria-label')){ ctl.setAttribute('aria-label',lab.textContent.trim()); }
+  });
+  // standalone controls (lock/vault password, search, paste box): fall back to placeholder
+  document.querySelectorAll('input[placeholder],textarea[placeholder]').forEach(function(c){
+    if(c.getAttribute('aria-label'))return;
+    if(c.id && document.querySelector('label[for="'+c.id+'"]'))return;
+    c.setAttribute('aria-label',c.getAttribute('placeholder'));
+  });
+})();
 </script>
 </body>
 </html>
