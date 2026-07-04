@@ -593,6 +593,15 @@ function renderMarket(){renderConsent();renderPool();renderMine();mkSearch();ren
     c.setAttribute('aria-label',c.getAttribute('placeholder'));
   });
 })();
+
+// ── A11Y: announce computed results & status to screen readers ────────────
+(function(){
+  ['vpb-r','ib-r','ws-r','dga-r','slip-r','pw-m','imp-m','pb-r','mk-build'].forEach(function(id){
+    const el=document.getElementById(id);
+    if(el){el.setAttribute('aria-live','polite');el.setAttribute('aria-atomic','true');}
+  });
+  const err=document.getElementById('uerr'); if(err){err.setAttribute('role','alert');}
+})();
 </script>
 </body>
 </html>
