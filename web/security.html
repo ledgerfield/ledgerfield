@@ -3,22 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Page not found · LedgerField</title>
-<meta name="description" content="404 — page not found.">
-<link rel="canonical" href="https://www.5mart.ml/ledgerfield/404.html">
+<title>Security · LedgerField</title>
+<meta name="description" content="LedgerField security & responsible disclosure — how to report vulnerabilities and our security posture.">
+<link rel="canonical" href="https://www.5mart.ml/ledgerfield/security.html">
 <meta name="theme-color" content="#0d1117">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%236c63ff%22%2F%3E%3Cpath%20d%3D%22M9%208v16h14%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M13%2013h8M13%2017.5h6%22%20stroke%3D%22%23fff%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.85%22%2F%3E%3C%2Fsvg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LedgerField">
-<meta property="og:title" content="Page not found · LedgerField">
-<meta property="og:description" content="404 — page not found.">
-<meta property="og:url" content="https://www.5mart.ml/ledgerfield/404.html">
+<meta property="og:title" content="Security · LedgerField">
+<meta property="og:description" content="LedgerField security & responsible disclosure — how to report vulnerabilities and our security posture.">
+<meta property="og:url" content="https://www.5mart.ml/ledgerfield/security.html">
 <meta property="og:image" content="https://www.5mart.ml/ledgerfield/social-card.svg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Page not found · LedgerField">
-<meta name="twitter:description" content="404 — page not found.">
+<meta name="twitter:title" content="Security · LedgerField">
+<meta name="twitter:description" content="LedgerField security & responsible disclosure — how to report vulnerabilities and our security posture.">
 <meta name="twitter:image" content="https://www.5mart.ml/ledgerfield/social-card.svg">
-<meta name="robots" content="noindex">
 <script>try{if(localStorage.getItem('lf-theme')==='light')document.documentElement.className='light'}catch(e){}</script>
 <link rel="stylesheet" href="/ledgerfield/style.css">
 </head>
@@ -29,16 +28,30 @@
   <nav aria-label="Primary"><a href="/ledgerfield/">Home</a><a href="/ledgerfield/guides/">Guides</a><a href="/ledgerfield/wiki/">Wiki</a><a href="/ledgerfield/coverage.html">Coverage</a><a href="/ledgerfield/app.html" class="cta">Open app</a><button class="theme-toggle" type="button" aria-label="Toggle light or dark theme" onclick="lfTheme()"></button></nav>
 </div></header>
 <main id="main" class="wrap" tabindex="-1">
-<section class="hero" style="padding-top:30px">
-  <h1>404 &mdash; page not found</h1>
-  <p class="tagline">That page isn&rsquo;t in the ledger. It may have moved, or never existed.</p>
-  <div style="margin-top:18px">
-    <a class="cta" href="/ledgerfield/">Home</a>
-    <a class="cta secondary" href="/ledgerfield/guides/">Guides</a>
-    <a class="cta secondary" href="/ledgerfield/wiki/">Wiki</a>
-    <a class="cta secondary" href="/ledgerfield/coverage.html">Coverage</a>
-  </div>
-</section>
+<div class="crumbs"><a href="/ledgerfield/">Home</a> / Security</div>
+<h1>Security &amp; responsible disclosure</h1>
+<p>LedgerField handles financial data, so we take security seriously. If you find a vulnerability, please report it privately and give us a chance to fix it before public disclosure.</p>
+<div class="note"><b>Report a vulnerability:</b> open a private advisory at <a href="https://github.com/ledgerfield/ledgerfield/security/advisories/new">GitHub Security Advisories</a>. Machine-readable contact: <a href="/ledgerfield/.well-known/security.txt">security.txt</a>.</div>
+<h2>In scope</h2>
+<ul>
+  <li>The app (<a href="/ledgerfield/app.html">ledgerfield.html</a>) — vault encryption, local storage, calculators, exports.</li>
+  <li>Tax <a href="/ledgerfield/wiki/taxation.html#ruleset">rulesets</a> and their <a href="/ledgerfield/wiki/knitweb-p2p.html#cid">CID</a> verification.</li>
+  <li>The <a href="/ledgerfield/wiki/privacy-datamarket.html#k-anonymity">k-anonymity</a> guarantees of the data market.</li>
+  <li>This website.</li>
+</ul>
+<h2>Out of scope</h2>
+<ul>
+  <li>Social engineering, phishing and physical attacks.</li>
+  <li>Denial of service / volumetric attacks.</li>
+  <li>Findings that require an already-compromised device (the vault trusts the local machine).</li>
+</ul>
+<h2>Our posture</h2>
+<div class="grid2">
+  <div class="card"><h3>Offline by default</h3><p>The app runs client-side; raw data lives only in your encrypted <a href="/ledgerfield/wiki/privacy-datamarket.html#vault">vault</a>. No server, no telemetry.</p></div>
+  <div class="card"><h3>Verify, don&rsquo;t trust</h3><p>Rulesets and market packages are content-addressed — you verify them by recomputing their <a href="/ledgerfield/wiki/knitweb-p2p.html#cid">CID</a>.</p></div>
+  <div class="card"><h3>Privacy floor</h3><p>Only anonymised <a href="/ledgerfield/wiki/privacy-datamarket.html#k-anonymity">k&#8805;5</a> aggregates ever leave the device.</p></div>
+</div>
+<p>Thank you for helping keep LedgerField users safe.</p>
 </main>
 <footer class="site"><div class="inner">
   <div class="relay">
