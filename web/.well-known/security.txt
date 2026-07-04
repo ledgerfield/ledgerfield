@@ -1,0 +1,5 @@
+Contact: https://github.com/ledgerfield/ledgerfield/security/advisories/new
+Expires: 2027-01-01T00:00:00.000Z
+Preferred-Languages: en, nl
+Canonical: https://www.5mart.ml/ledgerfield/.well-known/security.txt
+Policy: https://www.5mart.ml/ledgerfield/security.html

@@ -212,7 +212,8 @@ ${main}
       <a href="https://github.com/ledgerfield/ledgerfield">GitHub</a><br>
       <a href="${BASE}/roadmap.html">Roadmap</a><br>
       <a href="${BASE}/wiki/knitweb-p2p.html">Knitweb &amp; P2P</a><br>
-      <a href="${BASE}/wiki/privacy-datamarket.html">Privacy model</a></div>
+      <a href="${BASE}/wiki/privacy-datamarket.html">Privacy model</a><br>
+      <a href="${BASE}/security.html">Security</a></div>
   </div>
 </div></footer>
 <script>function lfTheme(t){var h=document.documentElement;t=t||(h.classList.contains('light')?'dark':'light');h.classList.toggle('light',t==='light');try{localStorage.setItem('lf-theme',t)}catch(e){}}</script>
@@ -435,6 +436,34 @@ ${groups}`;
   return { file:'roadmap.html', html: wrap({ title:'Roadmap', desc:'LedgerField roadmap — what is shipped, what is next, and what we are exploring.', active:'', main, file:'roadmap.html' }) };
 }
 
+function securityPage() {
+  const main = `<div class="crumbs"><a href="${BASE}/">Home</a> / Security</div>
+<h1>Security &amp; responsible disclosure</h1>
+<p>LedgerField handles financial data, so we take security seriously. If you find a vulnerability, please report it privately and give us a chance to fix it before public disclosure.</p>
+<div class="note"><b>Report a vulnerability:</b> open a private advisory at <a href="https://github.com/ledgerfield/ledgerfield/security/advisories/new">GitHub Security Advisories</a>. Machine-readable contact: <a href="${BASE}/.well-known/security.txt">security.txt</a>.</div>
+<h2>In scope</h2>
+<ul>
+  <li>The app (<a href="${BASE}/app.html">ledgerfield.html</a>) — vault encryption, local storage, calculators, exports.</li>
+  <li>Tax <a href="${BASE}/wiki/taxation.html#ruleset">rulesets</a> and their <a href="${BASE}/wiki/knitweb-p2p.html#cid">CID</a> verification.</li>
+  <li>The <a href="${BASE}/wiki/privacy-datamarket.html#k-anonymity">k-anonymity</a> guarantees of the data market.</li>
+  <li>This website.</li>
+</ul>
+<h2>Out of scope</h2>
+<ul>
+  <li>Social engineering, phishing and physical attacks.</li>
+  <li>Denial of service / volumetric attacks.</li>
+  <li>Findings that require an already-compromised device (the vault trusts the local machine).</li>
+</ul>
+<h2>Our posture</h2>
+<div class="grid2">
+  <div class="card"><h3>Offline by default</h3><p>The app runs client-side; raw data lives only in your encrypted <a href="${BASE}/wiki/privacy-datamarket.html#vault">vault</a>. No server, no telemetry.</p></div>
+  <div class="card"><h3>Verify, don&rsquo;t trust</h3><p>Rulesets and market packages are content-addressed — you verify them by recomputing their <a href="${BASE}/wiki/knitweb-p2p.html#cid">CID</a>.</p></div>
+  <div class="card"><h3>Privacy floor</h3><p>Only anonymised <a href="${BASE}/wiki/privacy-datamarket.html#k-anonymity">k&#8805;5</a> aggregates ever leave the device.</p></div>
+</div>
+<p>Thank you for helping keep LedgerField users safe.</p>`;
+  return { file:'security.html', html: wrap({ title:'Security', desc:'LedgerField security & responsible disclosure — how to report vulnerabilities and our security posture.', active:'', main, file:'security.html' }) };
+}
+
 function notFound() {
   const main = `<section class="hero" style="padding-top:30px">
   <h1>404 &mdash; page not found</h1>
@@ -452,7 +481,7 @@ function notFound() {
 // ── build ────────────────────────────────────────────────────────────────────
 const pages = [
   landing(), guidesIndex(), ...GUIDES.map(guidePage),
-  wikiIndex(), ...Object.keys(CLUSTERS).map(clusterPage), coverage(), faqPage(), roadmapPage(), notFound(),
+  wikiIndex(), ...Object.keys(CLUSTERS).map(clusterPage), coverage(), faqPage(), roadmapPage(), securityPage(), notFound(),
 ];
 for (const p of pages) {
   const out = path.join(WEB, p.file);
@@ -491,6 +520,16 @@ ${pages.filter(p => !p.noindex).map(p => `  <url><loc>${ORIGIN}${canonUrl(p.file
 `;
 fs.writeFileSync(path.join(WEB, 'sitemap.xml'), sitemap);
 fs.writeFileSync(path.join(WEB, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${ORIGIN}${BASE}/sitemap.xml\n`);
+
+// ── security.txt (RFC 9116) ──────────────────────────────────────────────────
+fs.mkdirSync(path.join(WEB, '.well-known'), { recursive:true });
+fs.writeFileSync(path.join(WEB, '.well-known', 'security.txt'),
+`Contact: https://github.com/ledgerfield/ledgerfield/security/advisories/new
+Expires: 2027-01-01T00:00:00.000Z
+Preferred-Languages: en, nl
+Canonical: ${ORIGIN}${BASE}/.well-known/security.txt
+Policy: ${ORIGIN}${BASE}/security.html
+`);
 
 // ── link checker ─────────────────────────────────────────────────────────────
 const files = pages.map(p => p.file).concat(fs.existsSync(path.join(WEB,'app.html')) ? ['app.html'] : []);
