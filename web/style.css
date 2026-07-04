@@ -143,3 +143,34 @@ footer.site .relay code{font-size:.85em}
   .hero h1{font-size:2.1em}
   header.site nav{gap:11px;font-size:.85em}
 }
+
+/* ── print ────────────────────────────────────────────────── */
+@media print{
+  header.site,footer.site,.skip,.covbar,.cta,.btn,.crumbs{display:none!important}
+  html{scroll-behavior:auto}
+  body{background:#fff;color:#111;font-size:11pt}
+  main.wrap{max-width:none;padding:0}
+  a{color:#111;text-decoration:none}
+  h1,h2,h3{color:#111}
+  h1{font-size:20pt}
+  h2{font-size:15pt;border-bottom:1px solid #bbb;break-after:avoid}
+  h3{font-size:12pt;color:#333;break-after:avoid}
+  main.wrap::before{content:"LedgerField \2014 www.5mart.ml/ledgerfield";display:block;font-weight:700;color:#4b45c6;font-size:13pt;margin-bottom:14px;border-bottom:2px solid #4b45c6;padding-bottom:6px}
+  .hero{background:none;padding:6px 0;text-align:left}
+  .hero .tagline{color:#333}
+  .panel,.feature,.card,.wiki-def,.note,.ok-box,.warn-box,.res,.diagram{background:#fff!important;border:1px solid #ccc!important;box-shadow:none;break-inside:avoid}
+  .feature-grid,.grid2{display:block}
+  .feature,.card{margin-bottom:10px}
+  .tag,.badge,.pill{border:1px solid #bbb;color:#333;background:#f2f2f2}
+  table{font-size:9.5pt}
+  th{background:#eee!important;color:#111!important}
+  td,th{border-color:#ccc!important}
+  tr:hover td{background:none!important}
+  /* expand every FAQ answer and show all coverage rows on paper */
+  .faq details{border:1px solid #ccc}
+  .faq summary::after{content:""!important}
+  .faq .faq-a{display:block!important}
+  #covtab tbody tr{display:table-row!important}
+  .cov.y{color:#111}.cov.n{color:#999}
+  .wiki-def .kw{color:#333}
+}
