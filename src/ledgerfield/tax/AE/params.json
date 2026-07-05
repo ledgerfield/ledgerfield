@@ -1,0 +1,58 @@
+{
+  "jurisdiction": "AE",
+  "year": 2025,
+  "cit": {
+    "zero_band_limit_aed": 375000,
+    "standard_rate": 0.09,
+    "free_zone_qualifying_income_rate": 0.0,
+    "free_zone_non_qualifying_rate": 0.09,
+    "domestic_minimum_topup_tax_rate": 0.15,
+    "note": "Federal Decree-Law No. 47 of 2022; effective for financial years starting on/after 1 June 2023. 0% up to AED 375,000, 9% above. DMTT 15% applies to MNE groups with consolidated revenue >= EUR 750M from periods on/after 1 January 2025."
+  },
+  "vat": {
+    "standard_rate": 0.05,
+    "zero_rated": true,
+    "registration_threshold_aed": 375000,
+    "voluntary_registration_threshold_aed": 187500,
+    "note": "VAT introduced 1 January 2018 at 5%."
+  },
+  "personal_income_tax": {
+    "rate": 0.0,
+    "note": "No federal personal income tax on employment income."
+  },
+  "end_of_service_gratuity": {
+    "first_5_years_days_per_year": 21,
+    "after_5_years_days_per_year": 30,
+    "note": "Private-sector end-of-service benefit under Federal Decree-Law No. 33 of 2021 (UAE Labour Law); 21 days' basic wage per year for the first 5 years, 30 days per year thereafter."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "UAE Federal Tax Authority — Corporate Tax",
+        "url": "https://tax.gov.ae/en/taxes/corporate.tax.aspx"
+      },
+      {
+        "name": "UAE Ministry of Finance — Corporate Tax",
+        "url": "https://mof.gov.ae/corporate-tax/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "AED",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Entity type, Free Zone qualifying-income conditions, DMTT/Pillar Two, relief, filing, withholding, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, emirate-level, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-05"
+  }
+}
