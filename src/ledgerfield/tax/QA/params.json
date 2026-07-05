@@ -1,0 +1,56 @@
+{
+  "jurisdiction": "QA",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.10,
+    "basis": "Flat 10% CIT (Law No. 24 of 2018) on the foreign (non-GCC) ownership share of profit; wholly Qatari/GCC-owned entities are generally exempt.",
+    "special_rates": {
+      "petroleum_and_petrochemicals": 0.35
+    },
+    "note": "Administered by the General Tax Authority (GTA). Extractive-sector agreement rates are out of scope for this SME estimator."
+  },
+  "wht": {
+    "non_resident_services_and_royalties": 0.05,
+    "note": "5% withholding tax on certain payments to non-residents (Law No. 24 of 2018)."
+  },
+  "vat": {
+    "standard_rate": 0.0,
+    "implemented": false,
+    "note": "Qatar has not implemented VAT as of the target period, though it is a signatory to the GCC VAT Framework Agreement."
+  },
+  "personal_income_tax": {
+    "rate": 0.0,
+    "note": "No personal income tax on employment income."
+  },
+  "social_insurance": {
+    "qatari_employee_rate": 0.05,
+    "qatari_employer_rate": 0.10,
+    "note": "Retirement/social insurance applies to Qatari nationals only; expatriates are not covered."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Qatar General Tax Authority (Dhareeba)",
+        "url": "https://www.gta.gov.qa/en/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "QAR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Ownership blend, extractive-sector rates, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-05"
+  }
+}
