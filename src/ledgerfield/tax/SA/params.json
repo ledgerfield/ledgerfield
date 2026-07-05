@@ -1,0 +1,61 @@
+{
+  "jurisdiction": "SA",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.20,
+    "zakat_rate": 0.025,
+    "basis": "CIT 20% on non-GCC (foreign) ownership share of profit; Zakat 2.5% on Saudi/GCC ownership share of the Zakat base.",
+    "special_rates": {
+      "oil_and_hydrocarbons": "50%-85% banded",
+      "natural_gas_investment": 0.30
+    },
+    "note": "Administered by ZATCA. Special extractive-sector rates are out of scope for this SME estimator."
+  },
+  "wht": {
+    "dividends": 0.05,
+    "royalties": 0.15,
+    "management_fees": 0.20,
+    "note": "Withholding tax on payments to non-residents; rates vary by payment type and treaty."
+  },
+  "vat": {
+    "standard_rate": 0.15,
+    "note": "VAT raised from 5% to 15% effective 1 July 2020."
+  },
+  "personal_income_tax": {
+    "rate": 0.0,
+    "note": "No personal income tax on employment income."
+  },
+  "gosi": {
+    "saudi_employee_rate": 0.0975,
+    "saudi_employer_rate": 0.1175,
+    "non_saudi_employer_rate": 0.02,
+    "note": "General Organization for Social Insurance (GOSI); SANED unemployment insurance included for Saudi nationals."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "ZATCA — Zakat, Tax and Customs Authority",
+        "url": "https://zatca.gov.sa/en/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "SAR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Zakat is modelled as a proxy on owner-share profit; the true Zakat base includes adjusted net worth items.",
+      "Ownership blend, extractive-sector rates, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode the full Zakat base computation, deductions, exemptions, treaties, or filing rules.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-05"
+  }
+}
