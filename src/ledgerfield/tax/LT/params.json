@@ -1,0 +1,51 @@
+{
+  "jurisdiction": "LT",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.16,
+    "basis": "Standard 16% corporate income tax (pelno mokestis) from 1 January 2025, raised from 15% by the 2025 tax reform.",
+    "small_company_rate": 0.06,
+    "small_company_criteria": {
+      "max_employees": 10,
+      "max_income_eur": 300000,
+      "note": "Both conditions must be met: no more than 10 employees AND annual income not exceeding EUR 300,000. Rate raised from 5% to 6% on 1 January 2025."
+    },
+    "first_year_rate": 0.0,
+    "first_year_note": "Qualifying small companies pay 0% in their first tax year.",
+    "pillar_two_note": "Lithuania applies the EU Pillar Two (Directive 2022/2523) 15% global minimum tax for groups with consolidated revenue >= EUR 750m — out of scope for this SME estimator."
+  },
+  "vat": {
+    "standard_rate": 0.21,
+    "reduced_rates": [0.09, 0.05],
+    "implemented": true,
+    "local_name": "PVM (pridetines vertes mokestis)",
+    "oss_eligible": true,
+    "note": "EU member state; One-Stop-Shop (OSS/IOSS) available for cross-border B2C supplies."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "State Tax Inspectorate (VMI, Valstybine mokesciu inspekcija)",
+        "url": "https://www.vmi.lt/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Small-company eligibility (related-party aggregation rules), incentives, participation exemption, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

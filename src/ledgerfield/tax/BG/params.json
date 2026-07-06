@@ -1,0 +1,52 @@
+{
+  "jurisdiction": "BG",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.10,
+    "basis": "Flat 10% corporate income tax (Corporate Income Tax Act / ZKPO) on taxable profit; no progressive brackets.",
+    "pillar_two_note": "Despite the 10% headline CIT rate, Bulgaria implemented EU Pillar Two (Directive (EU) 2022/2523) as of 2024, including a Qualified Domestic Minimum Top-up Tax (QDMTT) bringing in-scope groups (consolidated revenue >= EUR 750m) to a 15% effective minimum. Out of scope for this SME estimator.",
+    "note": "Administered by the National Revenue Agency (NRA / NAP)."
+  },
+  "vat": {
+    "standard_rate": 0.20,
+    "reduced_rates": {
+      "tourism_accommodation": 0.09
+    },
+    "oss_eligible": true,
+    "note": "20% standard VAT (DDS); 9% reduced rate for hotel/tourist accommodation. EU member state: One-Stop-Shop (OSS/IOSS) available for cross-border B2C supplies."
+  },
+  "personal_income_tax": {
+    "rate": 0.10,
+    "note": "Flat 10% personal income tax on employment and most other income."
+  },
+  "currency_transition": {
+    "euro_adoption_date": "2026-01-01",
+    "note": "Bulgaria adopts the euro on 1 January 2026; the 2025 target year still uses the Bulgarian lev (BGN), pegged at 1.95583 BGN/EUR under the currency board."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "National Revenue Agency (NRA / NAP)",
+        "url": "https://nra.bg/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "BGN",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Pillar Two/QDMTT, one-off alternative taxes, withholding, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "jurisdiction": "CZ",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.21,
+    "basis": "Flat 21% corporate income tax (dan z prijmu pravnickych osob), raised from 19% by the 2024 consolidation package (konsolidacni balicek), effective from tax year 2024.",
+    "windfall_tax": {
+      "surcharge_rate": 0.60,
+      "note": "Temporary windfall tax (dan z neocekavanych zisku): 60% surcharge on excess profits of large banks and energy companies for 2023-2025. Out of scope for this SME estimator."
+    },
+    "note": "Administered by the Financial Administration (Financni sprava)."
+  },
+  "vat": {
+    "standard_rate": 0.21,
+    "reduced_rate": 0.12,
+    "oss_eligible": true,
+    "note": "21% standard VAT (DPH); the 2024 reform merged the former 10% and 15% reduced rates into a single 12% reduced rate. EU One-Stop-Shop (OSS) available for intra-EU B2C distance sales."
+  },
+  "personal_income_tax": {
+    "standard_rate": 0.15,
+    "higher_rate": 0.23,
+    "note": "15% base rate; 23% on income above 36x the average wage (threshold lowered from 48x by the 2024 consolidation package)."
+  },
+  "social_insurance": {
+    "employer_rate": 0.338,
+    "employee_rate": 0.116,
+    "note": "Employer ~33.8% (social security 24.8% + health 9.0%); employee 7.1% social security (incl. 0.6% sickness insurance from 2024) + 4.5% health."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Financni sprava (Czech Financial Administration)",
+        "url": "https://www.financnisprava.cz/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "CZK",
+    "pillar_two_note": "Czechia has implemented the EU Pillar Two directive (Act No. 416/2023 Coll.): a 15% minimum top-up tax applies to members of multinational and large domestic groups with consolidated revenue above EUR 750 million. Out of scope for this SME estimator.",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Windfall tax, Pillar Two top-up, investment incentives, R&D deduction, loss relief, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}

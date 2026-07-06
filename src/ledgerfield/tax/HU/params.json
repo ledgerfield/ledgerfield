@@ -1,0 +1,66 @@
+{
+  "jurisdiction": "HU",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.09,
+    "basis": "Flat 9% corporate income tax (társasági adó, Act LXXXI of 1996) on taxable profit — the lowest headline CIT rate in the EU.",
+    "note": "Administered by the National Tax and Customs Administration (NAV). A minimum-tax (income floor) rule may apply if declared profit is below 2% of adjusted revenue."
+  },
+  "local_business_tax": {
+    "max_rate": 0.02,
+    "name": "HIPA (helyi iparűzési adó)",
+    "note": "Municipal local business tax of up to 2% levied on adjusted net turnover (revenue less COGS, subcontractors, materials, mediated services and direct R&D) — a different base than CIT profit; rate set per municipality. Not computed by this estimator."
+  },
+  "kiva": {
+    "rate": 0.10,
+    "note": "KIVA small-business tax: optional 10% alternative regime replacing CIT and the social contribution tax; base is broadly payroll plus capital movements. Eligibility caps on headcount and revenue apply. Not computed by this estimator."
+  },
+  "sector_surtaxes": {
+    "note": "Sector-specific surtaxes apply on top of CIT for banks and financial institutions, retail, energy, insurance and telecom, mostly turnover-based with progressive scales. Out of scope for this SME estimator."
+  },
+  "pillar_two": {
+    "implemented": true,
+    "note": "Hungary implements the EU Pillar Two directive including a QDMTT (Act LXXXIV of 2023): in-scope groups (revenue >= EUR 750m) are topped up to a 15% effective rate despite the 9% headline CIT, with HIPA and certain other taxes counting toward the effective-rate computation."
+  },
+  "vat": {
+    "standard_rate": 0.27,
+    "reduced_rates": [0.18, 0.05],
+    "oss_eligible": true,
+    "note": "ÁFA (general turnover tax): 27% standard rate — the highest in the EU; 18% and 5% reduced rates for specified goods and services. EU One-Stop-Shop applies to cross-border B2C supplies."
+  },
+  "personal_income_tax": {
+    "rate": 0.15,
+    "note": "Flat 15% personal income tax (SZJA); family and under-25/under-30 base allowances can reduce the effective burden."
+  },
+  "social_insurance": {
+    "employee_rate": 0.185,
+    "employer_social_contribution_tax_rate": 0.13,
+    "note": "18.5% employee social security contribution (TB-járulék) and 13% employer social contribution tax (szociális hozzájárulási adó)."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "National Tax and Customs Administration (NAV)",
+        "url": "https://nav.gov.hu/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "HUF",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "HIPA (municipal, turnover-based), KIVA, sector surtaxes, Pillar Two top-up, minimum-tax floor, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}

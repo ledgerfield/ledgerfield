@@ -1,0 +1,57 @@
+{
+  "jurisdiction": "LU",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.16,
+    "reduced_rate": 0.14,
+    "reduced_bracket_limit": 175000,
+    "transition_band": {
+      "lower": 175000,
+      "upper": 200001,
+      "formula": "EUR 24,500 + 45% of taxable income above EUR 175,000",
+      "note": "Statutory transition band between the 14% and 16% brackets; simplified in this estimator as <=175k -> 14%, >175k -> 16%."
+    },
+    "basis": "Corporate income tax (impot sur le revenu des collectivites, IRC) cut from 17% to 16% as of tax year 2025; 14% on taxable income up to EUR 175,000.",
+    "solidarity_surtax_rate": 0.07,
+    "municipal_business_tax_rate_luxembourg_city": 0.0675,
+    "aggregate_effective_rate_luxembourg_city": 0.2387,
+    "note": "The calculator returns only the state CIT (IRC). The 7% solidarity surtax (on the CIT amount) and the municipal business tax (~6.75% in Luxembourg City) bring the aggregate effective rate to ~23.87% in Luxembourg City for 2025."
+  },
+  "vat": {
+    "standard_rate": 0.17,
+    "reduced_rates": [0.14, 0.08, 0.03],
+    "implemented": true,
+    "oss_eligible": true,
+    "note": "17% standard VAT rate is the lowest in the EU; reduced rates of 14%, 8% and 3% apply. EU One-Stop-Shop (OSS) available for cross-border B2C supplies."
+  },
+  "pillar_two": {
+    "in_scope": true,
+    "note": "Luxembourg has transposed the EU Pillar Two Directive (Law of 22 December 2023): IIR/QDMTT from 2024 and UTPR from 2025 apply a 15% global minimum tax to groups with consolidated revenue >= EUR 750m. Out of scope for this SME estimator."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Administration des contributions directes (ACD)",
+        "url": "https://impotsdirects.public.lu/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "The 175k-200k001 transition band, solidarity surtax, municipal business tax, net wealth tax, participation exemption and treaty relief may alter outcomes.",
+      "Verify against official ACD guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

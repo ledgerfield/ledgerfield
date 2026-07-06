@@ -1,0 +1,48 @@
+{
+  "jurisdiction": "LV",
+  "year": 2025,
+  "cit": {
+    "model": "estonian_distribution_only",
+    "retained_profit_rate": 0.0,
+    "distribution_rate_on_grossed_up_base": 0.20,
+    "effective_rate_on_net_distribution": 0.25,
+    "gross_up_formula": "CIT = net distribution * 20 / 80 (i.e. 20% of net/0.8)",
+    "basis": "Estonian model since 1 January 2018: no annual CIT on retained or reinvested profit; 20% CIT on the grossed-up base only when profit is distributed (dividends and deemed distributions), effectively 25% of the net distribution.",
+    "note": "Deemed distributions (non-business expenses, transfer-pricing adjustments, excessive interest, loans to related parties) are taxed like dividends — simplified out of this SME estimator.",
+    "pillar_two_note": "Latvia applies the EU Pillar Two (Directive 2022/2523) 15% global minimum tax for groups with consolidated revenue >= EUR 750m (deferred IIR/UTPR election) — out of scope for this SME estimator."
+  },
+  "vat": {
+    "standard_rate": 0.21,
+    "reduced_rates": [0.12, 0.05],
+    "implemented": true,
+    "local_name": "PVN (pievienotas vertibas nodoklis)",
+    "oss_eligible": true,
+    "note": "EU member state; One-Stop-Shop (OSS/IOSS) available for cross-border B2C supplies."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "State Revenue Service (VID, Valsts ienemumu dienests)",
+        "url": "https://www.vid.gov.lv/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Deemed-distribution items, credit-institution surcharge, participation exemption, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}
