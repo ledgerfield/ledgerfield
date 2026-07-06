@@ -1,0 +1,66 @@
+{
+  "jurisdiction": "TH",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.20,
+    "basis": "Flat 20% CIT on net profit under the Revenue Code; qualifying SMEs (paid-up capital <= THB 5m AND revenue <= THB 30m) use progressive brackets.",
+    "sme_regime": {
+      "paid_up_capital_max": 5000000,
+      "revenue_max": 30000000,
+      "brackets": [
+        {"up_to": 300000, "rate": 0.0},
+        {"up_to": 3000000, "rate": 0.15},
+        {"up_to": null, "rate": 0.20}
+      ],
+      "note": "SME brackets apply to net profit: first THB 300,000 exempt; THB 300,001-3,000,000 at 15%; above THB 3,000,000 at 20%."
+    },
+    "note": "Administered by The Revenue Department. Promoted BOI activities and special regimes are out of scope for this SME estimator."
+  },
+  "wht": {
+    "dividends": 0.10,
+    "interest": 0.15,
+    "note": "Domestic withholding: 10% on dividends, 15% on interest paid to non-residents; treaty relief may apply."
+  },
+  "vat": {
+    "standard_rate": 0.07,
+    "statutory_rate": 0.10,
+    "implemented": true,
+    "note": "Statutory VAT rate is 10%, temporarily reduced to 7% by repeatedly extended royal decree; current extension runs through 30 September 2025."
+  },
+  "personal_income_tax": {
+    "min_rate": 0.05,
+    "max_rate": 0.35,
+    "note": "Progressive personal income tax from 5% to 35% on net income (first THB 150,000 exempt)."
+  },
+  "social_insurance": {
+    "employee_rate": 0.05,
+    "employer_rate": 0.05,
+    "note": "Social Security Fund contributions of 5% each for employee and employer, capped on a wage base of THB 15,000 per month."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "The Revenue Department (Thailand)",
+        "url": "https://www.rd.go.th/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "THB",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "SME qualification, BOI promotion, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}

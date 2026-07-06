@@ -1,0 +1,66 @@
+{
+  "jurisdiction": "MY",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.24,
+    "basis": "Flat 24% corporate income tax under the Income Tax Act 1967, administered by the Inland Revenue Board of Malaysia (LHDN).",
+    "sme_regime": {
+      "eligibility": "Resident company, paid-up ordinary share capital <= RM2,500,000, gross business income <= RM50,000,000, and not part of a large group (no direct/indirect control links with a company exceeding the capital threshold).",
+      "brackets": [
+        {"up_to": 150000, "rate": 0.15, "note": "First RM150,000 of chargeable income."},
+        {"up_to": 600000, "rate": 0.17, "note": "Chargeable income from RM150,001 to RM600,000."},
+        {"up_to": null, "rate": 0.24, "note": "Chargeable income above RM600,000."}
+      ]
+    },
+    "note": "SME/MSME tiered rates apply per year of assessment; incentive/pioneer-status rates are out of scope for this SME estimator."
+  },
+  "wht": {
+    "interest": 0.15,
+    "royalties": 0.10,
+    "technical_services": 0.10,
+    "note": "Domestic withholding tax rates on payments to non-residents (Income Tax Act 1967); tax treaties may reduce these."
+  },
+  "sst": {
+    "implemented": true,
+    "model": "two_tier",
+    "sales_tax": {
+      "rates": [0.05, 0.10],
+      "note": "Sales Tax on manufactured and imported goods: 5% reduced rate for specified goods, 10% standard rate."
+    },
+    "service_tax": {
+      "standard_rate": 0.08,
+      "note": "Service Tax raised from 6% to 8% on 1 March 2024; the 6% rate is retained for food & beverage, telecommunications, parking, and logistics services."
+    },
+    "note": "Malaysia applies the Sales and Service Tax (SST), not VAT/GST."
+  },
+  "vat": {
+    "implemented": false,
+    "note": "No VAT. GST was repealed in 2018 and replaced by the two-tier SST (sales tax + service tax)."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Lembaga Hasil Dalam Negeri Malaysia (Inland Revenue Board of Malaysia, LHDN)",
+        "url": "https://www.hasil.gov.my/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "MYR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "SME eligibility, incentives, WHT, treaty relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official LHDN guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}

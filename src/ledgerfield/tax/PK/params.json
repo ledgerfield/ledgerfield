@@ -1,0 +1,59 @@
+{
+  "jurisdiction": "PK",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.29,
+    "basis": "Corporate income tax under the Income Tax Ordinance 2001, tax year 2025 (TY2025): 29% standard company rate.",
+    "special_rates": {
+      "small_company": 0.20,
+      "banking_company": 0.39
+    },
+    "small_company_conditions": {
+      "paid_up_capital_plus_reserves_max_pkr": 50000000,
+      "employees_max": 250,
+      "annual_turnover_max_pkr": 250000000,
+      "note": "Small company (s.2(59A)): paid-up capital plus undistributed reserves <= PKR 50m, employees <= 250, annual turnover <= PKR 250m."
+    },
+    "super_tax": {
+      "section": "4C",
+      "rate_range": [0.0, 0.10],
+      "top_rate_income_threshold_pkr": 500000000,
+      "note": "Progressive super tax (s.4C) of 0-10% on high incomes; top 10% for income above PKR 500m (banking companies face higher super tax). Not modelled in this SME estimator."
+    },
+    "note": "Administered by the Federal Board of Revenue (FBR). Minimum tax on turnover, alternative corporate tax, and final-tax regimes are out of scope."
+  },
+  "wht": {
+    "note": "Pakistan operates a withholding-tax (WHT) heavy regime: extensive withholding on supplies, services, contracts, imports, dividends, and profit on debt, often as minimum or final tax. Rates vary widely by transaction and filer status; not modelled."
+  },
+  "gst": {
+    "standard_rate": 0.18,
+    "basis": "Sales tax on goods (GST) at the federal level under the Sales Tax Act 1990: 18% standard rate.",
+    "provincial_services_note": "Sales tax on services is a provincial levy (Punjab, Sindh, KPK, Balochistan, ICT), typically 13-16% depending on province and service."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Federal Board of Revenue (FBR)",
+        "url": "https://www.fbr.gov.pk/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year (TY2025); Pakistan's tax year and transitional periods may differ."
+    },
+    "currency": "PKR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Super tax (s.4C), minimum tax on turnover, alternative corporate tax, WHT/final-tax regimes, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}

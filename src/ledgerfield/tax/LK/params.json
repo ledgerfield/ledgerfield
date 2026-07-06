@@ -1,0 +1,52 @@
+{
+  "jurisdiction": "LK",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.30,
+    "basis": "Standard 30% CIT under the Inland Revenue Act No. 24 of 2017, as amended 2022-2025.",
+    "sector_rates": {
+      "standard": 0.30,
+      "export_services": 0.15,
+      "betting_liquor_tobacco": 0.45
+    },
+    "note": "Administered by the Inland Revenue Department (IRD). Export of services taxed at 15% per the 2025 budget (previously exempt/zero); betting and gaming, liquor and tobacco taxed at the 45% sector rate."
+  },
+  "vat": {
+    "standard_rate": 0.18,
+    "implemented": true,
+    "effective_from": "2024-01-01",
+    "previous_rate": 0.15,
+    "note": "VAT increased from 15% to 18% effective 1 January 2024. The announced abolition of the Simplified VAT (SVAT) scheme has been postponed."
+  },
+  "sscl": {
+    "rate": 0.025,
+    "base": "turnover",
+    "note": "Social Security Contribution Levy (SSCL) of 2.5% on turnover of liable persons."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Sri Lanka Inland Revenue Department (IRD)",
+        "url": "https://www.ird.gov.lk/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "LKR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Sector qualification (export of services, betting/gaming, liquor, tobacco), reliefs, WHT, filing, and transitional rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}

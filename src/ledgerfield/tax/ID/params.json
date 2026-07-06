@@ -1,0 +1,62 @@
+{
+  "jurisdiction": "ID",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.22,
+    "public_listed_rate": 0.19,
+    "basis": "Standard 22% corporate income tax (PPh Badan) under UU HPP (Law No. 7 of 2021 on Harmonisation of Tax Regulations); publicly listed companies meeting the 40%-free-float conditions get a 3-percentage-point reduction to 19%.",
+    "small_business_final_tax": {
+      "rate": 0.005,
+      "turnover_ceiling_idr": 4800000000,
+      "note": "0.5% FINAL tax on TURNOVER (gross revenue, not profit) for small businesses with annual gross turnover ≤ IDR 4.8bn (PP 55/2022). Different tax base — out of scope for this CIT-on-profit estimator; note-only."
+    },
+    "art_31e_facility": {
+      "discount": 0.5,
+      "income_slice_idr": 4800000000,
+      "turnover_ceiling_idr": 50000000000,
+      "note": "Art. 31E: 50% rate discount on the first IDR 4.8bn slice of taxable income for companies with gross turnover ≤ IDR 50bn. Note-only — not modelled in cit.py."
+    },
+    "note": "Administered by the Direktorat Jenderal Pajak (DJP). Sector-specific final-tax regimes (construction, shipping, etc.) are out of scope."
+  },
+  "wht": {
+    "dividends_to_foreign_shareholders": 0.20,
+    "note": "20% withholding tax on dividends paid to foreign (non-resident) shareholders (Art. 26), subject to reduction under applicable tax treaties (treaty relief via DGT form)."
+  },
+  "vat": {
+    "standard_rate": 0.11,
+    "implemented": true,
+    "luxury_goods_rate": 0.12,
+    "note": "PPN (VAT) 11% under UU HPP. The statutory 12% rate effective 1 Jan 2025 applies to LUXURY goods only; for most goods and services the effective rate remains 11% via the DPP (tax base) adjustment of 11/12."
+  },
+  "personal_income_tax": {
+    "min_rate": 0.05,
+    "max_rate": 0.35,
+    "note": "Progressive personal income tax (PPh 21) from 5% to 35% across five brackets (UU HPP)."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Direktorat Jenderal Pajak (DJP)",
+        "url": "https://pajak.go.id/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "IDR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Small-business final-tax regime, Art. 31E facility, sector final taxes, WHT, relief, filing, and treaty rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}
