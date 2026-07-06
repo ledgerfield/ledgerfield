@@ -1,0 +1,64 @@
+{
+  "jurisdiction": "VN",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.20,
+    "basis": "Standard 20% CIT (Law on Corporate Income Tax); preferential 10% rate applies for 15 years to hi-tech enterprises and incentivized projects (15% and 17% preferential tiers also exist).",
+    "preferential_rates": {
+      "hi_tech_incentivized": 0.10,
+      "hi_tech_duration_years": 15,
+      "other_tiers": [0.15, 0.17]
+    },
+    "special_rates": {
+      "oil_and_gas_min": 0.32,
+      "oil_and_gas_max": 0.50
+    },
+    "note": "Administered by the General Department of Taxation (GDT). Oil & gas and extractive operations are taxed at agreement-based rates of 32-50% — out of scope for this SME estimator. New: the revised CIT Law effective Oct 2025 (applying from FY2026) enacts small-enterprise rates of 15%/17% by revenue — note-only for the 2025 params year."
+  },
+  "fct": {
+    "note": "Foreign Contractor Tax (FCT) applies to foreign entities doing business in or deriving income from Vietnam without a local entity; combines CIT and VAT elements at deemed rates by activity — out of scope for this SME estimator."
+  },
+  "vat": {
+    "standard_rate": 0.10,
+    "reduced_rate": 0.05,
+    "zero_rate": 0.0,
+    "implemented": true,
+    "note": "Standard VAT 10%; a temporary reduction to 8% on many goods/services has been extended through 2025/2026. 5% reduced band for essential goods/services and 0% for exports."
+  },
+  "personal_income_tax": {
+    "min_rate": 0.05,
+    "max_rate": 0.35,
+    "note": "Progressive personal income tax of 5-35% on employment income for tax residents."
+  },
+  "social_insurance": {
+    "employee_rate": 0.105,
+    "employer_rate": 0.215,
+    "note": "Combined social, health and unemployment insurance contributions (approximate headline rates); caps and fund splits apply."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "General Department of Taxation (Vietnam)",
+        "url": "https://www.gdt.gov.vn/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "VND",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Incentive qualification (hi-tech certification, sector/zone tests), tax holidays, FCT, extractive-sector rates, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}

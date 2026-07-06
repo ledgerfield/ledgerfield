@@ -1,0 +1,61 @@
+{
+  "jurisdiction": "MM",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.22,
+    "basis": "Flat 22% CIT under the Union Tax Law (2022 onwards, reduced from 25%), administered by the Internal Revenue Department (IRD).",
+    "special_rates": {
+      "ysx_listed_companies": 0.17,
+      "oil_and_gas": 0.25
+    },
+    "note": "Companies listed on the Yangon Stock Exchange (YSX) are taxed at 17%. Oil and gas exploration/production is taxed at 25% per production-sharing terms — out of scope for this SME estimator."
+  },
+  "commercial_tax": {
+    "standard_rate": 0.05,
+    "band": [0.0, 0.08],
+    "note": "Myanmar has no VAT; a Commercial Tax of generally 5% (0-8% band depending on the goods/services) applies instead. Specific goods (tobacco, liquor, vehicles) additionally attract an excise-like Specific Goods Tax (SGT)."
+  },
+  "vat": {
+    "standard_rate": 0.0,
+    "implemented": false,
+    "note": "Myanmar has not implemented VAT; the Commercial Tax regime applies instead."
+  },
+  "wht": {
+    "resident_interest": [0.0, 0.15],
+    "royalties_resident": 0.10,
+    "royalties_non_resident": 0.15,
+    "non_resident_goods_and_services": 0.025,
+    "note": "Withholding tax: interest paid to residents 0%/15% depending on payer/recipient status; royalties 10% (resident) / 15% (non-resident); 2.5% on payments to non-residents for goods and services."
+  },
+  "fiscal_year": {
+    "start": "10-01",
+    "end": "09-30",
+    "note": "Myanmar's fiscal year runs October to September (FY2024-25 = 1 October 2024 to 30 September 2025)."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Internal Revenue Department (IRD), Myanmar",
+        "url": "https://www.ird.gov.mm/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; Myanmar's October-September fiscal calendar and transitional periods may differ."
+    },
+    "currency": "MMK",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Sector-specific rates (oil and gas per production-sharing terms), Commercial Tax band placement, SGT, WHT, relief, and filing rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}

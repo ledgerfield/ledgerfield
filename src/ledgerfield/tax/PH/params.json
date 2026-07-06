@@ -1,0 +1,60 @@
+{
+  "jurisdiction": "PH",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.25,
+    "sme_rate": 0.20,
+    "sme_conditions": {
+      "max_net_taxable_income_php": 5000000,
+      "max_total_assets_php": 100000000,
+      "note": "Both conditions cumulative; total assets exclude the land on which the business's office, plant, and equipment are situated."
+    },
+    "basis": "25% standard corporate income tax under the CREATE Act (Republic Act No. 11534); 20% for qualifying SMEs (net taxable income ≤ PHP 5,000,000 and total assets ≤ PHP 100,000,000 excluding land of the business site).",
+    "mcit": {
+      "rate": 0.02,
+      "note": "Minimum corporate income tax (MCIT) of 2% of gross income applies from the fourth taxable year following commencement of operations, when higher than the regular CIT."
+    },
+    "note": "Administered by the Bureau of Internal Revenue (BIR). The CREATE MORE Act (Republic Act No. 12066) kept the 25%/20% rates and set a 20% RCIT for registered business enterprises under the enhanced deductions regime — out of scope for this SME estimator."
+  },
+  "wht": {
+    "dividends_to_nrfc": 0.25,
+    "dividends_to_nrfc_tax_sparing": 0.15,
+    "note": "Dividends to non-resident foreign corporations: 25% final withholding tax, reduced to 15% under the tax-sparing rule (or lower treaty rates)."
+  },
+  "vat": {
+    "standard_rate": 0.12,
+    "implemented": true,
+    "note": "12% value-added tax on sales of goods and services; zero-rating and exemptions apply to certain transactions (e.g. exports)."
+  },
+  "personal_income_tax": {
+    "min_rate": 0.0,
+    "max_rate": 0.35,
+    "note": "Graduated personal income tax of 0-35% under the TRAIN Law (Republic Act No. 10963); first PHP 250,000 of annual taxable income is exempt."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Bureau of Internal Revenue (BIR)",
+        "url": "https://www.bir.gov.ph/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "PHP",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "MCIT, incentives for registered business enterprises, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "jurisdiction": "KH",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.20,
+    "basis": "Flat 20% Tax on Income (ToI) for medium and large taxpayers under the Law on Taxation (2023), administered by the General Department of Taxation (GDT).",
+    "special_rates": {
+      "oil_gas_minerals": 0.30,
+      "insurance_gross_premium": 0.05
+    },
+    "small_taxpayer_brackets_khr": [
+      {"upper": 16000000, "rate": 0.0},
+      {"upper": 24000000, "rate": 0.05},
+      {"upper": 102000000, "rate": 0.10},
+      {"upper": null, "rate": 0.20}
+    ],
+    "note": "Small taxpayers use progressive 0-20% brackets on annual profit (KHR-denominated: 0% up to KHR 16M, 20% above KHR 102M); this SME estimator keeps the flat 20%/30% model. Insurance companies pay 5% on gross premiums for insurance activities (out of scope).",
+    "qip_note": "Qualified Investment Projects (QIPs) approved by the Council for the Development of Cambodia receive ToI exemption periods of 3 to 9 years under the Law on Investment; not modelled by this estimator."
+  },
+  "minimum_tax": {
+    "rate_on_turnover": 0.01,
+    "note": "Minimum tax of 1% of annual turnover (inclusive of all taxes except VAT) applies unless the taxpayer maintains proper accounting records."
+  },
+  "prepayment_of_toi": {
+    "monthly_rate_on_turnover": 0.01,
+    "note": "Monthly prepayment of ToI of 1% of turnover, creditable against the annual ToI (or minimum tax) liability."
+  },
+  "vat": {
+    "standard_rate": 0.10,
+    "implemented": true,
+    "note": "10% VAT on taxable supplies; 0% on exports."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "General Department of Taxation, Cambodia",
+        "url": "https://www.tax.gov.kh/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "KHR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Small-taxpayer brackets, QIP incentives, minimum tax, prepayments, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}

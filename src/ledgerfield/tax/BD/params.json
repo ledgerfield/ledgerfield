@@ -1,0 +1,58 @@
+{
+  "jurisdiction": "BD",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.275,
+    "basis": "Income Tax Act 2023; FY2024-25 rates administered by the National Board of Revenue (NBR).",
+    "rates": {
+      "non_listed": 0.275,
+      "listed": 0.225,
+      "bank_listed": 0.375,
+      "bank_non_listed": 0.40,
+      "mobile_tobacco": 0.45
+    },
+    "conditions": {
+      "banking_channel_reduced_rate": 0.25,
+      "banking_channel_note": "Non-listed companies qualify for a reduced 25% rate on condition that all receipts and expenses are transacted via the banking channel (bank transfer); cash transactions forfeit the concession.",
+      "listed_low_float_rate": 0.25,
+      "listed_low_float_note": "Listed companies that floated less than 10% of paid-up capital via IPO are taxed at 25% instead of 22.5%."
+    },
+    "minimum_tax": {
+      "gross_receipts_rate": 0.006,
+      "note": "Minimum tax of 0.6% on gross receipts may apply irrespective of profit or loss — out of scope for this SME estimator."
+    },
+    "note": "Banks, insurance companies and NBFIs: 37.5% (listed) / 40% (non-listed). Mobile phone operators and tobacco manufacturers: 45%."
+  },
+  "vat": {
+    "standard_rate": 0.15,
+    "implemented": true,
+    "reduced_rates": [0.05, 0.075, 0.10],
+    "note": "VAT & Supplementary Duty Act 2012: 15% standard rate with reduced 5% / 7.5% / 10% bands for specific goods and services; returns filed via Mushak forms."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "National Board of Revenue (NBR), Bangladesh",
+        "url": "https://nbr.gov.bd/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year FY2024-25 (Bangladesh income year 1 July 2024 – 30 June 2025); jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "BDT",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Banking-channel condition, minimum tax on gross receipts, surcharges, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}
