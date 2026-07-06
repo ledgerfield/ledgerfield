@@ -1,0 +1,9 @@
+# githfield.yml — links this repo's docs & backlog into githfield
+field:   ledgerfield
+name:    LedgerField
+accent:  "#d4a017"
+summary: P2P global accounting, tax engine & payroll
+backlog:
+  labels: []
+  group_by: ""
+docs: []
