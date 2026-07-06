@@ -1,0 +1,54 @@
+{
+  "jurisdiction": "BH",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.0,
+    "basis": "No general corporate income tax in Bahrain (zero-CIT model); only oil and gas exploration/production is taxed.",
+    "special_rates": {
+      "oil_and_gas_exploration_production": 0.46
+    },
+    "note": "Oil & gas taxed at 46% under Legislative Decree No. 22 of 1979. From 1 January 2025 Bahrain applies a 15% Domestic Minimum Top-up Tax (DMTT, Decree-Law No. 11 of 2024) to large MNEs with consolidated revenue >= EUR 750m — the first GCC state to do so; the DMTT targets large multinationals and is out of scope for this SME estimator."
+  },
+  "vat": {
+    "standard_rate": 0.10,
+    "implemented": true,
+    "note": "VAT standard rate 10%, raised from 5% on 1 January 2022; administered by the National Bureau for Revenue (NBR)."
+  },
+  "personal_income_tax": {
+    "rate": 0.0,
+    "note": "No personal income tax on employment income."
+  },
+  "social_insurance": {
+    "bahraini_employee_rate": 0.07,
+    "bahraini_employer_rate": 0.12,
+    "expat_employee_rate": 0.01,
+    "expat_employer_rate": 0.03,
+    "note": "Social Insurance Organization (SIO): Bahraini employees 7% employee / 12% employer (including 1% unemployment insurance); expatriates 1% employee / 3% employer."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Bahrain National Bureau for Revenue (NBR)",
+        "url": "https://www.nbr.gov.bh/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "BHD",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "DMTT (large MNEs), sector-specific rules, relief, and filing rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}

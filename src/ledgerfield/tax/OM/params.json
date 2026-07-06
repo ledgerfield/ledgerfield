@@ -1,0 +1,58 @@
+{
+  "jurisdiction": "OM",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.15,
+    "sme_rate": 0.03,
+    "basis": "Flat 15% CIT (Royal Decree No. 28/2009 as amended); concessionary 3% rate for qualifying small enterprises (registered capital <= OMR 50,000, <= 15 employees, gross income <= OMR 100,000, sector conditions).",
+    "special_rates": {
+      "petroleum_income": 0.55
+    },
+    "note": "Administered by the Oman Tax Authority. Petroleum income is taxed at a special 55% rate under concession agreements — out of scope for this SME estimator."
+  },
+  "wht": {
+    "non_resident_dividends_interest_royalties_services": 0.10,
+    "note": "10% withholding tax on dividends, interest, royalties and service fees paid to non-residents. In practice, WHT on dividends and interest has been suspended by Oman Tax Authority decision; royalties and service fees remain subject to WHT."
+  },
+  "vat": {
+    "standard_rate": 0.05,
+    "implemented": true,
+    "note": "5% VAT effective April 2021 (Royal Decree No. 121/2020), with zero-rating and exemptions for specified supplies."
+  },
+  "personal_income_tax": {
+    "rate": 0.0,
+    "note": "No personal income tax on employment income as of 2025. Oman approved a 5% personal income tax on high earners effective 2028 (Royal Decree No. 56/2025) — the first PIT in the GCC."
+  },
+  "social_insurance": {
+    "omani_employee_rate": 0.07,
+    "omani_employer_rate": 0.105,
+    "job_security_rate": 0.01,
+    "note": "PASI/Social Protection Fund contributions apply to Omani employees only (7% employee, 10.5% employer, plus 1% job security); expatriates are not covered."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Oman Tax Authority",
+        "url": "https://tms.taxoman.gov.om/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "OMR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "SME qualification, petroleum-sector rates, WHT suspensions, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}

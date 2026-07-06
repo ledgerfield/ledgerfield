@@ -1,0 +1,56 @@
+{
+  "jurisdiction": "IL",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.23,
+    "basis": "Flat 23% corporate income tax (Income Tax Ordinance), administered by the Israel Tax Authority.",
+    "special_rates": {
+      "preferred_enterprise": 0.16,
+      "preferred_enterprise_development_area_a": 0.075
+    },
+    "note": "Preferred / Special Preferred Enterprise regimes under the Encouragement of Capital Investments Law grant reduced rates (16%; 7.5% in development area A). Regime eligibility is fact-specific and out of scope for this SME estimator's flat calculation."
+  },
+  "vat": {
+    "standard_rate": 0.18,
+    "implemented": true,
+    "note": "VAT raised from 17% to 18% effective 1 January 2025 (approved October 2024)."
+  },
+  "personal_income_tax": {
+    "top_marginal_rate": 0.47,
+    "surtax_rate": 0.03,
+    "surtax_threshold_nis": 721560,
+    "top_combined_rate": 0.50,
+    "note": "Progressive personal income tax up to 47% top marginal rate. The 3% surtax (mas yesef) applies to individuals on income above ~NIS 721,560 (2025), giving a 50% combined top rate. The surtax is a personal income tax, NOT a corporate tax."
+  },
+  "social_insurance": {
+    "employee_max_rate": 0.12,
+    "employer_rates_tiered": [0.0355, 0.076],
+    "note": "National Insurance (Bituach Leumi) plus health insurance: employee contributions are tiered up to roughly 12% combined; employer contributions are tiered at 3.55% (lower bracket) and 7.6% (upper bracket). Simplified summary — brackets and ceilings change annually."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Israel Tax Authority",
+        "url": "https://www.gov.il/en/departments/israel_tax_authority"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "ILS",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Preferred Enterprise regimes, surtax, Bituach Leumi tiers, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}

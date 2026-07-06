@@ -1,0 +1,66 @@
+{
+  "jurisdiction": "JO",
+  "year": 2025,
+  "cit": {
+    "sector_rates": {
+      "standard": 0.20,
+      "banking": 0.35,
+      "financial": 0.24,
+      "telecom_energy_mining": 0.24
+    },
+    "basis": "Sector-based CIT under the Income Tax Law No. 38 of 2018 (as amended): 20% standard/industrial/other companies; 35% banks; 24% financial institutions, insurance and leasing; 24% telecom, electricity, mining and main fuel importers (activity-specific rates fall in a 24%-35% band).",
+    "note": "Administered by the Income and Sales Tax Department (ISTD). The telecom_energy_mining bucket is a simplification of several activity-specific rates."
+  },
+  "national_contribution": {
+    "sector_rates": {
+      "standard": 0.01,
+      "banking": 0.03,
+      "financial": 0.04,
+      "telecom_energy_mining": 0.07
+    },
+    "basis": "National Contribution Tax (Art. 11, Income Tax Law No. 38 of 2018) on taxable income at sector-based rates ranging 1%-7%: 1% other/standard companies, 3% banks, 4% financial institutions/insurance/leasing, up to 7% basic mining. Simplification: the combined telecom_energy_mining bucket uses the 7% mining rate as the conservative upper bound; actual per-activity rates in this bucket range 2%-7%.",
+    "note": "Levied on top of CIT on the same taxable-income base."
+  },
+  "vat": {
+    "standard_rate": 0.16,
+    "implemented": true,
+    "note": "General Sales Tax (GST) at a standard 16% rate; reduced and zero rates apply to specific goods and services."
+  },
+  "personal_income_tax": {
+    "bracket_rates": [0.05, 0.10, 0.15, 0.20, 0.25, 0.30],
+    "national_contribution_rate": 0.01,
+    "national_contribution_threshold": 200000,
+    "note": "Progressive PIT 5%-30% under Law 38/2018, plus a 1% national contribution on annual taxable income above JOD 200,000."
+  },
+  "social_security": {
+    "employee_rate": 0.075,
+    "employer_rate": 0.1425,
+    "note": "Social Security Corporation (SSC) contributions: 7.5% employee, 14.25% employer."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Income and Sales Tax Department (ISTD)",
+        "url": "https://istd.gov.jo/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "JOD",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Sector classification, activity-specific rates, GST regimes, relief, filing, and free-zone/development-zone rules may alter outcomes.",
+      "Verify against official ISTD guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}
