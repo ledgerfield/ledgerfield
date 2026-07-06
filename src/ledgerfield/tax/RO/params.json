@@ -1,0 +1,58 @@
+{
+  "jurisdiction": "RO",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.16,
+    "basis": "Flat 16% corporate income tax (impozit pe profit) on taxable profit under the Fiscal Code (Law 227/2015), administered by ANAF.",
+    "micro_enterprise_regime": {
+      "rate_low": 0.01,
+      "rate_high": 0.03,
+      "revenue_threshold_eur_2025": 250000,
+      "revenue_threshold_eur_2026": 100000,
+      "note": "Micro-enterprise regime: 1% (or 3%) tax on TURNOVER for companies with revenue up to EUR 250,000 in 2025 (threshold drops to EUR 100,000 from 2026). Different tax base (turnover, not profit) — out of scope for this profit-based estimator."
+    },
+    "minimum_turnover_tax": {
+      "rate": 0.01,
+      "turnover_threshold_eur": 50000000,
+      "note": "IMCA: minimum turnover tax of 1% applies to large companies with turnover above EUR 50 million; acts as a floor on the 16% profit tax. Out of scope for this profit-based estimator."
+    },
+    "pillar_two_note": "Romania has implemented the EU Pillar Two directive (15% global minimum tax) via Law 431/2023 for large groups (consolidated revenue >= EUR 750m); out of scope for this SME estimator."
+  },
+  "dividend_tax": {
+    "rate": 0.10,
+    "note": "Dividend withholding tax raised from 8% to 10% for dividends distributed from 1 January 2025."
+  },
+  "vat": {
+    "standard_rate": 0.19,
+    "rate_from_2025_08_01": 0.21,
+    "reduced_rates": [0.09, 0.05],
+    "oss_eligible": true,
+    "note": "TVA standard rate is 19% in H1-2025; RAISED to 21% from 1 August 2025 under the 2025 fiscal reform package (reduced rates consolidated to 11% from that date). This params file uses the 19% rate in force at the start of the 2025 range; apply rate_from_2025_08_01 for supplies on or after 1 August 2025. Romania participates in the EU One Stop Shop (OSS)."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "ANAF (Agentia Nationala de Administrare Fiscala)",
+        "url": "https://www.anaf.ro/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ. Note the mid-year VAT change on 2025-08-01."
+    },
+    "currency": "RON",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Micro-enterprise regime, IMCA minimum turnover tax, Pillar Two, sector-specific rules, relief, and filing rules may alter outcomes.",
+      "Verify against official ANAF guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}

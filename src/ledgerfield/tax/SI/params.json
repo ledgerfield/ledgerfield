@@ -1,0 +1,48 @@
+{
+  "jurisdiction": "SI",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.22,
+    "base_rate": 0.19,
+    "temporary_rate_window": {
+      "start_year": 2024,
+      "end_year": 2028,
+      "note": "Rate temporarily raised from 19% to 22% for 2024-2028 as a post-flood reconstruction levy (ZORZFS); scheduled to revert to 19% from 2029."
+    },
+    "basis": "Corporate income tax (DDPO) under ZDDPO-2; flat 22% for tax years 2024-2028.",
+    "minimum_tax_base_note": "Minimum tax base rules apply: tax relief and loss carry-forwards may not reduce the tax base below 63% of the pre-relief tax base (effective minimum taxation of 40% of relief-eligible base); not modelled by this SME estimator.",
+    "pillar_two_note": "Slovenia implemented the EU Pillar Two global minimum tax (Directive (EU) 2022/2523) via ZMDMSPS-1; in-scope groups (revenue >= EUR 750m) face a 15% minimum effective rate via a qualified domestic top-up tax."
+  },
+  "vat": {
+    "standard_rate": 0.22,
+    "reduced_rates": [0.095, 0.05],
+    "oss_eligible": true,
+    "note": "Standard VAT (DDV) rate 22%; reduced rates 9.5% and 5% (the 5% rate applies to books and publications)."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Finančna uprava Republike Slovenije (FURS, Financial Administration of the Republic of Slovenia)",
+        "url": "https://www.fu.gov.si/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Minimum tax base (63% floor), relief, loss carry-forwards, WHT, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

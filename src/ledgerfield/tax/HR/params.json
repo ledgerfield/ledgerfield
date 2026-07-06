@@ -1,0 +1,52 @@
+{
+  "jurisdiction": "HR",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.18,
+    "small_taxpayer_rate": 0.10,
+    "small_taxpayer_revenue_threshold_eur": 1000000,
+    "basis": "18% standard corporate income tax (porez na dobit); reduced 10% rate for taxpayers with annual revenue not exceeding EUR 1,000,000 (Profit Tax Act / Zakon o porezu na dobit).",
+    "pillar_two_note": "Croatia implemented EU Pillar Two (Directive (EU) 2022/2523) for in-scope groups (consolidated revenue >= EUR 750m), including a domestic minimum top-up tax to a 15% effective minimum. Out of scope for this SME estimator.",
+    "note": "Administered by the Tax Administration (Porezna uprava)."
+  },
+  "vat": {
+    "standard_rate": 0.25,
+    "reduced_rates": {
+      "reduced_13": 0.13,
+      "reduced_5": 0.05
+    },
+    "oss_eligible": true,
+    "note": "25% standard VAT (PDV); reduced rates of 13% (e.g. accommodation, certain foodstuffs) and 5% (e.g. bread, milk, books, medicines). EU member state: One-Stop-Shop (OSS/IOSS) available for cross-border B2C supplies."
+  },
+  "personal_income_tax": {
+    "system": "municipal_rates",
+    "note": "Municipal-rate PIT system: since 2024 the former municipal surtax is abolished and each municipality/city sets its own lower and higher PIT rates within statutory bands (e.g. lower rate roughly 15-23.6%, higher rate roughly 25-35.4% in 2025, Zagreb at the top of the bands)."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Tax Administration (Porezna uprava)",
+        "url": "https://www.porezna-uprava.hr/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "The 10% rate depends on annual revenue (<= EUR 1,000,000), not profit; the caller must assess eligibility.",
+      "Pillar Two, withholding, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}

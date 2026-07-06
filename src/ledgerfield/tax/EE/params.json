@@ -1,0 +1,58 @@
+{
+  "jurisdiction": "EE",
+  "year": 2025,
+  "cit": {
+    "retained_profit_rate": 0.0,
+    "distribution_rate_net": 0.2820512820512821,
+    "distribution_rate_fraction": "22/78",
+    "distribution_rate_gross": 0.22,
+    "basis": "Original Estonian model (Income Tax Act / Tulumaksuseadus): no annual CIT on retained or reinvested profit; tax is due only upon profit distribution at 22/78 of the NET distribution from 1 January 2025 (raised from 20/80; the preferential 14/86 regular-dividend rate was abolished as of 2025).",
+    "gross_up": "Rate is expressed on the net amount: net 78 -> tax 22 -> gross 100, i.e. 22% of the gross distribution and approximately 28.2% effective on the net distribution.",
+    "note_2026": "Security/defence levy package: the distribution rate becomes 24/76 of the net distribution from 1 January 2026 (note only, not modelled for 2025).",
+    "pillar_two_note": "Estonia applies the EU Minimum Tax Directive (Pillar Two) transitional deferral for jurisdictions with few in-scope groups; large multinational groups (>= EUR 750m revenue) may face top-up tax elsewhere in the group despite the 0% rate on retained profit."
+  },
+  "vat": {
+    "standard_rate": 0.22,
+    "rate_from_2025_07_01": 0.24,
+    "reduced_rates": {
+      "accommodation": 0.13,
+      "books_and_press": 0.09
+    },
+    "oss_eligible": true,
+    "note": "Käibemaks (VAT): standard rate 22% in H1 2025, RAISED to 24% from 1 July 2025 under the Security Tax Act; EU One-Stop-Shop applies."
+  },
+  "personal_income_tax": {
+    "rate": 0.22,
+    "note": "Flat personal income tax of 22% from 2025 (raised from 20%)."
+  },
+  "social_tax": {
+    "employer_rate": 0.33,
+    "note": "Sotsiaalmaks: 33% employer social tax (20% pension, 13% health insurance); plus unemployment insurance contributions (employer 0.8%, employee 1.6%) and funded-pension withholding."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Estonian Tax and Customs Board (EMTA)",
+        "url": "https://www.emta.ee/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Deemed distributions, fringe benefits, non-business expenses, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

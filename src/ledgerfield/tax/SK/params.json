@@ -1,0 +1,52 @@
+{
+  "jurisdiction": "SK",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.21,
+    "reduced_rate_small": 0.10,
+    "increased_rate_large": 0.24,
+    "small_taxable_revenue_threshold_eur": 100000,
+    "large_tax_base_threshold_eur": 5000000,
+    "basis": "2025 consolidation package amending the Income Tax Act (Act No. 595/2003 Coll.): 10% for taxable revenue up to EUR 100,000; 21% standard; 24% on a tax base exceeding EUR 5,000,000.",
+    "pillar_two_note": "Slovakia implemented the EU Pillar Two global minimum tax (Directive (EU) 2022/2523) via Act No. 507/2023 Coll.; in-scope groups (revenue >= EUR 750m) face a 15% minimum effective rate via a qualified domestic top-up tax."
+  },
+  "financial_transaction_tax": {
+    "introduced": true,
+    "note": "The 2025 consolidation package introduced a financial transaction tax (Act No. 279/2024 Coll.) on debit transactions of businesses, effective in 2025 (charged from 1 April 2025); out of scope for this CIT estimator."
+  },
+  "vat": {
+    "standard_rate": 0.23,
+    "reduced_rates": [0.19, 0.05],
+    "effective_from": "2025-01-01",
+    "previous_standard_rate": 0.20,
+    "oss_eligible": true,
+    "note": "Standard VAT rate raised from 20% to 23% on 1 January 2025 under the consolidation package; reduced rates restructured to 19% and 5%."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Finančná správa Slovenskej republiky (Financial Administration of the Slovak Republic)",
+        "url": "https://www.financnasprava.sk/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "The 10%/21%/24% band is selected via company_size; the estimator does not itself split a tax base across bands.",
+      "Financial transaction tax, minimum tax (tax licence), WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

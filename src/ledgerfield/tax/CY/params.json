@@ -1,0 +1,57 @@
+{
+  "jurisdiction": "CY",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.125,
+    "basis": "Flat 12.5% corporate income tax (Income Tax Law 118(I)/2002, as amended) on worldwide profits of Cyprus tax-resident companies.",
+    "ip_box": {
+      "qualifying_profit_exemption": 0.80,
+      "note": "IP box: 80% exemption on qualifying IP profits under the nexus approach, giving an effective rate as low as 2.5%. Out of scope for this SME estimator."
+    },
+    "tonnage_tax": {
+      "note": "Qualifying shipping companies may elect tonnage tax instead of CIT under the Merchant Shipping (Fees and Taxing Provisions) Law. Out of scope for this SME estimator."
+    },
+    "reform_note": "A 15% CIT rate has been announced as part of the Cyprus tax reform, but is not yet law within the target period (2025)."
+  },
+  "sdc": {
+    "dividends_resident_domiciled": 0.17,
+    "interest": 0.17,
+    "rents_effective_basis": "75% of gross rents at 3%",
+    "note": "Special Defence Contribution on passive income of Cyprus tax-resident and domiciled persons: dividends 17%, most interest 17%, rents on 75% of gross at 3%. Non-domiciled residents are generally exempt."
+  },
+  "vat": {
+    "standard_rate": 0.19,
+    "reduced_rates": [0.09, 0.05, 0.03],
+    "oss_eligible": true,
+    "note": "Standard VAT 19% with reduced rates of 9%, 5% and 3%. As an EU member state, Cyprus participates in the One Stop Shop (OSS) for intra-EU B2C supplies."
+  },
+  "pillar_two": {
+    "note": "Cyprus transposed the EU Pillar Two directive (Council Directive (EU) 2022/2523): a 15% minimum effective rate applies to in-scope groups with consolidated revenue of at least EUR 750 million. Out of scope for this SME estimator."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Cyprus Tax Department (Ministry of Finance)",
+        "url": "https://www.mof.gov.cy/mof/tax/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "IP box, tonnage tax, SDC, notional interest deduction, loss relief, and treaty rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

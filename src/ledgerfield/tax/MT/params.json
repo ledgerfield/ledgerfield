@@ -1,0 +1,53 @@
+{
+  "jurisdiction": "MT",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.35,
+    "basis": "Flat 35% corporate income tax (Income Tax Act, Cap. 123) at company level.",
+    "imputation_refund": {
+      "typical_refund_fraction": 0.857142857,
+      "fraction_label": "6/7",
+      "effective_rate_non_resident_shareholders": 0.05,
+      "note": "Full-imputation system: shareholders may claim a refund of the company-level tax upon distribution, typically 6/7 of the tax on trading income, reducing the effective burden to ~5% for non-resident shareholders. The refund is shareholder-level; the company always pays the full 35%."
+    },
+    "note": "Other refund fractions apply to specific income streams (e.g. 5/7 for passive interest/royalties, 2/3 where double-tax relief is claimed) — out of scope for this SME estimator."
+  },
+  "vat": {
+    "standard_rate": 0.18,
+    "reduced_rates": [0.12, 0.07, 0.05],
+    "implemented": true,
+    "oss_eligible": true,
+    "note": "18% standard VAT rate; reduced rates of 12%, 7% and 5% apply. EU One-Stop-Shop (OSS) available for cross-border B2C supplies."
+  },
+  "pillar_two": {
+    "in_scope": true,
+    "qdmtt_deferral": true,
+    "note": "Malta elected the 6-year deferral (Art. 50 EU Pillar Two Directive) and has not introduced an IIR/UTPR/QDMTT for the transitional period; in-scope groups (consolidated revenue >= EUR 750m) may instead be taxed under other jurisdictions' rules. Out of scope for this SME estimator."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Commissioner for Revenue (CFR)",
+        "url": "https://cfr.gov.mt/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Refund fractions vary by income stream (6/7, 5/7, 2/3, 100% participation exemption); shareholder residence, anti-abuse and treaty rules may alter outcomes.",
+      "Verify against official CFR guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

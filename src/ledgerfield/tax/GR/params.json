@@ -1,0 +1,48 @@
+{
+  "jurisdiction": "GR",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.22,
+    "basis": "Flat 22% corporate income tax (Law 4172/2013 Income Tax Code, as amended) on profits of Greek tax-resident legal entities.",
+    "credit_institutions_rate": 0.29,
+    "credit_institutions_note": "Credit institutions that have opted into the deferred-tax-asset (DTA) framework remain taxed at 29% instead of the standard 22%."
+  },
+  "business_tax": {
+    "note": "The business tax (telos epitidevmatos) is abolished for individuals and self-employed professionals as of 2025 and is being phased out for legal entities. Out of scope for this SME estimator."
+  },
+  "vat": {
+    "standard_rate": 0.24,
+    "reduced_rates": [0.13, 0.06],
+    "oss_eligible": true,
+    "note": "Standard VAT (FPA) 24% with reduced rates of 13% and 6%; 30% reduced rates apply on certain Aegean islands (e.g. Leros, Lesvos, Kos, Samos, Chios). As an EU member state, Greece participates in the One Stop Shop (OSS) for intra-EU B2C supplies."
+  },
+  "pillar_two": {
+    "note": "Greece transposed the EU Pillar Two directive via Law 5100/2024 (Council Directive (EU) 2022/2523): a 15% minimum effective rate applies to in-scope groups with consolidated revenue of at least EUR 750 million. Out of scope for this SME estimator."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Independent Authority for Public Revenue (AADE)",
+        "url": "https://www.aade.gr/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Advance tax payments, WHT on dividends/interest/royalties, tonnage tax for shipping, loss relief, and treaty rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}
