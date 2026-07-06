@@ -1,0 +1,69 @@
+{
+  "jurisdiction": "TR",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.25,
+    "basis": "25% standard corporate income tax (Corporate Tax Law No. 5520, as amended); 30% for banks and financial institutions.",
+    "special_rates": {
+      "banks_and_financial_institutions": 0.30
+    },
+    "domestic_minimum_tax": {
+      "rate": 0.10,
+      "note": "From 2025 (Law No. 7524), a domestic minimum corporate tax of 10% of adjusted profit before certain exemptions and deductions applies. Out of scope for this SME estimator."
+    },
+    "inflation_adjustment": {
+      "mandatory": true,
+      "note": "Mandatory inflation adjustment of financial statements under Tax Procedure Law Art. 298 repeating (mükerrer), re-activated FY2024+ when cumulative PPI conditions are met. The estimator's inflation_adjusted flag only records that the supplied profit is already restated; it does not recompute the restatement."
+    },
+    "note": "Administered by the Revenue Administration (Gelir İdaresi Başkanlığı)."
+  },
+  "wht": {
+    "dividends": 0.10,
+    "note": "Dividend withholding tax reduced from 15% to 10% by Presidential Decree in December 2021; interest WHT varies by instrument and maturity."
+  },
+  "vat": {
+    "standard_rate": 0.20,
+    "implemented": true,
+    "reduced_rates": [0.10, 0.01],
+    "note": "Standard VAT (KDV) rate raised from 18% to 20% in July 2023; reduced rates of 10% and 1% apply to designated goods and services."
+  },
+  "personal_income_tax": {
+    "rate_min": 0.15,
+    "rate_max": 0.40,
+    "note": "Progressive personal income tax with brackets from 15% to 40%; bracket thresholds are revalued annually for inflation."
+  },
+  "social_insurance": {
+    "employee_rate": 0.14,
+    "employee_unemployment_rate": 0.01,
+    "employer_rate": 0.2075,
+    "employer_unemployment_rate": 0.02,
+    "note": "SGK social security: employee 14% + 1% unemployment; employer 20.75% + 2% unemployment, with 4-5 percentage-point employer incentives available subject to conditions."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Revenue Administration (Gelir İdaresi Başkanlığı)",
+        "url": "https://www.gib.gov.tr/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "TRY",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Inflation restatement, domestic minimum tax, exemptions, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "Does not recompute inflation restatement of financial statements (flag-only).",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-06"
+  }
+}
