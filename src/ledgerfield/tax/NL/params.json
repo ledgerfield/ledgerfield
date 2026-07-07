@@ -200,7 +200,85 @@
       "WBSO": {
         "tarief_schijf_1": 0.36,
         "tarief_schijf_2": 0.16,
-        "schijf_1_grens": 380000
+        "schijf_1_grens": 380000,
+        "tarief_starter": 0.5,
+        "forfait_tarief_laag": 10.0,
+        "forfait_tarief_hoog": 4.0,
+        "forfait_urengrens": 1800
+      },
+      "Innovatiebox": {
+        "effectief_tarief": 0.09,
+        "forfait_max": 25000
+      },
+      "Excessief": {
+        "grens": 500000
+      },
+      "EIA": {
+        "percentage": 0.455
+      },
+      "Bijtelling": {
+        "ev_tarief_tot_30k": 0.17,
+        "overig_tarief": 0.22
+      },
+      "Thuiswerk": {
+        "vergoeding_per_dag": 2.4
+      },
+      "Saldering": {
+        "zonnepanelen_deadline": 2027
+      }
+    },
+    "2026": {
+      "IB": {
+        "schijf_1_grens": 76817,
+        "tarief_schijf_1": 0.355,
+        "tarief_schijf_2": 0.495,
+        "max_algemene_heffingskorting": 3068,
+        "max_arbeidskorting": 5599,
+        "eigenwoningforfait_pct": 0.0035,
+        "jaarruimte_pct": 0.3,
+        "aow_franchise": 18475,
+        "lijfrente_max_jaarruimte": 35798,
+        "lijfrente_max_reserveringsruimte": 42108
+      },
+      "VPB": {
+        "tarief_schijf_1": 0.19,
+        "tarief_schijf_2": 0.258,
+        "schijf_1_grens": 200000
+      },
+      "Box2": {
+        "tarief_schijf_1": 0.245,
+        "tarief_schijf_2": 0.31,
+        "schijf_1_grens": 67804
+      },
+      "Box3": {
+        "heffingsvrij_per_persoon": 57684,
+        "forfait_overige_beleggingen": 0.0588,
+        "tarief": 0.36
+      },
+      "LH": {
+        "dga_min_salaris": 56000,
+        "reiskostenvergoeding_per_km": 0.23
+      },
+      "ZVW": {
+        "bijdrage_pct": 0.0557,
+        "max_bijdragegrondslag": 75864
+      },
+      "KIA": {
+        "min_investering": 450,
+        "percentage": 0.28,
+        "kia_grens": 70600
+      },
+      "WKR": {
+        "vrije_ruimte_pct_tot_400k": 0.02
+      },
+      "WBSO": {
+        "tarief_schijf_1": 0.36,
+        "tarief_schijf_2": 0.16,
+        "schijf_1_grens": 380000,
+        "tarief_starter": 0.5,
+        "forfait_tarief_laag": 10.0,
+        "forfait_tarief_hoog": 4.0,
+        "forfait_urengrens": 1800
       },
       "Innovatiebox": {
         "effectief_tarief": 0.09,
