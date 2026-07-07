@@ -1,0 +1,50 @@
+{
+  "jurisdiction": "BO",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.25,
+    "basis": "IUE (Impuesto sobre las Utilidades de las Empresas, Ley 843): flat 25% on annual net taxable profits.",
+    "special_rates": {
+      "financial_sector_aa_iue": 0.25,
+      "mining_surtax": 0.125,
+      "mining_surtax_max_additional": 0.25
+    },
+    "note": "Financial sector pays an additional AA-IUE of 25% on profits when return on equity (ROE) exceeds 6% (excess-profitability surtax on banks and insurance). Mining bears an additional IUE surtax of 12.5% (price-linked rules can raise the combined additional burden up to 25%); hydrocarbons have their own additional regime (IDH and royalties). Surtaxes are out of scope for this SME estimator."
+  },
+  "it_transactions_tax": {
+    "rate": 0.03,
+    "note": "IT (Impuesto a las Transacciones): 3% on gross receipts of each transaction; IUE effectively paid can be credited against IT in the following year."
+  },
+  "vat": {
+    "standard_rate": 0.13,
+    "implemented": true,
+    "effective_rate_on_net_price": 0.1494,
+    "note": "IVA is 13% charged inside the price (tax-inclusive base), which is an effective 14.94% on the net-of-tax price (0.13 / 0.87)."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "SIN (Servicio de Impuestos Nacionales)",
+        "url": "https://www.impuestos.gob.bo/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ (IUE year-ends vary by sector)."
+    },
+    "currency": "BOB",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "AA-IUE financial surtax, mining/hydrocarbons surtaxes, IT crediting mechanics, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

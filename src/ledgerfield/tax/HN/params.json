@@ -1,0 +1,51 @@
+{
+  "jurisdiction": "HN",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.25,
+    "basis": "25% Impuesto Sobre la Renta (Ley del ISR) on net taxable income; territorial system — foreign-source income is generally not taxed in Honduras.",
+    "solidarity_contribution": {
+      "rate": 0.05,
+      "threshold_hnl": 1000000,
+      "basis": "Aportación solidaria: 5% on the portion of net taxable income exceeding HNL 1,000,000, in addition to the 25% CIT."
+    },
+    "alternative_minimum": {
+      "rate": 0.015,
+      "gross_revenue_threshold_hnl": 1000000000,
+      "note": "Alternative minimum tax of 1.5% on gross income for companies with gross revenue above HNL 1 billion; out of scope for this SME estimator."
+    },
+    "territorial_note": "Honduras applies a territorial tax regime: only Honduran-source income is subject to ISR."
+  },
+  "vat": {
+    "standard_rate": 0.15,
+    "increased_rate_alcohol_tobacco": 0.18,
+    "implemented": true,
+    "note": "ISV (Impuesto Sobre Ventas) at a standard 15% rate; 18% applies to alcoholic beverages and tobacco."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Servicio de Administración de Rentas (SAR)",
+        "url": "https://www.sar.gob.hn/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "HNL",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Alternative minimum tax, WHT, municipal taxes, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official SAR guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

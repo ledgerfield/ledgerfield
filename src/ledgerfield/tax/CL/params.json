@@ -1,0 +1,46 @@
+{
+  "jurisdiction": "CL",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.27,
+    "basis": "27% First Category Tax (Impuesto de Primera Categoría) under the semi-integrated regime, Art. 14A Ley sobre Impuesto a la Renta (LIR).",
+    "pro_pyme_rate": 0.25,
+    "pro_pyme_note": "Pro Pyme SME regime (Art. 14D LIR) taxed at 25%. Reform proposals contemplate a transitory 12.5% rate for 2025-2027; this estimator uses the statutory 25%.",
+    "shareholder_credit": {
+      "partial_integration_credit": 0.65,
+      "note": "Semi-integrated regime: final shareholders may credit 65% of the First Category Tax against their final taxes (Global Complementario / Adicional)."
+    },
+    "note": "Administered by the Servicio de Impuestos Internos (SII)."
+  },
+  "vat": {
+    "standard_rate": 0.19,
+    "implemented": true,
+    "note": "IVA (Impuesto al Valor Agregado) at a 19% standard rate, DL 825."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Servicio de Impuestos Internos (SII)",
+        "url": "https://www.sii.cl/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "CLP",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Pro Pyme eligibility thresholds (UF-based revenue caps), monthly PPM prepayments, and sector-specific rules may alter outcomes.",
+      "Verify against official SII guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

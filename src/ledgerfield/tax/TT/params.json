@@ -1,0 +1,55 @@
+{
+  "jurisdiction": "TT",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.30,
+    "sector_rates": {
+      "standard": 0.30,
+      "banks_petrochemical": 0.35,
+      "petroleum": 0.50
+    },
+    "basis": "Corporation Tax Act: 30% standard; 35% for commercial banks and petrochemical companies; 50% for petroleum production companies under the Petroleum Profits Tax (PPT) regime.",
+    "note": "Administered by the Inland Revenue Division (IRD)."
+  },
+  "business_levy": {
+    "rate": 0.006,
+    "base": "gross_revenue",
+    "note": "Business levy of 0.6% of gross revenue, creditable against corporation tax (payable when it exceeds the corporation tax liability). Not computed by this profit-based SME estimator."
+  },
+  "green_fund_levy": {
+    "rate": 0.003,
+    "base": "gross_revenue",
+    "note": "Green fund levy of 0.3% of gross revenue; not creditable against corporation tax. Not computed by this profit-based SME estimator."
+  },
+  "vat": {
+    "standard_rate": 0.125,
+    "implemented": true,
+    "note": "VAT standard rate 12.5%; zero-rated and exempt supplies exist."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Inland Revenue Division (IRD), Trinidad and Tobago",
+        "url": "https://www.ird.gov.tt/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "TTD",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Business levy and green fund levy on gross revenue, supplemental petroleum tax, unemployment levy, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official IRD guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "jurisdiction": "VE",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.34,
+    "basis": "ISLR (Ley de Impuesto sobre la Renta) Tarifa 2, progressive in Tax Units (UT); this SME estimator models the top band as a flat rate.",
+    "tarifa_2_ut_brackets": [
+      {"up_to_ut": 2000, "rate": 0.15},
+      {"from_ut": 2000, "up_to_ut": 3000, "rate": 0.22},
+      {"above_ut": 3000, "rate": 0.34}
+    ],
+    "special_rates": {
+      "banking_insurance": 0.40,
+      "hydrocarbons": 0.50
+    },
+    "note": "Tarifa 2 is progressive in Tax Units (UT): 15% up to 2,000 UT, 22% from 2,000 to 3,000 UT, 34% above 3,000 UT. The bolivar value of the UT is re-fixed administratively and shifts with hyperinflation, so the lower UT brackets cover a negligible slice of real-world profit; the estimator applies the 34% top band. Banking/insurance are taxed at 40% and hydrocarbons (Tarifa 3) at 50%. Verify the current UT value with SENIAT."
+  },
+  "inflation_adjustment": {
+    "applies": true,
+    "note": "Fiscal inflation adjustment (Ajuste por Inflacion / Reajuste Regular por Inflacion, API/RPA) revalues non-monetary assets and equity for tax purposes; excluded from this estimator. Financial-sector and special taxpayers have been excluded from the adjustment by reform."
+  },
+  "vat": {
+    "standard_rate": 0.16,
+    "implemented": true,
+    "note": "IVA standard rate 16%; the law allows a general band of 8%-16.5% set by the Executive, with reduced rates for certain goods and an additional rate (up to 15 percentage points extra) on luxury goods and services, plus a surtax band for payments in foreign currency/crypto."
+  },
+  "municipal_business_tax": {
+    "note": "Municipalities levy a gross-receipts business activity tax (Impuesto a las Actividades Economicas) at locally set rates; out of scope."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "SENIAT (Servicio Nacional Integrado de Administracion Aduanera y Tributaria)",
+        "url": "https://declaraciones.seniat.gob.ve/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "VES",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "UT-denominated brackets, the fiscal inflation adjustment (API/RPA), municipal turnover taxes, and sector-specific regimes may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}
