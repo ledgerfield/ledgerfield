@@ -1,0 +1,49 @@
+{
+  "jurisdiction": "PG",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.30,
+    "non_resident_rate": 0.48,
+    "basis": "30% CIT on resident companies; 48% on non-resident companies. Administered by the Internal Revenue Commission (IRC).",
+    "special_rates": {
+      "mining_and_petroleum": "Resource-sector regimes (mining, oil and gas) apply specific rates, additional profits tax and levies."
+    },
+    "note": "Mining and petroleum resource-sector regimes are out of scope for this SME estimator."
+  },
+  "gst": {
+    "standard_rate": 0.10,
+    "implemented": true,
+    "note": "10% Goods and Services Tax on most goods and services."
+  },
+  "sources": [
+    "https://irc.gov.pg/"
+  ],
+  "metadata": {
+    "source_status": "ai_estimated_needs_verification",
+    "needs_verification": true,
+    "official_sources": [
+      {
+        "name": "Internal Revenue Commission (IRC)",
+        "url": "https://irc.gov.pg/"
+      }
+    ],
+    "caveat": "AI-estimated rates and thresholds. Figures have NOT been verified against primary IRC legislation or guidance and must be confirmed before any filing, advice, or production use.",
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "PGK",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified, AI-estimated LedgerField estimates.",
+      "Residency status, resource-sector regimes, incentives, WHT, relief and sector rules may alter outcomes.",
+      "Verify against official IRC guidance and a local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

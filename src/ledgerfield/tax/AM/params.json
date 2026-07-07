@@ -1,0 +1,60 @@
+{
+  "jurisdiction": "AM",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.18,
+    "basis": "Flat 18% profit (corporate income) tax on taxable profit of resident entities.",
+    "note": "Administered by the State Revenue Committee (SRC / Petekamutner)."
+  },
+  "simplified_regimes": {
+    "turnover_tax": {
+      "note": "Turnover tax replaces profit tax and VAT for qualifying taxpayers below a revenue threshold; rates vary by activity."
+    },
+    "micro_business": {
+      "note": "Micro-business regime exempts qualifying small taxpayers below a lower revenue threshold from profit and turnover tax."
+    }
+  },
+  "vat": {
+    "standard_rate": 0.20,
+    "implemented": true,
+    "note": "Standard 20% VAT."
+  },
+  "personal_income_tax": {
+    "rate": 0.20,
+    "note": "Flat personal income tax on employment income (approximate; being phased down in some years)."
+  },
+  "sources": [
+    {
+      "name": "State Revenue Committee of the Republic of Armenia (Petekamutner)",
+      "url": "https://www.petekamutner.am/"
+    }
+  ],
+  "metadata": {
+    "source_status": "ai_estimated_needs_verification",
+    "needs_verification": true,
+    "note": "Rates in this pack are AI-estimated and MUST be verified against the State Revenue Committee (petekamutner.am) before any production tax filing.",
+    "official_sources": [
+      {
+        "name": "State Revenue Committee of the Republic of Armenia (Petekamutner)",
+        "url": "https://www.petekamutner.am/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "AMD",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Simplified turnover/micro-business regimes, deductions, WHT, relief, and filing rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

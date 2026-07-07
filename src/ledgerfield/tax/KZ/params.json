@@ -1,0 +1,55 @@
+{
+  "jurisdiction": "KZ",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.20,
+    "basis": "Flat 20% corporate income tax (КПН) under the Tax Code of the Republic of Kazakhstan.",
+    "special_rates": {
+      "subsurface_users_note": "Mining and oil & gas (subsurface) users are subject to additional special taxes (excess-profit tax, mineral extraction tax) beyond standard CIT."
+    },
+    "note": "Administered by the State Revenue Committee of the Ministry of Finance. A new Tax Code raises certain rates from 2026; this estimator models the 2025 standard flat 20% CIT."
+  },
+  "vat": {
+    "standard_rate": 0.12,
+    "implemented": true,
+    "note": "Standard VAT (НДС) rate of 12%. The new Tax Code contemplates changes to the VAT trajectory from 2026."
+  },
+  "personal_income_tax": {
+    "rate": 0.10,
+    "note": "Individual income tax (ИПН) generally 10% on employment income (indicative)."
+  },
+  "sources": [
+    {
+      "name": "State Revenue Committee of the Ministry of Finance of the Republic of Kazakhstan",
+      "url": "https://kgd.gov.kz/"
+    }
+  ],
+  "metadata": {
+    "source_status": "ai_estimated_needs_verification",
+    "needs_verification": true,
+    "ai_estimated_caveat": "These rates and parameters are AI-estimated and have NOT been verified against primary legislation. Verify against the State Revenue Committee (kgd.gov.kz) and a local tax advisor before any filing or production use.",
+    "official_sources": [
+      {
+        "name": "State Revenue Committee (kgd.gov.kz)",
+        "url": "https://kgd.gov.kz/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; a new Tax Code raises some rates from 2026 and transitional periods may differ."
+    },
+    "currency": "KZT",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Subsurface-user special taxes, sector-specific regimes, relief, and filing rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

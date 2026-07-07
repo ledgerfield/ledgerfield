@@ -1,0 +1,50 @@
+{
+  "jurisdiction": "AL",
+  "year": 2025,
+  "sources": [
+    "https://www.tatime.gov.al/"
+  ],
+  "cit": {
+    "standard_rate": 0.15,
+    "basis": "Flat 15% corporate income tax (Tatimi mbi Fitimin) administered by the General Directorate of Taxes.",
+    "small_business_rate": 0.0,
+    "small_business_turnover_threshold_all": 14000000,
+    "note": "AI-estimated: standard 15% CIT. Historically small businesses with annual turnover <= ALL 14 million were taxed at 0% CIT; verify current threshold and applicability against official guidance before filing."
+  },
+  "vat": {
+    "standard_rate": 0.20,
+    "implemented": true,
+    "note": "AI-estimated: standard VAT 20% (TVSH). Reduced/zero rates may apply to specific sectors."
+  },
+  "personal_income_tax": {
+    "note": "AI-estimated: progressive personal income tax applies; not modelled in this SME estimator."
+  },
+  "metadata": {
+    "source_status": "ai_estimated_needs_verification",
+    "needs_verification": true,
+    "verification_note": "RATES IN THIS PACK ARE AI-ESTIMATED AND MUST BE SOURCE-VERIFIED against the official Albanian tax authority (https://www.tatime.gov.al/) before any production filing.",
+    "official_sources": [
+      {
+        "name": "General Directorate of Taxes (Tatimet)",
+        "url": "https://www.tatime.gov.al/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "ALL",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are AI-estimated and simplified for LedgerField estimates.",
+      "Small-business relief, sector rates, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

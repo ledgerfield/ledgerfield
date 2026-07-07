@@ -1,0 +1,55 @@
+{
+  "jurisdiction": "ME",
+  "year": 2025,
+  "cit": {
+    "type": "progressive",
+    "basis": "Progressive corporate income tax (porez na dobit) computed per bracket on taxable profit in EUR.",
+    "brackets": [
+      { "up_to": 100000, "rate": 0.09 },
+      { "up_to": 1500000, "rate": 0.12 },
+      { "up_to": null, "rate": 0.15 }
+    ],
+    "note": "Administered by the Revenue and Customs Administration (Uprava prihoda i carina)."
+  },
+  "vat": {
+    "standard_rate": 0.21,
+    "reduced_rate": 0.07,
+    "implemented": true,
+    "note": "Standard PDV rate 21%; reduced rate 7% on certain goods and services."
+  },
+  "wht": {
+    "non_resident_dividends_interest_royalties": 0.15,
+    "note": "15% withholding on certain payments to non-residents, subject to tax treaties."
+  },
+  "sources": [
+    "https://www.poreskauprava.gov.me/"
+  ],
+  "metadata": {
+    "source_status": "ai_estimated_needs_verification",
+    "needs_verification": true,
+    "official_sources": [
+      {
+        "name": "Revenue and Customs Administration of Montenegro (Uprava prihoda i carina)",
+        "url": "https://www.poreskauprava.gov.me/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EUR",
+    "caveat": "AI-estimated rates and thresholds for the 2025 target period; NOT verified against primary legislation or the tax authority. Must be verified before any real use.",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Progressive brackets applied per-portion; WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

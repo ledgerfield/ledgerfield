@@ -1,0 +1,46 @@
+{
+  "jurisdiction": "FJ",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.20,
+    "non_resident_rate": 0.25,
+    "basis": "20% CIT on resident companies; 25% on non-resident / foreign companies (e.g. branches). Administered by the Fiji Revenue and Customs Service (FRCS).",
+    "note": "Sector-specific incentives, tax-free regions and concessions may alter the effective rate; out of scope for this SME estimator."
+  },
+  "vat": {
+    "standard_rate": 0.15,
+    "implemented": true,
+    "note": "15% Value Added Tax on most goods and services."
+  },
+  "sources": [
+    "https://www.frcs.org.fj/"
+  ],
+  "metadata": {
+    "source_status": "ai_estimated_needs_verification",
+    "needs_verification": true,
+    "official_sources": [
+      {
+        "name": "Fiji Revenue and Customs Service (FRCS)",
+        "url": "https://www.frcs.org.fj/"
+      }
+    ],
+    "caveat": "AI-estimated rates and thresholds. Figures have NOT been verified against primary FRCS legislation or guidance and must be confirmed before any filing, advice, or production use.",
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "FJD",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified, AI-estimated LedgerField estimates.",
+      "Residency status, incentives, concessions, WHT, relief and sector rules may alter outcomes.",
+      "Verify against official FRCS guidance and a local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

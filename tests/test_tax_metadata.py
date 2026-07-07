@@ -21,7 +21,16 @@ def test_every_shipped_tax_json_has_source_metadata():
         payload = json.loads(path.read_text(encoding="utf-8"))
         metadata = payload.get("metadata")
         assert isinstance(metadata, dict), path
-        assert metadata["source_status"] == "official_sources_referenced_estimate", path
+        # Two provenance tiers are allowed: source-referenced estimates, and the
+        # emerging-market packs (#39) whose rates are AI-estimated and explicitly
+        # flagged as needing source verification before any production filing.
+        status = metadata["source_status"]
+        assert status in (
+            "official_sources_referenced_estimate",
+            "ai_estimated_needs_verification",
+        ), path
+        if status == "ai_estimated_needs_verification":
+            assert metadata.get("needs_verification") is True, path
         assert metadata["currency"], path
         assert metadata["rate_threshold_assumptions"], path
         assert metadata["limitations"], path

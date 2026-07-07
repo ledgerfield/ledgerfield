@@ -1,0 +1,56 @@
+{
+  "jurisdiction": "NP",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.25,
+    "sector_rates": {
+      "standard": 0.25,
+      "financial_telecom": 0.30,
+      "special_industry": 0.20
+    },
+    "basis": "Sector-dependent CIT: 25% standard/general; 30% for banks, financial institutions, insurance, telecom and petroleum; 20% for special industries.",
+    "note": "Administered by the Inland Revenue Department (IRD). AI-estimated; verify against official guidance."
+  },
+  "vat": {
+    "standard_rate": 0.13,
+    "implemented": true,
+    "note": "Value Added Tax levied at 13% on taxable supplies of goods and services."
+  },
+  "personal_income_tax": {
+    "note": "Progressive individual income tax; not modelled in this SME estimator."
+  },
+  "sources": [
+    {
+      "name": "Inland Revenue Department (Nepal)",
+      "url": "https://ird.gov.np/"
+    }
+  ],
+  "metadata": {
+    "source_status": "ai_estimated_needs_verification",
+    "needs_verification": true,
+    "caveat": "AI-estimated rates. NOT verified against official primary sources. Must be validated against Inland Revenue Department guidance (https://ird.gov.np/) and a local tax advisor before filing or production use.",
+    "official_sources": [
+      {
+        "name": "Inland Revenue Department (Nepal)",
+        "url": "https://ird.gov.np/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; Nepal's fiscal year (mid-July to mid-July, Bikram Sambat) and transitional periods differ from the calendar year."
+    },
+    "currency": "NPR",
+    "rate_threshold_assumptions": [
+      "Rates are AI-estimated and simplified for LedgerField estimates.",
+      "Sector classification, rebates, relief, filing, and industry-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}
