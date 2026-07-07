@@ -1,0 +1,56 @@
+{
+  "jurisdiction": "KE",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.30,
+    "non_resident_branch_rate": 0.375,
+    "basis": "30% CIT on resident companies (Income Tax Act, Cap 470); 37.5% on non-resident companies operating through a branch (permanent establishment).",
+    "special_rates": {
+      "export_processing_zone_first_10_years": 0.0,
+      "export_processing_zone_next_10_years": 0.25
+    },
+    "note": "Administered by the Kenya Revenue Authority (KRA). EPZ enterprises pay 0% for the first ten years and 25% for the next ten years; special economic zone and sector-specific rates are out of scope for this SME estimator."
+  },
+  "vat": {
+    "standard_rate": 0.16,
+    "implemented": true,
+    "note": "16% standard VAT rate (VAT Act 2013); zero-rated and exempt supplies apply to specific goods and services."
+  },
+  "significant_economic_presence_tax": {
+    "rate": 0.03,
+    "note": "3% Significant Economic Presence (SEP) tax on gross turnover of non-residents supplying services over a digital marketplace to Kenyan users; replaced the 1.5% Digital Service Tax (Finance Act 2024)."
+  },
+  "minimum_top_up_tax": {
+    "note": "Minimum top-up tax (Pillar Two domestic minimum top-up tax, QDMTT) applies from 2025 to in-scope multinational groups (consolidated revenue >= EUR 750m) with an effective rate below 15%."
+  },
+  "turnover_tax": {
+    "rate": 0.015,
+    "note": "1.5% turnover tax for small businesses with annual turnover between KES 1 million and KES 25 million, in lieu of standard CIT."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Kenya Revenue Authority (KRA)",
+        "url": "https://www.kra.go.ke/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "KES",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "EPZ/SEZ incentives, turnover tax eligibility, SEP tax, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "jurisdiction": "EG",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.225,
+    "basis": "Standard 22.5% CIT on taxable profit (Income Tax Law No. 91 of 2005, as amended), administered by the Egyptian Tax Authority (ETA).",
+    "special_rates": {
+      "oil_gas_exploration_production": 0.4055,
+      "suez_canal_authority_egpc_cbe": 0.40
+    },
+    "note": "Oil & gas exploration and production companies are taxed at 40.55%; the Suez Canal Authority, the Egyptian General Petroleum Corporation (EGPC) and the Central Bank of Egypt at 40%."
+  },
+  "small_enterprise_regime": {
+    "turnover_threshold_egp": 20000000,
+    "turnover_rate_range": [0.004, 0.015],
+    "note": "Simplified small-enterprise regime (Law No. 6 of 2025): businesses with annual turnover up to EGP 20 million may opt for a turnover-based tax of 0.4%-1.5% instead of profit-based CIT. Out of scope for this profit-based estimator."
+  },
+  "vat": {
+    "standard_rate": 0.14,
+    "implemented": true,
+    "note": "Standard VAT rate of 14% (VAT Law No. 67 of 2016); reduced rates and exemptions apply to specific goods and services."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Egyptian Tax Authority (ETA)",
+        "url": "https://www.eta.gov.eg/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "EGP",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Sector-specific rates, the Law 6/2025 turnover regime, WHT, relief, filing, and free-zone rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

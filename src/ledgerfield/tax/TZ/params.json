@@ -1,0 +1,50 @@
+{
+  "jurisdiction": "TZ",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.30,
+    "basis": "Standard 30% CIT under the Income Tax Act 2004 (as amended), administered by the Tanzania Revenue Authority (TRA).",
+    "special_rates": {
+      "newly_listed_dse": 0.25,
+      "new_manufacturer_pharma_leather": 0.20,
+      "assembler_vehicles_tractors": 0.10
+    },
+    "note": "25% applies for 3 years to companies newly listed on the Dar es Salaam Stock Exchange with at least 30% of shares issued to the public; 20% to new manufacturers of pharmaceuticals or leather products under a performance agreement; 10% to new assemblers of vehicles, tractors and fishing boats for the first 5 years."
+  },
+  "alternative_minimum_tax": {
+    "rate": 0.005,
+    "base": "turnover",
+    "note": "0.5% alternative minimum tax on turnover for companies with perpetual unrelieved losses for three consecutive years; out of scope for this SME estimator."
+  },
+  "vat": {
+    "standard_rate": 0.18,
+    "implemented": true,
+    "note": "18% standard VAT on Mainland Tanzania; Zanzibar applies a 15% standard rate under its own VAT administration."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Tanzania Revenue Authority (TRA)",
+        "url": "https://www.tra.go.tz/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "TZS",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Reduced-rate eligibility windows (3-year DSE listing, 5-year assembler), performance agreements, AMT, WHT and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

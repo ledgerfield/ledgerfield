@@ -1,0 +1,53 @@
+{
+  "jurisdiction": "CI",
+  "year": 2025,
+  "ohada": {
+    "member": true,
+    "accounting_system": "SYSCOHADA (Système Comptable OHADA, revised AUDCIF)"
+  },
+  "cit": {
+    "standard_rate": 0.25,
+    "basis": "Flat 25% impôt sur les bénéfices industriels et commerciaux (BIC) on taxable profit (Code Général des Impôts de Côte d'Ivoire).",
+    "special_rates": {
+      "telecom_it_communication": 0.30
+    },
+    "minimum_tax": {
+      "rate_on_turnover": 0.005,
+      "name": "Impôt minimum forfaitaire (IMF)",
+      "note": "0.5% of turnover (incl. tax), subject to national floor and cap amounts per the CGI — bounds not modelled in this SME estimator."
+    },
+    "note": "Administered by the DGI (Direction Générale des Impôts). Telecom/IT/communication sector rate is 30%."
+  },
+  "vat": {
+    "standard_rate": 0.18,
+    "implemented": true,
+    "name": "TVA",
+    "note": "Standard 18% TVA; a reduced 9% rate applies to certain goods (e.g. milk, pasta)."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "DGI — Direction Générale des Impôts (Côte d'Ivoire)",
+        "url": "https://www.dgi.gouv.ci/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "XOF",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "IMF floor/cap bounds, sector rates, WHT, relief and filing rules may alter outcomes.",
+      "Verify against official DGI guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

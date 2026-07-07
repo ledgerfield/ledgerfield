@@ -1,0 +1,47 @@
+{
+  "jurisdiction": "UG",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.30,
+    "basis": "Flat 30% CIT on resident companies and non-resident branches (Income Tax Act, Cap 340).",
+    "note": "Administered by the Uganda Revenue Authority (URA). Branch repatriated-income tax, mining/petroleum variable rates, and exemption regimes are out of scope for this SME estimator."
+  },
+  "vat": {
+    "standard_rate": 0.18,
+    "implemented": true,
+    "note": "18% standard VAT rate (VAT Act, Cap 349); registration threshold UGX 150 million annual turnover; zero-rated and exempt supplies apply to specific goods and services."
+  },
+  "presumptive_turnover_tax": {
+    "note": "Small-business presumptive regime: resident taxpayers with annual turnover up to UGX 150 million may pay a turnover-based presumptive tax (banded fixed amounts / rates) instead of standard CIT."
+  },
+  "digital_services_tax": {
+    "rate": 0.05,
+    "note": "5% Digital Services Tax (DST) on income derived by non-residents from providing digital services to consumers in Uganda."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Uganda Revenue Authority (URA)",
+        "url": "https://ura.go.ug/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars (Uganda fiscal year runs July-June) and transitional periods may differ."
+    },
+    "currency": "UGX",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Presumptive regime eligibility, branch repatriation tax, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

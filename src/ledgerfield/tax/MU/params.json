@@ -1,0 +1,57 @@
+{
+  "jurisdiction": "MU",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.15,
+    "basis": "Flat 15% CIT under the Income Tax Act 1995, administered by the Mauritius Revenue Authority (MRA).",
+    "gbc_partial_exemption": {
+      "exemption_share": 0.80,
+      "effective_rate": 0.03,
+      "note": "Global Business / partial exemption regime: 80% exemption on qualifying foreign-source income (foreign dividends, interest, ship and aircraft leasing, CIS and closed-end fund management, etc.), leaving 15% on the 20% taxable slice — an effective 3% rate, subject to substance requirements."
+    },
+    "special_rates": {
+      "export_of_goods": 0.03
+    },
+    "corporate_climate_responsibility_levy": {
+      "rate": 0.02,
+      "turnover_threshold_mur": 50000000,
+      "note": "2% Corporate Climate Responsibility (CCR) levy on chargeable income of companies with turnover above Rs 50m, introduced by the Finance Act 2024 (2024-25)."
+    }
+  },
+  "vat": {
+    "standard_rate": 0.15,
+    "implemented": true,
+    "note": "VAT at 15% (Value Added Tax Act 1998); registration threshold and zero-rated/exempt supplies apply."
+  },
+  "personal_income_tax": {
+    "top_rate": 0.20,
+    "note": "Progressive PAYE with a top rate of 20% under the reformed bracket system; out of scope for this CIT estimator."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Mauritius Revenue Authority (MRA)",
+        "url": "https://www.mra.mu/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; the Mauritian fiscal year runs 1 July to 30 June, so transitional periods may differ."
+    },
+    "currency": "MUR",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Partial exemption applies only to qualifying income streams and requires substance; blended income books alter outcomes.",
+      "CCR levy, export rate, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official MRA guidance and a local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

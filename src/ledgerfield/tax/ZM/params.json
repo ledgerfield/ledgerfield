@@ -1,0 +1,52 @@
+{
+  "jurisdiction": "ZM",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.30,
+    "basis": "Standard 30% CIT under the Income Tax Act (Cap. 323, as amended), administered by the Zambia Revenue Authority (ZRA).",
+    "special_rates": {
+      "farming_agro_processing": 0.10,
+      "hotels_tourism_accommodation": 0.15
+    },
+    "note": "10% applies to income from farming and agro-processing; 15% to hotel/tourism income from accommodation and food services (remaining income taxed at the standard rate). Mining companies fall under a variable-profit tax regime with mineral royalties — out of scope for this SME estimator."
+  },
+  "turnover_tax": {
+    "rate": 0.05,
+    "threshold_zmw": 5000000,
+    "note": "5% turnover tax applies to businesses with annual turnover up to K5,000,000 that are not registered for CIT; out of scope for this SME estimator."
+  },
+  "mineral_royalty": {
+    "note": "Mineral royalty is levied on mining production at price-graduated rates (copper on a sliding scale by LME price); mining income is also subject to a variable-profit CIT regime. Out of scope for this SME estimator."
+  },
+  "vat": {
+    "standard_rate": 0.16,
+    "implemented": true,
+    "note": "16% standard VAT; exports and certain supplies are zero-rated, with exemptions per the VAT Act."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Zambia Revenue Authority (ZRA)",
+        "url": "https://www.zra.org.zm/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "ZMW",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Sector regimes (hotels/tourism split rates, mining variable-profit tax, mineral royalty, turnover tax), WHT and relief rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "jurisdiction": "MZ",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.32,
+    "basis": "IRPC (Imposto sobre o Rendimento das Pessoas Colectivas) at 32% standard rate under the Código do IRPC.",
+    "special_rates": {
+      "agriculture": 0.10
+    },
+    "note": "Agriculture and aquaculture benefit from a reduced 10% IRPC rate under an extended incentive. Mining and petroleum operations fall under specific fiscal regimes (production taxes and dedicated IRPC rules) — out of scope for this SME estimator. Administered by the Autoridade Tributária de Moçambique."
+  },
+  "vat": {
+    "standard_rate": 0.16,
+    "implemented": true,
+    "note": "IVA at 16% standard rate. Small taxpayers below the registration threshold may opt for the ISPC (Imposto Simplificado para Pequenos Contribuintes), a simplified 3% turnover regime that replaces IVA and IRPC."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Autoridade Tributária de Moçambique",
+        "url": "https://www.at.gov.mz/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "MZN",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Mining/petroleum regimes, ISPC eligibility, withholding taxes, incentives, and sector-specific rules may alter outcomes.",
+      "Verify against official Autoridade Tributária guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}
