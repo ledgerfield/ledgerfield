@@ -1,0 +1,58 @@
+{
+  "jurisdiction": "NI",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.30,
+    "basis": "30% IR (Impuesto sobre la Renta) on net taxable income under Ley No. 822, Ley de Concertacion Tributaria (LCT).",
+    "pago_minimo_definitivo": {
+      "rate_large_taxpayers": 0.03,
+      "rate_medium_taxpayers": 0.02,
+      "rate_small_taxpayers": 0.01,
+      "base": "gross_income",
+      "note": "Definitive minimum payment of 1%-3% of GROSS income, tiered by taxpayer size. Annual IR payable = max(30% of net income, minimum on gross income). A net loss with positive gross income still triggers the gross minimum."
+    },
+    "note": "Administered by the Direccion General de Ingresos (DGI)."
+  },
+  "vat": {
+    "standard_rate": 0.15,
+    "implemented": true,
+    "note": "IVA (Impuesto al Valor Agregado) at 15%; exports zero-rated, certain basic goods exempt."
+  },
+  "wht": {
+    "non_resident_general": 0.15,
+    "note": "Definitive withholding on payments to non-residents; rates vary by income type under the LCT."
+  },
+  "social_insurance": {
+    "employer_rate_inss": 0.225,
+    "employee_rate_inss": 0.07,
+    "inatec_rate": 0.02,
+    "note": "INSS social security (integral regime, employers with 50+ employees at 22.5%) plus 2% INATEC training levy; simplified."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Direccion General de Ingresos (DGI), Nicaragua",
+        "url": "https://www.dgi.gob.ni/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "NIO",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Pago minimo tier (1%-3%) depends on official taxpayer-size classification; caller supplies the applicable percentage.",
+      "Sector regimes, exemptions (zonas francas), relief, filing, and advance-payment rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

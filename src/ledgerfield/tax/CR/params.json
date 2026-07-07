@@ -1,0 +1,54 @@
+{
+  "jurisdiction": "CR",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.30,
+    "basis": "Impuesto sobre las Utilidades, Ley 7092 del Impuesto sobre la Renta: flat 30% on net income for companies above the SME gross-income ceiling.",
+    "sme_regime": {
+      "gross_income_ceiling_crc": 122145000,
+      "brackets_on_net_income": [
+        {"up_to_crc": 5761000, "rate": 0.05},
+        {"up_to_crc": 8643000, "rate": 0.10},
+        {"up_to_crc": 11524000, "rate": 0.15},
+        {"up_to_crc": null, "rate": 0.20}
+      ],
+      "note": "2025 published slice values: companies with gross income up to CRC 122,145,000 pay 5%/10%/15%/20% progressively on slices of net income."
+    },
+    "note": "Administered by the Ministerio de Hacienda / Dirección General de Tributación. Fiscal year aligned to the calendar year since the 2019 reform (Ley 9635)."
+  },
+  "vat": {
+    "standard_rate": 0.13,
+    "implemented": true,
+    "note": "IVA (Impuesto al Valor Agregado) 13% standard rate (Ley 9635); reduced rates of 4%, 2% and 1% apply to specific goods and services."
+  },
+  "territorial_system": {
+    "applies": true,
+    "note": "Costa Rica applies a territorial system: only Costa Rican-source income is subject to income tax; most foreign-source income is out of scope (subject to anti-abuse rules per Ley 10381)."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Ministerio de Hacienda de Costa Rica",
+        "url": "https://www.hacienda.go.cr/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; SME thresholds and slices are updated annually by executive decree."
+    },
+    "currency": "CRC",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "SME eligibility depends on gross income; slices apply to net income.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, credit, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

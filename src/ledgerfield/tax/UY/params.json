@@ -1,0 +1,52 @@
+{
+  "jurisdiction": "UY",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.25,
+    "basis": "IRAE (Impuesto a las Rentas de las Actividades Económicas) flat 25% on net business income (Título 4).",
+    "note": "Administered by the DGI (Dirección General Impositiva). Free-trade-zone (zona franca) companies and qualifying software/IT services enjoy broad IRAE exemptions — out of scope for this SME estimator."
+  },
+  "free_zone": {
+    "irae_rate": 0.0,
+    "note": "Zona franca users are exempt from IRAE (and most other national taxes) on qualifying activity under Ley 15.921; qualifying software development and related IT services can also be largely IRAE-exempt."
+  },
+  "imeba": {
+    "note": "IMEBA (Impuesto a la Enajenación de Bienes Agropecuarios) is an alternative turnover tax on first sales of agricultural goods; small agricultural producers may opt for IMEBA instead of IRAE."
+  },
+  "vat": {
+    "standard_rate": 0.22,
+    "reduced_rate": 0.10,
+    "implemented": true,
+    "note": "IVA standard rate 22%; 10% reduced (tasa mínima) rate applies to e.g. basic foodstuffs, medicines, and hotel services."
+  },
+  "net_wealth_tax": {
+    "rate": 0.015,
+    "note": "IP (Impuesto al Patrimonio) of 1.5% applies annually to corporate net worth located in Uruguay."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Dirección General Impositiva (DGI)",
+        "url": "https://www.gub.uy/direccion-general-impositiva/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "UYU",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Zona-franca/software exemptions, IMEBA option, IP, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

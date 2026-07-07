@@ -1,0 +1,49 @@
+{
+  "jurisdiction": "PY",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.10,
+    "basis": "IRE (Impuesto a la Renta Empresarial) flat 10% on net business income (Ley 6380/2019) — the lowest corporate income tax rate in South America.",
+    "note": "Administered by the DNIT (Dirección Nacional de Ingresos Tributarios). Small taxpayers may opt into the SIMPLE / RESIMPLE simplified regimes instead of the general IRE — out of scope for this SME estimator."
+  },
+  "idu": {
+    "resident_rate": 0.08,
+    "non_resident_rate": 0.15,
+    "note": "IDU (Impuesto a los Dividendos y a las Utilidades) on profit distributions: 8% for resident shareholders, 15% for non-residents (Ley 6380/2019)."
+  },
+  "vat": {
+    "standard_rate": 0.10,
+    "reduced_rate": 0.05,
+    "implemented": true,
+    "note": "IVA standard rate 10% — also the lowest standard VAT rate in South America; 5% reduced rate applies to e.g. basic-basket foodstuffs, pharmaceuticals, and real-estate transactions."
+  },
+  "small_business_regimes": {
+    "note": "SIMPLE and RESIMPLE simplified regimes are available for small businesses below turnover thresholds, replacing the general IRE with simplified presumptive assessment."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Dirección Nacional de Ingresos Tributarios (DNIT)",
+        "url": "https://www.dnit.gov.py/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "PYG",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "IDU on distributions, SIMPLE/RESIMPLE regimes, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

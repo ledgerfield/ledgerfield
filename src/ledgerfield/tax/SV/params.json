@@ -1,0 +1,61 @@
+{
+  "jurisdiction": "SV",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.30,
+    "reduced_rate": 0.25,
+    "reduced_rate_threshold": 150000,
+    "basis": "ISR (Impuesto sobre la Renta) under the Ley de Impuesto sobre la Renta (LISR): 30% standard; 25% for companies with taxable income up to USD 150,000. Whole-base (cliff) rate, not a progressive bracket.",
+    "minimum_tax": {
+      "rate": 0.01,
+      "base": "gross_income",
+      "applied": false,
+      "note": "1% minimum tax on gross income (2011/2014 reforms) declared unconstitutional by the Constitutional Chamber in 2015; not applied. Historical note only."
+    },
+    "note": "Administered by the Ministerio de Hacienda / Direccion General de Impuestos Internos (DGII)."
+  },
+  "vat": {
+    "standard_rate": 0.13,
+    "implemented": true,
+    "note": "IVA (Impuesto a la Transferencia de Bienes Muebles y a la Prestacion de Servicios) at 13%; exports zero-rated."
+  },
+  "wht": {
+    "non_resident_general": 0.20,
+    "tax_haven_rate": 0.25,
+    "note": "General 20% withholding on payments to non-residents (25% to low/no-tax jurisdictions); rates vary by income type."
+  },
+  "social_insurance": {
+    "employer_rate_isss": 0.075,
+    "employee_rate_isss": 0.03,
+    "employer_rate_afp": 0.0875,
+    "employee_rate_afp": 0.0725,
+    "note": "ISSS health/social security plus AFP pension contributions; contribution ceilings apply; simplified."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Ministerio de Hacienda, El Salvador",
+        "url": "https://www.mh.gob.sv/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "USD",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "The 25% reduced rate applies to the WHOLE base when taxable income is at most USD 150,000 (cliff, not bracket).",
+      "Pago a cuenta advance payments, exemptions, free-zone regimes, relief, and filing rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "jurisdiction": "PE",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.295,
+    "basis": "Flat 29.5% corporate income tax under the general regime (Régimen General, Ley del Impuesto a la Renta — LIR).",
+    "mype_tributario": {
+      "lower_rate": 0.10,
+      "upper_rate": 0.295,
+      "bracket_uit": 15,
+      "uit_2025": 5350,
+      "bracket_threshold": 80250,
+      "note": "Régimen MYPE Tributario (D.Leg. 1269): 10% on the first 15 UIT of net income (UIT 2025 = S/ 5,350 → S/ 80,250), 29.5% on the excess."
+    },
+    "note": "Administered by SUNAT. Special regimes (RER, Nuevo RUS, agriculture, mining stability agreements) are out of scope for this SME estimator."
+  },
+  "wht": {
+    "dividends": 0.05,
+    "note": "5% withholding tax on dividends and other profit distributions to individuals and non-residents."
+  },
+  "vat": {
+    "standard_rate": 0.18,
+    "implemented": true,
+    "decomposition": {
+      "igv": 0.16,
+      "ipm": 0.02
+    },
+    "note": "IGV (Impuesto General a las Ventas) at 18%, composed of 16% IGV proper plus 2% IPM (Impuesto de Promoción Municipal)."
+  },
+  "itan": {
+    "rate": 0.004,
+    "note": "ITAN (Temporary Net Assets Tax): 0.4% on net assets above S/ 1,000,000; creditable against income tax."
+  },
+  "labour": {
+    "essalud_employer_rate": 0.09,
+    "note": "Employer health contribution (EsSalud) 9%; pension via ONP 13% or private AFP; CTS and statutory gratuities (July/December) apply to payroll."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "SUNAT — Superintendencia Nacional de Aduanas y de Administración Tributaria",
+        "url": "https://www.sunat.gob.pe/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "PEN",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "MYPE eligibility caps (income ≤ 1,700 UIT), special regimes, loss carry-forward, and sector rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}
