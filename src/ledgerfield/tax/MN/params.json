@@ -1,0 +1,58 @@
+{
+  "jurisdiction": "MN",
+  "year": 2025,
+  "cit": {
+    "lower_rate": 0.10,
+    "upper_rate": 0.25,
+    "progressive_threshold_mnt": 6000000000,
+    "basis": "Two-band progressive CIT: 10% on annual taxable income up to MNT 6,000,000,000; 25% on the portion of taxable income above MNT 6,000,000,000.",
+    "note": "Administered by the General Department of Taxation (GDT/MTA). AI-estimated; verify against official guidance."
+  },
+  "vat": {
+    "standard_rate": 0.10,
+    "implemented": true,
+    "note": "Value Added Tax levied at 10% on taxable supplies of goods and services."
+  },
+  "wht": {
+    "non_resident_general": 0.20,
+    "note": "Withholding tax on certain payments to non-residents (AI-estimated; verify)."
+  },
+  "personal_income_tax": {
+    "standard_rate": 0.10,
+    "note": "Individual income tax broadly at 10% (progressive elements may apply)."
+  },
+  "sources": [
+    {
+      "name": "General Department of Taxation (Mongolia)",
+      "url": "https://mta.mn/"
+    }
+  ],
+  "metadata": {
+    "source_status": "ai_estimated_needs_verification",
+    "needs_verification": true,
+    "caveat": "AI-estimated rates and thresholds. NOT verified against official primary sources. Must be validated against General Department of Taxation guidance (https://mta.mn/) and a local tax advisor before filing or production use.",
+    "official_sources": [
+      {
+        "name": "General Department of Taxation (Mongolia)",
+        "url": "https://mta.mn/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "MNT",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are AI-estimated and simplified for LedgerField estimates.",
+      "Progressive bands, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

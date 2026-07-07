@@ -1,0 +1,53 @@
+{
+  "jurisdiction": "KG",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.10,
+    "basis": "Flat 10% corporate income (profit) tax under the Kyrgyz Tax Code.",
+    "note": "Administered by the State Tax Service (STS). Certain sectors (e.g. mining) have special regimes out of scope for this SME estimator."
+  },
+  "sales_tax": {
+    "rate_range": [0.01, 0.03],
+    "note": "Turnover-based sales tax on gross revenue; rate varies by activity and by cash vs non-cash settlement. Separate from CIT and VAT."
+  },
+  "vat": {
+    "standard_rate": 0.12,
+    "implemented": true,
+    "note": "Standard VAT rate is 12%."
+  },
+  "personal_income_tax": {
+    "rate": 0.10,
+    "note": "Flat 10% personal income tax."
+  },
+  "sources": [
+    "https://www.sti.gov.kg/"
+  ],
+  "metadata": {
+    "source_status": "ai_estimated_needs_verification",
+    "needs_verification": true,
+    "official_sources": [
+      {
+        "name": "Kyrgyz Republic State Tax Service (STS)",
+        "url": "https://www.sti.gov.kg/"
+      }
+    ],
+    "caveat": "AI-estimated figures pending verification against official State Tax Service publications; not for filing or production use without local validation.",
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "KGS",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified AI estimates for LedgerField.",
+      "Sales tax, VAT, sector regimes, relief and filing rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "jurisdiction": "RS",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.15,
+    "basis": "Flat 15% corporate income tax (porez na dobit pravnih lica).",
+    "note": "Administered by the Tax Administration (Poreska uprava)."
+  },
+  "vat": {
+    "standard_rate": 0.20,
+    "reduced_rate": 0.10,
+    "implemented": true,
+    "note": "Standard PDV rate 20%; reduced rate 10% on certain goods and services."
+  },
+  "wht": {
+    "non_resident_dividends_interest_royalties": 0.20,
+    "note": "20% withholding on certain payments to non-residents, subject to tax treaties."
+  },
+  "sources": [
+    "https://www.purs.gov.rs/"
+  ],
+  "metadata": {
+    "source_status": "ai_estimated_needs_verification",
+    "needs_verification": true,
+    "official_sources": [
+      {
+        "name": "Tax Administration of the Republic of Serbia (Poreska uprava)",
+        "url": "https://www.purs.gov.rs/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "RSD",
+    "caveat": "AI-estimated rates and thresholds for the 2025 target period; NOT verified against primary legislation or the tax authority. Must be verified before any real use.",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

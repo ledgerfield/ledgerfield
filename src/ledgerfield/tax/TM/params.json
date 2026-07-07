@@ -1,0 +1,50 @@
+{
+  "jurisdiction": "TM",
+  "year": 2025,
+  "cit": {
+    "private_domestic_rate": 0.08,
+    "state_or_foreign_rate": 0.20,
+    "basis": "8% corporate (profit) income tax for private/domestic legal entities; 20% for state enterprises and foreign legal entities, under the Turkmen Tax Code.",
+    "note": "Administered by the Main State Tax Service under the Ministry of Finance and Economy. Hydrocarbon and agreement-based regimes are out of scope for this SME estimator."
+  },
+  "vat": {
+    "standard_rate": 0.15,
+    "implemented": true,
+    "note": "Standard VAT rate is 15%."
+  },
+  "personal_income_tax": {
+    "rate": 0.10,
+    "note": "Employment income taxed at a standard rate (simplified estimate)."
+  },
+  "sources": [
+    "https://www.minfin.gov.tm/"
+  ],
+  "metadata": {
+    "source_status": "ai_estimated_needs_verification",
+    "needs_verification": true,
+    "official_sources": [
+      {
+        "name": "Ministry of Finance and Economy of Turkmenistan (Main State Tax Service)",
+        "url": "https://www.minfin.gov.tm/"
+      }
+    ],
+    "caveat": "AI-estimated figures pending verification against official Ministry of Finance and Economy / Main State Tax Service publications; not for filing or production use without local validation.",
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "TMT",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified AI estimates for LedgerField.",
+      "Entity classification (private vs state/foreign), hydrocarbon regimes, relief and filing rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

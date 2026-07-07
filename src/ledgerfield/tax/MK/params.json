@@ -1,0 +1,48 @@
+{
+  "jurisdiction": "MK",
+  "year": 2025,
+  "sources": [
+    "https://www.ujp.gov.mk/"
+  ],
+  "cit": {
+    "standard_rate": 0.10,
+    "basis": "Flat 10% corporate income tax (Danok na dobivka) administered by the Public Revenue Office (UJP).",
+    "note": "AI-estimated: standard 10% flat CIT. Verify current rate, base adjustments and reliefs against official guidance before filing."
+  },
+  "vat": {
+    "standard_rate": 0.18,
+    "implemented": true,
+    "note": "AI-estimated: standard VAT 18% (DDV). Reduced rates (e.g. 5%/10%) may apply to specific goods and services."
+  },
+  "personal_income_tax": {
+    "note": "AI-estimated: flat personal income tax applies; not modelled in this SME estimator."
+  },
+  "metadata": {
+    "source_status": "ai_estimated_needs_verification",
+    "needs_verification": true,
+    "verification_note": "RATES IN THIS PACK ARE AI-ESTIMATED AND MUST BE SOURCE-VERIFIED against the official North Macedonian tax authority (https://www.ujp.gov.mk/) before any production filing.",
+    "official_sources": [
+      {
+        "name": "Public Revenue Office (UJP)",
+        "url": "https://www.ujp.gov.mk/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "MKD",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are AI-estimated and simplified for LedgerField estimates.",
+      "Base adjustments, sector rates, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

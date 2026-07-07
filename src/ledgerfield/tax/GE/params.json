@@ -1,0 +1,55 @@
+{
+  "jurisdiction": "GE",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.15,
+    "model": "estonian_distributed_profit",
+    "basis": "Estonian model (since 2017): 15% CIT on DISTRIBUTED profit only; retained/reinvested profit is taxed at 0%.",
+    "retained_profit_rate": 0.0,
+    "gross_up_note": "For some distributions Georgia grosses up the base (net / 0.85, i.e. 15% of the 100/85 gross-up). This estimator applies 15% directly to the distribution for simplicity.",
+    "note": "Administered by the Revenue Service (rs.ge). Financial institutions and certain sectors may follow different regimes."
+  },
+  "vat": {
+    "standard_rate": 0.18,
+    "implemented": true,
+    "note": "Standard 18% VAT."
+  },
+  "personal_income_tax": {
+    "rate": 0.20,
+    "note": "Flat 20% personal income tax on employment income (approximate)."
+  },
+  "sources": [
+    {
+      "name": "Revenue Service of Georgia",
+      "url": "https://www.rs.ge/"
+    }
+  ],
+  "metadata": {
+    "source_status": "ai_estimated_needs_verification",
+    "needs_verification": true,
+    "note": "Rates in this pack are AI-estimated and MUST be verified against the Revenue Service (rs.ge) before any production tax filing.",
+    "official_sources": [
+      {
+        "name": "Revenue Service of Georgia",
+        "url": "https://www.rs.ge/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "GEL",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Estonian-model deemed distributions, gross-up, sector regimes, deductions, WHT, relief, and filing rules may alter outcomes.",
+      "Verify against official guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}
