@@ -1,0 +1,44 @@
+{
+  "jurisdiction": "AO",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.25,
+    "basis": "Imposto Industrial (Industrial Tax) at 25% standard rate under Law 26/20 (Industrial Tax Code, as amended).",
+    "special_rates": {
+      "banking_insurance_telecom": 0.35,
+      "agriculture": 0.10
+    },
+    "note": "Banking, insurance and telecommunications are taxed at 35%; agriculture, forestry and livestock at 10%. Oil sector operations fall under a separate petroleum income tax regime (Imposto sobre o Rendimento do Petróleo) — out of scope for this SME estimator. Administered by the Administração Geral Tributária (AGT)."
+  },
+  "vat": {
+    "standard_rate": 0.14,
+    "implemented": true,
+    "note": "IVA at 14% standard rate; reduced/simplified bands (e.g. 7% under the simplified regime and for certain essential goods) apply to qualifying taxpayers and supplies."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Administração Geral Tributária (AGT), Angola",
+        "url": "https://agt.minfin.gov.ao/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "AOA",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Petroleum income tax, mining regimes, withholding taxes, incentives, and sector-specific rules may alter outcomes.",
+      "Verify against official AGT guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

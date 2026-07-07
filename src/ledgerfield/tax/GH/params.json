@@ -1,0 +1,54 @@
+{
+  "jurisdiction": "GH",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.25,
+    "basis": "Standard 25% corporate income tax under the Income Tax Act, 2015 (Act 896), as amended.",
+    "special_rates": {
+      "mining_petroleum": 0.35,
+      "hotels": 0.22
+    },
+    "note": "Administered by the Ghana Revenue Authority (GRA). Mining and upstream petroleum operations are taxed at 35%; hotels at 22%. Location- and sector-based reduced rates (e.g. free zones, agro-processing) are out of scope for this SME estimator."
+  },
+  "growth_sustainability_levy": {
+    "standard_rate": 0.05,
+    "basis": "Growth & Sustainability Levy (GSL) at 5% of profit before tax for most sectors, 2023-2025.",
+    "note": "Banks, non-bank financial institutions and mining companies fall into higher GSL bands; this estimator applies the 5% standard band."
+  },
+  "vat": {
+    "standard_rate": 0.15,
+    "levies": {
+      "nhil": 0.025,
+      "getfund": 0.025,
+      "covid_levy": 0.01
+    },
+    "effective_rate_note": "NHIL (2.5%), GETFund (2.5%) and COVID-19 levy (1%) are charged on the VAT-exclusive value and are non-deductible as input tax, with 15% VAT then applied on the levy-inclusive value — effective rate approximately 21.9%.",
+    "note": "2025 reform: abolition of the COVID-19 levy has been announced; verify current status with the GRA before use."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Ghana Revenue Authority (GRA)",
+        "url": "https://gra.gov.gh/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "GHS",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "GSL sector bands, free-zone/location incentives, capital allowances, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official GRA guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

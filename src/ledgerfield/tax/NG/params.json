@@ -1,0 +1,57 @@
+{
+  "jurisdiction": "NG",
+  "year": 2025,
+  "cit": {
+    "rates_by_company_size": {
+      "small": 0.0,
+      "medium": 0.20,
+      "large": 0.30
+    },
+    "size_thresholds_turnover_ngn": {
+      "small_max": 25000000,
+      "medium_max": 100000000
+    },
+    "basis": "Companies Income Tax Act (CITA), as amended by the Finance Acts: 0% for small companies (gross turnover ≤ ₦25m), 20% for medium companies (turnover > ₦25m and ≤ ₦100m), 30% for large companies (turnover > ₦100m). Size is turnover-based; the caller asserts classification.",
+    "note": "Administered by the Federal Inland Revenue Service (FIRS). Minimum tax, sector-specific regimes (petroleum profits tax) and pioneer-status incentives are out of scope for this SME estimator."
+  },
+  "tertiary_education_tax": {
+    "rate": 0.03,
+    "basis": "Tertiary Education Trust Fund (TETFund) Act: 3% of assessable profit for medium and large companies (Finance Act 2023 rate); small companies are exempt.",
+    "applies_to": ["medium", "large"]
+  },
+  "vat": {
+    "standard_rate": 0.075,
+    "implemented": true,
+    "note": "VAT at 7.5% (Finance Act 2019, effective 1 February 2020)."
+  },
+  "reform_2025": {
+    "note": "Nigeria Tax Act 2025 (signed June 2025) consolidates CITA and related tax acts, effective 2026: small-company turnover threshold rises to ₦100m and the Tertiary Education Tax is replaced by a 4% Development Levy. Note only — not modelled for the 2025 ruleset."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Federal Inland Revenue Service (FIRS)",
+        "url": "https://www.firs.gov.ng/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "NGN",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Company-size classification is turnover-based and asserted by the caller.",
+      "Minimum tax, capital allowances, WHT, levies, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official FIRS guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

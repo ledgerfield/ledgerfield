@@ -1,0 +1,54 @@
+{
+  "jurisdiction": "RW",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.28,
+    "basis": "Flat 28% CIT, reduced from 30% by the 2023 Income Tax Law (Law No 027/2022), administered by the Rwanda Revenue Authority (RRA).",
+    "roadmap": {
+      "target_rate": 0.26,
+      "note": "The government's Medium-Term Revenue Strategy foresees a further reduction of the CIT rate from 28% to 26%."
+    },
+    "small_business_regimes": {
+      "note": "Micro and small businesses below the real-regime turnover thresholds may opt for flat-tax / lump-sum regimes instead of the standard 28% CIT; out of scope for this SME estimator."
+    },
+    "newly_listed_incentives": {
+      "rates": [0.25, 0.20],
+      "note": "Newly listed companies on the Rwanda Stock Exchange enjoy reduced CIT rates of 25% or 20% for a set period, depending on the share of equity floated to the public; out of scope for this SME estimator."
+    }
+  },
+  "vat": {
+    "standard_rate": 0.18,
+    "implemented": true,
+    "note": "VAT at 18%; registration threshold and zero-rated/exempt supplies apply."
+  },
+  "personal_income_tax": {
+    "top_rate": 0.30,
+    "note": "Progressive PAYE with a top rate of 30%; out of scope for this CIT estimator."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Rwanda Revenue Authority (RRA)",
+        "url": "https://www.rra.gov.rw/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "RWF",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Small-business flat/lump-sum regimes, listing incentives, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official RRA guidance and a local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

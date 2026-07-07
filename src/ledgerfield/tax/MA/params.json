@@ -1,0 +1,55 @@
+{
+  "jurisdiction": "MA",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.20,
+    "high_rate": 0.35,
+    "high_rate_threshold": 100000000,
+    "financial_institution_rate": 0.40,
+    "basis": "Impôt sur les Sociétés (IS). Finance Law 2023 four-year convergence (2023-2026) to a two-rate target system: 20% for net taxable profit below MAD 100,000,000 and 35% for MAD 100,000,000 or more; credit institutions and insurance/reinsurance companies converge to 40%. The applicable rate applies to the WHOLE taxable profit once the threshold is crossed (no marginal slices in the target system).",
+    "convergence_note": "2025 is year 3 of the Finance Law 2023 glide path; target rates are fully effective from 2026. This estimator uses the 2026 TARGET rates as the simplest defensible model — the exact 2025 transitional rates differ slightly per bracket (year-3 of the glide path).",
+    "cotisation_minimale": {
+      "rate": 0.0025,
+      "note": "Minimum contribution (cotisation minimale) of 0.25% of turnover is generally due even in loss-making years; out of scope for this SME estimator."
+    }
+  },
+  "vat": {
+    "standard_rate": 0.20,
+    "reduced_rates": [0.14, 0.10, 0.07],
+    "implemented": true,
+    "note": "TVA standard rate 20%, with reduced rates of 14%, 10% and 7% for specified goods and services."
+  },
+  "social_solidarity_contribution": {
+    "note": "A social solidarity contribution (contribution sociale de solidarité) on profits above statutory thresholds has applied in recent finance laws; check the current finance law for applicability and rates. Out of scope for this SME estimator."
+  },
+  "social_insurance": {
+    "note": "CNSS employer and employee contributions apply to payroll; not modelled in this SME estimator."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Direction Générale des Impôts (DGI), Kingdom of Morocco",
+        "url": "https://www.tax.gov.ma/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; 2025 is year 3 of the 2023-2026 rate convergence, so statutory transitional rates for 2025 differ slightly from the 2026 target rates used here."
+    },
+    "currency": "MAD",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "2026 target rates are used; exact 2025 transitional (year-3 glide path) rates differ slightly per bracket.",
+      "Cotisation minimale, social solidarity contribution, WHT, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official DGI guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

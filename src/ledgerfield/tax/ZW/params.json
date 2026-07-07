@@ -1,0 +1,51 @@
+{
+  "jurisdiction": "ZW",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.25,
+    "aids_levy_rate": 0.03,
+    "aids_levy_basis": "The 3% AIDS levy is charged on the income tax amount itself (tax-on-tax), NOT on taxable profit.",
+    "effective_rate": 0.2575,
+    "basis": "25% corporate income tax plus 3% AIDS levy on the tax, giving an effective rate of 25.75% (0.25 * 1.03).",
+    "note": "Administered by the Zimbabwe Revenue Authority (ZIMRA). Special mining lease and sector-specific rates are out of scope for this SME estimator."
+  },
+  "vat": {
+    "standard_rate": 0.15,
+    "implemented": true,
+    "note": "Standard VAT rate of 15%; zero-rating and exemptions apply to certain basic goods and exports."
+  },
+  "imtt": {
+    "rate": 0.02,
+    "note": "Intermediated Money Transfer Tax (IMTT) of 2% applies to most electronic/intermediated money transfers; caps and exemptions apply. Distinct rates may apply to foreign-currency transfers."
+  },
+  "currency_regime": {
+    "currencies": ["ZWG", "USD"],
+    "note": "Zimbabwe operates a dual-currency regime: the Zimbabwe Gold (ZWG, introduced April 2024) alongside the US dollar. Tax may be assessed and payable in the currency of trade."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Zimbabwe Revenue Authority (ZIMRA)",
+        "url": "https://www.zimra.co.zw/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "ZWG",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Sector-specific rates (e.g. special mining leases), capital allowances, relief, filing, and currency-of-assessment rules may alter outcomes.",
+      "Verify against official ZIMRA guidance and a local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

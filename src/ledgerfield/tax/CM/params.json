@@ -1,0 +1,65 @@
+{
+  "jurisdiction": "CM",
+  "year": 2025,
+  "ohada": {
+    "member": true,
+    "accounting_system": "SYSCOHADA (Système Comptable OHADA, revised AUDCIF)"
+  },
+  "cit": {
+    "standard_rate": 0.33,
+    "decomposition": {
+      "principal_rate": 0.30,
+      "cac_rate_on_tax": 0.10,
+      "note": "33% effective = 30% principal impôt sur les sociétés + 10% centimes additionnels communaux (CAC) levied on the tax itself: 0.30 * 1.10 = 0.33."
+    },
+    "basis": "30% IS + 10% CAC on the tax = 33% effective (Code Général des Impôts du Cameroun).",
+    "reduced_regimes": {
+      "turnover_up_to_xaf_3bn_rate_incl_cac": 0.275,
+      "turnover_up_to_xaf_3bn_principal_rate": 0.25,
+      "note": "Companies with turnover up to XAF 3 billion: 25% principal = 27.5% including CAC. Turnover bands per current Finance Law; not modelled in this SME estimator."
+    },
+    "minimum_tax": {
+      "rate_on_turnover_incl_cac": 0.022,
+      "name": "Minimum de perception",
+      "note": "2.2% of turnover incl. CAC (2% + 10% CAC) for the standard (réel) regime; higher rates apply to simplified regimes."
+    },
+    "note": "Administered by the DGI (Direction Générale des Impôts, Cameroun)."
+  },
+  "vat": {
+    "standard_rate": 0.1925,
+    "implemented": true,
+    "name": "TVA",
+    "decomposition": {
+      "principal_rate": 0.175,
+      "cac_rate_on_tax": 0.10,
+      "note": "19.25% = 17.5% principal VAT + 10% CAC levied on the tax: 0.175 * 1.10 = 0.1925."
+    },
+    "note": "Standard 19.25% TVA (incl. CAC); 0% on exports."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "DGI — Direction Générale des Impôts (Cameroun)",
+        "url": "https://www.impots.cm/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; jurisdiction fiscal calendars and transitional periods may differ."
+    },
+    "currency": "XAF",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Reduced-regime turnover bands, minimum-tax regimes, WHT, relief and filing rules may alter outcomes.",
+      "Verify against official DGI guidance and local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}

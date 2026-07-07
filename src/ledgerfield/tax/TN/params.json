@@ -1,0 +1,58 @@
+{
+  "jurisdiction": "TN",
+  "year": 2025,
+  "cit": {
+    "standard_rate": 0.20,
+    "basis": "Finance Law 2025 (Loi de Finances 2025) raised the standard CIT rate from 15% to 20%, applicable to FY2024 profits declared in 2025 onwards.",
+    "fl2025_rate_change": {
+      "previous_standard_rate": 0.15,
+      "new_standard_rate": 0.20,
+      "previous_banks_insurance_rate": 0.35,
+      "new_banks_insurance_rate": 0.40,
+      "note": "Finance Law 2025 rate raise: standard 15% -> 20%; banks, financial institutions and insurance 35% -> 40%."
+    },
+    "sector_rates": {
+      "standard": 0.20,
+      "banks_insurance": 0.40,
+      "telecom_hydrocarbons": 0.35,
+      "reduced": 0.10
+    },
+    "reduced_regime_note": "The 10% reduced regime covers agriculture and fishing, regional development zones, and support activities.",
+    "conjunctural_contribution": {
+      "note": "Recent finance laws have imposed a temporary conjunctural contribution (contribution conjoncturelle) on certain large companies, notably banks and financial institutions, on top of CIT. Out of scope for this SME estimator."
+    },
+    "note": "Administered by the Ministere des Finances / Direction Generale des Impots."
+  },
+  "vat": {
+    "standard_rate": 0.19,
+    "reduced_rates": [0.13, 0.07],
+    "implemented": true,
+    "note": "Standard VAT (TVA) rate of 19%, with reduced rates of 13% and 7% for specific goods and services."
+  },
+  "metadata": {
+    "source_status": "official_sources_referenced_estimate",
+    "official_sources": [
+      {
+        "name": "Ministere des Finances — Direction Generale des Impots",
+        "url": "https://impots.finances.gov.tn/"
+      }
+    ],
+    "effective_date_range": {
+      "start": "2025-01-01",
+      "end": "2025-12-31",
+      "basis": "Target ruleset/params year; the Finance Law 2025 rates apply to FY2024 profits declared in 2025 onwards."
+    },
+    "currency": "TND",
+    "rate_threshold_assumptions": [
+      "Rates and thresholds are simplified for LedgerField estimates.",
+      "Minimum tax (impot minimum), conjunctural contributions, export/offshore regimes, relief, filing, and sector-specific rules may alter outcomes.",
+      "Verify against official guidance and a local advisor before filing or production use."
+    ],
+    "limitations": [
+      "Not legal, tax, accounting, or filing advice.",
+      "Does not encode every deduction, exemption, treaty, WHT, payroll, or filing rule.",
+      "High-stakes use requires local validation against official forms and current law."
+    ],
+    "last_reviewed": "2026-07-07"
+  }
+}
